@@ -17,17 +17,24 @@ def _table_cells(line: str) -> list[str] | None:
         return None
     return [c.strip() for c in line.strip().strip("|").split("|")]
 
+MACHINE_READABLE_HEADING = "### 2a. Model inputs (machine-readable)"
+
 def _dossier_points(path: Path, label: str, msgs: list[str]) -> dict[tuple[str, str, str], float]:
     """Keyed (item, scenario, period). Parses the machine-readable §2a table when the
-    dossier has one; otherwise falls back to the legacy §2 table, keyed with item ""."""
+    dossier has one; otherwise falls back to the legacy §2 table, keyed with item "".
+    Matches the exact "### 2a. Model inputs (machine-readable)" heading, not just any
+    "### 2a."/"### 2b." prefix: some dossiers (e.g. D5) carry earlier descriptive
+    sub-sections numbered "2a."/"2b." before the real machine-readable table, and a
+    loose prefix match would stop at the first of those instead of reading the table
+    this function exists to read."""
     pts: dict[tuple[str, str, str], float] = {}
     if not path.exists():
         return pts
     text = path.read_text()
-    if "### 2a." in text:
+    if MACHINE_READABLE_HEADING in text:
         in_2a = False
         for ln in text.splitlines():
-            if ln.strip().startswith("### 2a."):
+            if ln.strip() == MACHINE_READABLE_HEADING:
                 in_2a = True; continue
             if in_2a and ln.startswith("#"):
                 break

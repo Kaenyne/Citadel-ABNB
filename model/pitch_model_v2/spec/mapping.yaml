@@ -1,0 +1,668 @@
+# Human-authored mapping for spec_seed.py. No input values live here: every input line's
+# `values` are generated from a dossier's `### 2a.` table by
+# `python3 -m pitch_model_v2.spec_seed`, which writes lines.yaml from this file.
+#
+# Wave-1 dossiers used: H0 (history), D1 (3Q26 nights), D4 (ADR), D5 (FX), R1 (kernel),
+# R3 (cushion), C4 (S&M), V1 (Street), V2 (multiple). See docs/pitch-model-v2/DECISIONS.md
+# for the decision ids cited below.
+
+meta:
+  price_date: "2026-09-16"
+  spot: 167.51
+  scenarios: [base, short, breaker]
+  periods:
+    [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+     1Q26, 2Q26, 3Q26, 4Q26, 1Q27, 2Q27, 3Q27, 4Q27, FY26, FY27, ALL]
+
+lines:
+  # ---------------------------------------------------------------- drivers
+  - id: NIGHTS
+    label: Nights booked (m)
+    unit: m
+    block: drivers
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26, 3Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: nights_m
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.1
+        scenario_map: {base: actual, short: actual, breaker: actual}
+      - periods: [3Q26]
+        item: nights_m
+        dossier: docs/pitch-model-v2/dossiers/D1_d1_nights_3q26.md
+        receipt: data/processed/pitch_model_v2/receipts/D1/receipt.json
+        grade: B
+        decision: DEC-0004
+        tolerance: 0.1
+
+  - id: ADR
+    label: ADR ($)
+    unit: usd
+    block: drivers
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26, 3Q26, 4Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: adr_usd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.01
+        scenario_map: {base: actual, short: actual, breaker: actual}
+      - periods: [3Q26, 4Q26]
+        item: adr_total_usd
+        dossier: docs/pitch-model-v2/dossiers/D4_d4_adr.md
+        receipt: data/processed/pitch_model_v2/receipts/D4/receipt.json
+        grade: B
+        decision: DEC-0008
+        tolerance: 0.01
+
+  - id: GBV
+    label: GBV ($M)
+    unit: musd
+    block: drivers
+    kind: formula
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26, 3Q26]
+    expr: "NIGHTS * ADR"
+
+  - id: FX_REV
+    label: Revenue FX contribution (pp y/y)
+    unit: pp
+    block: drivers
+    kind: input
+    periods: [3Q26, 4Q26, 1Q27, 2Q27]
+    provenance:
+      - periods: [3Q26, 4Q26, 1Q27, 2Q27]
+        item: revenue_fx_pp
+        dossier: docs/pitch-model-v2/dossiers/D5_d5_fx.md
+        receipt: data/processed/pitch_model_v2/receipts/D5/receipt.json
+        grade: B
+        decision: DEC-0010
+        tolerance: 0.01
+
+  - id: FX_ADR
+    label: ADR FX contribution (pp y/y)
+    unit: pp
+    block: drivers
+    kind: input
+    periods: [3Q26, 4Q26, 1Q27, 2Q27]
+    provenance:
+      - periods: [3Q26, 4Q26, 1Q27, 2Q27]
+        item: adr_fx_pp
+        dossier: docs/pitch-model-v2/dossiers/D5_d5_fx.md
+        receipt: data/processed/pitch_model_v2/receipts/D5/receipt.json
+        grade: B
+        decision: DEC-0010
+        tolerance: 0.01
+
+  - id: STREET_NIGHTS
+    label: Street nights (m)
+    unit: m
+    block: drivers
+    kind: input
+    periods: [3Q26, 4Q26]
+    provenance:
+      - periods: [3Q26, 4Q26]
+        item: street_nights_m
+        dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+        receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+        grade: B
+        decision: DEC-0013
+        tolerance: 0.1
+        scenario_map: {base: street, short: street, breaker: street}
+
+  - id: STREET_ADR
+    label: Street ADR ($)
+    unit: usd
+    block: drivers
+    kind: input
+    periods: [3Q26]
+    provenance:
+      - periods: [3Q26]
+        item: street_adr_usd
+        dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+        receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+        grade: B
+        decision: DEC-0013
+        tolerance: 0.01
+        scenario_map: {base: street, short: street, breaker: street}
+
+  # ---------------------------------------------------------------- revenue
+  - id: REV
+    label: Revenue ($M)
+    unit: musd
+    block: revenue
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: revenue_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: TAKE
+    label: Take rate (%)
+    unit: pct
+    block: revenue
+    kind: formula
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    expr: "REV / GBV * 100"
+
+  - id: LAM_Q1
+    label: Kernel lambda, Q1 season (%)
+    unit: pct
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: lambda_q1_pct
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.01
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: LAM_Q2
+    label: Kernel lambda, Q2 season (%)
+    unit: pct
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: lambda_q2_pct
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.01
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: LAM_Q3
+    label: Kernel lambda, Q3 season (%)
+    unit: pct
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: lambda_q3_pct
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.01
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: LAM_Q4
+    label: Kernel lambda, Q4 season (%)
+    unit: pct
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: lambda_q4_pct
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.01
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: W1
+    label: Kernel weight, GBV[q-1]
+    unit: weight
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: w1
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.001
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: W2
+    label: Kernel weight, GBV[q-2]
+    unit: weight
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: w2
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.001
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: JW0
+    label: Joint-rule weight, GBV[t] (sensitivity only)
+    unit: weight
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: joint_w0
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.001
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: JW1
+    label: Joint-rule weight, GBV[t-1] (sensitivity only)
+    unit: weight
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: joint_w1
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.001
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: JW2
+    label: Joint-rule weight, GBV[t-2] (sensitivity only)
+    unit: weight
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: joint_w2
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.001
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: JW3
+    label: Joint-rule weight, mean(GBV[t-3],GBV[t-4]) (sensitivity only)
+    unit: weight
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: joint_w3
+        dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+        receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+        grade: B
+        decision: DEC-0006
+        tolerance: 0.001
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: REV_KERNEL
+    label: Revenue, kernel ($M)
+    unit: musd
+    block: revenue
+    kind: formula
+    periods: [3Q26]
+    expr: "LAM_Q3@ALL / 100 * (W1@ALL * GBV[-1] + W2@ALL * GBV[-2])"
+
+  - id: CUSH
+    label: Guide cushion, trailing-8 mean (pp)
+    unit: pctpt
+    block: revenue
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: cushion_mean_pct
+        dossier: docs/pitch-model-v2/dossiers/R3_r3_cushion.md
+        receipt: data/processed/pitch_model_v2/receipts/R3/receipt.json
+        grade: A
+        decision: DEC-0001
+        tolerance: 0.01
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: STREET_REV
+    label: Street revenue ($M)
+    unit: musd
+    block: revenue
+    kind: input
+    periods: [3Q26, 4Q26, FY26, FY27]
+    provenance:
+      - periods: [3Q26, 4Q26, FY26, FY27]
+        item: street_revenue_musd
+        dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+        receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+        grade: B
+        decision: DEC-0013
+        tolerance: 0.5
+        scenario_map: {base: street, short: street, breaker: street}
+
+  # ------------------------------------------------------------------ costs
+  - id: COR
+    label: Cost of revenue, cash ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: cor_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: OPS
+    label: Operations & support, cash ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: ops_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: PD
+    label: Product development, cash ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: pd_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: GA
+    label: G&A ex lodging reserve, cash ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: ga_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: SBC
+    label: Stock-based compensation, total ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: sbc_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: DA
+    label: Depreciation & amortization ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: da_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: EBITDA
+    label: Adjusted EBITDA ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: adj_ebitda_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: SHARES
+    label: Diluted shares, historical (m)
+    unit: m
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: shares_m
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.1
+        scenario_map: {base: actual, short: actual, breaker: actual}
+
+  - id: SM
+    label: Sales & marketing, cash ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods:
+      [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25,
+       1Q26, 2Q26, 3Q26, 4Q26, FY26, FY27]
+    provenance:
+      - periods: [1Q23, 2Q23, 3Q23, 4Q23, 1Q24, 2Q24, 3Q24, 4Q24, 1Q25, 2Q25, 3Q25, 4Q25, 1Q26, 2Q26]
+        item: sm_musd
+        dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+        receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+        grade: B
+        decision: DEC-0003
+        tolerance: 0.5
+        scenario_map: {base: actual, short: actual, breaker: actual}
+      - periods: [3Q26, 4Q26, FY26, FY27]
+        item: sm_musd
+        dossier: docs/pitch-model-v2/dossiers/C4_c4_sales_marketing.md
+        receipt: data/processed/pitch_model_v2/receipts/C4/receipt.json
+        grade: B
+        decision: DEC-0011
+        tolerance: 0.5
+        scenario_map: {base: "base (line build)", short: short, breaker: "breaker (ramp pauses)"}
+
+  - id: STREET_EBITDA
+    label: Street adjusted EBITDA ($M)
+    unit: musd
+    block: costs
+    kind: input
+    periods: [3Q26, FY27]
+    provenance:
+      - periods: [3Q26, FY27]
+        item: street_ebitda_musd
+        dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+        receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+        grade: B
+        decision: DEC-0013
+        tolerance: 0.5
+        scenario_map: {base: street, short: street, breaker: street}
+
+  - id: STREET_EPS
+    label: Street diluted EPS ($)
+    unit: usd
+    block: costs
+    kind: input
+    periods: [3Q26, FY27]
+    provenance:
+      - periods: [3Q26, FY27]
+        item: street_eps_usd
+        dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+        receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+        grade: B
+        decision: DEC-0013
+        tolerance: 0.01
+        scenario_map: {base: street, short: street, breaker: street}
+
+  - id: STREET_MARGIN
+    label: Street adjusted EBITDA margin (%)
+    unit: pct
+    block: costs
+    kind: input
+    periods: [FY27]
+    provenance:
+      - periods: [FY27]
+        item: street_margin_pct
+        dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+        receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+        grade: B
+        decision: DEC-0013
+        tolerance: 0.01
+        scenario_map: {base: street, short: street, breaker: street}
+
+  # -------------------------------------------------------------- valuation
+  - id: MULT
+    label: Exit EV / adj. EBITDA multiple (x)
+    unit: x
+    block: valuation
+    kind: input
+    periods: [FY27]
+    provenance:
+      - periods: [FY27]
+        item: exit_multiple_x
+        dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+        receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+        grade: B
+        decision: DEC-0014
+        tolerance: 0.01
+        scenario_map: {base: base_slope, short: bear_slope, breaker: bull_slope}
+
+  - id: SLOPE
+    label: Exit multiple slope (turns per pp of growth)
+    unit: x
+    block: valuation
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: slope_turns_per_pt
+        dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+        receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+        grade: B
+        decision: DEC-0015
+        tolerance: 0.01
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: SPOT
+    label: Spot price ($)
+    unit: usd
+    block: valuation
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: spot_usd
+        dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+        receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+        grade: B
+        decision: DEC-0015
+        tolerance: 0.01
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: NETCASH
+    label: Net cash ex client-held float ($M)
+    unit: musd
+    block: valuation
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: net_cash_ex_float_musd
+        dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+        receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+        grade: B
+        decision: DEC-0015
+        tolerance: 0.5
+        scenario_map: {base: base, short: base, breaker: base}
+
+  - id: SHARES_DIL
+    label: Diluted shares, valuation basis (m)
+    unit: m
+    block: valuation
+    kind: input
+    periods: [ALL]
+    provenance:
+      - periods: [ALL]
+        item: diluted_shares_m
+        dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+        receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+        grade: B
+        decision: DEC-0015
+        tolerance: 0.1
+        scenario_map: {base: base, short: base, breaker: base}
