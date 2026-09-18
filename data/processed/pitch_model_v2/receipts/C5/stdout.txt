@@ -1,0 +1,70 @@
+=== max abs diff across all recompute-vs-committed checks (USD m) ===
+1.1368683772161603e-13
+                check scenario    committed_scenario quarter  recompute_musd  committed_musd     abs_diff
+vs_40_lines_quarterly     base                  base    3Q26      265.389071      265.389071 0.000000e+00
+vs_40_lines_quarterly     base                  base    4Q26      276.410929      276.410929 0.000000e+00
+vs_40_lines_quarterly     base                  base    1Q27      249.227244      249.227244 0.000000e+00
+vs_40_lines_quarterly     base                  base    2Q27      271.580400      271.580400 0.000000e+00
+vs_40_lines_quarterly     base                  base    3Q27      256.539024      256.539024 0.000000e+00
+vs_40_lines_quarterly     base                  base    4Q27      267.193332      267.193332 0.000000e+00
+vs_40_lines_quarterly     bull             cost_bull    3Q26      257.806526      257.806526 0.000000e+00
+vs_40_lines_quarterly     bull             cost_bull    4Q26      268.513474      268.513474 0.000000e+00
+vs_40_lines_quarterly     bull             cost_bull    1Q27      240.675725      240.675725 2.842171e-14
+vs_40_lines_quarterly     bull             cost_bull    2Q27      262.261896      262.261896 0.000000e+00
+vs_40_lines_quarterly     bull             cost_bull    3Q27      247.736622      247.736622 2.842171e-14
+vs_40_lines_quarterly     bull             cost_bull    4Q27      258.025358      258.025358 0.000000e+00
+vs_40_lines_quarterly     bear             cost_bear    3Q26      272.971615      272.971615 0.000000e+00
+vs_40_lines_quarterly     bear             cost_bear    4Q26      284.308385      284.308385 0.000000e+00
+vs_40_lines_quarterly     bear             cost_bear    1Q27      260.337033      260.337033 0.000000e+00
+vs_40_lines_quarterly     bear             cost_bear    2Q27      283.686624      283.686624 0.000000e+00
+vs_40_lines_quarterly     bear             cost_bear    3Q27      267.974749      267.974749 0.000000e+00
+vs_40_lines_quarterly     bear             cost_bear    4Q27      279.103994      279.103994 0.000000e+00
+    short_equals_base    short short_costs_at_budget    3Q26      265.389071      265.389071 0.000000e+00
+    short_equals_base    short short_costs_at_budget    4Q26      276.410929      276.410929 0.000000e+00
+    short_equals_base    short short_costs_at_budget    1Q27      249.227244      249.227244 0.000000e+00
+    short_equals_base    short short_costs_at_budget    2Q27      271.580400      271.580400 0.000000e+00
+    short_equals_base    short short_costs_at_budget    3Q27      256.539024      256.539024 0.000000e+00
+    short_equals_base    short short_costs_at_budget    4Q27      267.193332      267.193332 0.000000e+00
+         vs_40_annual     base                  base    FY26      995.800000      995.800000 0.000000e+00
+         vs_40_annual     base                  base    FY27     1044.540000     1044.540000 0.000000e+00
+         vs_40_annual     bull             cost_bull    FY26      980.320000      980.320000 1.136868e-13
+         vs_40_annual     bull             cost_bull    FY27     1008.699600     1008.699600 1.136868e-13
+         vs_40_annual     bear             cost_bear    FY26     1011.280000     1011.280000 1.136868e-13
+         vs_40_annual     bear             cost_bear    FY27     1091.102400     1091.102400 0.000000e+00
+
+=== scenario table ===
+scenario period  ga_musd  revenue_musd  ga_pct_rev
+    base   3Q26  265.389      4804.036       5.524
+    base   4Q26  276.411      3178.108       8.697
+    base   1Q27  249.227      3053.129       8.163
+    base   2Q27  271.580      4028.981       6.741
+    base   3Q27  256.539      5280.732       4.858
+    base   4Q27  267.193      3465.764       7.710
+    base   FY26  995.800     14268.143       6.979
+    base   FY27 1044.540     15828.607       6.599
+   short   3Q26  265.389      4680.900       5.670
+   short   4Q26  276.411      2965.868       9.320
+   short   1Q27  249.227      2835.535       8.789
+   short   2Q27  271.580      3762.972       7.217
+   short   3Q27  256.539      4988.174       5.143
+   short   4Q27  267.193      3326.831       8.031
+   short   FY26  995.800     13932.768       7.147
+   short   FY27 1044.540     14913.512       7.004
+ breaker   3Q26  257.807      4804.036       5.366
+ breaker   4Q26  268.513      3178.108       8.449
+ breaker   1Q27  240.676      3053.129       7.883
+ breaker   2Q27  262.262      4028.981       6.509
+ breaker   3Q27  247.737      5280.732       4.691
+ breaker   4Q27  258.025      3465.764       7.445
+ breaker   FY26  980.320     14268.143       6.871
+ breaker   FY27 1008.700     15828.607       6.373
+
+=== 4Q23 history basis check ===
+                                       item scenario period  point
+                    ga_cash_ex_lodging_musd   actual   4Q23  211.0
+                               ga_gaap_musd   actual   4Q23 1203.0
+ga_cash_musd (gaap less sbc, incl. reserve)   actual   4Q23 1142.0
+                                sbc_ga_musd   actual   4Q23   61.0
+                  lodging_tax_reserves_musd   actual   4Q23  931.0
+
+OK: independent recompute matches all committed 40_line_build G&A cells to < 1e-6 USD m.

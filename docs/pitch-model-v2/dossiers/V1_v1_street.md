@@ -46,6 +46,9 @@ note above is left as written — it is the investigative record; this table ref
 | street_nights_m | street | 3Q26 | 149.0 | m | Bloomberg MODL, screenshot 12 Sep 2026 (Krish), n=28, per DEC-0005 |
 | street_nights_m | street | 4Q26 | 134.0 | m | Bloomberg MODL, screenshot 12 Sep 2026 (Krish), n=28 |
 | street_adr_usd | street | 3Q26 | 177.06 | usd | Bloomberg MODL, screenshot 12 Sep 2026 (Krish), n=26 |
+| street_adr_usd | street | 4Q26 | 171.33 | usd | Bloomberg MODL, screenshot 12 Sep 2026 (Krish), n=25 |
+| street_take_rate_pct | street | 3Q26 | 17.98 | pct | DEC-0018: street_revenue_musd 4744 ÷ (street_nights_m 149.0 × street_adr_usd 177.06 = 26381.94) × 100 = 17.98%. Cross-check: Bloomberg MODL's own directly-published 3Q26 take_rate_pct mean is 18.0% (n=28, screenshot 12 Sep 2026, Krish) — same capture, 0.02pt apart. |
+| street_take_rate_pct | street | 4Q26 | 13.77 | pct | DEC-0018: street_revenue_musd 3161 ÷ (street_nights_m 134.0 × street_adr_usd 171.33 = 22958.22) × 100 = 13.77%. Cross-check: Bloomberg MODL's own directly-published 4Q26 take_rate_pct mean is 13.76% (n=28, screenshot 12 Sep 2026, Krish) — same capture, 0.01pt apart. |
 | street_ebitda_musd | street | 3Q26 | 2362 | musd | LSEG desktop pull, as-of trading day 2026-09-11 (pulled 13 Sep 2026), mean $2361.5M, n=36 |
 | street_ebitda_musd | street | FY27 | 5766 | musd | LSEG desktop pull, as-of trading day 2026-09-11 (pulled 13 Sep 2026), mean $5766.1M, n=44 |
 | street_eps_usd | street | 3Q26 | 2.85 | usd | LSEG desktop pull, as-of trading day 2026-09-11 (pulled 13 Sep 2026), mean $2.8454, n=34 |
@@ -148,6 +151,19 @@ mix-up at its own citation.**
   4. Per the LANE2 convention, every row in §2 is `role=current` (September 2026 vintage) and must never
      be substituted into a historical guide-date or print-date test; none of the packages this dossier
      touched attempted that substitution.
+  5. **DEC-0018 gap: no FY26 or FY27 Street take rate.** `street_take_rate_pct` is added to §2a for 3Q26
+     (17.98%) and 4Q26 (13.77%) only, because the Bloomberg MODL screenshot (12 Sep 2026, Krish) — the
+     one source anywhere with a vendor-stamped forward nights and ADR — is quarterly-only: it has no FY26
+     or FY27 nights or ADR row (A1 §3, exhaustive free-web check, confirms the same absence; `D_sell-side-
+     dispersion.md` states directly: "nobody publishes an FY27 nights estimate"). No row is derived for
+     either annual period; deriving one would require a nights or ADR number this dossier's sources do
+     not contain. Nearest available substitutes, for the humans to choose from (not adopted here): (a)
+     the two quarterly MODL take rates already in §2a (17.98% / 13.77%) as a floor/ceiling band for
+     FY26/FY27, since 2H26 dominates the FY sequence; (b) `D_sell-side-dispersion.md`'s FY27 *derived*
+     nights range (+8.0% to +9.0% on the delivered/Zacks FY26 base — explicitly labelled JUDGEMENT, not a
+     consensus, and out of scope for a `street_*` row per this brief's vendor-attribution rule); (c) hold
+     the FY26/FY27 take rate flat at the FY26-to-date printed level and let the revenue/EBITDA rows in
+     §2a carry the disagreement instead.
 
 ## 8. Open choices
 1. **Which 3Q26 nights bar number goes in the memo: 148.9m or 149.0m, and from which Bloomberg
