@@ -1,0 +1,32 @@
+window     b_variant  n     a  gamma  gamma_t  beta  beta_se  beta_t  beta_p  wald_beta_eq_1_t  wald_p    r2  loo_beta_min  loo_beta_max H1_pass
+    W1             b 14 7.546  0.316   16.454 0.080    0.093   0.865   0.405            -9.915     0.0 0.753         0.001         0.261   False
+    W1          b_lo 14 7.592  0.314   14.847 0.090    0.102   0.880   0.397            -8.951     0.0 0.754         0.009         0.275   False
+    W1          b_hi 14 7.421  0.323   19.096 0.052    0.058   0.897   0.389           -16.374     0.0 0.751        -0.000         0.166   False
+    W1 none (spec a) 14 7.478  0.322   16.061   NaN      NaN     NaN     NaN               NaN     NaN 0.745           NaN           NaN     NaN
+    W2             b 10 8.014  0.205    1.569 0.184    0.054   3.390   0.012           -15.085     0.0 0.239         0.089         0.312    True
+    W2          b_lo 10 8.048  0.211    1.589 0.194    0.070   2.784   0.027           -11.565     0.0 0.246         0.103         0.367    True
+    W2          b_hi 10 7.758  0.223    1.575 0.106    0.032   3.264   0.014           -27.617     0.0 0.188         0.009         0.193    True
+    W2 none (spec a) 10 8.131  0.191    1.257   NaN      NaN     NaN     NaN               NaN     NaN 0.102           NaN           NaN     NaN
+
+window       spec  scored   mae  mae_naive  mae_ratio  rmse_ratio  mean_err
+    W1       a: v      13 1.703      2.173      0.784       0.728    -1.010
+    W1 joint: v+b      13 2.761      2.173      1.271       1.090    -1.874
+    W2       a: v      10 1.440      1.656      0.870       0.781    -0.745
+    W2 joint: v+b      10 2.408      1.656      1.454       1.372    -2.037
+
+                                                  read  g_pct  g_lo  g_hi  nights_m  nights_lo  nights_hi                                                           note
+             spec a stays only, W1, jul-only corrected   9.28  8.39 10.18    146.00     144.80     147.20                                band = ±1 sd of the July→Q3 gap
+                     joint fit, W1, jul-only corrected   8.94  7.34 10.00    145.54     143.41     146.96               fitted beta; stays ±1 sd; backlog band fee 0.133
+    identity-restricted beta=1, W1, jul-only corrected   4.58 -5.24  7.74    139.72     126.59     143.94 gamma from spec a; backlog term enters at its identity value 1
+         spec a stays only, W1, E6 Jul+Aug day-matched   9.18  8.29 10.08    145.87     144.67     147.07                                band = ±1 sd of the July→Q3 gap
+                 joint fit, W1, E6 Jul+Aug day-matched   8.84  7.25  9.90    145.41     143.28     146.83               fitted beta; stays ±1 sd; backlog band fee 0.133
+identity-restricted beta=1, W1, E6 Jul+Aug day-matched   4.48 -5.34  7.64    139.59     126.46     143.81 gamma from spec a; backlog term enters at its identity value 1
+             spec a stays only, W2, jul-only corrected   9.20  8.67  9.73    145.89     145.18     146.60                                band = ±1 sd of the July→Q3 gap
+                     joint fit, W2, jul-only corrected   8.30  6.09  9.28    144.69     141.74     146.00               fitted beta; stays ±1 sd; backlog band fee 0.133
+    identity-restricted beta=1, W2, jul-only corrected   4.50 -4.96  7.29    139.61     126.97     143.34 gamma from spec a; backlog term enters at its identity value 1
+         spec a stays only, W2, E6 Jul+Aug day-matched   9.14  8.61  9.68    145.82     145.11     146.53                                band = ±1 sd of the July→Q3 gap
+                 joint fit, W2, E6 Jul+Aug day-matched   8.24  6.03  9.22    144.60     141.65     145.92               fitted beta; stays ±1 sd; backlog band fee 0.133
+identity-restricted beta=1, W2, E6 Jul+Aug day-matched   4.44 -5.02  7.24    139.54     126.90     143.27 gamma from spec a; backlog term enters at its identity value 1
+                        mechanism v2 (final_nights.md)   9.89  9.89  9.89    146.81     146.81     146.81                                          146.8m; DEC-0028 base
+                            reviews index W2-corrected   9.52  9.52  9.52    146.32     146.32     146.32                                                         146.3m
+                                           Street card  11.50 11.50 11.50    148.96     148.96     148.96                                                         149.0m

@@ -1,0 +1,28 @@
+{
+  "id": "N1",
+  "commit": "d7fba077edd098464c26dfa0845840e92adf4fbe",
+  "cmd": "python3 analysis/src/pitch_model_v2/nights_v3/n1_stayed/run.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T20:05:11+00:00",
+  "exit_code": 0,
+  "wall_s": 1.2,
+  "watch": [
+    "data/processed/pitch_model_v2/nights_v3/N1",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [],
+  "new_files": [
+    "data/processed/pitch_model_v2/nights_v3/N1/partial_3q26.csv",
+    "data/processed/pitch_model_v2/nights_v3/N1/partial_3q26_coverage.csv",
+    "data/processed/pitch_model_v2/nights_v3/N1/reads_3q26.csv",
+    "data/processed/pitch_model_v2/nights_v3/N1/regional_revenue_regressions.csv",
+    "data/processed/pitch_model_v2/nights_v3/N1/regional_vs_ws10.csv",
+    "data/processed/pitch_model_v2/nights_v3/N1/regressions.csv",
+    "data/processed/pitch_model_v2/nights_v3/N1/series_quarterly.csv",
+    "data/processed/pitch_model_v2/nights_v3/N1/walkforward.csv",
+    "data/processed/pitch_model_v2/nights_v3/N1/walkforward_paths.csv"
+  ],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

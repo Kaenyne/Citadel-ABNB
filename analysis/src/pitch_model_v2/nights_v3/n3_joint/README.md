@@ -1,0 +1,2 @@
+# N3 — joint fit of the nights v3 identity
+Pre-registered in `docs/pitch-model-v2/lines/nights_v3_prereg.md` (DEC-0033). Reads N1 (`series_quarterly.csv`, `partial_3q26.csv`) and N2 (`identity_term.csv`, `forward_band.csv`); writes `joint_regressions.csv`, `joint_walkforward.csv`, `convergence_3q26.csv`, `joint_panel.csv`, `inputs.json` under `data/processed/pitch_model_v2/nights_v3/N3/`. Run: `python3 analysis/src/pitch_model_v2/nights_v3/n3_joint/run.py`.

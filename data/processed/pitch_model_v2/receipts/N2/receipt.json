@@ -1,0 +1,31 @@
+{
+  "id": "N2",
+  "commit": "d7fba077edd098464c26dfa0845840e92adf4fbe",
+  "cmd": "python3 analysis/src/pitch_model_v2/nights_v3/n2_backlog/run.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T20:15:28+00:00",
+  "exit_code": 0,
+  "wall_s": 0.1,
+  "watch": [
+    "data/processed/pitch_model_v2/nights_v3/N2",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [],
+  "new_files": [
+    "data/processed/pitch_model_v2/nights_v3/N2/backlog_total.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/backlog_uf.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/diagnostics.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/fee_share_evidence.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/forward_band.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/forward_band_committed.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/identity_term.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/identity_term_grid.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/inputs_measured_vs_assumed.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/norm_sensitivity.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/stays_crosscheck.csv",
+    "data/processed/pitch_model_v2/nights_v3/N2/summary.txt"
+  ],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

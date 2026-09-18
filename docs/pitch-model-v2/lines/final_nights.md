@@ -113,6 +113,10 @@ the machine-readable table `analysis/src/pitch_model_v2/qa.py` parses. The headi
 `MACHINE_READABLE_HEADING`, not a section number in this document's sequence. Numeric points only; every
 number is the one the design's own §2a carries, so the two files cannot drift. Verified with:*
 `PYTHONPATH=analysis/src python3 -c "import pathlib; from pitch_model_v2 import qa; m=[]; p=qa._dossier_points(pathlib.Path('docs/pitch-model-v2/lines/final_nights.md'),'D1v2',m); print(len(p), m)"`*)*
+| nights_v3_stays_only_m | base | 3Q26 | 146.0 | m | support row, not in base: vintage-matched stays only, W1 fit, July partial corrected; band 144.8 to 147.2 |
+| nights_v3_stays_only_w2_m | base | 3Q26 | 145.8 | m | support row, not in base: W2 fit on the E6 July+August basis; band 145.1 to 146.5 |
+| nights_v3_backlog_term_pp | base | 3Q26 | -4.70 | pp | N2 central, not in base: identity term rejected (beta 0.08 W1, 0.18 W2); band -13.63 to -2.44 |
+| nights_v3_new_listing_contrib_pp | base | 2Q26 | 11.39 | pp | descriptive: new-listing contribution to stays growth, down from 18.9 in 1Q23 |
 
 | item | scenario | period | point | unit | note |
 |---|---|---|---|---|---|
@@ -647,6 +651,73 @@ Recomputed in-session from `figures/nights_regression_points.csv` (the 14 fitted
 **What the evidence does not say.** Significance of the association is not significance of the forecast: with 10 to 14 out-of-sample quarters the improvement over naive is inside noise, and the one significant out-of-sample fact is a positive bias. That is why the line's base is the mechanism (DEC-0029) and the index is a cross-check.
 
 ![significance](figures/nights_index_significance.png)
+
+
+### 3.13 Nights v3: the booked = stayed + Δbacklog identity, tested (18 Sep 2026, DEC-0033)
+
+**Why this exists.** After §3.12 the reviews-index OLS was set aside as the source of the line. Theo asked for a construction that mixes the supply–demand decomposition of the alt data with the RNPL balance-sheet work and tests it for significance. Pre-registration: `nights_v3_prereg.md`, written before any regression ran. Diggers: N1 (`dossiers/N1_stayed_decomposition.md`), N2 (`dossiers/N2_backlog_identity.md`), joint fit N3 (`analysis/src/pitch_model_v2/nights_v3/n3_joint/`, receipt `receipts/N3/`).
+
+**The identity.** Reported nights are booked net of cancellations in the quarter; stays happen later. So `N(t) = S(t) + K(t) − K(t−1)`, with `S` nights stayed (alt data: reviews, vintage-matched) and `K` the booked-not-yet-stayed backlog (balance sheet: unearned fees ÷ fee share ÷ ADR, plus the RNPL unpaid share). In growth terms `g_N ≈ γ·v + β·b`, and the identity says β = 1. That restriction is what was tested.
+
+**Half one, the stays decomposition (N1, grade B).** 2Q26 global: same-listing −7.12%, new-listing contribution +11.39pp, vintage-matched total +4.27%. Partial 3Q26 (July only, 108 of 123 markets; August half observed; September absent): total +5.60% corrected, sd 2.78pp; on the E6 July+August day-matched basis +5.30%. Two findings govern how this may be quoted. First, the *level* of the split is listing-ageing arithmetic: same-listing has been negative every quarter since 2Q23 while reported nights grew 7 to 12%, sitting 16.6pp below reported growth on average. Only its *movement* is informative: the new-listing contribution has fallen from +18.9pp in 1Q23 to +11.4pp in 2Q26, which is the honest form of "supply intake is slowing". Second, the pre-registered H2 test fails on both windows: regressing reported nights on the two components loses to the single index in walk-forward (MAE ratio to naive 2.99 on W1 and 1.02 on W2 against the index's 0.90 and 0.76 on identical scored sets). The split is a descriptive sentence, not a model row.
+
+**Half two, the backlog (N2, grade B).** Fee share 0.133 is the only grid value consistent with the FY2025 10-K Note 2 (host *and* guest fees sit in unearned fees) and the realised revenue-to-GBV ratio of 13.2 to 13.6%. Backlog at 2Q26: 136.8m nights central (113.0 to 161.5), of which 21.0m unpaid RNPL (13.6 to 37.3), i.e. 0.92 quarters of booked nights, a 2.8-month mean lead. RNPL did not enlarge the backlog, it reclassified part of it as unpaid: at an ADR ratio of 1.00 the backlog is exactly invariant to the unpaid share. The growth-points term `b` is noisy: its pre-RNPL same-season standard deviation is 1.9 to 2.6pp, and subtracting it from reported growth makes the remainder a *worse* match to the stays proxy (correlation 0.86 falls to 0.50).
+
+**The joint fit (N3).**
+
+| window | spec | n | γ on stays (HAC t) | β on backlog (SE) | p(β=0) | Wald β=1 (t, p) | R² | LOO β range |
+|---|---|---|---|---|---|---|---|---|
+| W1 | stays only | 14 | 0.322 (16.1) | — | — | — | 0.75 | — |
+| W1 | joint, central b | 14 | 0.316 (16.5) | 0.080 (0.093) | 0.405 | -9.9, 0.0000 | 0.75 | 0.00 to 0.26 |
+| W1 | joint, low b | 14 | 0.314 (14.8) | 0.090 (0.102) | 0.397 | -9.0, 0.0000 | 0.75 | 0.01 to 0.28 |
+| W1 | joint, high b | 14 | 0.323 (19.1) | 0.052 (0.058) | 0.389 | -16.4, 0.0000 | 0.75 | -0.00 to 0.17 |
+| W2 | stays only | 10 | 0.191 (1.3) | — | — | — | 0.10 | — |
+| W2 | joint, central b | 10 | 0.205 (1.6) | 0.184 (0.054) | 0.012 | -15.1, 0.0000 | 0.24 | 0.09 to 0.31 |
+| W2 | joint, low b | 10 | 0.211 (1.6) | 0.194 (0.070) | 0.027 | -11.6, 0.0000 | 0.25 | 0.10 to 0.37 |
+| W2 | joint, high b | 10 | 0.223 (1.6) | 0.106 (0.032) | 0.014 | -27.6, 0.0000 | 0.19 | 0.01 to 0.19 |
+
+Walk-forward, expanding window from 1Q22, minimum five training points, one step ahead, identical scored sets:
+
+| window | spec | scored quarters | MAE ratio to naive | RMSE ratio | mean error (pp) |
+|---|---|---|---|---|---|
+| W1 | a: v | 13 | 0.784 | 0.728 | -1.01 |
+| W1 | joint: v+b | 13 | 1.271 | 1.090 | -1.87 |
+| W2 | a: v | 10 | 0.870 | 0.781 | -0.74 |
+| W2 | joint: v+b | 10 | 1.454 | 1.372 | -2.04 |
+
+Verdict on the pre-registered criteria: **H1 fails.** β is 0.08 on W1 (p 0.41) and 0.18 on W2 (p 0.01); the identity value β = 1 is rejected on both windows at any conventional level; adding the backlog term makes the walk-forward *worse than naive* (1.27 and 1.45). The identity is arithmetically exact but the balance-sheet backlog is dominated by measurement noise at quarterly frequency, so only about a tenth of a measured backlog change shows up in reported nights. **H2 fails** (above). **H3 delivered** as a band below.
+
+**Where 3Q26 converges.**
+
+| read | 3Q26 y/y | band | nights (m) | band (m) |
+|---|---|---|---|---|
+| spec a stays only, W1, jul-only corrected | +9.28% | 8.39 to 10.18 | 146.0 | 144.8 to 147.2 |
+| joint fit, W1, jul-only corrected | +8.94% | 7.34 to 10.00 | 145.5 | 143.4 to 147.0 |
+| identity-restricted beta=1, W1, jul-only corrected | +4.58% | -5.24 to 7.74 | 139.7 | 126.6 to 143.9 |
+| spec a stays only, W1, E6 Jul+Aug day-matched | +9.18% | 8.29 to 10.08 | 145.9 | 144.7 to 147.1 |
+| joint fit, W1, E6 Jul+Aug day-matched | +8.84% | 7.25 to 9.90 | 145.4 | 143.3 to 146.8 |
+| identity-restricted beta=1, W1, E6 Jul+Aug day-matched | +4.48% | -5.34 to 7.64 | 139.6 | 126.5 to 143.8 |
+| spec a stays only, W2, jul-only corrected | +9.20% | 8.67 to 9.73 | 145.9 | 145.2 to 146.6 |
+| joint fit, W2, jul-only corrected | +8.30% | 6.09 to 9.28 | 144.7 | 141.7 to 146.0 |
+| identity-restricted beta=1, W2, jul-only corrected | +4.50% | -4.96 to 7.29 | 139.6 | 127.0 to 143.3 |
+| spec a stays only, W2, E6 Jul+Aug day-matched | +9.14% | 8.61 to 9.68 | 145.8 | 145.1 to 146.5 |
+| joint fit, W2, E6 Jul+Aug day-matched | +8.24% | 6.03 to 9.22 | 144.6 | 141.7 to 145.9 |
+| identity-restricted beta=1, W2, E6 Jul+Aug day-matched | +4.44% | -5.02 to 7.24 | 139.5 | 126.9 to 143.3 |
+| mechanism v2 (final_nights.md) | +9.89% | point | 146.8 | point |
+| reviews index W2-corrected | +9.52% | point | 146.3 | point |
+| Street card | +11.50% | point | 149.0 | point |
+
+Reading the table: every route that survives its own test lands between 144.6m and 146.8m, below the Street card at 149.0m. The stays-only route (vintage-matched, wedge-free) reads 146.0m on W1 and 145.8m on W2, 0.8 to 1.0m below the mechanism base, with a band of ±1.2m from the partial-quarter gap alone. The identity-imposed read (139.7m) is shown because the pre-registration promised every spec; it is not a forecast, it is what happens when a term with 2pp of noise is forced in at coefficient 1.
+
+**What enters the line from this round (proposed, for Theo).**
+1. Base stays at the mechanism 146.8m (DEC-0028). Nothing in v3 passed a promotion test.
+2. The stays-only vintage-matched read joins the constellation as a support row in place of the raw index row: it beats the raw index in walk-forward on both windows (N1: 0.82 vs 0.96 on W1, 0.72 vs 0.77 on W2 on identical sets) and is wedge-free by construction.
+3. The new-listing contribution enters the memo as one descriptive sentence with the ageing caveat: the contribution of listings under a year old has fallen from +18.9pp to +11.4pp of stays growth since 1Q23.
+4. Unearned fees at 3Q26 becomes a filed falsifier of the RNPL leg rather than a nights term: pre-RNPL, pre-migration expectation $2,105M (+15.6% y/y); the score-sheet band runs from $1,519M (−16.6%) to $1,957M (+7.5%) depending on the unpaid share and single-fee migration. A print above $2,105M says RNPL is not deferring cash the way the leg assumes.
+
+**Falsifiers at 5 Nov.** Reported nights outside 144.6 to 147.2m kills the alt-data half; unearned fees outside the score-sheet band kills the backlog half.
+
+![nights v3 identity](figures/nights_v3_identity.png)
 
 ## 4. 4Q26: why 131.8m, word by word
 
@@ -1501,3 +1572,4 @@ All three drawn from the committed files by `docs/pitch-model-v2/lines/figures/`
 ![walk-forward](figures/nights_walkforward_errors.png)
 ![rnpl path](figures/nights_rnpl_path.png)
 ![constellation](figures/nights_constellation_3q26.png)
+![nights v3 identity](figures/nights_v3_identity.png)
