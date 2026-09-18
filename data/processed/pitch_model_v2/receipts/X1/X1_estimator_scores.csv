@@ -1,0 +1,12 @@
+estimator,target,window,n,rmse_pp,bias_pp
+"D4 midpoint (eur+baskets)/2, contemporaneous",DISCLOSED ADR FX,full 2Q22-2Q26,17,0.406,0.131
+"D4 midpoint (eur+baskets)/2, contemporaneous",DISCLOSED ADR FX,W1-like 1Q23-2Q26,14,0.42,0.087
+"D4 midpoint (eur+baskets)/2, contemporaneous",DISCLOSED ADR FX,scored 1Q24-2Q26,10,0.332,-0.062
+D5 point_phi_adrfx (Phi on lagged fitted ADR-FX),DISCLOSED ADR FX,full 2Q22-2Q26,17,2.424,-0.018
+D5 point_phi_adrfx (Phi on lagged fitted ADR-FX),DISCLOSED ADR FX,W1-like 1Q23-2Q26,14,2.203,-0.649
+D5 point_phi_adrfx (Phi on lagged fitted ADR-FX),DISCLOSED ADR FX,scored 1Q24-2Q26,10,2.269,-0.234
+fx_lag_v2 contemporaneous basket fit f(basket_q),DISCLOSED ADR FX,full 2Q22-2Q26,17,0.938,0.325
+fx_lag_v2 contemporaneous basket fit f(basket_q),DISCLOSED ADR FX,W1-like 1Q23-2Q26,14,0.582,0.0
+fx_lag_v2 contemporaneous basket fit f(basket_q),DISCLOSED ADR FX,scored 1Q24-2Q26,10,0.575,-0.193
+D5 point_phi_adrfx (Phi on lagged fitted ADR-FX),DISCLOSED REVENUE FX,2Q22-2Q26,17,2.127,0.282
+"D4 midpoint (eur+baskets)/2, contemporaneous",DISCLOSED REVENUE FX,2Q22-2Q26,17,1.45,0.431
