@@ -19,12 +19,19 @@ def test_qa_passes_on_clean_build(tmp_path):
     out = build.build(FIX, tmp_path / "m.xlsx", check_paths=False)
     assert qa.check(out, FIX, root=tmp_path, allow_uncalculated=True) == []
 
-def test_qa_flags_value_not_in_dossier(tmp_path):
+def test_qa_flags_value_outside_tolerance(tmp_path):
     _dossiers(tmp_path)
     (tmp_path / "docs/pitch-model-v2/dossiers/D1_nights.md").write_text("## 2. The number\n| scenario | period | point |\n|---|---|---|\n| base | 3Q26 | 140.0 |\n")
     out = build.build(FIX, tmp_path / "m.xlsx", check_paths=False)
     msgs = qa.check(out, FIX, root=tmp_path, allow_uncalculated=True)
     assert any("D1" in m and "3Q26" in m for m in msgs)
+
+def test_qa_flags_value_not_stated_in_dossier(tmp_path):
+    _dossiers(tmp_path)
+    (tmp_path / "docs/pitch-model-v2/dossiers/D1_nights.md").write_text("## 2. The number\n| scenario | period | point |\n|---|---|---|\n| base | 3Q26 | 146.3 |\n| base | 4Q26 | 133.2 |\n| short | 3Q26 | 145.0 |\n| base | 1Q26 | 143.1 |\n| base | 2Q26 | 134.4 |\n| short | 1Q26 | 143.1 |\n| short | 2Q26 | 134.4 |\n")
+    out = build.build(FIX, tmp_path / "m.xlsx", check_paths=False)
+    msgs = qa.check(out, FIX, root=tmp_path, allow_uncalculated=True)
+    assert any("not stated in dossier" in m for m in msgs)
 
 def test_qa_flags_error_cells(tmp_path):
     _dossiers(tmp_path)
