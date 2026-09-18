@@ -1,5 +1,15 @@
 # Final line — NIGHTS (Nights and Seats Booked)
 
+**Version 2 — 18 September 2026.** *(v2, 18 Sep: this version supersedes v1's 3Q26 base. Under **DEC-0028**
+the nights line is a disclosed-mechanism build, not a regression of printed nights on an alt-data index, and
+under **DEC-0029** the 3Q26 base is the mechanism's own output **146.8m / +9.89%**, replacing the
+reviews-index bias-corrected read of 146.3m / +9.5% that DEC-0004 and DEC-0024 adopted. The governing
+construction is [`nights_v2_design.md`](nights_v2_design.md); where that file and this one disagree, the
+design governs and the disagreement is named in place. 4Q26 (DEC-0019) and 2027 (DEC-0025) are unchanged in
+level. Bands are now shown per DEC-0030. Every change from v1 is marked with an italic note like this one, so
+a reader can see what moved. Corrections filed the same day, including the restated 1Q27 falsifier, are in
+[`corrections_2026-09-18.md`](corrections_2026-09-18.md).)*
+
 Rationale file for the first settled line of the pitch model v2, written per **DEC-0026** ("every settled
 line gets `docs/pitch-model-v2/lines/final_<line>.md` explaining word by word why the base number stands,
 the git data and model behind it, every alternative, and how the thesis catalysts enter that number").
@@ -19,54 +29,115 @@ licensed and quoted only as a dated aggregate.
 
 ## 1. The line at a glance
 
-| period | base nights (m) | y/y | how the number is constructed | decision id |
-|---|---:|---:|---|---|
-| 1Q23 | 121.1 | — | printed, 10-Q filed 2023-05-09 | DEC-0003 |
-| 2Q23 | 115.1 | — | printed, 10-Q 2023-08-03 | DEC-0003 |
-| 3Q23 | 113.2 | — | printed, 10-Q 2023-11-01 | DEC-0003 |
-| 4Q23 | 98.8 | — | printed, FY23 10-K 2024-02-16 | DEC-0003 |
-| 1Q24 | 132.6 | +9.50% | printed, 10-Q 2024-05-08 | DEC-0003 |
-| 2Q24 | 125.1 | +8.69% | printed, 10-Q 2024-08-06 | DEC-0003 |
-| 3Q24 | 122.8 | +8.48% | printed, 10-Q 2024-11-07 | DEC-0003 |
-| 4Q24 | 111.0 | +12.35% | printed, FY24 10-K 2025-02-13 | DEC-0003 |
-| 1Q25 | 143.1 | +7.92% | printed | DEC-0003 |
-| 2Q25 | 134.4 | +7.43% | printed | DEC-0003 |
-| 3Q25 | 133.6 | +8.79% | printed | DEC-0003 |
-| 4Q25 | 121.9 | +9.82% | printed | DEC-0003 |
-| 1Q26 | 156.2 | +9.15% | printed | DEC-0003 |
-| 2Q26 | 148.3 | +10.34% | printed — the naive carry-forward the 3Q26 forecast is scored against | DEC-0003 |
-| **3Q26** | **146.3** | **+9.5%** | reviews stays index raw read **+10.041%**, less the index's own **+0.518pp** W2 walk-forward bias = **+9.523%**, × 133.6m | DEC-0004, DEC-0024 |
-| **4Q26** | **131.8** | **+8.12%** | team reference **+8.90%** (PR #32), less a **0.78pt** ex-NA fee-and-cancellation lap (case B), × 121.9m | DEC-0019 |
-| **1Q27** | **169.02** | **+8.21%** | bridge path: NA +2.31 (0.291 weight) + ex-NA +10.773 (0.709), lap −0.742 − 0.363, event +1.0 | DEC-0025 |
-| **2Q27** | **157.10** | **+5.93%** | same, ex-NA +10.452, lap −0.742 − 0.907, World Cup lap −0.5 | DEC-0025 |
-| **3Q27** | **155.96** | **+6.23%** | same, ex-NA +10.131, lap −0.742 − 0.907, no event | DEC-0025 |
-| **4Q27** | **139.77** | **+6.05%** | same, ex-NA +9.810, lap −0.742 − 0.907, no event | DEC-0025 |
-| **FY27** | **621.84** | **+6.64%** | sum of the four quarters ÷ FY26 sum **583.11m** | DEC-0025 |
+| period | base nights (m) | y/y | band (m) | how the number is constructed | decision id |
+|---|---:|---:|---|---|---|
+| 1Q23 | 121.1 | — | — | printed, 10-Q filed 2023-05-09 | DEC-0003 |
+| 2Q23 | 115.1 | — | — | printed, 10-Q 2023-08-03 | DEC-0003 |
+| 3Q23 | 113.2 | — | — | printed, 10-Q 2023-11-01 | DEC-0003 |
+| 4Q23 | 98.8 | — | — | printed, FY23 10-K 2024-02-16 | DEC-0003 |
+| 1Q24 | 132.6 | +9.50% | — | printed, 10-Q 2024-05-08 | DEC-0003 |
+| 2Q24 | 125.1 | +8.69% | — | printed, 10-Q 2024-08-06 | DEC-0003 |
+| 3Q24 | 122.8 | +8.48% | — | printed, 10-Q 2024-11-07 | DEC-0003 |
+| 4Q24 | 111.0 | +12.35% | — | printed, FY24 10-K 2025-02-13 | DEC-0003 |
+| 1Q25 | 143.1 | +7.92% | — | printed | DEC-0003 |
+| 2Q25 | 134.4 | +7.43% | — | printed | DEC-0003 |
+| 3Q25 | 133.6 | +8.79% | — | printed | DEC-0003 |
+| 4Q25 | 121.9 | +9.82% | — | printed | DEC-0003 |
+| 1Q26 | 156.2 | +9.15% | — | printed | DEC-0003 |
+| 2Q26 | 148.3 | +10.34% | — | printed — the naive carry-forward the 3Q26 forecast is scored against | DEC-0003 |
+| **3Q26** | **146.8** | **+9.89%** | envelope **146.0–148.2**; judge band **~144.2–150.4** | **mechanism** (`nights_v2_design.md` §2): 0.288 × NA +5.60 + 0.712 × ex-NA +11.62 = **+9.886%**, × 133.6m | **DEC-0029** |
+| **4Q26** | **131.8** | **+8.12%** | envelope **131.6–132.9** | team reference **+8.90%** (PR #32), less a **0.78pt** ex-NA fee-and-cancellation lap (case B), × 121.9m | DEC-0019 |
+| **1Q27** | **169.02** | **+8.21%** | envelope **166.9–170.9** | bridge path: NA +2.31 (0.291 weight) + ex-NA +10.773 (0.709), lap −0.742 − 0.363, event +1.0 | DEC-0025 |
+| **2Q27** | **157.10** | **+5.93%** | envelope **156.3–160.2** | same, ex-NA +10.452, lap −0.742 − 0.907, World Cup lap −0.5 | DEC-0025 |
+| **3Q27** | **155.96** | **+6.23%** | envelope **154.7–159.4** | same, ex-NA +10.131, lap −0.742 − 0.907, no event | DEC-0025 |
+| **4Q27** | **139.77** | **+6.05%** | envelope **139.1–142.7** | same, ex-NA +9.810, lap −0.742 − 0.907, no event | DEC-0025 |
+| **FY27** | **621.84** | **+6.64%** | envelope **617.1–633.1** | sum of the four quarters ÷ FY26 sum **583.11m** | DEC-0025 |
+
+*(v2, 18 Sep: three changes to this table. **(a)** The 3Q26 row moves from 146.3m / +9.5% ("reviews stays
+index raw read less the index's own W2 bias", DEC-0004 / DEC-0024) to the mechanism's own **146.8m /
++9.89%** per **DEC-0029**; the arithmetic is in the new §3.0 and the index read becomes the cross-check that
+§3.1–§3.10 documents. **(b)** A **band column** is added per **DEC-0030**: the "envelope" is the mechanism's
+eight-parameter envelope from `nights_v2_design.md` §4.1, and the "judge band" for 3Q26 widens it by WS10's
+ex-NA bear/bull demand spread of ±1.6pp of total nights — the dominant uncertainty, which is a demand
+forecast and not a disclosure, so it is shown around the envelope rather than inside it. **(c)** 4Q26 and the
+2027 rows are **unchanged in level** (DEC-0019, DEC-0025); only their envelopes are new. Where v1's
+construction text disagrees with the design, the design governs: the 4Q26 lap is quoted here as v1's 0.78pt
+because that is the committed route, and the design's own identity route gives −0.742pt and +8.157% —
+the same 131.8m to the 0.1m the company discloses, `nights_v2_design.md` §2.3.)*
+
+*(v2, 18 Sep — the judge band arithmetic, because DEC-0030 states it rounded. One point of growth is 1.336m
+nights on the fixed 133.6m 3Q25 denominator, so ±1.6pp is **±2.14m**: 146.04 − 2.14 = **143.90m** and
+148.23 + 2.14 = **150.37m**. DEC-0030 quotes "~144.2–150.4"; the high edge agrees and the low edge is 0.3m
+tighter than the arithmetic on the envelope edges. §2a carries the computed numbers, 143.90 and 150.37.)*
 
 The y/y column for 1Q24–2Q26 is computed in this file from the printed levels (Airbnb discloses the level,
 not the growth rate, in the KPI box); every level is a filing number.
 
 Two mechanical warnings about that table, both real and both sourced in §5:
 
-1. The 2027 y/y figures are computed against the **bridge's own FY26**, which still carries 3Q26 at
-   **146.813m**, not the adopted 146.3m (`06_revenue_path_3q26_4q27_v2b.csv`, row `3Q26,base,nights_mm`).
-   3Q27's +6.23% is 155.958 ÷ 146.813. On the adopted 146.3m the same level is +6.60%, and FY27 is
-   **+6.73%** rather than +6.64% (arithmetic done in this file on the dossiers' own levels; the FY26 sum
-   becomes 582.62m). The FY27 *level* does not move, because the 2027 quarters are built from regional
-   growth rates and not chained off the literal 3Q26 level (D3 §7 conflict 1). What moves is the
-   denominator, and nobody has re-run the package.
+1. ~~The 2027 y/y figures are computed against the **bridge's own FY26**, which still carries 3Q26 at
+   **146.813m**, not the adopted 146.3m~~ — **withdrawn.** *(v2, 18 Sep: DEC-0029 removes this warning
+   rather than answering it. The mechanism's own 3Q26 is **146.813m**, which is exactly the number
+   `06_revenue_path_3q26_4q27_v2b.csv` already carries, so the FY26 denominator and the adopted base are now
+   the same object: FY26 = 156.2 + 148.3 + 146.813 + 131.798 = **583.111m**, FY27 = **621.841m**,
+   **+6.642%**. The "+6.73% rather than +6.64%" correction and the cross-lane re-run request are both moot,
+   and §7.4 item 5 is closed. `nights_v2_design.md` §9.1 point 1.)*
 2. The path is not monotone: 1Q27 (+8.21%) is **above** 4Q26 (+8.12%). That is the +1.0pt Middle East event
    term and the fact that the ex-NA RNPL lap is only 40% phased in 1Q27. `06_pass_line.csv` tests exactly
    this ("1Q27 nights growth within 2 points of the 4Q26 exit unless a named lap explains it", gap 0.09,
-   pass).
+   pass). *(v2, 18 Sep: unchanged as arithmetic, and it is now also the reason the 11 February falsifier had
+   to be restated on an event-adjusted basis — §7.1 and `corrections_2026-09-18.md` entry 1.)*
+3. *(v2, 18 Sep — a third warning, new.)* The 3Q26 band is **asymmetric upward** (−0.77m / +1.41m around
+   146.81m), because the two 3Q26-specific unquantified terms — the July 2026 eligibility expansion and the
+   partiality of the US lap — are both carried at **zero** in the base. The mechanism is the conservative
+   reading of its own inputs, not the middle of them (`nights_v2_design.md` §4.1).
 
 Alternatives carried beside each decided number (all in §3–§5):
 
 | period | base | shown beside it |
 |---|---|---|
-| 3Q26 | 146.3 (+9.5%) | raw index 147.0 (+10.0%) · W1-corrected 144.8 (+8.4%) · external stack 145.9 (+9.2%) · team baseline 146.8 (+9.9%) · Street 149.0 (+11.5%) |
+| 3Q26 | **146.8 (+9.89%)** *(v2)* | raw index 147.0 (+10.0%) · W2-corrected 146.3 (+9.52%) · W1-corrected 144.8 (+8.4%) · external stack 145.9 (+9.2%) · RNPL cohort module 146.3 (+9.49%) · H1–H2 bridge 146.3 (+9.49%) · Street 149.0 (+11.5%) |
 | 4Q26 | 131.8 (+8.12%) | case A 132.7 (+8.86%) · β=0.5 carry 131.6 (+7.93%) · Street 134.0 (+9.93%) |
 | FY27 | 621.84 (+6.64%) | lap-schedule 1Q27 167.1 / 2Q27 157.8 (D2) · RNPL global lap +6.42% (alt_rnpl) · lap-treatment flip +8.17% |
+
+*(v2, 18 Sep: the 3Q26 row is inverted. In v1 the base was the index's W2-corrected read and 146.8 was
+listed as the alternative "team baseline"; under DEC-0029 the mechanism is the base and the three reads that
+land at 146.3 — the W2-corrected index, the RNPL cohort module and the H1–H2 seasonal bridge — are
+cross-checks. The numbers themselves did not move; which one is the line did. The β = 0.5 carry row for 4Q26
+is retained but is now closed rather than open: see §7.4 item 3.)*
+
+### 2a. Model inputs (machine-readable)
+
+*(v2, 18 Sep: new. This file is now a provenance source for the model, so the decided points are carried in
+the machine-readable table `analysis/src/pitch_model_v2/qa.py` parses. The heading is the literal string
+`MACHINE_READABLE_HEADING`, not a section number in this document's sequence. Numeric points only; every
+number is the one the design's own §2a carries, so the two files cannot drift. Verified with:*
+`PYTHONPATH=analysis/src python3 -c "import pathlib; from pitch_model_v2 import qa; m=[]; p=qa._dossier_points(pathlib.Path('docs/pitch-model-v2/lines/final_nights.md'),'D1v2',m); print(len(p), m)"`*)*
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| nights_m | base | 3Q26 | 146.8 | m | mechanism output, DEC-0029; 133.6m times 1.09887. Design 2a row nights_m base 3Q26 |
+| nights_yoy_pct | base | 3Q26 | 9.89 | pct | 0.288 times 5.60 plus 0.712 times 11.621 = 9.887, rounded by nights_quarterly.py to 9.89 |
+| nights_m_low | base | 3Q26 | 146.04 | m | parameter envelope low, all eight parameters adverse; n2_band.csv ENVELOPE_levels_m 3Q26 |
+| nights_m_high | base | 3Q26 | 148.23 | m | parameter envelope high; same row. The band is asymmetric upward because two 3Q26 terms are carried at zero |
+| nights_m_judge_low | base | 3Q26 | 143.90 | m | DEC-0030. Envelope low 146.04 less 1.6pp of total nights growth. One growth point is 1.336m on the 133.6m base so 1.6pp is 2.14m. 146.04 less 2.14 = 143.90. DEC-0030 quotes about 144.2 |
+| nights_m_judge_high | base | 3Q26 | 150.37 | m | DEC-0030. Envelope high 148.23 plus 2.14 = 150.37. DEC-0030 quotes about 150.4. The widener is WS10 ex-NA bear and bull, plus or minus 2.2pp of ex-NA which is plus or minus 1.6pp of total |
+| nights_m | base | 4Q26 | 131.80 | m | DEC-0019 case B; the mechanism identity exit is 8.157 pct which gives 131.84m, the same 131.8m to the 0.1m disclosed |
+| nights_yoy_pct | base | 4Q26 | 8.12 | pct | DEC-0019; 8.90 PR 32 reference less the 0.78pt ex-NA fee and cancellation lap |
+| nights_m_low | base | 4Q26 | 131.57 | m | parameter envelope low |
+| nights_m_high | base | 4Q26 | 132.94 | m | parameter envelope high; still 1.06m below the Street 134.0m |
+| nights_m | base | 1Q27 | 169.02 | m | bridge path, DEC-0025; 06_revenue_path_3q26_4q27_v2b.csv row 1Q27 base nights_mm 169.0178 |
+| nights_yoy_pct | base | 1Q27 | 8.206 | pct | 06_nights_build.csv base. Ex-event this is 7.206 pct or 167.46m; see section 7.1 |
+| nights_m | base | 2Q27 | 157.10 | m | DEC-0025; 148.3m times 1.05934 |
+| nights_yoy_pct | base | 2Q27 | 5.934 | pct | 06_nights_build.csv base; includes the minus 0.5pt World Cup lap |
+| nights_m | base | 3Q27 | 155.96 | m | DEC-0025; 146.813m times 1.06229 |
+| nights_yoy_pct | base | 3Q27 | 6.229 | pct | 06_nights_build.csv base |
+| nights_m | base | 4Q27 | 139.77 | m | DEC-0025; 131.798m times 1.06045 |
+| nights_yoy_pct | base | 4Q27 | 6.045 | pct | 06_nights_build.csv base |
+| nights_m | base | FY27 | 621.84 | m | sum of the four 2027 quarters; 06_annual_fy26_fy28_v2b.csv row FY27 base |
+| nights_yoy_pct | base | FY27 | 6.642 | pct | 621.8414 over FY26 583.1113. The FY26 denominator now matches the 06 build under DEC-0029 |
+| nights_m_low | base | FY27 | 617.07 | m | parameter envelope low, 6.007 pct on its own FY26 |
+| nights_m_high | base | FY27 | 633.14 | m | parameter envelope high, 8.106 pct; compare D3 lap-treatment flip 8.17 pct from a different route |
 
 ---
 
@@ -126,11 +197,59 @@ the Street's $26.35bn (D1 §7).
 
 ---
 
-## 3. 3Q26: why 146.3m, word by word
+## 3. 3Q26: why 146.8m, and what the reviews index now is
 
-The committed line is **146.3m, +9.5%** (DEC-0004, restated as the built-together line in DEC-0024). The
-number is the reviews stays index's raw reading **corrected for the index's own measured walk-forward
-bias**. Every step of that sentence is below.
+*(v2, 18 Sep: this section is retitled and re-ordered, not rewritten. §3.0 below is new and is the
+construction of the base. Everything from §3.1 to §3.10 is kept **word for word** as the record of the
+reviews stays index — how it is counted, what its survivorship correction is, what its walk-forward scores
+are and what the re-vintaging did to them — because under DEC-0028 that index is the line's most-scored
+independent cross-check and the memo has to be able to answer for it. What changed is its job: it is no
+longer the base. §3.6's closing and §3.11 are amended below to say so.)*
+
+### 3.0 The mechanism: 0.288 × 5.60 + 0.712 × 11.62 = 9.886 → 146.81m
+
+*(v2, 18 Sep: new, per DEC-0029. The base is the mechanism's own output and nothing about it is a nowcast.)*
+
+The committed line is **146.8m, +9.89%**. It is one equation on four numbers, every one of them named in
+`nights_v2_design.md` §2:
+
+```
+NA 3Q26      =  3.31 (underlying)  +  2.29 (fee + cancellation still in window)  +  0.00 (US RNPL lapped)  =  +5.60%
+ex-NA 3Q26   =  ( WS10 TOTAL 10.29  −  0.288 × WS10 NA 7.00 )  /  0.712                                    = +11.621%
+total 3Q26   =  0.288 × 5.60  +  0.712 × 11.621  =  1.613 + 8.274                                          =  +9.886%
+level        =  133.6m × 1.09887                                                                           =  146.81m
+```
+
+Where each of the four numbers comes from, cell by cell:
+
+| number | what it is | where it comes from |
+|---|---|---|
+| **0.288** | the **prior-year** North America share of nights, the correct y/y weight | WS10's estimated share, `data/processed/overnight/10_regional_panel_quarterly.csv` `na_nights_share_est_pct`. `nights_v2_design.md` §2.1 (3Q26 row, "NA share s") and §2a row `na_share_3q26`. **Estimated, not disclosed** — the FY2025 10-K gives 29.6%, and the design states the 0.12–0.18pp upward bias that follows (§2.1 point 2) |
+| **+5.60** | North America's 3Q26 growth with the US product leg lapped out | **3.31** is the choice model's pre-product run rate for 2026 (`data/processed/na_nights_lap_scenarios.csv`, row "base: no product lever"), which agrees with the FY25 10-K's NA +2.597%; **+2.29** is the fee-plus-cancellation leg, fitted in PR #32 on the 1Q26 bucket as (8.0 − 3.31) − 2.40; **0.00** is the RNPL leg, fitted on 3Q25 at +2.40 and removed in full because the US anniversary is inside the quarter. `nights_v2_design.md` §2.2 steps 1, 2 and 5; §2a rows `na_underlying_yoy_pct`, `bundle_na_feecancel_pts`, `bundle_na_rnpl_pts` |
+| **0.712** | the rest of the world's share | 1 − 0.288, by construction |
+| **+11.621** | the nights-weighted growth of EMEA + Latin America + Asia Pacific | backed out of WS10's own forward TOTAL (10.29) and NA (7.00) at WS10's own share, so it already contains WS10's −0.41pp calibration constant. `nights_v2_design.md` §2.2 step 5; §2a row `exna_underlying_yoy_pct` base 3Q26 |
+
+`nights_quarterly.py` rounds 9.886 to **+9.89% / 146.8m**, and that is the number the bridge, the 06 FY27
+build and DEC-0028 all carry. Two things the arithmetic is and is not saying. It does **not** claim demand is
+weakening in 3Q26: it leaves the rest of the world growing at 11.6% and takes 1.4 points off North America
+**because a product anniversary is inside the quarter**. And the step down from 2Q26's printed +10.342% is
+only **−0.455pp**, of which the lap is −0.691pp of NA contribution, WS10's own ex-NA deceleration is
+−0.783pp, and the calibration residual swinging from −1.059 to zero is **+1.059pp** — so the lap is the
+largest identifiable piece but not the whole step, and an almost equal amount is a demand forecast, not
+arithmetic (`nights_v2_design.md` §2.2).
+
+**Two parameters are fitted and that is all.** +2.40 and +2.29 points of NA nights, fitted on two letter
+bucket midpoints (3Q25 "mid-single digit" = 5.0, 1Q26 "high-single digit" = 8.0) and one annual 10-K anchor.
+They are not error-bounded by any statistical procedure — D2's words, "a fitting error there passes straight
+through my reproduction untouched" — which is why §4.1 of the design carries the bucket width as a band
+parameter and why the band column exists in §1.
+
+**146.3m is now the cross-check, not the base.** The reviews stays index's W2 bias-corrected read is
+**+9.523% / 146.32m**; the unified RNPL cohort module is **+9.49% / 146.3m**; the H1–H2 seasonal bridge is
+**+9.49% / 146.3m**. Three constructions with almost nothing in common land within 0.03pp of each other,
+0.5m below the mechanism and 2.7m below the Street. That cluster is evidence about the level, and §3.1–§3.10
+is the full account of the strongest member of it. It is not the line. `nights_v2_design.md` §5 carries the
+whole constellation with each read's walk-forward ratio printed beside it.
 
 ### 3.1 From review dumps to review counts
 
@@ -320,7 +439,21 @@ correction is
 `docs/pitch-forecasts/questions/risk-q3-nights-meets-guide/datasets/adopted_print_states_v2.json` (A09
 rev 2, 17 Sep): `centre_source` = "team nowcast +9.5% (reviews index 9.5-10.0 **bias-corrected 9.52**;
 external stack 9.2; module 9.49)"; `sd_source` = the fresh-vintage W2 RMSE range 1.634–1.816; adopted object
-**N(9.5, 1.70)**; P(≥147.0m) **0.386**, P(≥147.8m) **0.260**.
+**N(9.5, 1.70)**; P(≥147.0m) **0.386**, P(≥147.8m) **0.260**. **That object is the record of what the v1 base
+was and of the distribution the 6 November print is scored against; it is no longer a statement about how the
+line is built.**
+
+*(v2, 18 Sep: the closing sentence changed. In v1 this subsection ended by identifying the base as the
+index's bias-corrected read. Under **DEC-0029** the base is the mechanism's +9.89% / 146.8m (§3.0), and
++9.523% / 146.32m is one of the cross-checks. The arithmetic above is unchanged and still governs the
+cross-check — 10.041046 − 0.518452 = 9.522594, and the W1 counterpart would subtract 1.631798 and give
+144.8m, so the choice of window is still worth 1.5m nights **on the cross-check**. Two consequences of the
+demotion, both in our favour and both worth saying: the base no longer depends on a bias correction
+estimated on ten quarters whose training years fail their own vintage-constancy test, and the point and the
+band now come from the same object, which is what PREREG D-02 said a point-plus-band from two different
+objects could never do. For pre-registration and 6 Nov scoring, **DEC-0004's 8.5–11.0% band and the
+N(9.5, 1.70) object still stand** — they are what INT-02 scores against, and the mechanism's envelope does
+not replace them.)*
 
 ### 3.7 Three independent routes land at 146.3
 
@@ -355,6 +488,12 @@ SYNTHESIS §2 row G says the stack is "in-sample, not independent". It is corrob
 second forecast.
 
 ### 3.9 Why the team baseline 146.8 was retired
+
+*(v2, 18 Sep: **reversed by DEC-0028 / DEC-0029** — 146.8m is the base again, and this subsection is kept as
+the record of why it was set aside on 17 September and what had to be answered to bring it back. Its three
+objections are answered in §3.11 and in `nights_v2_design.md` §8 and §9.2. One thing in it that stands
+unchanged: the two fitted parameters really are fitted on two bucket midpoints and one annual anchor, and
+nothing here pretends otherwise.)*
 
 146.8m / +9.89% is **PR #32's NA-lap model, base** (`nights_baseline_reconciliation.csv`, row
 "PR #32 NA-lap model, base", `q3_yoy_pct` 9.89, `q3_nights_mm` 146.8). It is a bridge with two fitted
@@ -433,6 +572,16 @@ walk-forward score at all, two fitted parameters that cannot be error-bounded, a
 America only) that two SEC-filed shareholder letters contradict (§4). PREREG D-02 and DEC-0004 both went the
 other way.
 
+*(v2, 18 Sep: **DEC-0028 reversed that**, and the three objections are answered rather than waved away.
+(i) "No walk-forward score" is true and stays true — but the index that displaced it clears its own
+pre-registered 0.75 hurdle on neither window once re-vintaged (§3.5), so the comparison was never
+scored-versus-unscored. (ii) "Unbounded parameters" is now bounded: `nights_v2_design.md` §4.1 puts an
+explicit range on all eight of them and prints the envelope. (iii) PREREG D-02's ban on mixing a point from
+one object with a band from another is **moot**, because the point and the band now come from the same
+object. The lap-geography objection was never against the mechanism as built here: this version laps the
+global legs globally from 4Q26, which is what the letters say. The paragraph below states what has to be
+true for it.)*
+
 **149.0m (+11.5%) — the Street.** True if 3Q26 accelerates from 2Q26's +10.34%. That requires the product
 bundle to still be adding in its lap quarter, September to have been strong enough to offset a hotel RevPAR
 family that faded from +8.2% in July to about +4% by mid-August, and the booking-date KPI to run above a
@@ -440,6 +589,34 @@ stay-date series that reads +10.0% before correction. No measured series in this
 through August. The adopted distribution puts P(≥147.0m) at 0.386 and P(≥147.8m, a genuine acceleration) at
 0.260. Our claim is not that the Street is irrational — it is that the Street's number is the guide carried
 forward, and that management would have to hit a guide that no independent series supports.
+
+**What would have to be true for 146.8** *(v2, 18 Sep: new — the base now needs its own entry in this list.)*
+Five things, in descending order of how much they matter:
+
+1. **The letter bucket midpoints have to be roughly right.** The whole fit is two of them: 3Q25 NA
+   "mid-single digit" read as 5.0 and 1Q26 NA "high-single digit" read as 8.0. ±1 point of NA growth is
+   ±0.288pp of total nights, about ±0.4m. WS27 finds North America has sat at the **bottom** of its bucket in
+   five of the last six quarters, so the likelier error is that 1Q26 was 7 rather than 8 — which makes our
+   number **lower**, not higher.
+2. **WS10's ex-NA forecast has to hold at +11.6%.** This is the largest uncertainty in the line and it is not
+   in the parameter envelope at all, because it is a demand forecast rather than a disclosure. WS10's own
+   bear/bull for ex-NA is ±2.2pp, i.e. **±1.6pp of total nights** — bigger than all eight banded parameters
+   combined. It is why DEC-0030 puts a wider judge band around the envelope (§1).
+3. **The forward calibration constant has to be −0.41pp, not −1.06pp.** The printed quarters carry their own
+   reconciliation residuals (−0.01, +0.20, −0.76, −1.06) while the forward quarters carry the four-quarter
+   mean inside WS10's TOTAL. If 2Q26's −1.06 were the right forward constant, ex-NA would be 10.708% and
+   3Q26 would be **+9.24% / 145.9m**, just below the bottom of the envelope. **That is the single cleanest
+   way to argue our number is too high and we should say it first** (`nights_v2_design.md` §2.2).
+4. **The US RNPL lap has to be full.** We take the entire +2.40 NA points out in 3Q26 on the call's
+   "beginning of Q3". The 3Q25 letter says "In August", and on the letter reading roughly 6 of 13 weeks are
+   not yet lapped, worth **+0.32pp**. This pushes **up** from the base.
+5. **The July 2026 eligibility expansion has to be worth nothing.** Management named it (ledger D044) and did
+   not size it or name the booking types; the unified module carries +0.1 to +0.3 points. We carry **zero**,
+   worth up to **+0.30pp**. This also pushes **up**.
+
+Items 4 and 5 are the reason the 3Q26 band is asymmetric upward: give both of them their top and you get
+**148.2m**, which is still **0.8m below the Street's 149.0m**. Item 3 is the one that argues the other way,
+and item 2 is larger than everything else on the list.
 
 **Grade.** D1 is **B**. Its strongest known failure, verbatim from D1 §6: "**the index's central reading is
 +10.0%, which is 147.0m — the Street's lowest estimate — and 146.3m exists only because we subtract the
@@ -588,6 +765,13 @@ the same run**, marks the 0.7-share (1.22pt) and 1.0-share (1.75pt) rows as
 `consistent_with_4q25_disclosure = no`. The admissible range is **0.70 to 0.88**. Two files from one folder
 disagree by a factor of two.
 
+*(v2, 18 Sep: **filed** as entry 4 of [`corrections_2026-09-18.md`](corrections_2026-09-18.md) under
+DEC-0032 — a dated correction, not an edit to another lane's CSV, which is what §7.4 item 6 asked for. The
+gap file governs; the two rows that generate the "0.9 to 1.8" span are exactly the two it marks
+inadmissible. Nothing in the model moves: the adopted 0.78pt sits inside 0.70–0.88, and the design's own
+identity route gives 0.742pt at the governing 1.649 ex-NA bundle — a 0.05pp difference on 4Q26 growth, about
+0.06m nights (`nights_v2_design.md` §2.3).)*
+
 **Grade.** D2 is **B**. Its strongest known failure, verbatim: "**the entire 0.78-point lap rests on one
 assumed parameter — the ex-NA share of the ex-NA bundle — pinned only by a single CFO sentence that exists
 in this repo as a stockanalysis.com mirror rather than the official IR transcript, and neither of the two
@@ -693,7 +877,16 @@ objects are not the same construction (the bridge carries a +1.0pt Middle East e
 phase-in; the module's 8.17 reference carries neither), so this is not a contradiction in arithmetic. But it
 means **our own base case for 1Q27 sits on our own pre-registered kill line for the RNPL module**, and a
 judge who reads both files will ask about it. Either the event term, the phase fraction, or the falsifier
-threshold has to move before 11 February. Flagged, not resolved.
+threshold has to move before 11 February. ~~Flagged, not resolved.~~
+
+*(v2, 18 Sep: **resolved by DEC-0032** — the **threshold's basis** moved, not the base case and not the
+phase fraction. Restated: a 1Q27 guide implying **≥ +9.2% as guided**, i.e. ≥ +8.2% net of the ~100bp Middle
+East base effect, falsifies the module. Ex-event our 1Q27 is **+7.206% / 167.46m**, a full point inside the
+kill line and within 0.36m of D2's ledger-dated schedule of 167.1m — so the two constructions are far closer
+than the headline gap suggested, and the whole visible disagreement was the +1.0pt event term. The
+arithmetic is in §7.1 and in `corrections_2026-09-18.md` entry 1; it is published now, five months before
+the print, precisely so that it is a basis correction and not a goalpost move. **D-11 itself — 169.02 vs
+167.1 as a construction — is still open** (§7.4 item 4), as is the 2Q27 ordering inversion below.)*
 
 D2 also flags an ordering problem in the descriptive rows that has to be resolved before they are used
 anywhere: at 2Q27 the **lap-only base (6.42%) is harsher than the lap-plus-tail short (6.44%)**, because by
@@ -747,7 +940,20 @@ not exist for a year that has not printed. Three things stand in for a test:
    `06_annual_fy26_fy28.csv`, `06_pr32_rederivation.csv` do not appear in the receipt's `changed` list at
    all. That proves the arithmetic is stable; it proves nothing about whether the assumptions are right.
 
-**And the stale anchor.** The whole FY27 path is still anchored to the pre-DEC-0004 team baseline
+**And the stale anchor — resolved.** *(v2, 18 Sep: **DEC-0029 closes this**, and closes it by adopting the
+anchor rather than by re-running anything. The paragraph below is kept as the record of the defect and of
+what it would have cost. The mechanism's own 3Q26 is **146.813m**, which is the number
+`06_revenue_path_3q26_4q27_v2b.csv` already carries, so the FY26 denominator and the adopted base are now the
+same object: FY26 = **583.111m**, FY27 = **621.841m**, **+6.642%**, internally consistent, no cross-lane
+re-run needed and no "+6.73% rather than +6.64%" correction owed. This closes **§7.4 items 2, 3 and 5**:
+item 5 (re-run the bridge and the 06 build on the adopted base) because the build already runs on it; item 2
+(say out loud that 146.3m is a bias correction) because 146.3m is no longer the base, and §3.6 now says what
+it is instead; item 3 (the β = 0.5 carry) because `adopted_q4_states_v2.json`'s rule is
+`q4 = 8.1 + 0.5 × (Q3 − 9.5)` and the 8.1 was built in a world where Q3 was 9.89 in the first place, so with
+the base back at 9.89 the consistent answer is **no carry** and 4Q26 stays at 8.12% / 131.8m.
+`nights_v2_design.md` §9.1.)*
+
+The whole FY27 path is still anchored to the pre-DEC-0004 team baseline
 146.813m / +9.89% for 3Q26 (`06_revenue_path_3q26_4q27_v2b.csv`, `3Q26,base,nights_mm` = 146.813, source
 "bridge v3 adopted"). D3 §7 conflict 1 is precise about the consequence: the FY27 quarterly build **does not
 chain arithmetically off the literal 3Q26 level** — it is built from WS10's regional y/y rates and prior-year
@@ -809,7 +1015,7 @@ and **full from 2Q27**.
 
 | period | RNPL's numerical appearance in the base |
 |---|---|
-| 3Q26 | **Not as a subtraction.** The base is the index read minus the index's own bias. RNPL enters only through the *corroborating* module route, which reaches the same 146.3m as 9.89 reference − 0.396 (M1 +0.304, M2 −0.113, M3 −0.019, M4 −0.568). Because the routes are alternatives, the base does not contain an RNPL term at all. |
+| 3Q26 | *(v2, 18 Sep: rewritten — the base is now the mechanism, not the index read.)* **As a lap, and only in North America.** The US RNPL leg of **+2.40 points of NA nights** is removed **in full** from the NA rate, which is what takes NA from the 1H26 bundle peak to +5.60% and costs 2.40 × 0.288 = **−0.691pp** of total nights. The fee-and-cancellation leg of +2.29 NA points is **still in the window** in 3Q26 and laps in 4Q26. No cancellation drag and no July-expansion credit are in the base: both are carried at zero (§3.0, §3.11). The unified module's route — 9.89 reference − 0.396 (M1 +0.304, M2 −0.113, M3 −0.019, M4 −0.568) = 146.3m — is a **cross-check on the same quarter, not a second effect**; the no-stacking rule below still applies. |
 | 4Q26 | **−0.78pt, and that is the whole catalyst in this quarter.** The ex-NA fee-and-cancellation legs, dated by the letters. |
 | 1Q27 | **−0.742pt** (fee/cancel, carried) **−0.363pt** (ex-NA RNPL at 40% phase-in) |
 | 2Q27–4Q27 | **−0.742pt** (fee/cancel, carried) **−0.907pt** (ex-NA RNPL, full) |
@@ -855,11 +1061,19 @@ wider than −8 weakens.
 
 | | 2Q26 (printed) | 3Q26 | 4Q26 | 1Q27 | 2Q27 | 3Q27 | 4Q27 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| **our base** | +10.34% | **+9.5%** | **+8.12%** | **+8.21%** | **+5.93%** | **+6.23%** | **+6.05%** |
+| **our base** | +10.34% | **+9.9%** | **+8.12%** | **+8.21%** | **+5.93%** | **+6.23%** | **+6.05%** |
 | Street | — | **+11.5%** (149.0m) | **+9.93%** (134.0m) | flat ~+11% revenue in every quarter | | | |
 
+*(v2, 18 Sep: the 3Q26 cell moves from +9.5% to **+9.9%** per DEC-0029. Nothing else in the sequence moves.
+The deceleration story is slightly **less** steep at the front and unchanged from 4Q26 on, which is the half
+of it we can date.)*
+
 The step from 2Q26 to 4Q26 is **−2.2 points**; from 2Q26 to 2Q27, **−4.4 points**. The Street's 3Q26 bar is
-an *acceleration*.
+an *acceleration*. *(v2, 18 Sep: on the mechanism the 2Q26→3Q26 step is only **−0.455pp**, and the design
+decomposes it — NA contribution −0.731pp of which the lap is −0.691pp, WS10's own ex-NA deceleration
+−0.783pp, calibration residual +1.059pp. Two of the three pieces are larger than the step itself, and one of
+them is a demand forecast. Say that before a judge finds it: **3Q26 is not where the arithmetic is
+strongest**; 4Q26 onward is.)*
 
 **What the deceleration is made of — and what the record can and cannot separate.**
 
@@ -988,11 +1202,40 @@ never published.
 our own cases (8.12 and 8.86) are inside the inconclusive band, so the guide alone will not settle the lap
 question.
 
-**1Q27 guide, 11 Feb.** **≥ +8.2% (169.0m) falsifies the RNPL module outright**, because that requires both
-the partial ex-NA lap and the pull-forward reversal to be absent. Note the tension flagged in §5.3: the
-adopted bridge base for 1Q27 is **169.0178m / +8.206%**, i.e. at that threshold. The two constructions
-differ (the bridge carries a +1.0pt Middle East event and a 40% RNPL phase-in), but the threshold and the
-base case have to be reconciled before 11 February.
+**1Q27 guide, 11 Feb — restated.** *(v2, 18 Sep: **DEC-0032**, filed as entry 1 of
+`corrections_2026-09-18.md`. The tension flagged in §5.3 is resolved, and it is resolved by moving the
+threshold's **basis**, not the base case.)*
+
+The threshold as written on 11 September: **≥ +8.2% (169.0m) falsifies the RNPL module outright**, because
+that requires both the partial ex-NA lap and the pull-forward reversal to be absent. It was written against
+the module's 8.17 reference, which carries **no Middle East event term and no partial phase**. The adopted
+bridge base carries a **+1.0pt** Middle East lap and a 40%-phased ex-NA RNPL lap, so the two objects were
+never on one basis, and comparing them was a units error rather than a contradiction in arithmetic.
+
+**The restated falsifier:** a 1Q27 guide implying **≥ +9.2% as guided** — i.e. **≥ +8.2% net of the ~100bp
+Middle East base effect management itself sized in the 1Q26 letter** — falsifies the RNPL module.
+
+```
+adopted 1Q27 base, headline      +8.206%   ->  156.2m x 1.08206  =  169.0178m
+remove the event term            -1.000pp
+ex-event 1Q27                    +7.206%   ->  156.2m x 1.07206  =  167.4558m   (D2's ledger-dated schedule: 167.1m)
+restated threshold, as guided    +9.200%   ->  156.2m x 1.092    =  170.57m
+distance to the kill line        9.200 - 8.206 = 0.994pp  headline,  8.200 - 7.206 = 0.994pp  ex-event
+```
+
+So the base that looked as if it sat **on** its own kill line sits **a full point inside it** on either
+basis, and the ex-event level is within **0.36m** of D2's independently built schedule. The ~100bp event is
+**official** — 1Q26 shareholder letter, ledger D042, "Absent the impact of the conflict… approximately 10%".
+Restating now rather than in February is the point: the guide is not knowable for five months, the old
+number stays in the record, and the arithmetic is published with it. Doing the same thing after the letter
+prints would be choosing the basis that saves the module. **Not** taken: the equally defensible alternative
+of carrying the Middle East term at 0.0 in base (which would put 1Q27 at +7.21% / 167.5m and close D-11 by
+convergence) — moving an input to clear a threshold is what DEC-0016 forbids. Also **not** moved: the 0.40
+phase fraction, the one 1Q27 parameter with a filing behind it.
+
+One provenance note that travels with this row: the 1Q27 falsifier is **not** in
+`D1_prereg_thresholds.csv`, although §8 row 81 of this file and §10 row 56 of the design both point there.
+It lives in D2 §2a and §6 and in `docs/rnpl-short-audit/00_SYNTHESIS.md` §2. Score it from those.
 
 **The flip rule on this line** (memo v3 Risks): nights **≥ +10.3%** *with* a restated product-bundle
 contribution of **2.5 points or more** and we cover. (AGENT_BRIEF §4's flip is the separate take-rate/GBV
@@ -1052,23 +1295,49 @@ memo v3.
 
 ### 7.4 The open items on this line, in one list
 
-1. **Memo wording on the index's validation status.** Memo v3's bare "0.68x naive" is what the SR note
-   forbids. DEC-0004 adopts the three-ratio sentence; the memo has not been changed yet.
-2. **Whether the memo says out loud that 146.3m is a bias correction.** D1's recommendation is yes, one
-   clause, because leaving it out invites the judge question with no good answer. Not yet done.
-3. **The 3Q26 → 4Q26 carry (β).** Base carries no carry; the adopted object's own β is 0.5, which would put
-   4Q26 at 7.93% / 131.6m.
-4. **D-11 / the 1Q27 construction**: bridge 169.02 vs ledger schedule 167.1, plus the 2Q27 ordering inversion
-   that has to be resolved before the descriptive rows are used — **and the fact that the adopted 1Q27 base
-   (169.0178m / +8.206%) sits on the pre-registered 11 February threshold that falsifies the RNPL module
-   (≥ +8.2%, 169.0m).**
-5. **Re-run `h1_to_h2_bridge_v3.py` and `06_fy27_path_v2` on the adopted 146.3m base**, so the FY26
-   denominator and the pass-line exit checks use the governing number. Cross-lane request, 0.7 seconds.
-6. **Correct `D1_prereg_thresholds.csv`'s "0.9 to 1.8 points" lap range to 0.70–0.88**, by dated correction
-   note rather than an edit to another lane's artefact.
-7. **Correct `LINES.md`'s attribution** of FY27 nights +6.4% to `ALPHA_F_RNPL.md`.
-8. **Stop quoting +17.9% / +16.5% next to a nights number** — they are revenue comps; the nights comps are
-   +9.2% and +10.3%.
+*(v2, 18 Sep: five of these are now closed. Items **2, 3 and 5** are closed by **DEC-0029**; item **8** is
+filed in `corrections_2026-09-18.md`; item **6** is filed there too; and a new item **9** records the
+falsifier restatement, closed by **DEC-0032**. Items 1, 4 and 7 remain open. Nothing has been deleted from
+the list — a closed item keeps its text so a reader can see what was closed and by what.)*
+
+1. **OPEN — Memo wording on the index's validation status.** Memo v3's bare "0.68x naive" is what the SR note
+   forbids. DEC-0004 adopts the three-ratio sentence; the memo has not been changed yet. *(v2: under
+   DEC-0028 the index is a cross-check rather than the spine, which makes the sentence easier to write but
+   does not write it. Still open.)*
+2. ~~**Whether the memo says out loud that 146.3m is a bias correction.**~~ **CLOSED by DEC-0029.** *(v2,
+   18 Sep: 146.3m is no longer the base, so there is no bias correction inside the line to disclose. §3.6 now
+   states what the 146.32m read is — a cross-check — and §3.0 states what the base is. The memo says the
+   mechanism's arithmetic and quotes the index with its three ratios.)*
+3. ~~**The 3Q26 → 4Q26 carry (β).**~~ **CLOSED by DEC-0029.** *(v2, 18 Sep: `adopted_q4_states_v2.json`'s
+   rule is `q4 = 8.1 + 0.5 × (Q3 − 9.5)`, and the 8.1 was built in a world where Q3 was 9.89. With the base
+   back at 9.89 there is no downgrade to carry, so the consistent answer is **no carry** and 4Q26 stays at
+   8.12% / 131.8m. `nights_v2_design.md` §9.1 point 3.)*
+4. **OPEN — D-11 / the 1Q27 construction**: bridge 169.02 vs ledger schedule 167.1, plus the 2Q27 ordering
+   inversion that has to be resolved before the descriptive rows are used. *(v2, 18 Sep: the second half of
+   this item — that the adopted 1Q27 base sat on the pre-registered 11 February falsifier — is **closed** by
+   DEC-0032; see item 9. The construction gap itself is still open, although it is now much smaller than it
+   looked: ex-event the bridge gives 167.46m against the ledger schedule's 167.1m, **0.36m apart**, and the
+   whole visible disagreement was the +1.0pt event term.)*
+5. ~~**Re-run `h1_to_h2_bridge_v3.py` and `06_fy27_path_v2` on the adopted 146.3m base.**~~ **CLOSED by
+   DEC-0029.** *(v2, 18 Sep: the request is moot. The build already carries 3Q26 at 146.813m, which is the
+   mechanism's own number, so the FY26 denominator (583.111m), the FY27 y/y (+6.642%) and the
+   `06_pass_line.csv` exit checks are all computed against the governing base. Nothing to re-run.)*
+6. ~~**Correct `D1_prereg_thresholds.csv`'s "0.9 to 1.8 points" lap range to 0.70–0.88.**~~ **FILED** as
+   entry 4 of [`corrections_2026-09-18.md`](corrections_2026-09-18.md) (DEC-0032), by dated correction note
+   rather than an edit to another lane's artefact, as the item asked. The CSV itself is unchanged.
+7. **OPEN — Correct `LINES.md`'s attribution** of FY27 nights +6.4% to `ALPHA_F_RNPL.md`, which contains no
+   FY27 nights figure. *(v2, 18 Sep: still open; it is another lane's artefact and is not in this note's
+   five entries.)*
+8. ~~**Stop quoting +17.9% / +16.5% next to a nights number**~~ — they are revenue comps; the nights comps
+   are +9.2% and +10.3%. **FILED** in the 18 Sep corrections round: the substance is on the record in §5.2
+   of this file and in `nights_v2_design.md` §9.2, and the memo change is tracked with the other memo
+   corrections in [`corrections_2026-09-18.md`](corrections_2026-09-18.md) (entry 2 carries the other memo
+   number, the acceleration count).
+9. *(v2, 18 Sep — new, and already closed.)* ~~**The 11 February falsifier and our own base collide.**~~
+   **CLOSED by DEC-0032**, filed as entry 1 of [`corrections_2026-09-18.md`](corrections_2026-09-18.md). The
+   threshold is restated on an event-adjusted basis — ≥ **+9.2%** as guided, i.e. ≥ +8.2% ex-event — the
+   arithmetic is published five months before the print, the old number stays in the record, and the base
+   (+8.206% headline, +7.206% ex-event) sits **1.0pp inside** its own kill line on either basis. See §7.1.
 
 ---
 
@@ -1167,6 +1436,34 @@ Paths are relative to `/Users/theomachado/Citadel-ABNB`.
 | 86 | 2Q27 step −2.272pt decomposes to −0.544 (RNPL phase) + −1.500 (event swing) + −0.227 (ex-NA contribution) | `06_nights_build.csv`, 1Q27 and 2Q27 base rows | arithmetic done in this file | `receipts/D3/` | — |
 | 87 | historical y/y 1Q24–2Q26 (+9.50 … +10.34) | computed in this file from the printed levels in row #1 | derived | — | DEC-0003 |
 
+*(v2, 18 Sep: rows 88–105 are new. They are the mechanism's own parameters and receipts, taken from
+`nights_v2_design.md` §10 and §2a, so that everything the 3Q26 base now depends on is traceable from this
+file. Rows 1–87 are unchanged; several of them now describe cross-checks rather than the line, and §3 and
+§5 say which.)*
+
+| # | number | file path | cell / row | receipt | decision |
+|---|---|---|---|---|---|
+| 88 | the governing construction of this line | `docs/pitch-model-v2/lines/nights_v2_design.md` | §2 the mechanism, §4 the band, §5 the constellation, §10 provenance | `data/processed/pitch_model_v2/receipts/N2/` | DEC-0028 |
+| 89 | NA prior-year share s: **0.288** (3Q26), 0.282 (4Q26), 0.291 (1Q27, 2Q27), 0.288 (3Q27), 0.282 (4Q27) | `data/processed/overnight/10_regional_panel_quarterly.csv`; `06_fy27_path_v2/06_assumptions.csv` | `na_nights_share_est_pct`; 1Q27/2Q27 marked `is_judgement = True` | `receipts/N2/receipt_n2_mechanism.json` | DEC-0029 |
+| 90 | NA underlying **+3.31%** (2026) and **+2.31%** (2027), no product lever | `data/processed/na_nights_lap_scenarios.csv`; `analysis/src/na_nights_reconciliation.py` | row "base: no product lever", cols 2026 / 2027 | `receipts/N2/receipt_na_nights_reconciliation.json` (exit 0, 3.2 s, `changed: []`) | DEC-0029, DEC-0025 |
+| 91 | FY25 10-K anchor: NA **+2.597%** (158/154), ex-NA **+10.947%** (375/338) | `data/raw/regulatory/quantification/abnb_2025_10k.json` index 43; `data/processed/adr/01_regional_annual.csv` | Geographic Mix; the 10-K's own printed cell says "3 %" | `analysis/src/adr/01_annual_anchors.py` | DEC-0029 |
+| 92 | fitted legs **RNPL +2.40** and **fee+cancel +2.29** points of NA nights | `analysis/src/nights_quarterly.py` `fit_product()`; `data/processed/nights_quarterly_na.csv` | `underlying_pts`, `product_pts`; re-derived at `06_fy27_path_v2/run.py` lines 152–159 (`pr32_rnpl_na_pts`, `pr32_t1_cancel_na_pts`) | `receipts/N2/receipt_nights_quarterly.json`, `stdout_nights_quarterly.txt` (exit 0, `changed: []`) | DEC-0029 |
+| 93 | ex-NA underlying **+11.621%** (3Q26), +11.095 (4Q26), 10.773 / 10.452 / 10.131 / 9.810 (2027) | `data/processed/overnight/10_regional_forecast.csv`; `06_nights_build.csv` | WS10 TOTAL less NA at WS10's share; TOTAL rows carry the −0.41pp calibration; 2027 phased linearly (`exna_phasing_rule`, judgement) | `receipts/N2/receipt_n2_mechanism.json`; `receipts/D3/receipt.json` | DEC-0029, DEC-0025 |
+| 94 | ex-NA bundle **1.649** points of total nights at s 0.288 (vs 1.752 at s 0.266) | `06_fy27_path_v2/06_assumptions.csv` `exna_bundle_total_pts`; `data/processed/overnight2/D/D1_exna_4q26_gap.csv` | the assumptions file's own source string names both | `receipts/N2/receipt_n2_mechanism.json` | DEC-0019, DEC-0025 |
+| 95 | fee/cancellation lap **−0.742pt**, first applied 4Q26 and carried flat through 2027; split 0.45 in 0.40–0.50 | `06_nights_build.csv`; `D1_exna_4q26_gap.csv` | `lap_fee`; `pts_missing_from_4q26`, `consistent_with_4q25_disclosure` | `receipts/D3/receipt.json`; `receipt_D1_cohort.json` | DEC-0019, DEC-0025 |
+| 96 | ex-NA RNPL lap **−0.363** (1Q27, 0.40 phase) and **−0.907** (2Q27 on) | `06_nights_build.csv`; `06_assumptions.csv` `exna_rnpl_lap_fraction_1Q27` | `lap_rnpl`; fraction `is_judgement = True` | `receipts/D3/` | DEC-0025 |
+| 97 | event terms: 3Q26 **0.0**, 4Q26 **0.0**, 1Q27 **+1.0**, 2Q27 **−0.5** (bear −0.75, bull 0) | `06_nights_build.csv` `event_pts`; `06_assumptions.csv` | ~100bp Middle East from ledger **D042** (1Q26 letter, `official`); World Cup never sized | `receipts/D3/`; `receipts/N2/` | DEC-0025, DEC-0032 |
+| 98 | US lap partiality **0.00** base / 0.4615 high; July 2026 expansion **0.0** base / +0.30 high | `nights_quarterly.py` `IN_WINDOW["3Q26"]`; `06_assumptions.csv` `rnpl_eligibility_expansion_lap_3Q27_pts = 0.0`; ledger **D008**, **D044** | both carried at zero, both `is_judgement` | `receipts/N2/n2_band.csv` rows `us_lap_partiality`, `july_expansion` | DEC-0029 |
+| 99 | WS10 calibration residual **−0.41pp**, the four-quarter mean folded into forward TOTAL | `data/processed/overnight/10_regional_panel_quarterly.csv` `residual_vs_total_pp`; `research/notes/overnight/10_regional-and-segment-decomposition.md` "## Caveats" | printed residuals −0.01 / +0.20 / −0.76 / −1.06 | `receipts/N2/receipt_n2_mechanism.json` | DEC-0029 |
+| 100 | **3Q26 mechanism +9.89% / 146.8m** | `data/processed/nights_quarterly_total.csv` | row (3Q26, base, `exna_lap` False) | `receipts/N2/receipt_nights_quarterly.json` | **DEC-0029** |
+| 101 | parameter envelope 146.04–148.23 (3Q26), 131.57–132.94 (4Q26), 617.07–633.14 (FY27), and the one-at-a-time swings | `data/processed/pitch_model_v2/receipts/N2/n2_band.csv` | `ENVELOPE_all_parameters`, `ENVELOPE_levels_m`; `swing_lo_pp`, `swing_hi_pp` | `receipts/N2/receipt_n2_mechanism.json` (exit 0, 0.3 s) | DEC-0030 |
+| 102 | judge band: envelope widened by WS10's ex-NA bear/bull, **±2.2pp of ex-NA = ±1.6pp of total** = ±2.14m on the 133.6m base | `data/processed/overnight/10_regional_forecast.csv` bear/bull ex-NA 8.206 / 13.304 vs base 11.095 (4Q26); arithmetic in §1 and §2a of this file | not inside the envelope by construction — it is a demand forecast, not a disclosure | `receipts/N2/` | DEC-0030 |
+| 103 | mechanism reproduces `06_nights_build.csv` to 3dp on all four 2027 quarters (8.206 / 5.934 / 6.229 / 6.045) | `receipts/N2/n2_mechanism_quarterly.csv`; `stdout_n2_mechanism.txt` | "Cross-check against committed files" | `receipts/N2/receipt_n2_mechanism.json` (exit 0) | DEC-0025 |
+| 104 | the constellation of fifteen 3Q26 reads with each one's walk-forward ratio | `docs/pitch-model-v2/lines/figures/nights_constellation_3q26.csv` | cols `source`, `read_yoy_pct`, `level_m`, `ratio_vs_naive`, `independent_of_mechanism` | `receipts/N2/receipt_n2_mechanism.json` | DEC-0028 |
+| 105 | nights acceleration count: **6 of the last 16 prints** (5 above +0.5pp), not four | `data/processed/predictive/02_peer_readthrough_panel.csv` | `abnb_nights_accel_pp`, 3Q22–2Q26 | recomputed in `corrections_2026-09-18.md` entry 2 | DEC-0032 |
+| 106 | restated 11 Feb falsifier: **≥ +9.2% as guided**, i.e. ≥ +8.2% ex-event; base +8.206 headline / +7.206 ex-event | `06_nights_build.csv` 1Q27 base row; `06_revenue_path_3q26_4q27_v2b.csv` row `1Q27,base,nights_mm`; ledger **D042** | arithmetic in §7.1 of this file and `nights_v2_design.md` §7.2 | `receipts/D3/`, `receipts/N2/` | **DEC-0032** |
+| 107 | provenance of the bundle magnitudes: **neither D014 nor D032 is in any SEC filing** — 4Q25 8-K `0001193125-26-048670` and 1Q26 8-K `0001193125-26-211816` carry Exhibit 99.1 only; 1Q26 10-Q `0001559720-26-000014` located, not read | `docs/pitch-model-v2/dossiers/X3_x3_bundle_sentences_provenance.md` (grade C); `data/processed/overnight2/D/rnpl_statement_ledger.csv` rows **D014**, **D032** | cite as CFO statements on the 4Q25 and 1Q26 calls, IR webcast replay, marked for human verification; quote the filed "roughly 20% of global GBV" (**D031**) beside them | — | DEC-0031 |
+
 ## 9. Figures (added 18 Sep, discussion with Theo)
 
 All three drawn from the committed files by `docs/pitch-model-v2/lines/figures/` scripts run in-session; the regression was refit from the unrounded nights levels in `data/processed/abnb_driver_history_quarterly.csv` and matches the published coefficients (slope 0.322153 vs 0.322138, intercept 1.525410 vs 1.525819, r 0.86184 vs 0.86182; 3Q26 implied 10.0410 in both). The 14 fitted pairs are in `figures/nights_regression_points.csv`.
@@ -1174,7 +1471,10 @@ All three drawn from the committed files by `docs/pitch-model-v2/lines/figures/`
 - `figures/nights_regression.png` — the 14 quarterly points (index y/y on x, printed nights y/y on y), the OLS line, the 3Q26 index read of +26.4% projected to +10.04% (147.0m), and the W2 bias correction down to +9.52% (146.3m).
 - `figures/nights_walkforward_errors.png` — the walk-forward errors on both windows against the naive baseline; the dashed line is the mean error, +1.63pp on W1 and +0.52pp on W2, which is the bias subtracted in §3.6.
 - `figures/nights_rnpl_path.png` — the base nights y/y from 2Q26 printed through 4Q27, decomposed into the pre-lap path, the fee/cancellation lap, the RNPL lap, and the event terms; RNPL appears as no separate term in 3Q26 and as an explicit lap from 4Q26 onward (§6.1).
+- *(v2, 18 Sep: new.)* `figures/nights_constellation_3q26.png` — **the fifteen 3Q26 reads on one axis**, from the mechanism's +9.89% / 146.8m through the reviews index (raw +10.04%, W2-corrected +9.52%, W1-corrected +8.41%), the external stack's twelve-series median +9.23% and its named members, the unified RNPL cohort module +9.49%, the H1–H2 seasonal bridge +9.49%, the management guide floor of ≥+10.0% and the Street's +11.53% / 149.0m, each plotted with its walk-forward ratio against naive where it has one and flagged for whether it is independent of the mechanism. The point of the figure is the cluster: ten of the eleven non-Street, non-guide reads sit between +7.4% and +10.1% with a median of +9.49%, and the one exception is CPI lodging at +11.9%, whose ratio is 0.956 — barely better than doing nothing. Data behind it: `figures/nights_constellation_3q26.csv` (`nights_v2_design.md` §5).
+  **Note what is missing from the chart, and why it matters more than what is on it:** the two strongest external features on this KPI have **no 3Q26 point at all**. Hotel RevPAR (MAR/HLT, 0.665–0.68 W2 / 0.755 W1) does not exist until **Marriott prints on 4 November**, one day before Airbnb; and BEA monthly accommodation spend (0.71 W2) has no clean 3Q26 reading until the **November** release. Both appear in the CSV with a blank read and are drawn as absent, not as zero. The best-scored evidence on this line arrives after the memo is written.
 
 ![regression](figures/nights_regression.png)
 ![walk-forward](figures/nights_walkforward_errors.png)
 ![rnpl path](figures/nights_rnpl_path.png)
+![constellation](figures/nights_constellation_3q26.png)
