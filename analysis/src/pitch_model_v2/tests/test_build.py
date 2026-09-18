@@ -90,6 +90,42 @@ def test_build_all_tabs_decisions_validation_and_formats(tmp_path):
     assert cell.fill.fgColor.rgb in ("00FFF2CC", "FFF2CC")
 
 
+def test_build_evidence_and_grade_cell_for_multi_entry_input(tmp_path):
+    raw = yaml.safe_load(FIX.read_text())
+    d1 = raw["lines"][0]
+    assert d1["id"] == "D1"
+    d1["provenance"] = [
+        {"dossier": "docs/pitch-model-v2/dossiers/H0_history.md",
+         "receipt": "data/processed/pitch_model_v2/receipts/H0/receipt.json",
+         "grade": "A", "decision": "DEC-0001", "tolerance": 0.1,
+         "periods": ["1Q26", "2Q26"], "item": "nights_m"},
+        {"dossier": "docs/pitch-model-v2/dossiers/D1_nights.md",
+         "receipt": "data/processed/pitch_model_v2/receipts/D1/receipt.json",
+         "grade": "B", "decision": "DEC-0002", "tolerance": 0.1,
+         "periods": ["3Q26", "4Q26"], "item": "nights_m"},
+    ]
+    spec_path = tmp_path / "spec_multi.yaml"
+    spec_path.write_text(yaml.dump(raw))
+    out = build.build(spec_path, tmp_path / "m4.xlsx", check_paths=False)
+    wb = load_workbook(out)
+
+    ev = wb["Evidence"]
+    assert [ev.cell(row=1, column=j).value for j in range(1, 11)] == [
+        "id", "line", "kind", "periods", "grade", "decision", "tolerance", "dossier", "receipt", "expr"]
+    ev_rows = [
+        [ev.cell(row=r, column=j).value for j in range(1, 11)]
+        for r in range(2, ev.max_row + 1)
+    ]
+    d1_rows = [r for r in ev_rows if r[0] == "D1"]
+    assert len(d1_rows) == 2
+    assert d1_rows[0][3] == "1Q26–2Q26" and d1_rows[0][4] == "A" and d1_rows[0][5] == "DEC-0001"
+    assert d1_rows[1][3] == "3Q26–4Q26" and d1_rows[1][4] == "B" and d1_rows[1][5] == "DEC-0002"
+
+    ws = wb["Drivers"]
+    d1_row = next(r for r in range(2, ws.max_row + 1) if ws.cell(row=r, column=1).value == "D1")
+    assert ws.cell(row=d1_row, column=4).value == "A · DEC-0001 / B · DEC-0002"
+
+
 def test_build_rejects_unknown_block(tmp_path):
     raw = yaml.safe_load(FIX.read_text())
     raw["lines"][0]["block"] = "nowhere"

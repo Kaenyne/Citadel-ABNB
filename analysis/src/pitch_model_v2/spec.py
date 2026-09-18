@@ -36,7 +36,14 @@ class Line:
     periods: list[str]
     values: dict[str, dict[str, float]] = field(default_factory=dict)
     expr: str = ""
-    provenance: dict = field(default_factory=dict)
+    provenance: list[dict] = field(default_factory=list)
+
+    def entry_for(self, period: str) -> dict:
+        """Return the provenance entry whose periods cover `period`."""
+        for entry in self.provenance:
+            if period in entry.get("periods", []):
+                return entry
+        raise SpecError(f"{self.id}: no provenance entry covers period {period}")
 
 @dataclass
 class Spec:
@@ -87,6 +94,22 @@ def to_excel(expr: str, period: str, periods: list[str]) -> str:
             parts.append(t.text)
     return "".join(parts)
 
+def _norm_provenance(raw, periods: list[str]) -> list[dict]:
+    """Normalise a line's raw `provenance` (a dict, a list of dicts, or absent) into a
+    list of entry dicts, each carrying its own `periods` (default: the full line period
+    list), `item` (default ""), and `scenario_map` (default {}, i.e. identity)."""
+    if isinstance(raw, dict):
+        entries = [dict(raw)] if raw else []
+    elif isinstance(raw, list):
+        entries = [dict(e) for e in raw]
+    else:
+        entries = []
+    for e in entries:
+        e.setdefault("periods", list(periods))
+        e.setdefault("item", "")
+        e.setdefault("scenario_map", {})
+    return entries
+
 def _line(d: dict) -> Line:
     for k in ("id", "label", "unit", "block", "kind", "periods"):
         if k not in d:
@@ -97,8 +120,10 @@ def _line(d: dict) -> Line:
         raise SpecError(f"line id {d['id']!r} collides with a whitelisted function name")
     if d["kind"] not in ("input", "formula"):
         raise SpecError(f"{d['id']}: kind must be input or formula")
-    return Line(d["id"], d["label"], d["unit"], d["block"], d["kind"], list(d["periods"]),
-                d.get("values", {}), d.get("expr", ""), d.get("provenance", {}))
+    periods = list(d["periods"])
+    provenance = _norm_provenance(d.get("provenance", {}), periods)
+    return Line(d["id"], d["label"], d["unit"], d["block"], d["kind"], periods,
+                d.get("values", {}), d.get("expr", ""), provenance)
 
 def load(path: str | Path, check_paths: bool = True) -> Spec:
     raw = yaml.safe_load(Path(path).read_text())
@@ -114,17 +139,31 @@ def load(path: str | Path, check_paths: bool = True) -> Spec:
         if ln.kind == "input":
             if ln.expr:
                 raise SpecError(f"{ln.id}: input may not carry expr")
-            prov = ln.provenance
-            if prov.get("grade") not in ("A", "B"):
-                raise SpecError(f"{ln.id}: input needs grade A or B, got {prov.get('grade')!r}")
-            for k in ("dossier", "receipt", "decision", "tolerance"):
-                if k not in prov:
-                    raise SpecError(f"{ln.id}: provenance missing {k}")
-            if check_paths:
-                root = Path(path).resolve().parents[3]   # <repo>/model/pitch_model_v2/spec/lines.yaml
-                for k in ("dossier", "receipt"):
-                    if not (root / prov[k]).exists():
-                        raise SpecError(f"{ln.id}: {k} not found at {prov[k]}")
+            entries = ln.provenance
+            if not entries:
+                raise SpecError(f"{ln.id}: input needs at least one provenance entry")
+            root = Path(path).resolve().parents[3] if check_paths else None   # <repo>/model/pitch_model_v2/spec/lines.yaml
+            coverage: dict[str, int] = {p: 0 for p in ln.periods}
+            for entry in entries:
+                if entry.get("grade") not in ("A", "B"):
+                    raise SpecError(f"{ln.id}: input needs grade A or B, got {entry.get('grade')!r}")
+                for k in ("dossier", "receipt", "decision", "tolerance"):
+                    if k not in entry:
+                        raise SpecError(f"{ln.id}: provenance missing {k}")
+                for p in entry.get("periods", []):
+                    if p not in ln.periods:
+                        raise SpecError(f"{ln.id}: provenance entry period {p} not in line periods")
+                    coverage[p] = coverage.get(p, 0) + 1
+                if check_paths:
+                    for k in ("dossier", "receipt"):
+                        if not (root / entry[k]).exists():
+                            raise SpecError(f"{ln.id}: {k} not found at {entry[k]}")
+            for p in ln.periods:
+                n = coverage[p]
+                if n == 0:
+                    raise SpecError(f"{ln.id}: period {p} not covered by any provenance entry")
+                if n > 1:
+                    raise SpecError(f"{ln.id}: period {p} covered by more than one provenance entry")
             for sc in scenarios:
                 for p in ln.periods:
                     if p not in ln.values.get(sc, {}):

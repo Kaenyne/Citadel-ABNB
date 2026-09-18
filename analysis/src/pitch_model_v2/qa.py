@@ -10,13 +10,46 @@ NAME_RE = re.compile(r"\b([A-Z][A-Z0-9_]*_[0-9A-Z]+)\b")
 BUILTIN = {"INDEX", "MATCH", "SUM", "MIN", "MAX", "IF", "ABS", "EXP", "LN"}
 LICENSED = re.compile(r"(BEST_|BDH\(|BDP\(|=BDS|LSEG Workspace export|Third Bridge)", re.I)
 ROW_RE = re.compile(r"^\|\s*(\w+)\s*\|\s*([0-9A-Z]+)\s*\|\s*([-+]?\d*\.?\d+)")
+SEP_CELL_RE = re.compile(r"^:?-+:?$")
 
-def _dossier_points(path: Path) -> dict[tuple[str, str], float]:
-    pts = {}
+def _table_cells(line: str) -> list[str] | None:
+    if not line.strip().startswith("|"):
+        return None
+    return [c.strip() for c in line.strip().strip("|").split("|")]
+
+def _dossier_points(path: Path, label: str, msgs: list[str]) -> dict[tuple[str, str, str], float]:
+    """Keyed (item, scenario, period). Parses the machine-readable §2a table when the
+    dossier has one; otherwise falls back to the legacy §2 table, keyed with item ""."""
+    pts: dict[tuple[str, str, str], float] = {}
     if not path.exists():
         return pts
+    text = path.read_text()
+    if "### 2a." in text:
+        in_2a = False
+        for ln in text.splitlines():
+            if ln.strip().startswith("### 2a."):
+                in_2a = True; continue
+            if in_2a and ln.startswith("#"):
+                break
+            if not in_2a:
+                continue
+            cells = _table_cells(ln)
+            if not cells or len(cells) < 4:
+                continue
+            if cells[0].lower() == "item":
+                continue
+            if all(SEP_CELL_RE.match(c) for c in cells):
+                continue
+            item, scenario, period, point_s = cells[0], cells[1], cells[2], cells[3]
+            try:
+                point = float(point_s)
+            except ValueError:
+                msgs.append(f"{label}: 2a row not numeric: {ln.strip()}")
+                continue
+            pts[(item, scenario, period)] = point
+        return pts
     in_sec = False
-    for ln in path.read_text().splitlines():
+    for ln in text.splitlines():
         if ln.startswith("## 2."):
             in_sec = True; continue
         if in_sec and ln.startswith("## "):
@@ -24,7 +57,7 @@ def _dossier_points(path: Path) -> dict[tuple[str, str], float]:
         if in_sec:
             m = ROW_RE.match(ln)
             if m and m.group(1) not in ("scenario", "---"):
-                pts[(m.group(1), m.group(2))] = float(m.group(3))
+                pts[("", m.group(1), m.group(2))] = float(m.group(3))
     return pts
 
 def check(workbook_path: str | Path, spec_path: str | Path, root: str | Path | None = None, allow_uncalculated: bool = False) -> list[str]:
@@ -54,7 +87,7 @@ def check(workbook_path: str | Path, spec_path: str | Path, root: str | Path | N
                     msgs.append(f"{ws.title}!{c.coordinate}: looks like licensed export content: {v[:60]!r}")
     if uncalculated and not allow_uncalculated:
         msgs.append(f"{uncalculated} formula cells have no cached value: run recalc")
-    # 2. every spec input: name, provenance files, receipt exit 0, value present in dossier §2
+    # 2. every spec input: name, provenance files, receipt exit 0, value present in dossier 2a/§2
     for lid in s.order:
         ln = s.lines[lid]
         for p in ln.periods:
@@ -62,23 +95,45 @@ def check(workbook_path: str | Path, spec_path: str | Path, root: str | Path | N
                 msgs.append(f"{lid}_{p}: defined name missing")
         if ln.kind != "input":
             continue
-        pv = ln.provenance
-        dpath, rpath = root / pv["dossier"], root / pv["receipt"]
-        if not dpath.exists():
-            msgs.append(f"{lid}: dossier missing {pv['dossier']}"); continue
-        if not rpath.exists():
-            msgs.append(f"{lid}: receipt missing {pv['receipt']}")
-        else:
-            rec = json.loads(rpath.read_text())
-            if rec.get("exit_code") != 0:
-                msgs.append(f"{lid}: receipt exit_code {rec.get('exit_code')}")
-        pts = _dossier_points(dpath); tol = float(pv.get("tolerance", 0))
+        entry_ok: dict[int, bool] = {}
+        entry_dpath: dict[int, Path] = {}
+        for entry in ln.provenance:
+            dpath, rpath = root / entry["dossier"], root / entry["receipt"]
+            entry_dpath[id(entry)] = dpath
+            ok = dpath.exists()
+            if not ok:
+                msgs.append(f"{lid}: dossier missing {entry['dossier']}")
+            if not rpath.exists():
+                msgs.append(f"{lid}: receipt missing {entry['receipt']}")
+            else:
+                rec = json.loads(rpath.read_text())
+                if rec.get("exit_code") != 0:
+                    msgs.append(f"{lid}: receipt exit_code {rec.get('exit_code')}")
+            entry_ok[id(entry)] = ok
+        points_cache: dict[str, dict[tuple[str, str, str], float]] = {}
         for sc, per_vals in ln.values.items():
             for p, v in per_vals.items():
-                if (sc, p) not in pts:
-                    msgs.append(f"{lid} {sc} {p}: value {v} not stated in dossier §2")
-                elif abs(pts[(sc, p)] - float(v)) > tol:
-                    msgs.append(f"{lid} {sc} {p}: spec {v} vs dossier {pts[(sc, p)]} exceeds tolerance {tol}")
+                entry = ln.entry_for(p)
+                if not entry_ok.get(id(entry), True):
+                    continue
+                dpath = entry_dpath[id(entry)]
+                pts = points_cache.get(entry["dossier"])
+                if pts is None:
+                    pts = _dossier_points(dpath, entry["dossier"], msgs)
+                    points_cache[entry["dossier"]] = pts
+                item = entry.get("item", "")
+                dossier_sc = entry.get("scenario_map", {}).get(sc, sc)
+                tol = float(entry.get("tolerance", 0))
+                key, key_all = (item, dossier_sc, p), (item, dossier_sc, "all")
+                if key in pts:
+                    point = pts[key]
+                elif key_all in pts:
+                    point = pts[key_all]
+                else:
+                    msgs.append(f"{lid} {sc} {p}: value {v} not stated in dossier 2a/§2 (item '{item}')")
+                    continue
+                if abs(point - float(v)) > tol:
+                    msgs.append(f"{lid} {sc} {p}: spec {v} vs dossier {point} exceeds tolerance {tol}")
     return msgs
 
 def main(argv=None):

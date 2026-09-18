@@ -15,7 +15,8 @@ TABS = {"drivers": "Drivers", "revenue": "Revenue and Guide", "costs": "Costs an
         "valuation": "Valuation and Call", "event": "5 Nov Event Card", "street": "Street"}
 ORDER = ["Cover", "Drivers", "Revenue and Guide", "Costs and Earnings", "Valuation and Call",
          "5 Nov Event Card", "Street", "Evidence", "Decision Log", "Scenario Data"]
-FMT = {"pct": "0.00%", "musd": "#,##0", "usd": "0.00", "m": "0.0", "x": "0.0x", "prob": "0.00", "usd_share": "0.00"}
+FMT = {"pct": "0.00%", "musd": "#,##0", "usd": "0.00", "m": "0.0", "x": "0.0x", "prob": "0.00", "usd_share": "0.00",
+       "pp": "0.00", "pctpt": "0.00", "log": "0.0000", "weight": "0.00", "elasticity": "0.000"}
 INPUT_FILL = PatternFill("solid", fgColor="FFF2CC")   # yellow: an input, named, fed by Scenario Data
 HEAD = Font(bold=True)
 
@@ -65,7 +66,8 @@ def build(spec_path: str | Path, out_path: str | Path, decisions_path: str | Pat
         ws = sheets[ln.block]; row = rows[ln.block]; rows[ln.block] += 1
         ws.cell(row=row, column=1, value=lid); ws.cell(row=row, column=2, value=ln.label); ws.cell(row=row, column=3, value=ln.unit)
         if ln.kind == "input":
-            pv = ln.provenance; ws.cell(row=row, column=4, value=f"{pv['grade']} · {pv['decision']}")
+            label = " / ".join(f"{e['grade']} · {e['decision']}" for e in ln.provenance)
+            ws.cell(row=row, column=4, value=label)
         else:
             ws.cell(row=row, column=4, value="formula: " + ln.expr)
         for p in ln.periods:
@@ -78,16 +80,28 @@ def build(spec_path: str | Path, out_path: str | Path, decisions_path: str | Pat
                 c.value = "=" + specmod.to_excel(ln.expr, p, periods)
             c.number_format = FMT.get(ln.unit, "General")
             _name(wb, f"{lid}_{p}", ws.title, col, row)
-    # Evidence
+    # Evidence: one row per (line, provenance entry) for inputs, one row per formula line.
     ev = wb.create_sheet("Evidence")
-    for j, h in enumerate(["id", "line", "kind", "grade", "decision", "tolerance", "dossier", "receipt", "expr"], start=1):
+    for j, h in enumerate(["id", "line", "kind", "periods", "grade", "decision", "tolerance", "dossier", "receipt", "expr"], start=1):
         ev.cell(row=1, column=j, value=h).font = HEAD
-    for i, lid in enumerate(s.order, start=2):
-        ln = s.lines[lid]; pv = ln.provenance
-        vals = [lid, ln.label, ln.kind, pv.get("grade", ""), pv.get("decision", ""), pv.get("tolerance", ""),
-                pv.get("dossier", ""), pv.get("receipt", ""), ln.expr]
-        for j, v in enumerate(vals, start=1):
-            ev.cell(row=i, column=j, value=v)
+    i = 2
+    for lid in s.order:
+        ln = s.lines[lid]
+        if ln.kind == "input":
+            for e in ln.provenance:
+                eperiods = e.get("periods") or ln.periods
+                prange = f"{eperiods[0]}–{eperiods[-1]}" if eperiods else ""
+                vals = [lid, ln.label, ln.kind, prange, e.get("grade", ""), e.get("decision", ""),
+                        e.get("tolerance", ""), e.get("dossier", ""), e.get("receipt", ""), ln.expr]
+                for j, v in enumerate(vals, start=1):
+                    ev.cell(row=i, column=j, value=v)
+                i += 1
+        else:
+            prange = f"{ln.periods[0]}–{ln.periods[-1]}" if ln.periods else ""
+            vals = [lid, ln.label, ln.kind, prange, "", "", "", "", "", ln.expr]
+            for j, v in enumerate(vals, start=1):
+                ev.cell(row=i, column=j, value=v)
+            i += 1
     # Decision Log
     dl = wb.create_sheet("Decision Log")
     for j, h in enumerate(["id", "line", "period", "scenario", "value", "reason", "rejected", "date"], start=1):

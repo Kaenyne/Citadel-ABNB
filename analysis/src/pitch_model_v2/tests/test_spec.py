@@ -204,3 +204,92 @@ def test_check_paths_true_requires_provenance_files(tmp_path):
     s_checked = spec.load(p)
     s_unchecked = spec.load(p, check_paths=False)
     assert s_checked.order == s_unchecked.order
+
+
+def _prov_entry(periods, item, decision="DEC-0001", grade="A", scenario_map=None):
+    e = {"dossier": "d.md", "receipt": "r.json", "grade": grade, "decision": decision,
+         "tolerance": 0.1, "periods": list(periods), "item": item}
+    if scenario_map is not None:
+        e["scenario_map"] = scenario_map
+    return e
+
+
+def test_provenance_list_covers_periods(tmp_path):
+    y = """
+meta:
+  periods: [1Q26, 2Q26, 3Q26, 4Q26]
+  scenarios: [base]
+lines:
+  - id: D1
+    label: Nights
+    unit: m
+    block: drivers
+    kind: input
+    periods: [1Q26, 2Q26, 3Q26, 4Q26]
+    values:
+      base: {1Q26: 1.0, 2Q26: 2.0, 3Q26: 3.0, 4Q26: 4.0}
+    provenance:
+      - {dossier: h.md, receipt: hr.json, grade: A, decision: DEC-0001, tolerance: 0.1, periods: [1Q26, 2Q26], item: history_item}
+      - {dossier: f.md, receipt: fr.json, grade: B, decision: DEC-0002, tolerance: 0.1, periods: [3Q26, 4Q26], item: forecast_item}
+"""
+    p = tmp_path / "ok.yaml"; p.write_text(y)
+    s = spec.load(p, check_paths=False)
+    ln = s.lines["D1"]
+    assert ln.entry_for("1Q26")["item"] == "history_item"
+    assert ln.entry_for("3Q26")["item"] == "forecast_item"
+    assert ln.entry_for("4Q26")["item"] == "forecast_item"
+
+
+def test_provenance_list_rejects_gap_and_overlap(tmp_path):
+    gap = """
+meta:
+  periods: [1Q26, 2Q26, 3Q26]
+  scenarios: [base]
+lines:
+  - id: D1
+    label: Nights
+    unit: m
+    block: drivers
+    kind: input
+    periods: [1Q26, 2Q26, 3Q26]
+    values:
+      base: {1Q26: 1.0, 2Q26: 2.0, 3Q26: 3.0}
+    provenance:
+      - {dossier: h.md, receipt: hr.json, grade: A, decision: DEC-0001, tolerance: 0.1, periods: [1Q26]}
+      - {dossier: f.md, receipt: fr.json, grade: B, decision: DEC-0002, tolerance: 0.1, periods: [3Q26]}
+"""
+    p = tmp_path / "gap.yaml"; p.write_text(gap)
+    with pytest.raises(spec.SpecError, match="D1.*2Q26"):
+        spec.load(p, check_paths=False)
+
+    overlap = """
+meta:
+  periods: [1Q26, 2Q26, 3Q26]
+  scenarios: [base]
+lines:
+  - id: D1
+    label: Nights
+    unit: m
+    block: drivers
+    kind: input
+    periods: [1Q26, 2Q26, 3Q26]
+    values:
+      base: {1Q26: 1.0, 2Q26: 2.0, 3Q26: 3.0}
+    provenance:
+      - {dossier: h.md, receipt: hr.json, grade: A, decision: DEC-0001, tolerance: 0.1, periods: [1Q26, 2Q26]}
+      - {dossier: f.md, receipt: fr.json, grade: B, decision: DEC-0002, tolerance: 0.1, periods: [2Q26, 3Q26]}
+"""
+    p2 = tmp_path / "overlap.yaml"; p2.write_text(overlap)
+    with pytest.raises(spec.SpecError, match="D1.*2Q26"):
+        spec.load(p2, check_paths=False)
+
+
+def test_dict_provenance_still_works():
+    s = spec.load(FIX, check_paths=False)
+    ln = s.lines["D1"]
+    assert isinstance(ln.provenance, list)
+    assert len(ln.provenance) == 1
+    assert ln.provenance[0]["grade"] == "A"
+    assert ln.provenance[0]["decision"] == "DEC-0001"
+    assert ln.entry_for("1Q26") is ln.provenance[0]
+    assert ln.entry_for("4Q26") is ln.provenance[0]
