@@ -276,3 +276,46 @@ def fig8_final_model():
     bx.set_xticks(list(x_h) + list(x_f)); bx.set_xticklabels(labels, fontsize=9); bx.legend(loc="upper left", fontsize=8.5, ncol=2)
     _title(bx, "The option term, y/y: 3Q26 nets, 4Q26 small, 1Q27 flat, 2Q27 the hit — and it matches the filed laps", None)
     fig.tight_layout(); fig.savefig(C.FIG / "fig8_final_model.png", dpi=160); plt.close(fig)
+
+
+def fig9_one_line():
+    """One line (printed history continuing into our base view), ranges around the forward part, Airbnb's actual nights
+    guidance as boxes, the Street as diamonds. Guidance from overnight/02_guidance_ledger.csv (read-only)."""
+    import data as D
+    kpi = D.load_kpi(); hist = kpi[(kpi.qi >= C.qi(2024, 1)) & (kpi.qi <= C.qi(2026, 2))]
+    f = pd.read_csv(C.OUT / "final_model_paths.csv"); fwd = f[f.phase != "observed"]; meta = json.loads((C.OUT / "final_model_meta.json").read_text())
+    g = pd.read_csv(C.ROOT / "data/processed/overnight/02_guidance_ledger.csv"); g = g[g.metric == "nights_yoy_pct"]
+    labels = [qlabel(q) for q in hist.qi] + list(fwd.quarter); n_h = len(hist); x_h = np.arange(n_h); x_f = np.arange(n_h, n_h + len(fwd))
+    # forward ranges (y/y): 3Q26 = stays read +/- band; 4Q26-4Q27 = the record's parameter envelopes (final_nights.md lines table) over the base's own prior-year levels
+    env_m = {"4Q26": (131.6, 132.9, 121.9), "1Q27": (166.9, 170.9, 156.2), "2Q27": (156.3, 160.2, 148.3), "3Q27": (154.7, 159.4, 146.8), "4Q27": (139.1, 142.7, 131.8)}
+    lo = [meta["stays_3q26"] - meta["band"]] + [(a / p - 1) * 100 for a, b, p in env_m.values()]
+    hi = [meta["stays_3q26"] + meta["band"]] + [(b / p - 1) * 100 for a, b, p in env_m.values()]
+    fig, ax = plt.subplots(figsize=(12.5, 6))
+    ax.axvspan(n_h - 0.5, x_f[-1] + 0.6, color=NEUTRAL, lw=0, zorder=0)
+    ax.fill_between(x_f, lo, hi, color=S1, alpha=0.13, lw=0, label="our range (3Q26: stays read +/- band; 2027: parameter envelope)")
+    ax.fill_between([x_f[0] - 0.18, x_f[0] + 0.18], [meta["stays_3q26"]] * 2, [meta["stays_3q26"] + meta["I_3q26"]["wave"]] * 2, color=S1, alpha=0.35, lw=0, label="3Q26 print range: stays + written options (9.3-10.9)")
+    ax.plot(x_h, hist.nights_m_yoy_pct, color=S1, lw=2.2, marker="o", ms=8, mec=SURF, mew=2, label="printed nights y/y")
+    ax.plot(np.r_[x_h[-1], x_f], np.r_[hist.nights_m_yoy_pct.iloc[-1], fwd.print_yoy], color=S1, lw=2.2, ls=(0, (4, 2)), marker="o", ms=8, mec=SURF, mew=2, label="our view (base print path)")
+    ax.scatter([x_f[1]], [meta["short_4q26_print"]], marker="v", s=70, color=RED, edgecolor=SURF, linewidth=1.5, zorder=6, label="4Q26 short (cancellation drag)")
+    # guidance: numeric buckets only (the directional guides are in stage_e_guidance.csv)
+    first = True
+    for _, r in g[g.guide_type == "bucket"].iterrows():
+        if r.target_period not in labels: continue
+        xg = labels.index(r.target_period)
+        ax.add_patch(plt.Rectangle((xg - 0.3, r.value_low), 0.6, r.value_high - r.value_low, facecolor=S3, alpha=0.28, edgecolor=S3, lw=1.5, zorder=3, label="Airbnb's nights guidance (shareholder letter)" if first else None)); first = False
+        tag = f"guided {r.value_low:.0f}-{r.value_high:.0f}" + (f", printed {r.actual:.1f}" if np.isfinite(r.actual) else "")
+        ax.text(xg, (r.value_high + 0.12) if r.target_period == "3Q26" else (r.value_low - 0.15), tag, ha="center", va=("bottom" if r.target_period == "3Q26" else "top"), color=INK2, fontsize=8.5)
+    x2 = labels.index("2Q26"); ax.text(x2, hist.nights_m_yoy_pct.iloc[-1] + 0.35, "guided: decelerate\nfrom 9.1; printed 10.3", ha="center", va="bottom", color=INK2, fontsize=8)
+    # Street
+    st = fwd.dropna(subset=["street_yoy"]); ax.scatter(x_f[:len(st)], st.street_yoy, marker="D", s=85, color=S2, edgecolor=SURF, linewidth=1.5, zorder=6, label="Street consensus (Bloomberg MODL)")
+    s3 = C.STREET["3Q26"]; ax.plot([x_f[0]] * 2, [(s3["low_m"] / C.BASE_3Q25_M - 1) * 100, (s3["high_m"] / C.BASE_3Q25_M - 1) * 100], color=S2, lw=2)
+    ax.text(x_f[0] + 0.25, st.street_yoy.iloc[0], "Street 149.0m (147-151)", color=INK2, fontsize=9, va="center")
+    ax.text(x_f[1] + 0.25, st.street_yoy.iloc[1], "Street 134.0m", color=INK2, fontsize=9, va="center")
+    for i, (q, lvl) in enumerate(zip(fwd.quarter, fwd.print_level_m)):
+        ax.text(x_f[i] + (0.35 if i == 1 else 0), lo[i] - 0.2, f"{lvl:.1f}m", ha="center", va="top", color=INK2, fontsize=8.5)
+    ax.set_xticks(list(x_h) + list(x_f)); ax.set_xticklabels(labels, fontsize=9); ax.set_ylabel("nights y/y, %"); ax.set_ylim(2.8, 13.6)
+    ax.legend(loc="upper left", fontsize=8.5, ncol=2)
+    _title(ax, "Our view, Airbnb's guidance, and the Street",
+           "3Q26: guided 10-12% (147.0-149.6m), Street 149.0m at the top of it, the business 9.35 +/- 1.9 below its floor. Airbnb beat its nights guide three quarters running.")
+    fig.tight_layout(); fig.savefig(C.FIG / "fig9_view_guidance_street.png", dpi=160); plt.close(fig)
+    g[g.target_period.isin(labels)][["print_quarter", "print_date", "target_period", "guide_type", "value_low", "value_high", "direction", "comparator_value", "actual", "outcome", "quote"]].to_csv(C.OUT / "stage_e_guidance.csv", index=False)
