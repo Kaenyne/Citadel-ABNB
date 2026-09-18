@@ -625,6 +625,29 @@ vintage-constancy test and whose W1 counterpart would subtract +1.63pp instead a
 
 ---
 
+### 3.12 Statistical evidence for the index-to-nights relationship (added 18 Sep, discussion with Theo)
+
+Recomputed in-session from `figures/nights_regression_points.csv` (the 14 fitted pairs, unrounded nights y/y from `abnb_driver_history_quarterly.csv`) and `data/processed/q3nowcast/E/backtest_wf_paths.csv`. Figure: `figures/nights_index_significance.png`.
+
+| test | statistic | reading |
+|---|---|---|
+| OLS slope, n 14 | 0.322, SE 0.055, t 5.9, p 0.00007, 95% CI 0.20–0.44, R² 0.74 | the association is strong and not a chance fit |
+| HAC(2) slope SE | 0.017, t 19 | serial correlation does not weaken it |
+| Pearson r / Spearman ρ | 0.86 (p 0.00007) / 0.76 (p 0.0015) | holds on ranks, so not one outlier's doing |
+| permutation, 20,000 re-pairings | p 0.0024 | fewer than 1 in 400 random pairings reach r 0.86; the second mode near 0.65 is 1Q23's leverage |
+| leave-one-quarter-out | slope 0.26–0.34; 3Q26 implied 9.8–10.2% | dropping 1Q23 gives 9.99%; the read is stable |
+| walk-forward vs naive, W1 (14 q) | RMSE 2.41 vs 2.88, ratio 0.84; index closer in 6/14; DM-style t 0.98, p 0.35 | the improvement is not statistically significant |
+| walk-forward vs naive, W2 (10 q) | RMSE 1.48 vs 2.16, ratio 0.68; closer in 7/10; DM t 1.27, p 0.24 | same |
+| mean walk-forward error, W1 / W2 | +1.63pp (t 3.3) / +0.52pp (t 1.1) | the over-prediction bias is significant on the long window |
+
+**The method in three sentences.** Reviews are written after check-out, so a market's review count is a census of completed stays, and its year-over-year change is a stay-growth index that needs no sampling or survey. Because Airbnb reports nights *booked*, not stays, the index is mapped to the KPI by one regression whose slope absorbs the average booking-to-stay lag and the survivorship bias of within-dump counting. The regression is then walked forward, refit on earlier quarters only, so the ratio to naive and the mean error are out-of-sample facts, not in-sample fit.
+
+**Why the correlation could be causal, in three sentences.** Every review is a stay that was first a booking, so the chain booking → stay → review is a physical sequence with a roughly constant review propensity, not two series responding to a common third factor. The slope of about a third is what that chain predicts once the survivorship inflation of the index is removed, so the coefficient has a mechanical interpretation rather than a fitted one. And the direction of time is fixed: bookings precede stays and stays precede reviews, so reverse causation from reviews to bookings is not available as an explanation.
+
+**What the evidence does not say.** Significance of the association is not significance of the forecast: with 10 to 14 out-of-sample quarters the improvement over naive is inside noise, and the one significant out-of-sample fact is a positive bias. That is why the line's base is the mechanism (DEC-0029) and the index is a cross-check.
+
+![significance](figures/nights_index_significance.png)
+
 ## 4. 4Q26: why 131.8m, word by word
 
 The committed line is **131.8m, +8.12%**, band 131.7–132.7 (**DEC-0019**). It is one subtraction from one
