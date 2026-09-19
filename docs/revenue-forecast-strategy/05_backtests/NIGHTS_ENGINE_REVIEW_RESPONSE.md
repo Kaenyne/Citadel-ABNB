@@ -1,5 +1,13 @@
 # Response to the external review of the nights engine
 
+> **Correction, 19 Sep 2026.** (1) RNPL has been available **globally** since 17 Feb 2026 (Airbnb Newsroom, ledger D025; 4Q25 letter D023
+> "even more guests globally in 2026"). Statements that Europe is not in the rollout list, that "a European launch would defer the hit",
+> or that EU markets are never-treated controls are wrong: the geographic ceiling was reached in Feb–Mar 2026; the last eligibility
+> expansion was July 2026; the remaining growth in the option flow is adoption within a fixed pool (and any further eligibility change).
+> The exploratory event study's post-Feb-2026 months use contaminated controls. (2) Management states RNPL is "driving longer booking
+> lead times" (1Q26 call, D033, mirror): a lead-time extension lifts printed nights above review-implied nights without any
+> cancellation — an additional, disclosed explanation for a positive post-launch residual. (3) The review data comprise **75.1 million
+> reviews** across 123 cities in the latest vintage (49 M since 2023); "700,000" in earlier drafts counted daily aggregate rows.
 18 September 2026, session OLS.V2. Scope: the concerns A–I in the reviewer's brief, checked against the code, the output
 files and dated primary sources. New diagnostics run for this response are in
 `data/processed/forecast_methods/reviews_index_v2/audit/` and are labelled AUDIT throughout; nothing in the original outputs,

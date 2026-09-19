@@ -1,5 +1,13 @@
 # Rationale — nights: the stays measurement, the print, the Street, and the RNPL timing
 
+> **Correction, 19 Sep 2026.** (1) RNPL has been available **globally** since 17 Feb 2026 (Airbnb Newsroom, ledger D025; 4Q25 letter D023
+> "even more guests globally in 2026"). Statements that Europe is not in the rollout list, that "a European launch would defer the hit",
+> or that EU markets are never-treated controls are wrong: the geographic ceiling was reached in Feb–Mar 2026; the last eligibility
+> expansion was July 2026; the remaining growth in the option flow is adoption within a fixed pool (and any further eligibility change).
+> The exploratory event study's post-Feb-2026 months use contaminated controls. (2) Management states RNPL is "driving longer booking
+> lead times" (1Q26 call, D033, mirror): a lead-time extension lifts printed nights above review-implied nights without any
+> cancellation — an additional, disclosed explanation for a positive post-launch residual. (3) The review data comprise **75.1 million
+> reviews** across 123 cities in the latest vintage (49 M since 2023); "700,000" in earlier drafts counted daily aggregate rows.
 > **Corrections, 18 Sep 2026 (audit, see `NIGHTS_ENGINE_REVIEW_RESPONSE.md`).** (1) Wherever this file attributes "~1 growth point"
 > of nights cost to RNPL: that figure is the Middle East conflict cancellation effect in the 1Q26 letter (ledger D042), not RNPL —
 > withdrawn. The RNPL cancellation disclosures are the 2Q26 10-Q ("higher cancellation rates than historic bookings") and the
