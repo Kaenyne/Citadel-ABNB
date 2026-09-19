@@ -10,7 +10,7 @@ import numpy as np, pandas as pd
 import config as C
 
 SHORT_4Q26_PRINT = 7.61     # final_nights.md section 4.4: base 8.12 less the cancellation drag = short 7.61
-CEILING = "no further RNPL access growth after the July 2026 eligibility expansion (UK/AU/CA done Feb-Mar 2026; BRL/INR/TRY excluded; Europe not in the rollout list)"
+CEILING = "geographic access global since 17 Feb 2026 (Newsroom D025); last eligibility expansion July 2026; remaining option-flow growth = adoption within a fixed pool (or a further eligibility change)"
 EXERCISE_AT = "stay date: payment is due shortly before the free-cancellation window closes (ledger D002: flexible 24h, moderate 5 days before check-in)"
 
 
