@@ -19,6 +19,7 @@ PYTHONPATH=analysis/src python3 -m pitch_model_v2.adr_engine.run --no-posterior 
 PYTHONPATH=analysis/src python3 -m pitch_model_v2.adr_engine.run --no-refresh-prices             # geomix stage reuses the saved inputs
 PYTHONPATH=analysis/src python3 -m pitch_model_v2.adr_engine.refresh_prices                      # ≈ 14 s; rebuilds the geo-mix inputs only
 PYTHONPATH=analysis/src python3 -m pytest analysis/src/pitch_model_v2/adr_engine/tests -q        # 27 tests
+PYTHONPATH=analysis/src python3 -m pitch_model_v2.adr_engine.cache_values                        # -> model/ABNB_official_model_complete.xlsx (no Excel needed)
 PYTHONPATH=analysis/src python3 analysis/src/pitch_model_v2/adr_engine/fetch_fx.py               # FRED refresh (writes a new dated file; point config.FX_DAILY at it)
 ```
 
@@ -37,6 +38,7 @@ PYTHONPATH=analysis/src python3 analysis/src/pitch_model_v2/adr_engine/fetch_fx.
 | `assemble.py` | reported ADR path, band, Street z / tail probability, GBV cross-check, scenario table |
 | `figures.py` | seven figures (dataviz palette) incl. `adr_full_logic.png` |
 | `workbook.py` | the `ADR_Engine` sheet + `Income_Statement` rows 8–11; runs the frozen nights builder unchanged and captures its workbook |
+| `cache_values.py` | writes `ABNB_official_model_complete.xlsx`: every formula evaluated and stored as a cached `<v>`, so the file reads without an Excel recalculation; formulas, charts and styles untouched |
 
 ## The `geomix` stage (`run.geomix_stage`, after the ex-FX stage)
 
