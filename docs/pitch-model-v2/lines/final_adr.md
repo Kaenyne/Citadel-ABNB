@@ -152,7 +152,7 @@ three origins, both windows, 17 disclosed quarters, pre-registered.
    from the same inputs the engine uses and checked cell by cell in openpyxl, not recalculated).
 3. Cross-line: D6/R2 GBV now $26.08bn / $22.81bn on lines 1 and 2; D3's FY27 ADR legs to be rebuilt on this line
    when reopened; D5's `adr_fx_pp` rows to be renamed (X1) — unchanged here.
-4. The 2Q25 letter text is missing from the local cache (ledger A §0); the 2Q25 global driver sentence is a hole.
+4. The 2Q25 shareholder letter text exists nowhere on this machine (verified by a full filesystem search; ledger A §0), so the 2Q25 global ADR driver sentence is a hole; one SEC fetch of `2Q25_d17531dex991.htm` closes it.
 5. Deepening the core (in order of power): an RNPL GBV-share / nights-share pair; a same-listing realised-rate
    series; a pre-registered supply-growth term with sign and size stated first. Not another regression on the
    residual.

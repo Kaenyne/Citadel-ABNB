@@ -1,4 +1,4 @@
-> Research survey by an autonomous Opus subagent on 21 Sep 2026 (overnight ADR session), read-only against the repo at HEAD 2a77a36; archived verbatim as provenance for docs/pitch-model-v2/lines/adr_v1_design.md. Model output, not a team decision.
+> Research survey by an autonomous Opus subagent on 21 Sep 2026 (overnight ADR session), read-only against the repo at HEAD 2a77a36; archived verbatim as provenance for docs/pitch-model-v2/lines/adr_v1_design.md. Model output, not a team decision. Updated 22 Sep after the agent verified the 2Q25 letter gap (see §0).
 
 # A — ADR disclosure ledger: what Airbnb management has actually said about the drivers of ADR
 
@@ -11,7 +11,7 @@
 - `data/raw/letters/*.htm` (the paths the guidance ledger cites) **is empty in this checkout** — `/Users/theomachado/Citadel-ABNB/data/raw/letters/` does not exist; the letters are gitignored (`.gitignore:28`, per `docs/pitch-model-v2/lines/nights_v2_design.md` §3.1). Raw letter/transcript text used below is the PDF-extraction cache at
   `/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/FX-ADR-R-model/public-data-2026-09-07/text/{YYYY}Q{N}_letter.txt` and `..._transcript.txt`, plus the on-disk filings `data/raw/regulatory/quantification/abnb_2025_10k.json` and `abnb_2026q2_10q.html`.
 - **The PDF extraction inserts spurious spaces** ("grow th", "quar ter", "shif t", "ser vice", "Nor th"). Every quote below has been de-spaced for readability; the *words* are verbatim. Re-verify against the SEC HTML before any quote goes on a slide.
-- **Gap: the 2Q25 shareholder letter text is not in the local cache** (only `2025Q2_transcript.txt`). 2Q25 numbers below come from `data/processed/overnight/02_kpi_panel_long.csv` rows 812–816, each carrying a short verbatim clause and `source_file = data/raw/letters/2Q25_d17531dex991.htm`, `source_verified = True`. **The 2Q25 global ADR driver sentence ("largely due to …") is therefore not reproduced here from raw text.** Flagged for human verification.
+- **Gap: the 2Q25 shareholder letter text does not exist anywhere on this machine** (only `2025Q2_transcript.txt`). Verified by a filesystem-wide `find / -iname "2025Q2_letter*"` (no hits) and by checking the sibling tree `/Users/theomachado/Citadel-ABNB-untracked` (no `data/raw/letters/`, no `*2Q25*`, no `*d17531*`). 2Q25 numbers below come from `data/processed/overnight/02_kpi_panel_long.csv` rows 812–816, each carrying a short verbatim clause and `source_file = data/raw/letters/2Q25_d17531dex991.htm`, `source_verified = True`. **The 2Q25 global ADR driver sentence ("largely due to …") is therefore not reproduced here from raw text.** Flagged for human verification.
 
 ---
 
@@ -280,7 +280,7 @@ ADR-relevant entries, verbatim:
 2. **One tranche or two inside 4Q25.** D024 note: "**Two dated tranches inside 4Q25, not one. PR #32 models a single October tranche.**" (PMS hosts from October; most non-PMS single-fee hosts to 15.5% from December.)
 3. **`06_fee_timeline.csv` misattributes the "over a quarter" / "about half" single-fee coverage to the letters** (rows 16, 19). They are call-only. See §4.2 item 4.
 4. **2Q26 APAC ex-FX ADR:** `04_regional_quarterly_wide.csv` row 23 = −1.3509 (basis "disclosed-chained") vs `10_regional_panel_quarterly.csv` row 24 = **blank**. The letter gives no figure. **Blank is correct.**
-5. **2Q25 letter text missing from the local cache** — the global ADR driver clause for 2Q25 is not reproduced here.
+5. **2Q25 letter text missing from the machine entirely** (filesystem-wide search, plus the untracked sibling tree) — the global ADR driver clause for 2Q25 is not reproduced here. One SEC fetch of `2Q25_d17531dex991.htm` closes it.
 6. **`data/raw/letters/` does not exist in this checkout**; every `source_file` path in `02_guidance_ledger.csv` and `02_kpi_panel_long.csv` points at files that are gitignored. Quotes are re-verified here against the OneDrive PDF-text cache, which is a **different extraction of the same documents**, not the filed HTML.
 7. **1Q26 10-Q (accession 0001559720-26-000014) has never been read.** It is the only filing that could still carry a filed bundle magnitude (X3 §8). One fetch closes it.
 
