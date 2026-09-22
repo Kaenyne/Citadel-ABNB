@@ -228,11 +228,15 @@ a plain-English sentence implying cancelled bookings stay in the KPI (they are n
 list" / "a European launch would defer the hit" (RNPL is global since 17 Feb 2026).
 
 **Live, not yet fixed:**
-1. `final_model_paths.csv` **phase labels are stale** — they read "flat: laps the −0.07" for 1Q27 and "THE HIT … 2Q26 wave"
-   while v2.1's gaps are −0.80 (1Q26) and +1.55 (2Q26). The y/y numbers updated; the words did not.
+1. ~~`final_model_paths.csv` phase labels are stale~~ — **FIXED 22 Sep** (`final_model.py`): 1Q27 now reads
+   "tailwind: laps a NEGATIVE year-ago residual (I_yoy > 0)", 2Q27 "THE HIT: laps the 2Q26 writing wave with no new
+   access to net it". Re-run `--stage F` to regenerate.
 2. **1Q27's option term flipped sign** under v2.1: **+0.80 pp** (lapping a negative 1Q26 residual), i.e. a y/y *tailwind*,
-   not "flat". Any narrative that says 1Q27 is neutral is now inconsistent with the engine's own table.
+   not "flat". The engine's labels are fixed; **any prose or slide still calling 1Q27 neutral remains wrong** and is a
+   finding for the auditor (see `docs/pitch-model-v2/briefs/NIGHTS_AUDIT.md` §4).
 3. `final_model_landing.csv` feeds **net** gaps into the kernel as if they were **gross** cohorts — double counts.
+   **Marked NOT FOR QUOTATION in the docstring 22 Sep**; still to be rebuilt on gross cohorts (disclosed x = 16–17%
+   × the RNPL booking flow) or deleted. The timing logic is sound; the magnitudes are not.
 4. The **ceiling** argument must be restated: access is global; the remaining fuel is adoption inside a fixed pool.
 5. Backtest weights are contemporaneous (look-ahead). The lagged run exists and matches; it is not yet the primary.
 
