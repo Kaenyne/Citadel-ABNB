@@ -270,6 +270,10 @@ origin growth (no Indian, Emirati or Indonesian market; one each in Thailand and
 a destination; those channels live in the four-region buckets, i.e. in (a). The two scenarios are carried beside
 the base in §3.6 and in the workbook: sub-regional adds −$0.24 to 4Q26; sub-regional plus tilt B adds −$0.84
 ($172.19) — still above the Street's $171.33. Composition alone does not get below the Street; the core has to.
+**Origin evidence, descriptive:** reviewer language across the 123 markets (figure `adr_origin_language_shares`) —
+English 71% of reviews in 2022 → 58% in 2026; Spanish 11 → 16%, Portuguese 1.8 → 3.5%, East-Asian 1.1 → 2.8%;
+2025 growth Portuguese +45%, Spanish +37% vs English +17%. It is the composition change on Airbnb's own guests and
+supports tilt B's direction; it carries no price and does not enter the term (`adr_v2_geomix_prereg.md` §4).
 
 ### 3.4 The other terms, carried as the card carries them
 

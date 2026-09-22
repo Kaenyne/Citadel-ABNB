@@ -63,14 +63,14 @@ LatAm, 30% of APAC (New Zealand). Files: `country_price_levels_usd.csv`, `geomix
 `geomix_*_forward.csv`, `geo_mix_tilt_sensitivity.csv`.
 
 **H1 (attribution): passes as a historical fact, but the term is fading.** Sub-regional mix, GBV-weighted:
-1Q23–2Q26 mean **−0.45pp** (≥ 0.25 line met); 1Q24–2Q26 −0.30; 3Q25–2Q26 **−0.15**; 1Q26 −0.25, 2Q26 −0.10.
+1Q23–2Q26 mean **−0.45pp** (≥ 0.25 line met); 1Q24–2Q26 −0.30; 3Q25–2Q26 **−0.15**; 1Q26 −0.26, 2Q26 −0.10.
 Within-region: APAC −9.2 → −0.8pp (2023 was Thailand/Taiwan/Japan reopening against an Australia-heavy panel; 2026
 is Australia at +0.7% vs Singapore/Thailand/Taiwan at +4–14%); NAM −0.4 to −0.8 in 2023–24, −0.5 in 2Q26 (Canada
 +16% at 0.70 of US price); EMEA oscillates around zero and is **+0.43 in 2Q26** (UK +7.7% at 1.46× the regional
 price, Italy +4%, France −3%, Portugal −3%); LatAm ±1 (Brazil +15% at 0.70× vs Mexico/Argentina +24–25% at 1.11×).
 **Consequence for the core:** net of the sub-regional term, `core2` runs 4.41 / 3.54 / 1.63 / 1.50 / 2.73 / 3.55 /
 2.25 / 3.26 / 2.61 / 2.45 / 2.57 / 2.69 / 3.63 / **3.95** — the 2026 step in like-for-like price is *smaller* once
-the fading mix drag is removed (3.95 vs a 2023–25 core2 mean of 2.86, a 1.1pp step, against 1.45pp on `core`).
+the fading mix drag is removed (3.95 vs a 2023–25 core2 mean of 2.77, a 1.2pp step, against 1.45pp on `core`).
 The sub-regional data therefore explain part of the 2026 acceleration as a mix headwind that went away; they do
 not support a larger forward drag.
 
@@ -88,3 +88,16 @@ letters) is invisible to it; Australia is 57% of the panel's APAC stays but a mu
 nights, so the APAC within-region term is Australia-vs-the-rest. Origin-side composition inside a destination (a
 cheaper listing booked by a cross-border guest) is outside this object entirely. Those channels live, if anywhere,
 in the four-region term through the disclosed LatAm/APAC buckets — see the tilt sensitivity in `adr_v1_design.md`.
+
+**Origin proxy, descriptive (added after the inventory `dossiers/ADR_D_origin_destination_inventory.md`):** the only
+Airbnb-side origin object in the git is reviewer language (`abnb_party_size_reviews_v2_language_year_shard*.csv`, 8
+buckets, annual, latest dump per market; `origin_proxy_review_language_by_region_year.csv`, figure
+`adr_origin_language_shares`). Across the 123 markets, English fell from **71% of reviews in 2022 to 58% in 2026**
+(to the June dumps); Spanish 11 → 16%, "other" 7 → 10%, Portuguese 1.8 → 3.5%, Chinese/Japanese/Korean 1.1 → 2.8%.
+2025 review growth: Portuguese +45%, other +39%, Spanish +37%, East-Asian +30%, **English +17%**. By destination:
+EMEA English 63 → 50% (other 8 → 13%, German 5 → 7%), APAC East-Asian 5 → 10%, LatAm Spanish 42 → 48% with English
+24 → 15%, North America English 93 → 89%. This is the composition change Theo describes, measured on Airbnb's own
+guests, and it is the direction the tilt-B scenario assumes. What it does **not** give is a price: an origin group's
+spend per night inside a destination is not observed (Indian guests write in English and are invisible here), so
+the exhibit corroborates the four-region tilt and does not enter the term. Coverage caveat: all years from the
+latest dump, so absolute growth rates carry delisting attrition; the *shares* within a year do not.
