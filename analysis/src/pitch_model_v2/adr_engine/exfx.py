@@ -172,8 +172,23 @@ def alternatives() -> pd.DataFrame:
     for q in lap_only.index:
         lap_only.loc[q, "residual"] = steps[q]; lap_only.loc[q, "core"] = steps[q] - lap_only.loc[q, "bundle"]
         lap_only.loc[q, "exfx_yoy"] = steps[q] + lap_only.loc[q, ["geo_mix", "unit_size", "los_mix", "seats", "interaction", "fee_k"]].sum()
+    # composition scenarios (adr_v2_geomix_prereg.md): sub-regional term H3 (geomix_subregional_term_forward.csv) and the four-region tilt B
+    subf = pd.read_csv(C.OUT / "geomix_subregional_term_forward.csv").set_index("quarter").subgeo_pp if (C.OUT / "geomix_subregional_term_forward.csv").exists() else None
+    tilt = pd.read_csv(C.OUT / "geo_mix_tilt_sensitivity.csv") if (C.OUT / "geo_mix_tilt_sensitivity.csv").exists() else None
+    comp = base.copy()
+    if subf is not None:
+        for q in comp.index:
+            comp.loc[q, "geo_mix"] = comp.loc[q, "geo_mix"] + float(subf.get(q, 0.0)); comp.loc[q, "exfx_yoy"] = comp.loc[q, "exfx_yoy"] + float(subf.get(q, 0.0))
+    tiltb = comp.copy()
+    if tilt is not None:
+        tb = tilt[tilt.pattern.str.startswith("tilt B")].set_index("quarter").geo_mix_pp; tbase = tilt[tilt.pattern.str.startswith("base")].set_index("quarter").geo_mix_pp
+        for q in tiltb.index:
+            if q in tb.index:
+                d = float(tb[q] - tbase[q]); tiltb.loc[q, "geo_mix"] += d; tiltb.loc[q, "exfx_yoy"] += d
     alts = {
         "base: core carry + bundle laps (nights-linked geo)": base,
+        "base + sub-regional country mix (v2 H3, Inside Airbnb panel)": comp,
+        "base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25)": tiltb,
         "lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary": lap_only,
         "card v3: last_q residual carry, no lap (card geo)": forward(bundle_total=0.0, geo_basis="card"),
         "full lap: ex-NA RNPL sized at the 1H26 residual steps": forward(exna_pp=RNPL_EXNA_ADR_PP_HIGH),

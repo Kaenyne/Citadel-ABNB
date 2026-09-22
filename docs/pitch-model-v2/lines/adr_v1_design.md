@@ -253,6 +253,24 @@ This is the link an analyst will look for: **the nights line's ex-NA growth is t
 point of LatAm/APAC outgrowth at a third of North America's ADR costs the blended ADR; 1Q27's −1.62 is the
 Middle East lap (+1.0pt of ex-NA nights) showing up as mix.
 
+### 3.3b The sub-regional layer and the composition lever (added 22 Sep, `adr_v2_geomix_prereg.md`)
+
+Theo's thesis is that growth is shifting toward lower-ADR countries. Two objects now measure it. **(a) The
+four-region term already carries the disclosed part**: at 3Q25 regional ADRs, one point of nights share moving from
+North America to Latin America is **−0.89pp** of blended ADR, to Asia Pacific −0.78, to EMEA −0.51; the base pattern
+(EMEA 8 / LatAm 20 / APAC 18) gives −1.34pp in 4Q26, a tilt to LatAm 30 / APAC 25 / EMEA 5 (the shape the
+India +60% and Brazil +31% origin statements imply, same ex-NA total) gives **−1.70**, a Europe-led tilt −1.08
+(`geo_mix_tilt_sensitivity.csv`). **(b) The sub-regional layer** — country mix inside each region, from the
+123-market stays panel and June-2026 listed prices in USD for 30 countries — averaged **−0.45pp** over 1Q23–2Q26
+but has faded to −0.15 over the last four quarters (APAC −9 → −1 as reopening ended; NAM −0.5 with Canada at
+0.70× US prices; EMEA **+0.4** in 2Q26 with the UK, Ireland and the Netherlands outgrowing France and Portugal);
+its forward rule gives −0.13 to −0.18pp, worth −$0.24 on 4Q26 ADR. Net of it, the 2026 step in like-for-like
+price is 1.1pp, not 1.45. **What the panel cannot see** is the destination side of the Indian and Brazilian
+origin growth (no Indian, Emirati or Indonesian market; one each in Thailand and Singapore) and origin mix inside
+a destination; those channels live in the four-region buckets, i.e. in (a). The two scenarios are carried beside
+the base in §3.6 and in the workbook: sub-regional adds −$0.24 to 4Q26; sub-regional plus tilt B adds −$0.84
+($172.19) — still above the Street's $171.33. Composition alone does not get below the Street; the core has to.
+
 ### 3.4 The other terms, carried as the card carries them
 
 Unit size / party size **+0.797pp** (booked capacity per reviewed stay +1.35% y/y on 2.05m vintage-matched
