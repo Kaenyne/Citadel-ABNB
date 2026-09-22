@@ -279,12 +279,22 @@ volumes, `15_seats_dilution`); interaction **−0.10**. The filed size read is t
 |---|---|---|---|---|---|
 | **base: core carry + bundle laps** | **3.32 / 177.68** | **2.78 / 173.03** | 2.42 | 2.96 | management's ~1pp laps on its dates; core stays at 3.85 |
 | card v3: residual carry, no lap (DEC-0008/9) | 3.69 / 178.32 | 3.69 / 174.55 | 3.61 | 3.61 | nothing laps; at the identity's FX the card would print $178.32, not $176.88 |
+| K4 lap-only residual steps | 2.91 / 176.97 | 1.99 / **171.71** | 1.30 | 1.36 | every residual change since 2Q25 is a dated product step that laps (3Q25 +0.92, 4Q25 +0.88, 1H26 +1.15) — **lands on the Street** |
 | full lap: ex-NA RNPL sized at the 1H26 steps | 3.32 / 177.68 | 2.78 / 173.03 | 1.96 | 1.81 | the 1H26 residual steps were RNPL-ex-NA and lap in 1H27 |
 | core mean reversion to 2.40 (K4 floor) | 1.86 / 175.20 | 1.33 / 170.60 | 0.97 | 1.51 | the 2026 step in core reverses entirely — **the named downside**: −$2.5 of ADR, −$0.35bn of GBV a quarter |
 | AR(1) on core (K4 ρ 0.75) | 3.09 / 177.30 | 2.39 / 172.38 | 1.90 | 2.35 | partial reversion |
 | base + fee-migration K line (DEC-0008 sensitivity) | 3.49 / 177.97 | 3.16 / 173.66 | 2.76 | 3.27 | tranche 2 reprice at the central mechanics 0.007 × Δshare |
 
-The card's carry and the base differ by exactly the bundle's lap: 0.37pp in 3Q26 (the 0.49 leg plus the geo
+**Addendum, 22 Sep (Theo's question: can the line sit at the Street, then below?).** Two of the rows above do,
+by stated assumption and not by fit: K4's lap-only steps ($171.71, on the Street) and core mean reversion
+($170.60, below). Their argument is the same one: the 2026 step in like-for-like price coincides with three dated
+product changes, the fee reprice is payout-neutral by construction (K2) and the RNPL effect is a mix effect, so
+neither should persist in like-for-like price once lapped. Against them stands the one alt-data test run for this
+question (`adr_v1b_utilisation_prereg.md`): North-American stays per listing, which fell every year 2022–2025,
+turned positive in 1H26 as listings growth slowed to 7% — the supply-demand picture behind NA's +5–7% ex-FX ADR
+argues for persistence, not reversion, though it fails its pre-registered walk-forward line (1.01 / 0.87). The base
+therefore stays the carry (DEC-0016); adopting the lap-only or reversion row as the short's base is a labelled
+decision for Theo, not an engine output. The card's carry and the base differ by exactly the bundle's lap: 0.37pp in 3Q26 (the 0.49 leg plus the geo
 difference), 0.91pp from 4Q26. A judge who believes nothing laps has the card's row; one who believes the
 2026 step was all product has the "full lap" row; the base is management's own sizing on management's own dates.
 
@@ -388,6 +398,7 @@ Theo's standing question is asked of every component, against a hedge-fund trave
 | unit size +0.8 | "Bedroom nights +12% vs +10% — isn't half your ADR bigger homes?" | Elasticity 0.23 (1.65 bedrooms average; +1 bedroom = +15% price), measured +0.63–0.80pp, a fifth of ex-FX. | clears |
 | LOS / seats / interaction | "Assumed." | Yes, small, banded, labelled; seats volumes are never disclosed. | clears, labelled |
 | the Street | "You're on consensus." | On it in 3Q26, +1.0% in 4Q26; the variant view is nights, and on GBV the two lines are 0.7–1.1% below the Street. The ADR line's job is attribution and shape. | clears |
+| supply-demand (utilisation) | "Occupancy leads rate — where is it?" | Built (stays per active listing, vintage-matched, 119 markets) and tested against the core, pre-registered: fails the line everywhere; NA alone explains the core in sample (r 0.77 lagged, β 0.32, p 0.002) and says pricing power is improving, not fading. Reported as a fourth constellation panel. | clears as a cross-check; does not move the number |
 | the band | "Your 3Q26 band is ±1pp on a number you carry flat." | It includes the core carry's own one-quarter error (0.88pp) and the FX bootstrap; the mean-reversion case is outside it and shown as a scenario, because the risk is one-sided. | clears |
 
 Net: the FX half is analyst-grade and new; the ex-FX half is as deep as the disclosed record allows and says

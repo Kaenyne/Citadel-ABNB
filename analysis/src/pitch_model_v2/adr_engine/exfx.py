@@ -167,8 +167,14 @@ def alternatives() -> pd.DataFrame:
     """The residual (core + bundle) and ex-FX under every rule carried beside the base."""
     k4 = pd.read_csv(C.K4_NOWCAST)
     base = forward()
+    # K4 "lap only, residual steps": every residual change since 2Q25 is a dated product step that laps at its anniversary
+    lap_only = base.copy(); steps = {"3Q26": 3.933, "4Q26": 3.056, "1Q27": 3.056 - 0.68, "2Q27": 3.056 - 0.68 - 0.47, "3Q27": 3.056 - 0.68 - 0.47, "4Q27": 3.056 - 0.68 - 0.47}
+    for q in lap_only.index:
+        lap_only.loc[q, "residual"] = steps[q]; lap_only.loc[q, "core"] = steps[q] - lap_only.loc[q, "bundle"]
+        lap_only.loc[q, "exfx_yoy"] = steps[q] + lap_only.loc[q, ["geo_mix", "unit_size", "los_mix", "seats", "interaction", "fee_k"]].sum()
     alts = {
         "base: core carry + bundle laps (nights-linked geo)": base,
+        "lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary": lap_only,
         "card v3: last_q residual carry, no lap (card geo)": forward(bundle_total=0.0, geo_basis="card"),
         "full lap: ex-NA RNPL sized at the 1H26 residual steps": forward(exna_pp=RNPL_EXNA_ADR_PP_HIGH),
         "core mean reversion to the 2023-25 mean": forward(core_rule="mean_reversion"),
