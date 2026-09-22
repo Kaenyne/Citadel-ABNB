@@ -28,14 +28,22 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
    and USD price levels for 30 countries gives a further −0.15pp.
 6. **The between-region term reconciles to the company's own accounting: annualised, ours is −1.10 / −1.33 / −1.67pp
    for 2023–25 against the 10-K's −1.08 / −1.24 / −1.58, within 0.02 to 0.09pp in each of three years from
-   independent sources, and in EMEA the disclosed constant-currency ADR minus panel-weighted accommodation inflation
-   regresses on our within-region mix with a slope of 1.09 where the identity implies 1.0 (r 0.48, n 7, p 0.27, so
-   the sign and scale are right and the sample is too small to call it significant).**
-7. The composition story management tells is real in the data but flatter than its letters imply: reviewer language
-   shows English falling from 71% to 58% of panel reviews since 2022 with Spanish, Portuguese and other origins
-   growing 37 to 45% in 2025 against 17% for English, while the tourism-board origin flows (NTTO, JNTO, ABS, StatCan)
-   put the Indian and Brazilian growth entirely outside North America yet imply an ex-NA split of EMEA 10.5 / LatAm
-   16.4 / APAC 14.9 rather than the letters' 8 / 20 / 18, so the steeper "tilt B" is retired.
+   independent sources; pooled across the 23 disclosed constant-currency regional prints, the disclosed rate minus
+   regional accommodation inflation regresses on our within-region mix with a slope of 1.13 (cluster-by-region
+   p 0.04, 90% interval 0.35 to 1.91) and cannot reject the identity's 1.0 — but Latin America alone carries that
+   slope (1.38 there; −0.30 without it), and the earlier EMEA-only reading of 1.09 turns to −0.38 when two further
+   disclosed quarters are admitted, so the scale is compatible with the identity and not pinned down by anything
+   Airbnb has published.**
+7. The composition story management tells is real in the data but flatter than its letters imply: on 53 million
+   reviews, non-English-origin guests grew 81% against 40% for English on day-matched windows from 2024 to 2026
+   (English share 62.9 → 56.8% on those windows, and on the quarterly series the y/y drop has been flat at about
+   2.9pp for four straight quarters after running faster earlier; cross-border Portuguese runs 11.9pp above its own
+   scope where the filed Brazil-origin statement runs 14pp above company nights, the same excess within about 2pp),
+   and within the same market a listing reviewed in a non-English language is 13% cheaper, so the
+   origin rotation alone costs about 0.35% a year of the price of the listing booked; but the tourism-board origin
+   flows (NTTO, JNTO, ABS, StatCan) put the Indian and Brazilian growth entirely outside North America yet imply an
+   ex-NA split of EMEA 10.5 / LatAm 16.4 / APAC 14.9 rather than the letters' 8 / 20 / 18, so the steeper "tilt B"
+   is retired.
 8. **The origin-to-destination layer passes an ordering test against the disclosed regional buckets in 4 of 7
    quarters (binomial p 0.018; 4 of 5 on the quarters where the ordering is identified, p 0.003), the sub-regional
    term's construction reproduces the disclosed-share four-region term within 0.13pp on 2Q24–2Q26, and re-weighting
@@ -63,22 +71,43 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
 - The whole thing re-runs from raw stores in twenty seconds, has 27 tests, and has eight pass/fail lines written
   for 5 November and 11 February.
 
-## Why the same analyst would call it weak
+## Why the same analyst would call it weak (after the four mitigations of 22 Sep)
 
-- The core like-for-like price (3.85pp, 1.45pp above its 2023–25 mean) is carried, not explained; the
-  supply-utilisation test failed its line and the sub-regional term explains only 0.2pp of the 2026 step.
-- The bundle's one point of ADR is transcript-only; no filing carries it, and its split into legs is assumed from
-  the residual's own steps.
-- The sub-regional term is small and fading (−0.15pp), it has no demonstrated forecast content (H2 failed), and the
-  panel cannot see India, the Gulf or South-East Asia as destinations.
-- The reconciliation samples are n 7 to 10 and the EMEA slope is not significant; the 10-K annual route and the H
-  route disagree on the 2025 size-mix sign by a full point.
+- The core like-for-like price (3.85pp) is carried, not explained, and the mitigations made the gap **larger**: with
+  2025's size term adjudicated (the 10-K route's negative sign was a Paris-weighting artefact; the H route +0.74 is
+  adopted, bracketed by the filed bedroom-nights metric at +0.42 to +1.29), 2025 like-for-like price was flat at 2.68
+  to 2.93pp against 2024's 2.69 to 2.75, so the 2026 step is about 1.2pp on a flat base rather than the
+  deceleration off a high 2025 the filed chain implied. The market-level panel (94 pairs, 92 markets) put
+  the price-to-utilisation elasticity at +0.08 (p 0.79; cannot reject 0.32, rules out above 0.7), which buys at
+  most 0.6pp of the core in the wrong direction for a give-back; the fix is a September-2026 capture wave against
+  the September-2025 one, not more analysis.
+- The bundle's one point of ADR is transcript-only, and that label is now exhaustive: the FY25 10-K, the 1Q26 and
+  2Q26 10-Qs and both letters were read; no filing carries a magnitude; Airbnb did not even name RNPL in a filing
+  until 2Q26.
+- The sub-regional term is small and fading (−0.15pp), has no demonstrated forecast content (H2 failed), and the
+  panel cannot see India, the Gulf or South-East Asia as destinations; the origin rotation is priced within
+  markets (−0.35% a year) but from a single review vintage and a snapshot price.
+- The reconciliation evidence is real but carried by one region: the pooled slope of 1.13 rests on Latin America
+  (whose accommodation-CPI comparator is Brazil alone at 24–33% coverage); the EMEA-only slope is window-dependent
+  (1.09 on n 7, −0.38 on n 9); and the Eurostat-weighted and panel-weighted EMEA mix series correlate −0.30 quarter
+  by quarter even though the sub-regional term moves 0.02pp between them.
 - Composition, measured as far as the data allow, does not put 4Q26 ADR below the Street; a short that needs that
   is leaning on a core assumption, and the analyst will say so.
+
+## What the mitigations closed and what they did not (22 Sep, notes `adr_v2_mitigation_A/B/C/D_*.md`)
+
+Closed: the size-mix sign (DEC-0040 proposed: the annual decomposition carries the H route); the X3 open lead on
+the 1Q26 10-Q (DEC-0041 proposed: "transcript-only" is exhaustive and stays); the "no price link" caveat on origin
+(a within-market price by language exists and is used as an exhibit). Narrowed: the reconciliation's n (23 pooled
+prints, slope compatible with 1, but one-region-dependent). Not closed: the core (needs a same-season capture
+wave or realised rates); destination coverage (needs the Bright Data file or an extended capture, both Theo's
+decisions).
 
 ## Proposed decisions (pending Theo)
 
 DEC-0037: the four-region term stays on the letter buckets as base, with the measured origin-destination split as
 its floor and tilt B retired. DEC-0038: the sub-regional term enters the workbook as a labelled attribution and
 forward row (−0.15pp), not the base. DEC-0039: the eight score lines of `adr_v2_upgrade6_sustainability_and_score.md`
-are the ADR line's falsifiers for 5 Nov and 11 Feb.
+are the ADR line's falsifiers for 5 Nov and 11 Feb. DEC-0040: the annual decomposition carries the H size
+route, which makes 2025 like-for-like price flat and the 2026 core step larger. DEC-0041: "transcript-only"
+on the bundle's ~1pp is exhaustive and stays, closing the X3 lead and DEC-0031's digger question.

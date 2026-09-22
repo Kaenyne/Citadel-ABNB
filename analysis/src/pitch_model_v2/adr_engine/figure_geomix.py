@@ -14,7 +14,7 @@ def main():
     ax.bar(x - w, base, w, color=G.S1, label='base: letter buckets 8 / 20 / 18'); ax.bar(x, meas, w, color=G.S3, label='measured origin→destination 10.5 / 16.4 / 14.9'); ax.bar(x + w, tbv, w, color=G.S8, alpha=0.55, label='tilt B 5 / 30 / 25 (retired)')
     for i, q in enumerate(qf): ax.text(i - w, base[q] - 0.12, f"{base[q]:.2f}", ha='center', va='top', fontsize=7.5, color=G.INK)
     ax.set_xticks(x); ax.set_xticklabels(qf); ax.set_ylabel('four-region geo mix, pp of ADR'); ax.axhline(0, color=G.AXIS, lw=0.8); ax.legend(fontsize=7.5, loc='lower left'); ax.set_ylim(-2.4, 0.15)
-    T(ax, "1. Between regions: growth lands where ADR is $95–159 vs $255 in North America. Annual check against the 10-K's own mix line, 2023–25: ours −1.10 / −1.33 / −1.67 vs 10-K −1.08 / −1.24 / −1.58")
+    T(ax, "1. Between regions: growth lands where ADR is \\$95–159 vs \\$255 in North America. Annual check against the 10-K's own mix line, 2023–25: ours −1.10 / −1.33 / −1.67 vs 10-K −1.08 / −1.24 / −1.58")
     ax = fig.add_subplot(gs[0, 1]); sub = pd.read_csv(O/'geomix_subregional_term.csv').set_index('quarter').subgeo_pp.loc[qs_h]
     eu = pd.read_csv(O/'geomix_eurostat_subregional_term.csv'); euA = eu[(eu.variant.str.startswith('eurostat_shares/panel_growth/median')) & (eu.horizon=='history')].set_index('quarter').subgeo_pp.reindex(qs_h)
     fw = pd.read_csv(O/'geomix_subregional_term_forward.csv').set_index('quarter').subgeo_pp.loc[qf]; xx = np.arange(len(qs_h) + len(qf))
@@ -28,8 +28,8 @@ def main():
     ax.bar(x3, r.disclosed_exfx_emea_pct, 0.5, color=G.NEUTRAL, edgecolor=G.AXIS, label='disclosed EMEA ex-FX ADR y/y (whole points)')
     ax.bar(x3, r.hicp_emea_panelwtd_pct, 0.5, color=G.S1, alpha=0.75, label='panel-weighted accommodation CPI'); ax.bar(x3, r.our_emea_mix_pp, 0.5, bottom=r.hicp_emea_panelwtd_pct, color=G.S2, label='+ our within-EMEA country mix')
     ax.plot(x3, r.hicp_emea_panelwtd_pct + r.our_emea_mix_pp + r.global_unit_size_pp + r.global_los_pp, '_', color=G.INK, ms=18, mew=2, label='+ size + LOS (all measured terms)')
-    ax.set_xticks(x3); ax.set_xticklabels(r.index); ax.set_ylabel('pp'); ax.legend(fontsize=7.5, loc='upper left'); ax.set_ylim(0, 7.2)
-    T(ax, f"3. Reconciliation to the company's EMEA disclosure: residual mean {r.resid_vs_panel_pp.mean():+.2f}pp, sd {r.resid_vs_panel_pp.std():.2f} (n {len(r)}); the gap regressed on our mix has slope 1.09 where the identity implies 1.0 (r 0.48, p 0.27)")
+    ax.set_xticks(x3); ax.set_xticklabels(r.index); ax.set_ylabel('pp'); ax.legend(fontsize=7.5, loc='upper left'); ax.set_ylim(0, 8.8)
+    T(ax, f"3. Reconciliation to the company's accounting: EMEA residual mean {r.resid_vs_panel_pp.mean():+.2f}pp, sd {r.resid_vs_panel_pp.std():.2f} (n {len(r)}); pooled on the 23 disclosed regional prints the gap on our mix has slope 1.13 (cluster-by-region p 0.04), cannot reject the identity's 1.0 \u2014 but LatAm carries it (\u22120.30 without it)")
     ax = fig.add_subplot(gs[1, 1]); it = pd.read_csv(O/'od_implied_tilt.csv'); cen = it[it.kind=='central'].iloc[0]; lo_ = it[['g_emea','g_latam','g_apac']].min(); hi_ = it[['g_emea','g_latam','g_apac']].max()
     x4 = np.arange(3); w = 0.26; ax.bar(x4 - w, [8, 20, 18], w, color=G.S1, label='letter buckets (2Q26)'); ax.bar(x4, [cen.g_emea, cen.g_latam, cen.g_apac], w, color=G.S3, label='measured origin→destination (central, band)')
     ax.errorbar(x4, [cen.g_emea, cen.g_latam, cen.g_apac], yerr=[[cen.g_emea-lo_.g_emea, cen.g_latam-lo_.g_latam, cen.g_apac-lo_.g_apac],[hi_.g_emea-cen.g_emea, hi_.g_latam-cen.g_latam, hi_.g_apac-cen.g_apac]], fmt='none', ecolor=G.INK, capsize=3)
@@ -53,7 +53,7 @@ def main():
         for l, c in [('en', G.S1), ('es', G.S2), ('other', G.MUTED), ('pt', G.S4), ('zh_ja_ko', G.S3)]:
             ax.plot(xr.index, xr[l], ls, marker='o', ms=3.5, color=c, lw=1.5, label=f"{l}" if reg=='GLOBAL' else None)
     ax.set_xticks([2022,2023,2024,2025,2026]); ax.set_xticklabels(['22','23','24','25','26*']); ax.set_ylabel('share of reviews, %'); ax.legend(fontsize=7.5, ncol=5, loc='center right', title='solid = global, dashed = EMEA', title_fontsize=7.5)
-    T(ax, "6. Guest-origin proxy from reviewer language: English 71% → 58% of reviews since 2022; Spanish, Portuguese and 'other' gain 2–3pp a year. Direction only, no price link")
+    T(ax, "6. Guest-origin proxy from reviewer language: English 71% → 58% of reviews since 2022. Within a market a non-English-reviewed listing is 13% cheaper, so the origin rotation costs ≈0.35% a year")
     fig.suptitle("ADR line v2 — the geographic-mix logic, measured on Airbnb's own supply and reconciled to the company's accounting", x=0.01, ha='left', fontsize=12, color=G.INK)
     return G._save(fig, 'adr_geomix_logic')
 

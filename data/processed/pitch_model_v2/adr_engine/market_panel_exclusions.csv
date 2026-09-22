@@ -1,0 +1,23 @@
+market_key,region,dump_a,dump_b,gap_days,median_price_a,median_price_b,usd_level_a,usd_level_b,reason,dump_date
+australia_nsw_sydney,APAC,2025-09-12,2026-06-16,277.0,,343.0,,241.5005833333333,price column empty in one dump (Inside Airbnb publication gap),
+australia_vic_melbourne,APAC,2025-09-12,2026-06-16,277.0,,277.0,,195.03108333333333,price column empty in one dump (Inside Airbnb publication gap),
+france_ile-de-france_paris,EMEA,2025-09-12,2026-06-16,277.0,,211.67,,245.9894682333333,price column empty in one dump (Inside Airbnb publication gap),
+switzerland_geneva_geneva,EMEA,2025-09-28,2026-06-29,274.0,126.0,0.16,158.7067387883698,0.2015323667153902,median price below the $5 floor (broken price field),
+switzerland_vd_vaud,EMEA,2025-11-01,2026-08-10,282.0,135.0,0.16,170.04293441611048,0.2015323667153902,median price below the $5 floor (broken price field),
+switzerland_zürich_zurich,EMEA,2025-09-29,2026-06-30,274.0,140.0,0.18,176.34082087596641,0.22672391255481397,median price below the $5 floor (broken price field),
+australia_nsw_sydney,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-09-12
+australia_vic_melbourne,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-09-12
+canada_qc_montreal,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-22
+france_ile-de-france_paris,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-09-12
+portugal_lisbon_lisbon,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-25
+portugal_norte_porto,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-25
+spain_catalonia_barcelona,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-14
+spain_catalonia_girona,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-31
+the-netherlands_south-holland_rotterdam,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-28
+united-states_ca_los-angeles,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-04
+united-states_ca_san-francisco,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-04
+united-states_ca_santa-clara-county,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-28
+united-states_ma_boston,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-27
+united-states_ny_new-york-city,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-04
+united-states_or_portland,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-04
+united-states_or_salem-or,,,,,,,,,dump carries no parseable price for any established entire-home listing,2025-12-28
