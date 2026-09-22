@@ -8,31 +8,37 @@ repo has independent evidence for a cost leg. Cost measure throughout: revenue m
 object the Street publishes implicitly. Street = LSEG means; dates are in the input files. Nothing in `40_line_build` or the official
 model is changed.
 
-## Bottom line
+## Bottom line (revised after the Codex check, `audit/CODEX_COST_LEG_CHECK.md`)
 
-1. **The Street needs slower cost growth than Airbnb has had in any year since the IPO.** Street FY27 EBITDA costs grow **+10.0%**
-   (FY28 +8.7%), against +21.2% / +25.0% / +14.0% / +12.7% / +12.5% in FY21-25 and +15.0% in FY26E. (The 5-point slowdown itself is not
-   unprecedented: FY22 to FY23 slowed 11 points.) Quarter by quarter, the Street's cost growth falls from +16.6% y/y in
-   3Q26 to +8.0% in 3Q27. Its FY27 incremental margin is 43.7% (FY28 48.8%) against 32.7% and 22.5% in FY24 and FY25.
-2. **Costs have started to come in above consensus, and cost surprises persist.** At the morning-of-print consensus, costs were below the
-   Street in 16 of the 18 prints from 2021Q1 to 2025Q2 and above it in 3 of the 4 since (3Q25 +$4M, 4Q25 +$41M, 1Q26 +$28M,
-   2Q26 −$0.4M; mean +0.9%). The regime test passes (p 0.007 W1, 0.005 W2) but the split was chosen after seeing the data. The persistence
-   test was not: last print's cost surprise predicts this print's, slope 0.53 (W1, p 0.003) and 0.67 (W2, p 0.0004). **PASS both windows.**
-3. **The overrun is in cost of revenue.** Actual cost of revenue came in above LSEG's COGS consensus at 11 of 14 prints in W1 (sign-test
-   p 0.029) and 8 of 10 in W2 (p 0.055). **PASS both windows.** The misses total +$64M over the last four prints (3Q25 +$35M, 4Q25 +$17M,
-   1Q26 +$1M, 2Q26 +$11M), while opex was mixed (+$9M net). Our FY27 excess over the Street also sits there: cost of revenue +$101M
-   against the COGS consensus (AI hosting), opex +$30M.
-4. **What it is worth.** At the Street's FY27 revenue, costs growing at the FY24-25 average (+12.6%) instead of the Street's +10.0% take
-   FY27 EBITDA to $5,531M, **−$235M / −149bp / −$0.34 EPS**. The line build's +11.1% gives −$94M / −59bp; the Street plus the recent
-   surprise gives −$91M / −57bp. On the official v2 revenue the gaps are −$394M (Street costs), −$488M (line build) and −$630M / −315bp
-   (historical cost growth). Each point of FY27 cost growth is worth 58bp of margin.
-5. **The near term is a coin flip.** For 3Q26 the pre-registered call is costs above the Street's $2,382.8M, but the persistence model
-   (2Q26 landed exactly on consensus) forecasts −0.2% (W2) to −0.7% (W1). Carrying the recent +0.9% surprise gives 3Q26 EBITDA $2,340M at
-   Street revenue (−$21M) and $2,287M at official v2 revenue (−$75M).
+1. **The Street's FY27 cost growth is the slowest of any year since the IPO, but only because FY26 is fast.** Street FY27 EBITDA costs
+   grow **+10.0%** (FY28 +8.7%) against +21.2% / +25.0% / +14.0% / +12.7% / +12.5% in FY21-25, after **+15.0% in FY26E**. Over two years
+   the Street compounds at 12.5% a year from FY25, in line with FY24-25's 12.6%. So the Street is not assuming cheap costs; it assumes
+   **the FY26 step-up is not repeated.** The cost claim therefore rests on persistence: management said the 2025 launch spend would
+   "carry into next year as fixed headcount" (Mertz, 2Q25 call, `transcripts/web/2Q25.html`), and on 8 Sep 2026 Chesky said "We're
+   going to have some major announcements next year" (Goldman Communacopia, `05_statements.csv` V023; the repo reads it as launch spend
+   ahead of revenue in FY27, no budget given). Its FY27 incremental margin is 43.7% against 32.7% and 22.5% in FY24 and FY25.
+2. **Costs have started to come in above consensus (descriptive).** At the pre-print consensus, costs were below the Street in 16 of the
+   18 prints from 2021Q1 to 2025Q2 and above it in 3 of the 4 since (3Q25 +$4M, 4Q25 +$41M, 1Q26 +$28M, 2Q26 −$0.4M; mean +0.9%). The
+   regime split was chosen after seeing the data (p 0.007 / 0.005 is descriptive). The registered persistence test passes (slope 0.53 W1,
+   0.67 W2) but it is the same evidence: controlling for the regime, the slope falls to 0.09 / 0.07 (p 0.25 / 0.42). Its forecast for
+   3Q26 is slightly *below* the Street (−0.2% to −0.7%).
+3. **Cost of revenue has run above the Street's COGS estimate recently, but the test is fragile.** On point values, cost of revenue came
+   in above LSEG's COGS consensus at 11 of 14 prints in W1 (p 0.029) and 8 of 10 in W2 (p 0.055), PASS as registered. Two of those are
+   rounding (4Q23 +$0.25M, 2Q25 +$0.03M); counted as misses the test fails (9 of 14, p 0.21; 7 of 10, p 0.17). The last four: +$35M,
+   +$17M, +$1M, +$11M. Cost of revenue is fees, amortisation and hosting together (the FY25 increase was fees +$188M, amortisation
+   +$28M, hosting +$27M), so this residual cannot be pinned on AI hosting. Our FY27 excess over the Street sits in the same line (cost of
+   revenue +$101M against the COGS consensus, opex +$30M), which is where the line build put its hosting assumption.
+4. **What it is worth.** Each point of FY27 cost growth is 58bp of margin at the Street's revenue. If FY26's step persists and FY27 costs
+   grow at the FY24-25 average (+12.6%) from the Street's FY26 base: FY27 EBITDA $5,531M, **−$235M / −149bp / −$0.34 EPS**. Applying the
+   historical rate from FY25 instead (no FY26 step) gives only −$21M. Line-build growth rebased to the Street's FY26 costs: −$94M / −59bp;
+   Street plus the recent surprise: −$91M / −57bp. On the official v2 revenue: −$395M (Street costs), −$488M, −$630M / −315bp.
+5. **3Q26 is a coin flip on costs.** The registered call is costs above the Street's $2,382.8M; persistence says slightly below. Carrying
+   the recent +0.9% gives 3Q26 EBITDA $2,340M at Street revenue (−$21M) and $2,287M at official v2 revenue (−$75M).
 
-Framing for the pitch: **the Street models cost growth Airbnb has not delivered in any year as a public company, costs have started beating consensus from
-above, and the overrun sits in the AI and hosting line management has flagged.** The earnings gap in the official model is still mostly
-revenue; this is the evidence that the cost side will not rescue it.
+Framing for the pitch: **the Street's FY27 needs Airbnb to stop the FY26 spending step; management has said the step is partly fixed
+(headcount, launches, hosting commitments); and for the first time costs have come in above consensus in three of four prints.** That
+supports "the cost base will not flex down when revenue slows", which is what the official model's revenue-driven gap needs. It is not a
+demonstrated cost-forecasting edge, and the note should never be quoted as one.
 
 ## Tables
 
@@ -77,13 +83,15 @@ Street FY27 COGS grows 11.0%; our cost of revenue grows 13.4% (hosting $447M vs 
 |---|---|---|
 | Street +10.0% | 36.45% (bar) | 34.82%, −$395M |
 | Street + recent surprise +11.0% | 35.88%, −$91M, −$0.13 EPS | 34.24%, −$485M |
-| Line build +11.1% | 35.86%, −$94M | 34.22%, −$488M |
+| Line-build growth +11.1% (rebased) | 35.86%, −$94M | 34.22%, −$488M |
 | FY24-25 average +12.6% | **34.96%, −$235M, −$0.34 EPS** | 33.30%, −$630M, −$0.91 |
+| (FY24-25 average from FY25, two years) | 36.3%, −$21M | |
 | FY26E Street +15.0% | 33.58%, −$453M | 31.89%, −$848M |
 
 ## What failed or is weak
 
-- T1 is post hoc and is reported as descriptive only. With n = 4 recent prints the regime could be noise; T2 and T3 carry the claim.
+- T1 is post hoc and is reported as descriptive only. With n = 4 recent prints the regime could be noise. T2 is not independent of it
+  (Codex F3) and T3 depends on two rounding-level prints (Codex F1): the cost-surprise evidence is descriptive, not a passed test.
 - T2's own forecast for 3Q26 is slightly *below* the Street, so persistence supports the claim that costs stopped beating, not that they
   will overrun next quarter. The registered live call (costs above the Street) is scored on 5 Nov.
 - The COGS consensus has no contributor count in the file and some observation dates are 3-4 weeks before the print. The basis matches

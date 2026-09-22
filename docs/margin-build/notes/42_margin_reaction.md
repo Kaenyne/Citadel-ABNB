@@ -7,25 +7,31 @@ pre-print close, ABNB minus QQQ; the file was re-verified against Yahoo closes (
 are LSEG FY means the day before each print and 5 trading days after, blended to next-twelve-months (NTM) by the days left in the
 current fiscal year.
 
-## Bottom line
+## Bottom line (revised after the Codex check, `audit/CODEX_COST_LEG_CHECK.md`)
 
-1. **Airbnb has never missed EBITDA consensus on a reported quarter** (22 of 22 beats since 2021Q1). Every margin-driven fall has come
-   from the forward view, meaning guidance and commentary that cut next year's estimates, not from the quarter itself.
-2. **The stock trades on forward EBITDA revisions at about 2-2.7x.** Each 1% cut to NTM adjusted-EBITDA consensus came with a 2.1%
-   (W1, n 14, p 0.010, R² 0.30) to 2.7% (W2, n 10, p 0.008, R² 0.37) fall relative to QQQ over five sessions; day 1 gives 2.0% / 2.7%
-   (p 0.002 / 0.001). **R1 and R3 PASS both windows.** At a constant EV/EBITDA multiple the move would be about 0.9% per 1%, so the
-   multiple moves with the estimates. The average print, with no revision, was followed by a −3.5% (W1) / −1.6% (W2) relative move.
-3. **The market does not price margin news separately from revenue news.** With the NTM revenue revision and the margin revision
-   together, the margin coefficient is +1.4 (W1, p 0.33) and +5.1 (W2, p 0.13). **R2 FAILS.** Descriptively the direction is right:
-   in W1 the nine prints where forward margin estimates fell averaged −5.5% over five sessions, against +1.7% for the five where they
-   rose. Margin cuts with flat or falling revenue estimates averaged −8.2% (1Q23 −18.8, 4Q23 −0.4, 2Q24 −15.6, 3Q24 −7.7, 1Q25 +0.5,
-   2Q25 −6.9); margin cuts alongside rising revenue estimates were forgiven (4Q25 +8.9, 3Q25 +1.1; 1Q24 −10.6 is the exception).
-4. **The cleanest margin reset on record is 3Q24 (Nov 2024).** Revenue estimates went up (+0.4% NTM) while EBITDA estimates fell 1.7%
-   (margin −0.77pt): −8.7% on day 1, −7.7% relative over five sessions. See `42_event_reasons.md` for what management said.
+1. **Airbnb has beaten EBITDA consensus in dollars on every reported quarter** (22 of 22 since 2021Q1; 1Q23 beat in dollars but
+   missed the Street margin by 0.07pt). The large margin-related falls came with cuts to forward estimates at the same print, through
+   guidance and commentary; the quarter itself was never the problem.
+2. **Forward EBITDA revisions and the stock move together at about 2-2.7x.** Each 1% cut to NTM adjusted-EBITDA consensus came with a
+   2.1% (W1, n 14, p 0.010, R² 0.30) to 2.7% (W2, n 10, p 0.008, R² 0.37) relative fall over five sessions; day 1 gives 2.0% / 2.7%.
+   **R1 and R3 PASS both windows as registered.** It is an association, not a measured price response: analysts revise after seeing
+   the stock, the day-1 slope already explains the five-session slope, dropping 2Q24 makes W2 fail (p 0.13), and adding 2022 kills it
+   (slope 0.44, p 0.28). A constant EV/EBITDA multiple would give about 1x.
+3. **A separate margin effect cannot be measured.** With the NTM revenue revision in the regression, the margin coefficient is +1.4
+   (W1, p 0.33) and +5.1 (W2, p 0.13): **R2 FAILS**, which means insufficient evidence, not proof of no effect. Descriptively, in W1 the
+   nine prints where forward margin estimates fell averaged −5.5% relative over five sessions, against +1.7% for the five where they rose.
+   Margin cuts with revenue estimates also falling: 1Q23 −18.8, 2Q24 −15.6, 1Q25 +0.5 (mean −11.3%). Margin cuts with revenue estimates
+   rising: 4Q23 −0.4, 1Q24 −10.6, 3Q24 −7.7, 2Q25 −6.9, 3Q25 +1.1, 4Q25 +8.9 (mean −2.6%).
+4. **One drop is margin-first: 3Q24 (8 Nov 2024).** The letter said Q4 margin would "decline ... due to higher marketing and product
+   development expenses" and promised "2025 growth and investment plans early next year". Q4 EBITDA consensus fell 9.6% with Q4 revenue
+   unchanged; FY25 EBITDA −2.1% on revenue +0.5%. −8.7% on day 1, −7.7% relative over five sessions. In 2Q24 (Aug 2024, −13.4%) the
+   headline was demand, but about 60% of the forward EBITDA cut came through margin. `42_event_reasons.md` has every print.
 5. **The scenario.** If management resets FY27 so that consensus margin falls 150bp below the Street's 36.45% with revenue unchanged,
-   FY27 EBITDA falls $237M (−4.1%), NTM EBITDA −3.6%, and the historical slope implies **−7.5% to −9.5%** relative to QQQ (constant
-   multiple −3.7%). With revenue also 2% lower: **−11% to −14%**. The full range, 100bp with flat revenue to 200bp with −4%:
-   **−5% to −21%**. A February reset gives almost the same numbers, because the NTM weight on FY27 is ~0.85-0.88 at both prints.
+   FY27 EBITDA falls $237M (−4.1%) and NTM EBITDA −3.6%: **−3.7% at a constant multiple, −7.5% to −9.5% on the historical slope**, and
+   roughly −0.5% to −14% across the slope's own uncertainty. With revenue also 2% lower: −5.4% constant multiple, −11% to −14% on the
+   slope. The full grid runs from −2.5% / −5% (100bp, flat revenue) to −8.4% / −21% (200bp, −4%); rows past the largest observed cut
+   (−5.5% NTM, 2Q24) are extrapolations. A February reset gives almost the same numbers (NTM weight on FY27 0.85 in November, 0.88 in
+   February). Slope-only moves are relative to a fitted baseline that is itself negative (average print −3.5% W1 / −1.6% W2).
 
 ## The regressions (`42_regressions.csv`, HC1 standard errors, one-sided p for a positive coefficient)
 
@@ -74,9 +80,19 @@ analysts cutting FY27 themselves. The team's audited probabilities (`docs/pitch-
 (C01); FY26 sentence held at "at least 35.5%" 0.33, "approximately 36%" 0.30, lowered or softened 0.27 (C04); FY27 guided down y/y or
 framed as an investment year in February 0.49 (B12); a numeric FY27 guide below 35.5% 0.36 and no number 0.48 (F03, strict reading).
 
+Management has never given a next-year margin number in November (`42_event_reasons.md`, five November prints). It signals a
+lower-margin year one quarter early in three ways: a named cost line growing faster than revenue in the guided quarter ("Q4 2024 Adjusted
+EBITDA Margin is expected to decline ... due to higher marketing and product development expenses", 3Q24 letter); "investment plans"
+attached to next year ("We're excited to share more about our 2025 growth and investment plans early next year", same letter); and a CFO
+answer that spend "will carry into next year as fixed headcount" (2Q25 call). The Nov 2024 to Feb 2025 sequence shows where the stock
+reacts: −8.7% when the November letter flagged the costs and the Street cut FY25, then +14.4% in February when the $200-250M budget and
+the 34.5% floor landed on a Street already at 34.46%. **For the pitch, 5 Nov is the event: the tells are a Q4 margin sentence that
+names marketing, product development or AI, and any "2027 investment plans" line.** A formal FY27 number would wait for February.
+
 ## Limits
 
-n is 14 and 10. Analysts revise after seeing the stock, so the slope mixes news with reaction. The margin-only effect cannot be separated
+n is 14 and 10. Analysts revise after seeing the stock, so the slope mixes news with reaction; a 50% haircut to the slope (an
+illustration, not an estimate) halves the scenario moves. The W1-W2 range is not a confidence interval. The margin-only effect cannot be separated
 from revenue at this n. Scenario rows are linear extrapolations and ignore what is already priced; the reverse DCF says the price sits on
 the Street/team base. Parameter count: two per regression (three for R2).
 
