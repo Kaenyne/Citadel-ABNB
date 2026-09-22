@@ -1,0 +1,205 @@
+---
+title: "Airbnb (ABNB): statistical analysis of the driver model and historicals"
+author: "Built from model/ABNB_driver_model.xlsx and model/ABNB_historicals.xlsx"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    theme: flatly
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%")
+suppressPackageStartupMessages({library(tidyverse); library(gt)})
+tb <- function(name, title = NULL, digits = 3) {
+  df <- read_csv(file.path("tables", paste0(name, ".csv")), show_col_types = FALSE)
+  g <- gt(df) |> fmt_number(columns = where(is.numeric), decimals = digits, drop_trailing_zeros = TRUE) |> tab_options(table.font.size = px(12))
+  if (!is.null(title)) g <- g |> tab_header(title = title)
+  g
+}
+fg <- function(name) knitr::include_graphics(file.path("figures", paste0(name, ".png")))
+```
+
+# 1. Data
+
+Twenty-two quarters (1Q21 to 2Q26) of KPIs, GAAP and cash cost lines, margins and cash flow from the Historicals workbook; 23 earnings prints with consensus, guidance and stock reaction from its Earnings sheet; the driver model's bear / base / bull quarterly and annual outputs, its 441-cell scenario grid and valuation summary; and 1,440 daily closes since the IPO. Every script reads the workbooks directly, so a rebuild of the model flows through on the next `source("run_all.R")`.
+
+# 2. Descriptive statistics and seasonality
+
+```{r}
+tb("01_summary_stats", "Quarterly KPIs, 1Q21 to 2Q26")
+```
+```{r}
+fg("01_kpi_small_multiples")
+```
+```{r}
+fg("02_seasonality")
+```
+```{r}
+tb("02_seasonal_shares", "Quarter share of the full year, FY22 to FY25")
+```
+```{r}
+fg("03_yoy_growth")
+```
+```{r}
+fg("05_regional_nights_growth")
+```
+```{r}
+fg("04_correlation_matrix")
+```
+
+# 3. What growth and margin are made of
+
+```{r}
+fg("06_revenue_growth_decomposition")
+```
+```{r}
+tb("04_growth_decomposition_by_year", "Average contribution to revenue y/y growth (points) by year")
+```
+```{r}
+fg("07_margin_bridge")
+```
+```{r}
+fg("08_unit_cost_vs_revenue_per_night")
+```
+```{r}
+fg("09_cost_ratios")
+```
+
+# 4. Regressions: operating leverage, scale, seasonality, marketing
+
+Fitted on 1Q22 to 2Q26 (the 2021 reopening quarters are excluded), with quarter dummies and Newey-West standard errors.
+
+```{r}
+tb("05_cost_elasticities", "Elasticity of each cash cost line to revenue; below 1 = operating leverage")
+```
+```{r}
+fg("10_cost_elasticities")
+```
+```{r}
+tb("06_margin_scale_regression", "Adjusted EBITDA margin on log revenue")
+```
+```{r}
+tb("07_regression_diagnostics", "Residual diagnostics")
+```
+```{r}
+fg("11_margin_vs_scale")
+```
+```{r}
+tb("08_seasonality_tests", "Quarter-of-year effect on detrended series: ANOVA and Kruskal-Wallis")
+```
+```{r}
+tb("09_sm_vs_nights_ccf", "Cross-correlation of S&M growth and nights growth")
+```
+```{r}
+fg("12_sm_nights_crosscorrelation")
+```
+```{r}
+tb("10_take_rate_regression", "Take rate on quarter, trend and FX")
+```
+
+# 5. Time series: forecasts, backtest, regimes
+
+```{r}
+fg("13_revenue_forecast_vs_model")
+```
+```{r}
+tb("11_revenue_forecasts_vs_model", "Revenue ($M): ETS and ARIMA vs the driver model, the 3Q26 guide and Street", 0)
+```
+```{r}
+fg("14_nights_forecast_vs_model")
+```
+```{r}
+tb("12_nights_forecasts_vs_model", "Nights (M): ETS and ARIMA vs the driver model", 1)
+```
+```{r}
+fg("15_stl_revenue")
+```
+```{r}
+tb("13_stl_seasonal_factors", "Multiplicative seasonal factors (STL)")
+```
+```{r}
+tb("14_forecast_backtest", "Rolling-origin backtest (origins 4Q23 to 4Q25). ARIMA collapses to the last-y/y-growth rule on this short series, so the two rows coincide")
+```
+```{r}
+tb("15_structural_breaks", "supF mean-shift test, BIC break date, ADF and KPSS")
+```
+```{r}
+fg("16_growth_regimes")
+```
+
+# 6. Earnings reaction
+
+```{r}
+tb("16_reaction_summary", "Print-day reaction across 23 prints (percent)")
+```
+```{r}
+tb("17_beat_miss_contingency", "Beat / guide-above-Street vs up day: Fisher exact and Wilcoxon rank-sum")
+```
+```{r}
+tb("18_reaction_univariate", "Excess return on each surprise feature: HC3 OLS, bootstrap CI, Spearman")
+```
+```{r}
+tb("19_reaction_multivariate", "Revenue surprise and guide-vs-Street together")
+```
+```{r}
+fg("17_reaction_scatter")
+```
+```{r}
+fg("18_reaction_by_print")
+```
+```{r}
+fg("19_reaction_drift")
+```
+
+# 7. Scenarios, sensitivity and Monte Carlo
+
+```{r}
+fg("20_football_field")
+```
+```{r}
+fg("21_sensitivity_heatmap")
+```
+```{r}
+fg("23_tornado")
+```
+```{r}
+tb("21_tornado", "One-at-a-time driver sensitivity, FY27E EV/EBITDA lens")
+```
+```{r}
+fg("22_monte_carlo_price")
+```
+```{r}
+tb("20_monte_carlo_summary", "Monte Carlo summary (20,000 draws)")
+```
+```{r}
+tb("22_model_vs_street", "Driver model vs Street revenue consensus", 1)
+```
+
+# 8. Event study and volatility
+
+```{r}
+fg("24_event_study_paths")
+```
+```{r}
+tb("23_event_study_car", "Cumulative return (%) from the reaction session")
+```
+```{r}
+fg("25_return_distribution")
+```
+```{r}
+tb("24_print_day_volatility", "Print sessions vs ordinary sessions")
+```
+```{r}
+fg("26_realised_volatility")
+```
+```{r}
+fg("27_price_history")
+```
+
+# 9. What else the data supports
+
+See `README.md` in this folder for the full menu, including analyses that need data not yet in the workbooks.
