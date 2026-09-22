@@ -1,0 +1,22 @@
+test,window,variable,n,n_recent,recent_mean,earlier_mean,stat,p_one_sided,pass_line,note,t,intercept,last_value,pred_next_print,mean_all,verdict_both_windows
+T1_regime_recent4_vs_earlier,W1,cost_surprise_pct,14,4.0,0.9004292685752898,-1.8691399172866763,2.769569185861966,0.006993006993006993,"p<=0.10 both W1,W2 (raw)",split chosen after seeing data,,,,,,PASS
+T2_persistence_AR1,W1,cost_surprise_pct,13,,,,0.5254601470931796,0.002781515330978738,"slope>0, p<=0.10 both W1,W2",,3.4360795310269054,-0.6746003233686401,-0.015944623879920797,-0.6829785877779286,,PASS
+count_costs_above_street,W1,cost_surprise_pct,14,,0.9004292685752898,-1.8691399172866763,4.0,,,,,,,,,
+T1_regime_recent4_vs_earlier,W1,cost_surprise_exvar_pct,14,4.0,0.5102275598031688,-2.3092549420308743,2.819482501834043,0.005994005994005994,"p<=0.10 both W1,W2 (raw)",split chosen after seeing data,,,,,,PASS
+T2_persistence_AR1,W1,cost_surprise_exvar_pct,13,,,,0.5478373853267849,0.004636181275022931,"slope>0, p<=0.10 both W1,W2",,3.1481708794444847,-0.8339486085473773,-0.25519079208334405,-0.9737516648417877,,PASS
+count_costs_above_street,W1,cost_surprise_exvar_pct,14,,0.5102275598031688,-2.3092549420308743,4.0,,,,,,,,,
+T3_cor_above_cogs_consensus,W1,cor_surprise_pct,14,,3.0891261946494044,0.16422904779316128,11.0,0.0286865234375,"sign test p<=0.10 both W1,W2",,,,,,0.999913946894945,PASS
+T1_regime_recent4_vs_earlier,W2,cost_surprise_pct,10,4.0,0.9004292685752898,-2.059430820704966,2.959860089280256,0.004761904761904762,"p<=0.10 both W1,W2 (raw)",split chosen after seeing data,,,,,,PASS
+T2_persistence_AR1,W2,cost_surprise_pct,9,,,,0.6716725546850711,0.0003931677994820499,"slope>0, p<=0.10 both W1,W2",,5.635407259771761,-0.21708036674848982,-0.015944623879920797,-0.22778993300340883,,PASS
+count_costs_above_street,W2,cost_surprise_pct,10,,0.9004292685752898,-2.059430820704966,3.0,,,,,,,,,
+T1_regime_recent4_vs_earlier,W2,cost_surprise_exvar_pct,10,4.0,0.5102275598031688,-2.474296215546389,2.9845237753495577,0.004761904761904762,"p<=0.10 both W1,W2 (raw)",split chosen after seeing data,,,,,,PASS
+T2_persistence_AR1,W2,cost_surprise_exvar_pct,9,,,,0.683075206269324,0.00020375915619194027,"slope>0, p<=0.10 both W1,W2",,6.291421124819848,-0.25000341775003654,-0.25519079208334405,-0.424317920690399,,PASS
+count_costs_above_street,W2,cost_surprise_exvar_pct,10,,0.5102275598031688,-2.474296215546389,3.0,,,,,,,,,
+T3_cor_above_cogs_consensus,W2,cor_surprise_pct,10,,3.0891261946494044,-0.19784510831968083,8.0,0.0546875,"sign test p<=0.10 both W1,W2",,,,,,1.1169434128679534,PASS
+T1_regime_recent4_vs_earlier,all_2021Q1+,cost_surprise_pct,22,4.0,0.9004292685752898,-3.555556871172693,4.455986139747982,0.0032809295967190706,"p<=0.10 both W1,W2 (raw)",split chosen after seeing data,,,,,,
+T2_persistence_AR1,all_2021Q1+,cost_surprise_pct,21,,,,0.38156564813449734,0.037850532624018704,"slope>0, p<=0.10 both W1,W2",,1.8788110373038829,-1.201261735303936,-0.015944623879920797,-1.2073456560489388,,
+count_costs_above_street,all_2021Q1+,cost_surprise_pct,22,,0.9004292685752898,-3.555556871172693,5.0,,,,,,,,,
+T1_regime_recent4_vs_earlier,all_2021Q1+,cost_surprise_exvar_pct,22,4.0,0.5102275598031688,-4.426561731148424,4.936789290951593,0.0019138755980861245,"p<=0.10 both W1,W2 (raw)",split chosen after seeing data,,,,,,
+T2_persistence_AR1,all_2021Q1+,cost_surprise_exvar_pct,21,,,,0.40246193724486257,0.010829314292162657,"slope>0, p<=0.10 both W1,W2",,2.5017876351801513,-1.417333601187805,-0.25519079208334405,-1.5200381817367186,,
+count_costs_above_street,all_2021Q1+,cost_surprise_exvar_pct,22,,0.5102275598031688,-4.426561731148424,5.0,,,,,,,,,
+T3_cor_above_cogs_consensus,all_2021Q1+,cor_surprise_pct,22,,3.0891261946494044,-1.6706870882337512,12.0,0.4159059524536133,"sign test p<=0.10 both W1,W2",,,,,,-0.8052664913459048,
