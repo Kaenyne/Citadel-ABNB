@@ -23,3 +23,25 @@ p <- ggplot(dec, aes(period, pts / 100, fill = driver)) +
   theme(legend.position = "top")
 save_fig(p, "P1_revenue_growth_decomposition_2024on", 8.5, 4.6)
 message("09_pitch_figures done")
+
+# ---- P2: day-1 excess return by print, coloured by whether the next-quarter guide beat Street ----------------
+e <- d$earn |> mutate(excess_1d = 100 * excess_1d, guide_vs_street = 100 * guide_vs_street,
+                      verdict = case_when(is.na(guide_vs_street) ~ "No guide vs Street on record",
+                                          guide_vs_street > 0 ~ "Guide above Street", TRUE ~ "Guide below Street"),
+                      verdict = factor(verdict, levels = c("Guide above Street", "Guide below Street", "No guide vs Street on record")),
+                      print = factor(print, levels = print))
+means <- e |> filter(verdict != "No guide vs Street on record") |> group_by(verdict) |> summarise(m = mean(excess_1d), n = n())
+p <- ggplot(e, aes(print, excess_1d, fill = verdict)) +
+  geom_hline(yintercept = 0, colour = INK["axis"]) +
+  geom_col(width = 0.72) +
+  geom_text(aes(label = sprintf("%+.0f", excess_1d), vjust = if_else(excess_1d >= 0, -0.4, 1.3)), size = 2.8, colour = INK["primary"]) +
+  scale_fill_manual(values = c(`Guide above Street` = PAL[["blue"]], `Guide below Street` = PAL[["orange"]], `No guide vs Street on record` = INK[["axis"]])) +
+  scale_y_continuous(labels = function(x) paste0(x, "%"), expand = expansion(mult = 0.15)) +
+  labs(title = "The print trades on the guide: day-1 excess return vs QQQ, all 23 prints",
+       subtitle = sprintf("Guide above Street: mean %+.1f%% (n = %d). Guide below Street: mean %+.1f%% (n = %d). Wilcoxon rank-sum p = 0.02",
+                          means$m[means$verdict == "Guide above Street"], means$n[means$verdict == "Guide above Street"],
+                          means$m[means$verdict == "Guide below Street"], means$n[means$verdict == "Guide below Street"]),
+       x = NULL, y = NULL, caption = "Source: model/ABNB_historicals.xlsx, Earnings sheet. Guide = next-quarter revenue guide midpoint vs consensus at the print (none on record before 4Q21)") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+save_fig(p, "P2_reaction_by_print_guide_vs_street", 8.5, 4.6)
+message("P2 done")
