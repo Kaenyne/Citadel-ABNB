@@ -185,10 +185,18 @@ def alternatives() -> pd.DataFrame:
         for q in tiltb.index:
             if q in tb.index:
                 d = float(tb[q] - tbase[q]); tiltb.loc[q, "geo_mix"] += d; tiltb.loc[q, "exfx_yoy"] += d
+    # measured origin-destination tilt (upgrade 2, od_layer.py): the tourism-board allocation of the named origins
+    odm = comp.copy()
+    if (C.OUT / "od_geo_mix_measured_tilt.csv").exists():
+        od = pd.read_csv(C.OUT / "od_geo_mix_measured_tilt.csv"); odc = od[od.pattern.str.startswith("measured OD tilt (central)")].set_index("quarter")
+        for q in odm.index:
+            if q in odc.index:
+                d = float(odc.loc[q, "delta_vs_base_pp"]); odm.loc[q, "geo_mix"] += d; odm.loc[q, "exfx_yoy"] += d
     alts = {
         "base: core carry + bundle laps (nights-linked geo)": base,
         "base + sub-regional country mix (v2 H3, Inside Airbnb panel)": comp,
-        "base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25)": tiltb,
+        "base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9)": odm,
+        "base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2": tiltb,
         "lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary": lap_only,
         "card v3: last_q residual carry, no lap (card geo)": forward(bundle_total=0.0, geo_basis="card"),
         "full lap: ex-NA RNPL sized at the 1H26 residual steps": forward(exna_pp=RNPL_EXNA_ADR_PP_HIGH),

@@ -275,6 +275,41 @@ English 71% of reviews in 2022 → 58% in 2026; Spanish 11 → 16%, Portuguese 1
 2025 growth Portuguese +45%, Spanish +37% vs English +17%. It is the composition change on Airbnb's own guests and
 supports tilt B's direction; it carries no price and does not enter the term (`adr_v2_geomix_prereg.md` §4).
 
+### 3.3c The four upgrades, 22 Sep (results; notes `adr_v2_upgrade1/2/3/6_*.md`, thesis `adr_v2_thesis.md`)
+
+1. **Eurostat weights (upgrade 1).** Re-weighting the within-EMEA mix with Eurostat platform nights by country moves
+   the weights a lot (France 10 → 21% of EMEA, Ireland 6 → 1%, Italy 24 → 16%) and the term almost not at all: EMEA
+   mix mean −0.11 → −0.05pp, the sub-regional term −0.45 → −0.43 over 1Q23–2Q26, 4Q26 effect −$0.25 → −$0.27. The
+   countries that gain weight sit near the EMEA mean price. The module reproduces the original build to 1e-14 as its
+   control. **The term does not rest on the scrape footprint.** The price basis (median vs review-weighted) matters
+   more than the weights (up to −$0.19).
+2. **Origin → destination (upgrade 2).** The tourism-board files (NTTO, JNTO, ABS, StatCan; Eurostat carries no
+   residence split) show the named origins' growth entirely ex-NA (India into the US −8% vs Airbnb +60%; Brazil −3%
+   vs +31%), Canada's and Australia's US shares falling — and an implied ex-NA split of **EMEA 10.5 / LatAm 16.4 /
+   APAC 14.9**, flatter than the letters' 8 / 20 / 18. Priced, the four-region term is −1.03 / −1.10 / −1.34 / −0.90
+   (3Q26–2Q27) vs the base −1.29 / −1.34 / −1.62 / −1.08, i.e. +0.24pp on 4Q26. **Tilt B is retired**: reproducing
+   8 / 20 / 18 from origin growth alone needs the named origins at 22% of global nights against a ceiling of 16.5%.
+   Validation is cross-sectional only: ordering test 4 of 7 quarters (p 0.018; 4 of 5 identified, p 0.003); no
+   time-series content (r 0.2 to −0.25, n 7). The India → EMEA vs APAC split is unidentified (bound 0–40% EMEA)
+   and moves the priced term 0.03pp; the binding unknown is the undisclosed origin size weights (8.5–16.5%).
+3. **Reconciliation (upgrade 3).** Annual: our four-region term −1.10 / −1.33 / −1.67 vs the 10-K's −1.08 / −1.24 /
+   −1.58 (2023–25), 0.02–0.09pp apart from independent sources; our sub-regional term (−0.86 / −0.36 / −0.30) sits
+   inside the 10-K's "pricing + sub-regional mix" plug (2.48 / 2.80 / 3.62), 8% of it in 2025, and being negative it
+   *raises* the implied like-for-like price (3.34 / 3.15 / 3.93). Quarterly EMEA: disclosed ex-FX minus
+   panel-weighted accommodation CPI regressed on our mix gives slope 1.09 (identity 1.0), r 0.48, n 7, p 0.27 —
+   right sign and scale, not significant; residual mean +0.65pp, sd 0.72; zeroing the mix worsens the fit (sd 0.72
+   → 0.83). Found: the 10-K route's 2025 size-mix term is −0.25 vs the H route's +0.74 — a 1pp sign disagreement to
+   adjudicate; rebased on our size/LOS the implied price is flat 2024–25 (2.69 / 2.68).
+4. **Sustainability (upgrade 6).** `refresh_prices.py` rebuilds the term's inputs from the raw stores in 14 s
+   (reproduces `country_price_levels_usd.csv` to 1e-14); `run.py` has a `geomix` stage that verifies every table
+   against disk before overwriting; 27 tests; eight pre-registered pass/fail lines for 5 Nov and 11 Feb
+   (`adr_v2_upgrade6_sustainability_and_score.md`).
+
+**Net effect on the line.** The base keeps the letter buckets (disclosed) with the measured origin-destination
+split as its floor; the composition case for 4Q26 runs **$172.79 (sub-regional) to $173.19 (sub-regional + measured
+tilt)** around the base $173.03; tilt B ($172.18) is retired. Composition, measured as far as the git allows, does
+not put 4Q26 below the Street's $171.33.
+
 ### 3.4 The other terms, carried as the card carries them
 
 Unit size / party size **+0.797pp** (booked capacity per reviewed stay +1.35% y/y on 2.05m vintage-matched
