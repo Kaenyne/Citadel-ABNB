@@ -1,0 +1,223 @@
+*** MARGIN_VERIFY_ONLY=1: no committed output, no registry write ***
+
+=== 1 combine ===
+*** MARGIN_VERIFY_ONLY=1 — writing to _verify/, registry skipped ***
+WS23 combine: backtest replay ...
+  1056 backtest rows
+WS23 combine: adopted dollar construction (margin x revenue leg) ...
+  528 dollar-from-margin rows
+WS23 combine: LIVE ...
+  48 live rows
+WS23 combine: scoring ...
+window  horizon_q  n       mae    rw_mae  mae_ratio_seasonal_naive  mae_ratio_street  p_sign_street    cov80
+    W1          0 14 30.655385 24.260716                  0.248365          0.469622       0.000061 0.857143
+    W1          1 13 78.295564 73.408684                  0.600497          1.195424       0.709473 0.615385
+    W1          2 12 85.956564 85.555880                  0.649955               NaN            NaN 0.583333
+    W2          0 10 25.837188 21.368892                  0.264184          0.444566       0.000977 0.800000
+    W2          1  9 75.089296 71.536338                  0.828191          1.606634       0.910156 0.888889
+    W2          2  8 93.958643 89.445433                  1.014398               NaN            NaN 0.875000
+               target window  horizon_q prior_basis          spec_id  n      mae   rw_mae  mae_ratio_seasonal_naive  rw_mae_ratio_seasonal_naive  mae_ratio_street  k_better_seasonal_naive  p_sign_seasonal_naive    cov80
+adj_ebitda_margin_pct     W1          0         PIT            stack 14 1.194779 0.842934                  0.534083                     0.440705          0.750452                       11               0.028687 0.928571
+adj_ebitda_margin_pct     W1          0         PIT       stack_clip 14 1.126425 0.823305                  0.503527                     0.430443          0.707518                       11               0.003174 0.928571
+adj_ebitda_margin_pct     W1          0         PIT    stack_ew_clip 14 1.122719 0.822672                  0.501871                     0.430112          0.705191                       11               0.003174 0.928571
+adj_ebitda_margin_pct     W1          0         PIT stack_lam25_clip 14 1.129407 0.824598                  0.504861                     0.431119          0.709392                       11               0.003174 0.928571
+adj_ebitda_margin_pct     W2          0         PIT            stack 10 0.787637 0.662142                  0.402090                     0.377294          0.600710                        9               0.010742 1.000000
+adj_ebitda_margin_pct     W2          0         PIT       stack_clip 10 0.787637 0.662142                  0.402090                     0.377294          0.600710                        9               0.010742 1.000000
+adj_ebitda_margin_pct     W2          0         PIT    stack_ew_clip 10 0.802336 0.678887                  0.409594                     0.386835          0.611920                        9               0.010742 1.000000
+adj_ebitda_margin_pct     W2          0         PIT stack_lam25_clip 10 0.780288 0.653770                  0.398339                     0.372523          0.595105                        9               0.010742 1.000000
+adj_ebitda_margin_pct     W1          1         PIT            stack 13 1.951983 1.560214                  0.830519                     0.806668          1.189374                        9               0.133423 0.846154
+adj_ebitda_margin_pct     W1          1         PIT       stack_clip 13 1.951983 1.560214                  0.830519                     0.806668          1.189374                        9               0.133423 0.846154
+adj_ebitda_margin_pct     W1          1         PIT    stack_ew_clip 13 1.970498 1.593454                  0.838396                     0.823854          1.200656                        9               0.133423 0.846154
+adj_ebitda_margin_pct     W1          1         PIT stack_lam25_clip 13 1.942726 1.543594                  0.826580                     0.798076          1.183733                        9               0.133423 0.846154
+adj_ebitda_margin_pct     W2          1         PIT            stack  9 1.269124 1.283541                  0.804067                     0.801551          1.278123                        6               0.253906 1.000000
+adj_ebitda_margin_pct     W2          1         PIT       stack_clip  9 1.269124 1.283541                  0.804067                     0.801551          1.278123                        6               0.253906 1.000000
+adj_ebitda_margin_pct     W2          1         PIT    stack_ew_clip  9 1.295968 1.324188                  0.821075                     0.826934          1.305157                        6               0.253906 1.000000
+adj_ebitda_margin_pct     W2          1         PIT stack_lam25_clip  9 1.255702 1.263218                  0.795564                     0.788860          1.264606                        6               0.253906 1.000000
+adj_ebitda_margin_pct     W1          2         PIT            stack 12 2.228944 1.862096                  0.899551                     0.950307               NaN                        6               0.612793 0.750000
+adj_ebitda_margin_pct     W1          2         PIT       stack_clip 12 2.228944 1.862096                  0.899551                     0.950307               NaN                        6               0.612793 0.750000
+adj_ebitda_margin_pct     W1          2         PIT    stack_ew_clip 12 2.225100 1.872861                  0.898000                     0.955801               NaN                        7               0.387207 0.750000
+adj_ebitda_margin_pct     W1          2         PIT stack_lam25_clip 12 2.230866 1.856713                  0.900326                     0.947560               NaN                        6               0.612793 0.750000
+adj_ebitda_margin_pct     W2          2         PIT            stack  8 1.765683 1.714805                  1.026026                     1.031149               NaN                        3               0.855469 0.875000
+adj_ebitda_margin_pct     W2          2         PIT       stack_clip  8 1.765683 1.714805                  1.026026                     1.031149               NaN                        3               0.855469 0.875000
+adj_ebitda_margin_pct     W2          2         PIT    stack_ew_clip  8 1.728315 1.660397                  1.004312                     0.998433               NaN                        4               0.636719 0.875000
+adj_ebitda_margin_pct     W2          2         PIT stack_lam25_clip  8 1.784367 1.742008                  1.036883                     1.047507               NaN                        3               0.855469 0.875000
+WS23 combine: registering final-margin__combined and final-margin__combined_dollar_from_margin ...
+  MARGIN_VERIFY_ONLY=1: registry NOT written; copy in _verify/
+  registered 1728 rows
+               target quarter       point   raw_point                 clip     qhat80   pit_bias
+adj_ebitda_margin_pct  2026Q3   49.939939   49.939939 sentence_not_binding   2.203943  -0.669316
+adj_ebitda_margin_pct  2026Q4   29.037696   29.037696          no_sentence   4.205129  -0.450167
+adj_ebitda_margin_pct  2027Q1   19.470222   19.470222          no_sentence   4.522924  -0.442768
+adj_ebitda_margin_pct  2027Q2   34.035895   34.035895          no_sentence   4.522924  -0.442768
+adj_ebitda_margin_pct  2027Q3   48.303223   48.303223          no_sentence   4.522924  -0.442768
+adj_ebitda_margin_pct  2027Q4   27.896161   27.896161          no_sentence   4.522924  -0.442768
+      adj_ebitda_musd  2026Q3 2411.001494 2411.001494             clip_off  76.333734 -13.944722
+      adj_ebitda_musd  2026Q4  922.484952  922.484952             clip_off 107.554858  -6.198150
+      adj_ebitda_musd  2027Q1  593.563712  593.563712             clip_off 150.097402  10.092267
+      adj_ebitda_musd  2027Q2 1370.880391 1370.880391             clip_off 150.097402  10.092267
+      adj_ebitda_musd  2027Q3 2548.713162 2548.713162             clip_off 150.097402  10.092267
+      adj_ebitda_musd  2027Q4  968.874689  968.874689             clip_off 150.097402  10.092267
+quarter       point  margin_pct  revenue_musd     qhat80   pit_bias
+ 2026Q3 2399.132402   49.939939     4804.0355  62.583785 -11.466193
+ 2026Q4  922.849284   29.037696     3178.1078 119.804228   1.154825
+ 2027Q1  594.451041   19.470222     3053.1293 149.489915  10.659832
+ 2027Q2 1371.299634   34.035895     4028.9807 149.489915  10.659832
+ 2027Q3 2550.763997   48.303223     5280.7325 149.489915  10.659832
+ 2027Q4  966.815133   27.896161     3465.7641 149.489915  10.659832
+--- 1 combine ok (4s)
+
+=== 2 diagnostics ===
+street-independent LIVE 3Q26: raw 49.878 clipped 49.878
+window                                                      variant  n    mae  ratio_to_naive  delta_vs_full_pp                                                 dropped
+    W1                                             ALL (stack_clip) 14 1.1264          0.5035            0.0000                                                        
+    W1           drop street-bias|dispersion_conditioned|rw_hl4_med 14 1.2208          0.5457            0.0944           street-bias|dispersion_conditioned|rw_hl4_med
+    W1              drop street-bias|street_plus_flowthrough|rw_hl4 14 1.1634          0.5200            0.0369              street-bias|street_plus_flowthrough|rw_hl4
+    W1                                 drop baselines-margin|street 14 1.0986          0.4911           -0.0278                                 baselines-margin|street
+    W1 drop guide-policy-margin|actual_given_guide|nov_sentence_pin 14 1.1069          0.4948           -0.0196 guide-policy-margin|actual_given_guide|nov_sentence_pin
+    W1             drop margin-ts|q_sentence_direction|k_fit_median 14 1.1303          0.5053            0.0039             margin-ts|q_sentence_direction|k_fit_median
+    W1                                                drop FAMILY_A 14 1.0866          0.4857           -0.0398                                                FAMILY_A
+    W1               STREET-INDEPENDENT ONLY (M3 + M2sent + family) 14 1.4194          0.6345            0.2930                                     all Street-anchored
+    W1                                             NO SENTENCE CLIP 14 1.1948          0.5341            0.0684                                                the clip
+    W2                                             ALL (stack_clip) 10 0.7876          0.4021            0.0000                                                        
+    W2           drop street-bias|dispersion_conditioned|rw_hl4_med 10 0.8706          0.4444            0.0830           street-bias|dispersion_conditioned|rw_hl4_med
+    W2              drop street-bias|street_plus_flowthrough|rw_hl4 10 0.8693          0.4438            0.0817              street-bias|street_plus_flowthrough|rw_hl4
+    W2                                 drop baselines-margin|street 10 0.7534          0.3846           -0.0343                                 baselines-margin|street
+    W2 drop guide-policy-margin|actual_given_guide|nov_sentence_pin 10 0.7753          0.3958           -0.0123 guide-policy-margin|actual_given_guide|nov_sentence_pin
+    W2             drop margin-ts|q_sentence_direction|k_fit_median 10 0.8145          0.4158            0.0268             margin-ts|q_sentence_direction|k_fit_median
+    W2                                                drop FAMILY_A 10 0.8137          0.4154            0.0261                                                FAMILY_A
+    W2               STREET-INDEPENDENT ONLY (M3 + M2sent + family) 10 1.2024          0.6138            0.4147                                     all Street-anchored
+    W2                                             NO SENTENCE CLIP 10 0.7876          0.4021            0.0000                                                the clip
+
+window                                                  member  n   mae   bias
+    W1           street-bias|dispersion_conditioned|rw_hl4_med 14 1.223  0.134
+    W1              street-bias|street_plus_flowthrough|rw_hl4 14 1.661  0.692
+    W1                                 baselines-margin|street 14 1.592 -1.219
+    W1 guide-policy-margin|actual_given_guide|nov_sentence_pin 14 1.883 -1.424
+    W1             margin-ts|q_sentence_direction|k_fit_median 14 2.048 -1.680
+    W1                                                FAMILY_A 14 2.128 -0.063
+    W1                   seasonal_naive (= the sentence level) 14 2.237 -0.473
+    W2           street-bias|dispersion_conditioned|rw_hl4_med 10 0.787  0.069
+    W2              street-bias|street_plus_flowthrough|rw_hl4 10 0.987  0.316
+    W2                                 baselines-margin|street 10 1.311 -1.126
+    W2 guide-policy-margin|actual_given_guide|nov_sentence_pin 10 1.842 -1.507
+    W2             margin-ts|q_sentence_direction|k_fit_median 10 1.539 -1.024
+    W2                                                FAMILY_A 10 1.670  0.429
+    W2                   seasonal_naive (= the sentence level) 10 1.959  0.194
+
+        set  n  combination_mae  street_mae  naive_mae
+     all_14 14            1.126       1.592      2.237
+stress_1H23  2            0.792       1.343      0.792
+  hard_2H23  2            3.055       3.246      5.073
+ shock_1H25  2            1.615       2.219      1.298
+ calm_last4  4            0.446       0.690      1.805
+--- 2 diagnostics ok (1s)
+
+=== 3 forecast ===
+
+--- adopted path ---
+quarter  margin_pct  combination_pct  street_pct  m3_sentence_pct                 clip                                            source
+ 2026Q3   49.939939        49.939939   49.775747        50.085470 sentence_not_binding            final-margin|combined|stack_clip (h=0)
+ 2026Q4   28.897437        29.037696   28.897437        29.904833          no_sentence                     baselines-margin|street (h=1)
+ 2027Q1   19.470222        19.470222         NaN        17.621216          no_sentence final-margin|combined|stack_clip (h>=2, SCENARIO)
+ 2027Q2   34.035895        34.035895         NaN        33.191192          no_sentence final-margin|combined|stack_clip (h>=2, SCENARIO)
+ 2027Q3   48.303223        48.303223         NaN        48.326551          no_sentence final-margin|combined|stack_clip (h>=2, SCENARIO)
+ 2027Q4   27.896161        27.896161         NaN        28.145914          no_sentence final-margin|combined|stack_clip (h>=2, SCENARIO)
+
+--- quarterly P&L (base) ---
+quarter  revenue_musd  adj_ebitda_musd  adj_ebitda_margin_pct  margin_q10  margin_q90  op_income_musd  net_income_musd  eps_diluted_gaap
+ 2026Q3       4804.04          2399.13                  49.94       47.86       52.02         1926.92          1703.38              2.88
+ 2026Q4       3178.11           918.39                  28.90       26.48       31.31          432.60           466.75              0.80
+ 2027Q1       3053.13           594.45                  19.47       15.82       23.12          109.79           215.78              0.37
+ 2027Q2       4028.98          1371.30                  34.04       30.39       37.69          799.49           803.91              1.40
+ 2027Q3       5280.73          2550.76                  48.30       44.65       51.95         2019.04          1800.13              3.16
+ 2027Q4       3465.76           966.82                  27.90       24.25       31.55          419.72           463.76              0.82
+
+--- annual ---
+period scenario  revenue_musd  adj_ebitda_musd  adj_ebitda_margin_pct  eps_diluted  fcf_musd_range_mid
+  FY26     base      14268.14          5097.52                  35.73         5.28             4843.95
+  FY27     base      15828.61          5483.33                  34.64         5.73             5296.71
+  FY28     base      17137.44          5936.73                  34.64         6.27             5730.80
+  FY26     bear      14164.81          5017.19                  35.42         5.17             4808.18
+  FY27     bear      14948.33          4805.36                  32.15         4.72             4740.57
+  FY28     bear      17137.44          5509.09                  32.15         5.63             5376.48
+  FY26     bull      14391.94          5194.93                  36.10         5.42             4895.79
+  FY27     bull      16570.74          6052.89                  36.53         6.58             5739.52
+  FY28     bull      17137.44          6259.89                  36.53         6.75             5999.13
+
+--- vs consensus ---
+period  model_ebitda_musd  lseg_ebitda_musd  gap_ebitda_musd  model_margin_pct  lseg_margin_pct  gap_margin_pp
+2026Q3            2399.13           2361.52            37.61             49.94            49.78           0.16
+2026Q4             918.39            913.68             4.71             28.90            28.90          -0.00
+2027Q1             594.45            610.73           -16.28             19.47            20.29          -0.82
+2027Q2            1371.30           1451.71           -80.41             34.04            35.96          -1.92
+2027Q3            2550.76           2695.55          -144.79             48.30            51.15          -2.85
+2027Q4             966.82           1068.40          -101.58             27.90            30.28          -2.38
+  FY26            5097.52           5053.72            43.80             35.73            35.62           0.11
+  FY27            5483.33           5766.10          -282.77             34.64            36.45          -1.81
+  FY28            5936.73           6602.72          -665.98             34.64            37.65          -3.01
+
+--- floor break-even ---
+cost_response     k  floor_pct  fy26_margin_base_pct  cushion_pp  breakeven_2h26_shortfall_pct  breakeven_2h26_shortfall_musd
+         held 0.000       35.5                35.727       0.227                         0.628                         50.129
+         flex 0.364       35.5                35.727       0.227                         0.937                         74.814
+    full_flex 1.000       35.5                35.727       0.227                         6.682                        533.391
+
+--- card ---
+                                                 item       value        unit        band80                                 vs                                                                                                                                                                                                                                                                                                                                                 note
+                               3Q26 adj EBITDA margin   49.939939           % 47.86 - 52.02                      Street 49.78%                                                                                                                                                                                                                    combination stack_clip, h=0; bias-corrected on the last 5 PIT errors -> 50.21%, which the 'down slightly' sentence caps at 50.09%
+                                      3Q26 adj EBITDA 2399.132402       USD m   2337 - 2462 Street 2362 (n 36, EBITDA sd 20.0)                                                                                                  final-margin|combined_dollar_from_margin (the margin combination x bridge-v3 revenue 4,804), band = its OWN conformal qhat80 62.6 on the 2024Q1+ calibration; W1/W2 h=0 MAE 30.7 / 25.8. Cross-check: the four-member dollar combination reads 2411
+                               3Q26 beat vs Street, $   37.610612       USD m                                                                                                                                                                                                                                                                                                                                      M5 flow-through arithmetic: 0.464 x (4,804 - 4,744) + 16 = +$44M
+                      P(3Q26 adj EBITDA beats Street)    0.779408 probability                                                  Gaussian, sd = qhat80/1.2816 = 48.8, on the SAME object as the band (WS31 audit 04). The previously published 0.77 mixed a band from the margin route with an sd from the four-member dollar object and is withdrawn. Descriptive, not a validated probability: the calibration pool is n=10 and the object was selected after seeing the scoreboard
+                   P(3Q26 margin beats Street margin)    0.540286 probability                                                                                                                                                                                                                                                                                                                                         Gaussian on the margin object's own conformal sd; same caveat
+                              3Q26 EPS (GAAP diluted)    2.878906         USD   2.70 - 3.05                        Street 2.85                                                                                                                                                       M7 bridge, ETR 18.0%, 591.7m shares; $0.001386 of EPS per $M of EBITDA. Band is JOINT (WS31 audit 06): EBITDA conformal term and M7's measured bridge sd $0.083 in quadrature, not EBITDA-only
+                               4Q26 adj EBITDA margin   28.897437           %                                    Street 28.90%                                                                                                                                                                                                                                                                        h=1 rule: the Street is unbeaten; combination 29.04%, M3 sentence path 29.90%
+                               FY26 adj EBITDA margin   35.726611           %                       floor 35.5%, Street 35.62%                                                                                                                                                                                                                                                                                   1H26 actual + 3Q26 combination + 4Q26 Street, on bridge v3 revenue
+                                      FY26 adj EBITDA 5097.524102       USD m                                   Street 5,053.7                                                                                                                                                                                                                                                                                                                                                     
+                5 Nov FY26 margin sentence (forecast)   36.000000           %                                                                                                                                                                                                                                                                                          M3: the November sentence has been the numeric floor + 50bp, exact 2 of 2; p ~0.45-0.50. 'Approximately 36%'
+4Q26 margin implied by the 36.0% sentence at our 3Q26   30.124819           %                                    Street 28.90%                                                                                                                                                                                                                                                                      M3 budget identity: 1pp of FY26 = 4.49pp of 4Q26; 1pp of 3Q26 = -1.51pp of 4Q26
+                    FY27 adj EBITDA margin (SCENARIO)   34.641898           %                                    Street 36.45%                                                                                                                                                                                                                                                                                     h>=2 fails its test; this is a spending scenario, not a forecast
+--- 3 forecast ok (1s)
+
+=== 4 workbook ===
+wrote /Users/theomachado/Citadel-ABNB/data/processed/margin_build/23_final_model/_verify/ABNB_margin_model.xlsx (52 KB), sheets: ['README', 'Inputs', 'Lines', 'Bridge', 'Scenarios', 'Consensus', 'Seasonality', 'Weights', 'Card']
+--- 4 workbook ok (0s)
+
+=== 4b reconciliation checks ===
+   ok  02/03 cost stack reconciles (five lines - D&A add-back = total cash costs) (worst |gap| 6.821e-13)
+   ok  03 one add-back schedule in both bridges (worst |gap| 2.274e-13)
+   ok  07 CFO = NI + D&A + SBC + working capital + other (worst |gap| 4.547e-13)
+   ok  15 annual net income and tax = sum of quarters (FY26 incl. 1H26 actuals) (worst |gap| 4.547e-13)
+   ok  04 band and P(beat) come from the same registered object (worst |gap| 2.776e-15)
+   ok  05 scenario margins differ (3Q26 bear/base/bull 49.6117 / 49.9399 / 50.4226)
+   ok  06 EPS band is joint ($2.704-3.054 vs EBITDA-only $2.740-3.017)
+all reconciliation checks passed
+
+=== MARGIN_VERIFY_ONLY comparison (recomputed vs committed) ===
+  23_bands.csv                          identical                     max|d|=2.27374e-13
+  23_card_5nov.csv                      identical                     max|d|=4.54747e-13
+  23_card_budget_identity.csv           identical                     max|d|=0
+  23_combination_by_quarter.csv         identical                     max|d|=6.82121e-13
+  23_combination_live.csv               identical                     max|d|=9.09495e-13
+  23_combination_scores.csv             identical                     max|d|=1.13687e-13
+  23_combination_weights.csv            identical                     max|d|=2.27374e-13
+  23_conformal.csv                      identical                     max|d|=4.44089e-15
+  23_diag_leave_one_out.csv             identical                     max|d|=3.29944e-15
+  23_diag_member_scores.csv             identical                     max|d|=8.88178e-16
+  23_diag_shock_vs_calm.csv             identical                     max|d|=1.77636e-15
+  23_diag_street_independent_live.csv   identical                     max|d|=0
+  23_dollar_from_margin_by_quarter.csv  identical                     max|d|=9.09495e-13
+  23_dollar_from_margin_live.csv        identical                     max|d|=4.54747e-13
+  23_dollar_from_margin_scores.csv      identical                     max|d|=2.27374e-13
+  23_forecast_annual.csv                identical                     max|d|=9.09495e-13
+  23_forecast_quarterly.csv             identical                     max|d|=9.09495e-13
+  23_fy26_floor_breakeven.csv           identical                     max|d|=1.59162e-11
+  23_lines_quarterly.csv                identical                     max|d|=4.54747e-13
+  23_macro_sensitivity.csv              identical                     max|d|=1.42109e-14
+  23_path_rule.csv                      identical                     max|d|=4.54747e-13
+  23_scenarios.csv                      identical                     max|d|=4.54747e-13
+  23_seasonality.csv                    identical                     max|d|=7.10543e-15
+  23_vs_consensus.csv                   identical                     max|d|=4.54747e-13
+  _registry_final-margin.csv            NEW (no committed file)       
+(25 files compared; nothing was written outside /Users/theomachado/Citadel-ABNB/data/processed/margin_build/23_final_model/_verify)
+
+WS23 verify-only done (score.py skipped).

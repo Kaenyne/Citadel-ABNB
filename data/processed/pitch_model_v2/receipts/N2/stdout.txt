@@ -1,0 +1,75 @@
+N2 - backlog identity term (booked-not-yet-stayed nights)
+central cell: fee_share 0.133, ADR basis 'current', B 1.05 (ramp), r 1.33; lambda 0.906; kappa calibration 1.0007
+pre-RNPL seasonal norms UF/next-q revenue: Q1 0.880  Q2 0.697  Q3 0.665  Q4 0.689
+
+quarter |  N   |  K cen |  K low |  K high |  U cen |  b cen |  b low |  b high | K/N q | S implied
+1Q22    | 102.1 |   78.2 |   67.1 |    83.9 |    0.0 | +20.91 | +17.94 |  +22.43 |  0.77 |    68.2
+2Q22    | 103.7 |   91.0 |   97.6 |    78.1 |    0.0 | -14.22 | -15.25 |  -12.20 |  0.88 |    90.9
+3Q22    |  99.7 |   58.6 |   62.9 |    50.3 |    0.0 | -10.28 | -11.02 |   -8.82 |  0.59 |   132.0
+4Q22    |  88.2 |   58.2 |   49.9 |    62.4 |    0.0 |  +0.34 |  +0.29 |   +0.36 |  0.66 |    88.7
+1Q23    | 121.1 |   97.0 |   83.2 |   104.0 |    0.0 |  +4.76 |  +4.09 |   +5.11 |  0.80 |    82.3
+2Q23    | 115.1 |  106.3 |  114.0 |    91.2 |    0.0 |  -3.31 |  -3.55 |   -2.84 |  0.92 |   105.8
+3Q23    | 113.2 |   68.3 |   73.3 |    58.6 |    0.0 |  -5.66 |  -6.07 |   -4.85 |  0.60 |   151.2
+4Q23    |  98.8 |   68.5 |   58.7 |    73.4 |    0.0 |  +0.68 |  +0.58 |   +0.73 |  0.69 |    98.7
+1Q24    | 132.6 |  105.9 |  113.5 |    90.8 |    0.0 |  -1.16 |  -1.24 |   -0.99 |  0.80 |    95.2
+2Q24    | 125.1 |  116.2 |   99.7 |   124.7 |    0.0 |  +0.91 |  +0.78 |   +0.97 |  0.93 |   114.7
+3Q24    | 122.8 |   76.1 |   81.7 |    65.3 |    0.0 |  -1.91 |  -2.05 |   -1.64 |  0.62 |   162.9
+4Q24    | 111.0 |   76.8 |   65.9 |    82.4 |    0.0 |  +0.60 |  +0.52 |   +0.65 |  0.69 |   110.3
+1Q25    | 143.1 |  119.5 |  102.5 |   128.2 |    0.0 |  +3.96 |  +3.40 |   +4.25 |  0.83 |   100.5
+2Q25    | 134.4 |  123.1 |  132.1 |   105.6 |    0.0 |  -5.41 |  -5.80 |   -4.64 |  0.92 |   130.8
+3Q25    | 133.6 |   81.4 |   86.6 |    95.6 |    1.5 |  -1.35 |  -1.95 |   +5.38 |  0.61 |   175.4
+4Q25    | 121.9 |   83.0 |   70.1 |    92.6 |    4.8 |  +0.84 |  +0.14 |   +2.92 |  0.68 |   120.3
+1Q26    | 156.2 |  127.9 |  132.3 |   150.1 |   17.9 |  +1.60 |  -0.72 |   +8.20 |  0.82 |   111.3
+2Q26    | 148.3 |  136.8 |  113.0 |   161.5 |   21.0 |  +3.92 |  +3.00 |   +5.62 |  0.92 |   139.4
+
+3Q26 score sheet (m = 0 accounting; u_eff is what the print implies)
+scenario | UF $M | UF y/y | u_eff | implied RNPL GBV share | K | b(3Q26)
+u7_m9      |  1781 |   -2.1% |  19.4% |  21.0% |   89.4 | -4.23
+u10_m12    |  1667 |   -8.4% |  24.6% |  26.4% |   88.2 | -5.13
+u12_m18    |  1519 |  -16.6% |  31.3% |  33.4% |   86.6 | -6.30
+u7_m0      |  1957 |   +7.5% |  11.4% |  12.5% |   91.3 | -2.84
+u15_m0     |  1789 |   -1.7% |  19.1% |  20.6% |   89.5 | -4.17
+
+forward, RNPL GBV share stabilised (central parameter cell, dossier nights path)
+period | scenario | u | K | b | b_unpaid | module total_rnpl_pts
+3Q26   | flat21  |  19.4% |   89.4 | -4.21 | -6.53 | -0.396
+4Q26   | flat21  |  19.4% |   91.1 | +0.03 | -2.49 | -1.288
+1Q27   | flat21  |  19.4% |  135.7 | -0.25 | -4.07 | -1.699
+2Q27   | flat21  |  19.4% |  145.6 | +0.69 | -1.02 | -1.729
+3Q26   | mid24   |  22.2% |   88.8 | -4.70 | -5.03 | -0.396
+4Q26   | mid24   |  22.2% |   90.5 | +0.02 | -2.46 | -1.288
+1Q27   | mid24   |  22.2% |  134.7 | -0.46 | -3.43 | -1.699
+2Q27   | mid24   |  22.2% |  144.5 | +0.64 | -0.87 | -1.729
+3Q26   | high27  |  25.1% |   88.1 | -5.20 | -3.52 | -0.396
+4Q26   | high27  |  25.1% |   89.8 | +0.01 | -2.43 | -1.288
+1Q27   | high27  |  25.1% |  133.7 | -0.68 | -2.79 | -1.699
+2Q27   | high27  |  25.1% |  143.4 | +0.59 | -0.72 | -1.729
+
+committed forward band (min/max over the full registered grid)
+period | b central | b low | b high | module total_rnpl_pts
+3Q26   |  -4.70 | -14.62 |  -2.09 | -0.396
+4Q26   |  +0.02 |  -2.06 |  +0.64 | -1.288
+1Q27   |  -0.46 |  -3.32 |  +0.80 | -1.699
+2Q27   |  +0.64 |  +0.15 |  +1.49 | -1.729
+
+diagnostics
+pre-RNPL b scatter by season       | current Q1 | n  3 | 2.523 | 2.621
+pre-RNPL b scatter by season       | current Q2 | n  3 | -2.603 | 2.626
+pre-RNPL b scatter by season       | current Q3 | n  3 | -2.97 | 1.913
+pre-RNPL b scatter by season       | current Q4 | n  3 | 0.709 | 0.101
+pre-RNPL b scatter by season       | forward Q1 | n  3 | 2.105 | 2.527
+pre-RNPL b scatter by season       | forward Q2 | n  3 | -2.019 | 2.354
+pre-RNPL b scatter by season       | forward Q3 | n  3 | -2.216 | 1.371
+pre-RNPL b scatter by season       | forward Q4 | n  3 | -0.514 | 0.695
+pre-RNPL b scatter by season       | kernelw Q1 | n  3 | 3.204 | 2.955
+pre-RNPL b scatter by season       | kernelw Q2 | n  3 | -2.458 | 2.042
+pre-RNPL b scatter by season       | kernelw Q3 | n  3 | -3.282 | 1.705
+pre-RNPL b scatter by season       | kernelw Q4 | n  3 | 0.507 | 0.251
+implied vs stated RNPL GBV share   | 3Q25       | n  1 | 2.62 | 4.0
+implied vs stated RNPL GBV share   | 4Q25       | n  1 | 8.2 | 9.0
+implied vs stated RNPL GBV share   | 1Q26       | n  1 | 19.32 | 20.0
+implied vs stated RNPL GBV share   | 2Q26       | n  1 | 21.0 | 21.0
+corr(reviews index, g_nights)      | 1Q23-2Q26  | n 14 | 0.863 | 
+corr(reviews index, g_nights - b)  | 1Q23-2Q26  | n 14 | 0.503 | 
+best corr(index, g_nights - b) over the grid | fee 0.155 current B 1.1 r 1.33 step | n 14 | 0.603 | 
+b sensitivity to norm and +/-5% revenue | 2Q26       | n  4 | -0.097 | 7.945

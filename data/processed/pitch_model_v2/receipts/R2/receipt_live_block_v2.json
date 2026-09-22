@@ -1,0 +1,21 @@
+{
+  "id": "R2",
+  "commit": "e6d98321b58f0f226ba1225408462d22edbb4a3f",
+  "cmd": "python3 analysis/src/forecast_methods/live_block_v2/run.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T15:54:16+00:00",
+  "exit_code": 0,
+  "wall_s": 2.1,
+  "watch": [
+    "analysis/src/forecast_methods/live_block_v2",
+    "data/processed/forecast_methods/live_block_v2",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [],
+  "new_files": [
+    "analysis/src/forecast_methods/live_block_v2/__pycache__/reconcile.cpython-313.pyc"
+  ],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

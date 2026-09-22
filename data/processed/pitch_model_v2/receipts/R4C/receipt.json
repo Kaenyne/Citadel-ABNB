@@ -1,0 +1,39 @@
+{
+  "id": "R4C",
+  "commit": "d984b14ab3b751a17d2efa28e6d574459fbab2f3",
+  "cmd": "python3 -B analysis/src/forecast_methods/gbv_guidance_inference_v1/conditional/run.py --out data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2 && MPLCONFIGDIR=/private/tmp/claude-501/-Users-theomachado-Library-CloudStorage-OneDrive-UniversityofFlorida-Young--Willem-K--s-files---Citadel---ABNB/517269ac-8ba5-4875-8aad-11a7b566283e/scratchpad/mpl python3 -B analysis/src/forecast_methods/gbv_guidance_inference_v1/run.py --out-dir data/processed/forecast_methods/gbv_guidance_inference_v1/integrated_v2 && python3 -B /private/tmp/claude-501/-Users-theomachado-Library-CloudStorage-OneDrive-UniversityofFlorida-Young--Willem-K--s-files---Citadel---ABNB/517269ac-8ba5-4875-8aad-11a7b566283e/scratchpad/compare_r4c.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB-untracked",
+  "started": "2026-09-18T15:34:14+00:00",
+  "exit_code": 0,
+  "wall_s": 10.2,
+  "watch": [
+    "data/processed/forecast_methods/gbv_guidance_inference_v1",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [],
+  "new_files": [
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/attempts.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/coefficients.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/conditional_scenarios.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/covariance_matrices.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/design_residuals.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/diagnostics.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/influence.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/leave_one_year_out.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/model_statistics.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/partial_precision_changes.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/prepared_mature_rows.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/primary_claims.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/run_receipt.json",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/source_manifest.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/conditional/results_v2/vif.csv",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/integrated_v2/gbv_guidance_relationship.png",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/integrated_v2/gbv_guidance_relationship.svg",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/integrated_v2/integration_verification.json",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/integrated_v2/q2_2027_legacy_scenario.json",
+    "data/processed/forecast_methods/gbv_guidance_inference_v1/integrated_v2/six_model_statistics.csv"
+  ],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

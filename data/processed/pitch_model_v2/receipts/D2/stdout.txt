@@ -1,0 +1,29 @@
+4Q25 base nights, mm                : 121.9
+team reference 4Q26 y/y, %          : 8.9
+admissible ex-NA lap, pts           : -0.88 to -0.7
+adopted lap at the 45% midpoint, pts: -0.78
+4Q26 base                           : 8.12 % -> 131.8 mm
+4Q26 cancellation drag, central cell: {'delta_0pp': 0.0, 'delta_1pp': -0.14, 'delta_2pp': -0.28, 'delta_4pp': -0.57, 'mgmt_implied': -0.85}
+4Q26 cancellation drag, grid ex-zero: (-1.36, -0.08)
+module 4Q26 tail (m3+m4), pts       : -0.542
+
+scenario period  yoy_pct  nights_mm  lo_pct  lo_mm  hi_pct  hi_mm                                                                                         source
+    base   4Q26     8.12      131.8    8.04  131.7    8.86  132.7          N memo 2 case B, global lap at the pinned 45% split; hi = case A (PR #32 NA-only lap)
+   short   4Q26     7.61      131.2    6.58  129.9    8.35  132.1 unified RNPL module base; band = module bear/bull (lap + pull-forward + deferral + propensity)
+ breaker   4Q26    10.00      134.1   10.00  134.1   11.44  135.8     management repeats 'low double digits' (>=10.0); hi = P90 of the adopted 4Q26 print object
+    base   1Q27     6.97      167.1    6.85  166.9    7.10  167.3                    exna_lap=False reference + ledger-dated ex-NA lap (note 01 s2.4); D-11 safe
+   short   1Q27     6.47      166.3    5.28  164.4    7.34  167.7                                              unified RNPL module base; band = module bear/bull
+ breaker   1Q27     8.17      169.0    8.17  169.0    8.17  169.0              the pre-registered February falsifier: the ex-NA lap is absent (PR #32 reference)
+    base   2Q27     6.42      157.8    6.24  157.6    6.60  158.1                    exna_lap=False reference + ledger-dated ex-NA lap (note 01 s2.4); D-11 safe
+   short   2Q27     6.44      157.9    5.74  156.8    6.87  158.5                                              unified RNPL module base; band = module bear/bull
+ breaker   2Q27     8.17      160.4    8.17  160.4    8.17  160.4              the pre-registered February falsifier: the ex-NA lap is absent (PR #32 reference)
+
+                object  recomputed  committed  tolerance                                         source  abs_diff  match
+         4Q26 base y/y        8.12       8.12       0.01         h2_bridge_v3_rebased_lines.csv adopted       0.0   True
+   4Q26 base nights mm      131.80     131.80       0.10      h2_bridge_v3_rebased_lines.csv adopted_mm       0.0   True
+   4Q26 base nights mm      131.80     131.80       0.10           rnpl_v2 live_scenarios.csv exna path       0.0   True
+  4Q26 short nights mm      131.20     131.20       0.10           rnpl_v2 live_scenarios.csv theo path       0.0   True
+  4Q26 short nights mm      131.20     131.20       0.10               rnpl_nights_module.csv nights_mm       0.0   True
+4Q26 breaker nights mm      134.10     134.00       0.20 Bloomberg MODL 4Q26 bar 134.0m (R16 threshold)       0.1   True
+
+all matches: True

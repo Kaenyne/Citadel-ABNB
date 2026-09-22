@@ -1,0 +1,37 @@
+{
+  "A1_beta_p_max": 0.01,
+  "A2_diff_p_max": 0.05,
+  "A5_median_ratio_max": 0.75,
+  "B1_ratio_max": 0.75,
+  "C1_mean_gap_min_bands": 1.0,
+  "C1_quarter_min_bands": 0.5,
+  "C1_quarters_min": 3,
+  "beta_B_bundle_pts": [
+    2.0,
+    3.0
+  ],
+  "freeze_qi": 8101,
+  "lag_trim_months": 2,
+  "panel_window_ymi": [
+    24276,
+    24314,
+    24288
+  ],
+  "post_quarters": [
+    8102,
+    8103,
+    8104,
+    8105
+  ],
+  "primary_measure": "yoy_vmatch",
+  "windows": {
+    "W1": [
+      8088,
+      8092
+    ],
+    "W2": [
+      8092,
+      8096
+    ]
+  }
+}

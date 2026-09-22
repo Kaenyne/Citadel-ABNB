@@ -1,0 +1,21 @@
+{
+  "id": "C2",
+  "commit": "e6d98321b58f0f226ba1225408462d22edbb4a3f",
+  "cmd": "python3 data/processed/pitch_model_v2/receipts/C2/c2_ops_recompute.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T16:00:04+00:00",
+  "exit_code": 0,
+  "wall_s": 0.2,
+  "watch": [
+    "data/processed/pitch_model_v2/receipts/C2",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [],
+  "new_files": [
+    "data/processed/pitch_model_v2/receipts/C2/stderr.txt",
+    "data/processed/pitch_model_v2/receipts/C2/stdout.txt"
+  ],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

@@ -1,0 +1,24 @@
+[shim] E5_backtest.py: repointed MAIN -> /Users/theomachado/Citadel-ABNB
+03:11:36 64 quarterly index features
+03:11:41 backtest_abnb_quarterly.csv 2560 tests
+03:11:41 backtest_survivor_robustness.csv 400 rows
+03:11:42 backtest_eurostat_monthly.csv 74 tests
+          family  tests  flagged  evaluable_wf  beat_naive  beat_naive_and_ar1  beat_by_20pct  best_ratio
+  abnb_quarterly   2560     1186          2560         463                 372             70    0.600304
+eurostat_monthly     74       63            74          71                  71             68    0.404308
+                     feature  lag transform               target  window  n         r   perm_p  wf_n  wf_ratio_vs_naive  wf_ratio_vs_ar1  sign_acc
+   GLOBAL|yoy_cohort|w_equal    0     level           nights_yoy 2023Q1+ 14  0.861253 0.001998    10           0.600304         0.615367  0.800000
+      EMEA|yoy_all|w_reviews    1        d1 expe_room_nights_yoy 2023Q1+ 14 -0.785486 0.003996    10           0.605332         0.738437  0.900000
+   EMEA|yoy_vmatch|w_reviews    1        d1 expe_room_nights_yoy 2023Q1+ 14 -0.772883 0.006993    10           0.623708         0.760854  0.900000
+GLOBAL_NW|yoy_cohort|w_equal    0     level           nights_yoy 2023Q1+ 14  0.855643 0.000999    10           0.649507         0.665805  0.800000
+   GLOBAL|yoy_mature|w_equal    0     level           nights_yoy 2023Q1+ 14  0.851615 0.001998    10           0.653464         0.669861  0.700000
+   EMEA|yoy_mature|w_reviews    1        d1 expe_room_nights_yoy 2023Q1+ 14 -0.780996 0.009990    10           0.656428         0.800768  0.900000
+       NAM|yoy_all|w_reviews    0     level              gbv_yoy 2022Q1+ 18  0.924206 0.000999    14           0.657960         0.528536  0.714286
+   EMEA|yoy_cohort|w_reviews    0     level           nights_yoy 2023Q1+ 14  0.853130 0.003996    10           0.660353         0.676922  0.700000
+       EMEA|yoy_all|w_median    0     level           nights_yoy 2023Q1+ 14  0.835816 0.004995    10           0.662359         0.678979  0.600000
+     APAC|yoy_cohort|w_equal    0     level           nights_yoy 2023Q1+ 14  0.792085 0.004995    10           0.670044         0.686857  0.800000
+ GLOBAL|yoy_cohort|w_reviews    0     level           nights_yoy 2023Q1+ 14  0.865672 0.000999    10           0.675665         0.692619  0.600000
+     APAC|yoy_mature|w_equal    0     level           nights_yoy 2023Q1+ 14  0.800110 0.002997    10           0.677087         0.694076  0.700000
+      EMEA|yoy_all|w_reviews    0     level           nights_yoy 2023Q1+ 14  0.840939 0.005994    10           0.681614         0.698717  0.500000
+ GLOBAL|yoy_vmatch|w_reviews    0     level           nights_yoy 2023Q1+ 14  0.863376 0.002997    10           0.682225         0.699344  0.700000
+     EMEA|yoy_cohort|w_equal    0     level           nights_yoy 2023Q1+ 14  0.848519 0.003996    10           0.682364         0.699487  0.700000

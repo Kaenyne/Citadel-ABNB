@@ -1,0 +1,1947 @@
+meta:
+  price_date: '2026-09-16'
+  spot: 167.51
+  scenarios:
+  - base
+  - short
+  - breaker
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  - 3Q26
+  - 4Q26
+  - 1Q27
+  - 2Q27
+  - 3Q27
+  - 4Q27
+  - FY26
+  - FY27
+  - ALL
+lines:
+- id: NIGHTS
+  label: Nights booked (m)
+  unit: m
+  block: drivers
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  - 3Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: nights_m
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.1
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  - periods:
+    - 3Q26
+    item: nights_m
+    dossier: docs/pitch-model-v2/dossiers/D1_d1_nights_3q26.md
+    receipt: data/processed/pitch_model_v2/receipts/D1/receipt.json
+    grade: B
+    decision: DEC-0004
+    tolerance: 0.1
+  values:
+    base:
+      1Q23: 121.1
+      2Q23: 115.1
+      3Q23: 113.2
+      4Q23: 98.8
+      1Q24: 132.6
+      2Q24: 125.1
+      3Q24: 122.8
+      4Q24: 111.0
+      1Q25: 143.1
+      2Q25: 134.4
+      3Q25: 133.6
+      4Q25: 121.9
+      1Q26: 156.2
+      2Q26: 148.3
+      3Q26: 146.3
+    short:
+      1Q23: 121.1
+      2Q23: 115.1
+      3Q23: 113.2
+      4Q23: 98.8
+      1Q24: 132.6
+      2Q24: 125.1
+      3Q24: 122.8
+      4Q24: 111.0
+      1Q25: 143.1
+      2Q25: 134.4
+      3Q25: 133.6
+      4Q25: 121.9
+      1Q26: 156.2
+      2Q26: 148.3
+      3Q26: 145.0
+    breaker:
+      1Q23: 121.1
+      2Q23: 115.1
+      3Q23: 113.2
+      4Q23: 98.8
+      1Q24: 132.6
+      2Q24: 125.1
+      3Q24: 122.8
+      4Q24: 111.0
+      1Q25: 143.1
+      2Q25: 134.4
+      3Q25: 133.6
+      4Q25: 121.9
+      1Q26: 156.2
+      2Q26: 148.3
+      3Q26: 147.0
+- id: ADR
+  label: ADR ($)
+  unit: usd
+  block: drivers
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  - 3Q26
+  - 4Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: adr_usd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.01
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  - periods:
+    - 3Q26
+    - 4Q26
+    item: adr_total_usd
+    dossier: docs/pitch-model-v2/dossiers/D4_d4_adr.md
+    receipt: data/processed/pitch_model_v2/receipts/D4/receipt.json
+    grade: B
+    decision: DEC-0008
+    tolerance: 0.01
+  values:
+    base:
+      1Q23: 168.43
+      2Q23: 166.01
+      3Q23: 161.38
+      4Q23: 156.73
+      1Q24: 172.88
+      2Q24: 169.53
+      3Q24: 163.64
+      4Q24: 158.13
+      1Q25: 171.34
+      2Q25: 174.48
+      3Q25: 171.29
+      4Q25: 167.51
+      1Q26: 186.82
+      2Q26: 183.73
+      3Q26: 176.88
+      4Q26: 173.94
+    short:
+      1Q23: 168.43
+      2Q23: 166.01
+      3Q23: 161.38
+      4Q23: 156.73
+      1Q24: 172.88
+      2Q24: 169.53
+      3Q24: 163.64
+      4Q24: 158.13
+      1Q25: 171.34
+      2Q25: 174.48
+      3Q25: 171.29
+      4Q25: 167.51
+      1Q26: 186.82
+      2Q26: 183.73
+      3Q26: 173.8
+      4Q26: 170.94
+    breaker:
+      1Q23: 168.43
+      2Q23: 166.01
+      3Q23: 161.38
+      4Q23: 156.73
+      1Q24: 172.88
+      2Q24: 169.53
+      3Q24: 163.64
+      4Q24: 158.13
+      1Q25: 171.34
+      2Q25: 174.48
+      3Q25: 171.29
+      4Q25: 167.51
+      1Q26: 186.82
+      2Q26: 183.73
+      3Q26: 178.47
+      4Q26: 177.35
+- id: GBV
+  label: GBV ($M)
+  unit: musd
+  block: drivers
+  kind: formula
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  - 3Q26
+  expr: NIGHTS * ADR
+- id: FX_REV
+  label: Revenue FX contribution (pp y/y)
+  unit: pp
+  block: drivers
+  kind: input
+  periods:
+  - 3Q26
+  - 4Q26
+  - 1Q27
+  - 2Q27
+  provenance:
+  - periods:
+    - 3Q26
+    - 4Q26
+    - 1Q27
+    - 2Q27
+    item: revenue_fx_pp
+    dossier: docs/pitch-model-v2/dossiers/D5_d5_fx.md
+    receipt: data/processed/pitch_model_v2/receipts/D5/receipt.json
+    grade: B
+    decision: DEC-0010
+    tolerance: 0.01
+  values:
+    base:
+      3Q26: 2.89
+      4Q26: 0.98
+      1Q27: 0.93
+      2Q27: 0.62
+    short:
+      3Q26: 2.89
+      4Q26: 0.52
+      1Q27: -1.01
+      2Q27: -1.92
+    breaker:
+      3Q26: 2.89
+      4Q26: 1.45
+      1Q27: 2.88
+      2Q27: 3.16
+- id: FX_ADR
+  label: ADR FX contribution (pp y/y)
+  unit: pp
+  block: drivers
+  kind: input
+  periods:
+  - 3Q26
+  - 4Q26
+  - 1Q27
+  - 2Q27
+  provenance:
+  - periods:
+    - 3Q26
+    - 4Q26
+    - 1Q27
+    - 2Q27
+    item: adr_fx_pp
+    dossier: docs/pitch-model-v2/dossiers/D5_d5_fx.md
+    receipt: data/processed/pitch_model_v2/receipts/D5/receipt.json
+    grade: B
+    decision: DEC-0010
+    tolerance: 0.01
+  values:
+    base:
+      3Q26: 2.89
+      4Q26: 0.93
+      1Q27: 0.88
+      2Q27: 0.56
+    short:
+      3Q26: 2.89
+      4Q26: 0.45
+      1Q27: -1.11
+      2Q27: -2.05
+    breaker:
+      3Q26: 2.89
+      4Q26: 1.4
+      1Q27: 2.87
+      2Q27: 3.16
+- id: STREET_NIGHTS
+  label: Street nights (m)
+  unit: m
+  block: drivers
+  kind: input
+  periods:
+  - 3Q26
+  - 4Q26
+  provenance:
+  - periods:
+    - 3Q26
+    - 4Q26
+    item: street_nights_m
+    dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+    receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+    grade: B
+    decision: DEC-0013
+    tolerance: 0.1
+    scenario_map:
+      base: street
+      short: street
+      breaker: street
+  values:
+    base:
+      3Q26: 149.0
+      4Q26: 134.0
+    short:
+      3Q26: 149.0
+      4Q26: 134.0
+    breaker:
+      3Q26: 149.0
+      4Q26: 134.0
+- id: STREET_ADR
+  label: Street ADR ($)
+  unit: usd
+  block: drivers
+  kind: input
+  periods:
+  - 3Q26
+  provenance:
+  - periods:
+    - 3Q26
+    item: street_adr_usd
+    dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+    receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+    grade: B
+    decision: DEC-0013
+    tolerance: 0.01
+    scenario_map:
+      base: street
+      short: street
+      breaker: street
+  values:
+    base:
+      3Q26: 177.06
+    short:
+      3Q26: 177.06
+    breaker:
+      3Q26: 177.06
+- id: REV
+  label: Revenue ($M)
+  unit: musd
+  block: revenue
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: revenue_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 1818.0
+      2Q23: 2484.0
+      3Q23: 3397.0
+      4Q23: 2218.0
+      1Q24: 2142.0
+      2Q24: 2748.0
+      3Q24: 3732.0
+      4Q24: 2480.0
+      1Q25: 2272.0
+      2Q25: 3096.0
+      3Q25: 4095.0
+      4Q25: 2778.0
+      1Q26: 2678.0
+      2Q26: 3608.0
+    short:
+      1Q23: 1818.0
+      2Q23: 2484.0
+      3Q23: 3397.0
+      4Q23: 2218.0
+      1Q24: 2142.0
+      2Q24: 2748.0
+      3Q24: 3732.0
+      4Q24: 2480.0
+      1Q25: 2272.0
+      2Q25: 3096.0
+      3Q25: 4095.0
+      4Q25: 2778.0
+      1Q26: 2678.0
+      2Q26: 3608.0
+    breaker:
+      1Q23: 1818.0
+      2Q23: 2484.0
+      3Q23: 3397.0
+      4Q23: 2218.0
+      1Q24: 2142.0
+      2Q24: 2748.0
+      3Q24: 3732.0
+      4Q24: 2480.0
+      1Q25: 2272.0
+      2Q25: 3096.0
+      3Q25: 4095.0
+      4Q25: 2778.0
+      1Q26: 2678.0
+      2Q26: 3608.0
+- id: TAKE
+  label: Take rate (%)
+  unit: pct
+  block: revenue
+  kind: formula
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  expr: REV / GBV * 100
+- id: LAM_Q1
+  label: Kernel lambda, Q1 season (%)
+  unit: pct
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: lambda_q1_pct
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.01
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 12.66
+    short:
+      ALL: 12.66
+    breaker:
+      ALL: 12.66
+- id: LAM_Q2
+  label: Kernel lambda, Q2 season (%)
+  unit: pct
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: lambda_q2_pct
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.01
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 13.71
+    short:
+      ALL: 13.71
+    breaker:
+      ALL: 13.71
+- id: LAM_Q3
+  label: Kernel lambda, Q3 season (%)
+  unit: pct
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: lambda_q3_pct
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.01
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 17.24
+    short:
+      ALL: 17.24
+    breaker:
+      ALL: 17.24
+- id: LAM_Q4
+  label: Kernel lambda, Q4 season (%)
+  unit: pct
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: lambda_q4_pct
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.01
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 12.03
+    short:
+      ALL: 12.03
+    breaker:
+      ALL: 12.03
+- id: W1
+  label: Kernel weight, GBV[q-1]
+  unit: weight
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: w1
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.001
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 0.6667
+    short:
+      ALL: 0.6667
+    breaker:
+      ALL: 0.6667
+- id: W2
+  label: Kernel weight, GBV[q-2]
+  unit: weight
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: w2
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.001
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 0.3333
+    short:
+      ALL: 0.3333
+    breaker:
+      ALL: 0.3333
+- id: JW0
+  label: Joint-rule weight, GBV[t] (sensitivity only)
+  unit: weight
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: joint_w0
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.001
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 0.359
+    short:
+      ALL: 0.359
+    breaker:
+      ALL: 0.359
+- id: JW1
+  label: Joint-rule weight, GBV[t-1] (sensitivity only)
+  unit: weight
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: joint_w1
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.001
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 0.4729
+    short:
+      ALL: 0.4729
+    breaker:
+      ALL: 0.4729
+- id: JW2
+  label: Joint-rule weight, GBV[t-2] (sensitivity only)
+  unit: weight
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: joint_w2
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.001
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 0.1681
+    short:
+      ALL: 0.1681
+    breaker:
+      ALL: 0.1681
+- id: JW3
+  label: Joint-rule weight, mean(GBV[t-3],GBV[t-4]) (sensitivity only)
+  unit: weight
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: joint_w3
+    dossier: docs/pitch-model-v2/dossiers/R1_r1_kernel.md
+    receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json
+    grade: B
+    decision: DEC-0006
+    tolerance: 0.001
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 0.0
+    short:
+      ALL: 0.0
+    breaker:
+      ALL: 0.0
+- id: REV_KERNEL
+  label: Revenue, kernel ($M)
+  unit: musd
+  block: revenue
+  kind: formula
+  periods:
+  - 3Q26
+  expr: LAM_Q3@ALL / 100 * (W1@ALL * GBV[-1] + W2@ALL * GBV[-2])
+- id: CUSH
+  label: Guide cushion, trailing-8 mean (pp)
+  unit: pctpt
+  block: revenue
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: cushion_mean_pct
+    dossier: docs/pitch-model-v2/dossiers/R3_r3_cushion.md
+    receipt: data/processed/pitch_model_v2/receipts/R3/receipt.json
+    grade: A
+    decision: DEC-0001
+    tolerance: 0.01
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 1.857
+    short:
+      ALL: 1.857
+    breaker:
+      ALL: 1.857
+- id: STREET_REV
+  label: Street revenue ($M)
+  unit: musd
+  block: revenue
+  kind: input
+  periods:
+  - 3Q26
+  - 4Q26
+  - FY26
+  - FY27
+  provenance:
+  - periods:
+    - 3Q26
+    - 4Q26
+    - FY26
+    - FY27
+    item: street_revenue_musd
+    dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+    receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+    grade: B
+    decision: DEC-0013
+    tolerance: 0.5
+    scenario_map:
+      base: street
+      short: street
+      breaker: street
+  values:
+    base:
+      3Q26: 4744.0
+      4Q26: 3161.0
+      FY26: 14160.0
+      FY27: 15798.0
+    short:
+      3Q26: 4744.0
+      4Q26: 3161.0
+      FY26: 14160.0
+      FY27: 15798.0
+    breaker:
+      3Q26: 4744.0
+      4Q26: 3161.0
+      FY26: 14160.0
+      FY27: 15798.0
+- id: COR
+  label: Cost of revenue, cash ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: cor_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 428.0
+      2Q23: 432.0
+      3Q23: 459.0
+      4Q23: 384.0
+      1Q24: 480.0
+      2Q24: 506.0
+      3Q24: 465.0
+      4Q24: 427.0
+      1Q25: 506.0
+      2Q25: 544.0
+      3Q25: 549.0
+      4Q25: 487.0
+      1Q26: 581.0
+      2Q26: 633.0
+    short:
+      1Q23: 428.0
+      2Q23: 432.0
+      3Q23: 459.0
+      4Q23: 384.0
+      1Q24: 480.0
+      2Q24: 506.0
+      3Q24: 465.0
+      4Q24: 427.0
+      1Q25: 506.0
+      2Q25: 544.0
+      3Q25: 549.0
+      4Q25: 487.0
+      1Q26: 581.0
+      2Q26: 633.0
+    breaker:
+      1Q23: 428.0
+      2Q23: 432.0
+      3Q23: 459.0
+      4Q23: 384.0
+      1Q24: 480.0
+      2Q24: 506.0
+      3Q24: 465.0
+      4Q24: 427.0
+      1Q25: 506.0
+      2Q25: 544.0
+      3Q25: 549.0
+      4Q25: 487.0
+      1Q26: 581.0
+      2Q26: 633.0
+- id: OPS
+  label: Operations & support, cash ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: ops_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 267.0
+      2Q23: 298.0
+      3Q23: 299.0
+      4Q23: 254.0
+      1Q24: 266.0
+      2Q24: 314.0
+      3Q24: 347.0
+      4Q24: 265.0
+      1Q25: 282.0
+      2Q25: 309.0
+      3Q25: 343.0
+      4Q25: 303.0
+      1Q26: 301.0
+      2Q26: 323.0
+    short:
+      1Q23: 267.0
+      2Q23: 298.0
+      3Q23: 299.0
+      4Q23: 254.0
+      1Q24: 266.0
+      2Q24: 314.0
+      3Q24: 347.0
+      4Q24: 265.0
+      1Q25: 282.0
+      2Q25: 309.0
+      3Q25: 343.0
+      4Q25: 303.0
+      1Q26: 301.0
+      2Q26: 323.0
+    breaker:
+      1Q23: 267.0
+      2Q23: 298.0
+      3Q23: 299.0
+      4Q23: 254.0
+      1Q24: 266.0
+      2Q24: 314.0
+      3Q24: 347.0
+      4Q24: 265.0
+      1Q25: 282.0
+      2Q25: 309.0
+      3Q25: 343.0
+      4Q25: 303.0
+      1Q26: 301.0
+      2Q26: 323.0
+- id: PD
+  label: Product development, cash ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: pd_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 271.0
+      2Q23: 260.0
+      3Q23: 244.0
+      4Q23: 253.0
+      1Q24: 290.0
+      2Q24: 280.0
+      3Q24: 294.0
+      4Q24: 306.0
+      1Q25: 338.0
+      2Q25: 331.0
+      3Q25: 333.0
+      4Q25: 335.0
+      1Q26: 375.0
+      2Q26: 374.0
+    short:
+      1Q23: 271.0
+      2Q23: 260.0
+      3Q23: 244.0
+      4Q23: 253.0
+      1Q24: 290.0
+      2Q24: 280.0
+      3Q24: 294.0
+      4Q24: 306.0
+      1Q25: 338.0
+      2Q25: 331.0
+      3Q25: 333.0
+      4Q25: 335.0
+      1Q26: 375.0
+      2Q26: 374.0
+    breaker:
+      1Q23: 271.0
+      2Q23: 260.0
+      3Q23: 244.0
+      4Q23: 253.0
+      1Q24: 290.0
+      2Q24: 280.0
+      3Q24: 294.0
+      4Q24: 306.0
+      1Q25: 338.0
+      2Q25: 331.0
+      3Q25: 333.0
+      4Q25: 335.0
+      1Q26: 375.0
+      2Q26: 374.0
+- id: GA
+  label: G&A ex lodging reserve, cash ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: ga_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 191.0
+      2Q23: 219.0
+      3Q23: 202.0
+      4Q23: 211.0
+      1Q24: 223.0
+      2Q24: 242.0
+      3Q24: 210.0
+      4Q24: 226.0
+      1Q25: 235.0
+      2Q25: 244.0
+      3Q25: 257.0
+      4Q25: 259.0
+      1Q26: 226.0
+      2Q26: 227.0
+    short:
+      1Q23: 191.0
+      2Q23: 219.0
+      3Q23: 202.0
+      4Q23: 211.0
+      1Q24: 223.0
+      2Q24: 242.0
+      3Q24: 210.0
+      4Q24: 226.0
+      1Q25: 235.0
+      2Q25: 244.0
+      3Q25: 257.0
+      4Q25: 259.0
+      1Q26: 226.0
+      2Q26: 227.0
+    breaker:
+      1Q23: 191.0
+      2Q23: 219.0
+      3Q23: 202.0
+      4Q23: 211.0
+      1Q24: 223.0
+      2Q24: 242.0
+      3Q24: 210.0
+      4Q24: 226.0
+      1Q25: 235.0
+      2Q25: 244.0
+      3Q25: 257.0
+      4Q25: 259.0
+      1Q26: 226.0
+      2Q26: 227.0
+- id: SBC
+  label: Stock-based compensation, total ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: sbc_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 240.0
+      2Q23: 304.0
+      3Q23: 286.0
+      4Q23: 290.0
+      1Q24: 295.0
+      2Q24: 382.0
+      3Q24: 362.0
+      4Q24: 368.0
+      1Q25: 358.0
+      2Q25: 424.0
+      3Q25: 399.0
+      4Q25: 411.0
+      1Q26: 410.0
+      2Q26: 487.0
+    short:
+      1Q23: 240.0
+      2Q23: 304.0
+      3Q23: 286.0
+      4Q23: 290.0
+      1Q24: 295.0
+      2Q24: 382.0
+      3Q24: 362.0
+      4Q24: 368.0
+      1Q25: 358.0
+      2Q25: 424.0
+      3Q25: 399.0
+      4Q25: 411.0
+      1Q26: 410.0
+      2Q26: 487.0
+    breaker:
+      1Q23: 240.0
+      2Q23: 304.0
+      3Q23: 286.0
+      4Q23: 290.0
+      1Q24: 295.0
+      2Q24: 382.0
+      3Q24: 362.0
+      4Q24: 368.0
+      1Q25: 358.0
+      2Q25: 424.0
+      3Q25: 399.0
+      4Q25: 411.0
+      1Q26: 410.0
+      2Q26: 487.0
+- id: DA
+  label: Depreciation & amortization ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: da_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 11.0
+      2Q23: 9.0
+      3Q23: 8.0
+      4Q23: 16.0
+      1Q24: 14.0
+      2Q24: 14.0
+      3Q24: 15.0
+      4Q24: 22.0
+      1Q25: 25.0
+      2Q25: 21.0
+      3Q25: 22.0
+      4Q25: 23.0
+      1Q26: 22.0
+      2Q26: 17.0
+    short:
+      1Q23: 11.0
+      2Q23: 9.0
+      3Q23: 8.0
+      4Q23: 16.0
+      1Q24: 14.0
+      2Q24: 14.0
+      3Q24: 15.0
+      4Q24: 22.0
+      1Q25: 25.0
+      2Q25: 21.0
+      3Q25: 22.0
+      4Q25: 23.0
+      1Q26: 22.0
+      2Q26: 17.0
+    breaker:
+      1Q23: 11.0
+      2Q23: 9.0
+      3Q23: 8.0
+      4Q23: 16.0
+      1Q24: 14.0
+      2Q24: 14.0
+      3Q24: 15.0
+      4Q24: 22.0
+      1Q25: 25.0
+      2Q25: 21.0
+      3Q25: 22.0
+      4Q25: 23.0
+      1Q26: 22.0
+      2Q26: 17.0
+- id: EBITDA
+  label: Adjusted EBITDA ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: adj_ebitda_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 262.0
+      2Q23: 819.0
+      3Q23: 1834.0
+      4Q23: 738.0
+      1Q24: 424.0
+      2Q24: 894.0
+      3Q24: 1958.0
+      4Q24: 765.0
+      1Q25: 417.0
+      2Q25: 1043.0
+      3Q25: 2051.0
+      4Q25: 786.0
+      1Q26: 519.0
+      2Q26: 1261.0
+    short:
+      1Q23: 262.0
+      2Q23: 819.0
+      3Q23: 1834.0
+      4Q23: 738.0
+      1Q24: 424.0
+      2Q24: 894.0
+      3Q24: 1958.0
+      4Q24: 765.0
+      1Q25: 417.0
+      2Q25: 1043.0
+      3Q25: 2051.0
+      4Q25: 786.0
+      1Q26: 519.0
+      2Q26: 1261.0
+    breaker:
+      1Q23: 262.0
+      2Q23: 819.0
+      3Q23: 1834.0
+      4Q23: 738.0
+      1Q24: 424.0
+      2Q24: 894.0
+      3Q24: 1958.0
+      4Q24: 765.0
+      1Q25: 417.0
+      2Q25: 1043.0
+      3Q25: 2051.0
+      4Q25: 786.0
+      1Q26: 519.0
+      2Q26: 1261.0
+- id: SHARES
+  label: Diluted shares, historical (m)
+  unit: m
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: shares_m
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.1
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  values:
+    base:
+      1Q23: 670.0
+      2Q23: 665.0
+      3Q23: 660.0
+      4Q23: 640.0
+      1Q24: 654.0
+      2Q24: 649.0
+      3Q24: 642.0
+      4Q24: 636.0
+      1Q25: 632.0
+      2Q25: 626.0
+      3Q25: 621.0
+      4Q25: 614.0
+      1Q26: 608.0
+      2Q26: 597.0
+    short:
+      1Q23: 670.0
+      2Q23: 665.0
+      3Q23: 660.0
+      4Q23: 640.0
+      1Q24: 654.0
+      2Q24: 649.0
+      3Q24: 642.0
+      4Q24: 636.0
+      1Q25: 632.0
+      2Q25: 626.0
+      3Q25: 621.0
+      4Q25: 614.0
+      1Q26: 608.0
+      2Q26: 597.0
+    breaker:
+      1Q23: 670.0
+      2Q23: 665.0
+      3Q23: 660.0
+      4Q23: 640.0
+      1Q24: 654.0
+      2Q24: 649.0
+      3Q24: 642.0
+      4Q24: 636.0
+      1Q25: 632.0
+      2Q25: 626.0
+      3Q25: 621.0
+      4Q25: 614.0
+      1Q26: 608.0
+      2Q26: 597.0
+- id: SM
+  label: Sales & marketing, cash ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 1Q23
+  - 2Q23
+  - 3Q23
+  - 4Q23
+  - 1Q24
+  - 2Q24
+  - 3Q24
+  - 4Q24
+  - 1Q25
+  - 2Q25
+  - 3Q25
+  - 4Q25
+  - 1Q26
+  - 2Q26
+  - 3Q26
+  - 4Q26
+  - FY26
+  - FY27
+  provenance:
+  - periods:
+    - 1Q23
+    - 2Q23
+    - 3Q23
+    - 4Q23
+    - 1Q24
+    - 2Q24
+    - 3Q24
+    - 4Q24
+    - 1Q25
+    - 2Q25
+    - 3Q25
+    - 4Q25
+    - 1Q26
+    - 2Q26
+    item: sm_musd
+    dossier: docs/pitch-model-v2/dossiers/H0_h0_history.md
+    receipt: data/processed/pitch_model_v2/receipts/H0/receipt.json
+    grade: B
+    decision: DEC-0003
+    tolerance: 0.5
+    scenario_map:
+      base: actual
+      short: actual
+      breaker: actual
+  - periods:
+    - 3Q26
+    - 4Q26
+    - FY26
+    - FY27
+    item: sm_musd
+    dossier: docs/pitch-model-v2/dossiers/C4_c4_sales_marketing.md
+    receipt: data/processed/pitch_model_v2/receipts/C4/receipt.json
+    grade: B
+    decision: DEC-0011
+    tolerance: 0.5
+    scenario_map:
+      base: base (line build)
+      short: short
+      breaker: breaker (ramp pauses)
+  values:
+    base:
+      1Q23: 422.0
+      2Q23: 450.0
+      3Q23: 370.0
+      4Q23: 391.0
+      1Q24: 479.0
+      2Q24: 527.0
+      3Q24: 471.0
+      4Q24: 501.0
+      1Q25: 519.0
+      2Q25: 639.0
+      3Q25: 585.0
+      4Q25: 633.0
+      1Q26: 696.0
+      2Q26: 808.0
+      3Q26: 778.3
+      4Q26: 758.1
+      FY26: 3040.4
+      FY27: 3459.6
+    short:
+      1Q23: 422.0
+      2Q23: 450.0
+      3Q23: 370.0
+      4Q23: 391.0
+      1Q24: 479.0
+      2Q24: 527.0
+      3Q24: 471.0
+      4Q24: 501.0
+      1Q25: 519.0
+      2Q25: 639.0
+      3Q25: 585.0
+      4Q25: 633.0
+      1Q26: 696.0
+      2Q26: 808.0
+      3Q26: 778.3
+      4Q26: 758.1
+      FY26: 3040.4
+      FY27: 3459.6
+    breaker:
+      1Q23: 422.0
+      2Q23: 450.0
+      3Q23: 370.0
+      4Q23: 391.0
+      1Q24: 479.0
+      2Q24: 527.0
+      3Q24: 471.0
+      4Q24: 501.0
+      1Q25: 519.0
+      2Q25: 639.0
+      3Q25: 585.0
+      4Q25: 633.0
+      1Q26: 696.0
+      2Q26: 808.0
+      3Q26: 785.4
+      4Q26: 713.7
+      FY26: 3003.1
+      FY27: 3285.6
+- id: STREET_EBITDA
+  label: Street adjusted EBITDA ($M)
+  unit: musd
+  block: costs
+  kind: input
+  periods:
+  - 3Q26
+  - FY27
+  provenance:
+  - periods:
+    - 3Q26
+    - FY27
+    item: street_ebitda_musd
+    dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+    receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+    grade: B
+    decision: DEC-0013
+    tolerance: 0.5
+    scenario_map:
+      base: street
+      short: street
+      breaker: street
+  values:
+    base:
+      3Q26: 2362.0
+      FY27: 5766.0
+    short:
+      3Q26: 2362.0
+      FY27: 5766.0
+    breaker:
+      3Q26: 2362.0
+      FY27: 5766.0
+- id: STREET_EPS
+  label: Street diluted EPS ($)
+  unit: usd
+  block: costs
+  kind: input
+  periods:
+  - 3Q26
+  - FY27
+  provenance:
+  - periods:
+    - 3Q26
+    - FY27
+    item: street_eps_usd
+    dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+    receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+    grade: B
+    decision: DEC-0013
+    tolerance: 0.01
+    scenario_map:
+      base: street
+      short: street
+      breaker: street
+  values:
+    base:
+      3Q26: 2.85
+      FY27: 6.23
+    short:
+      3Q26: 2.85
+      FY27: 6.23
+    breaker:
+      3Q26: 2.85
+      FY27: 6.23
+- id: STREET_MARGIN
+  label: Street adjusted EBITDA margin (%)
+  unit: pct
+  block: costs
+  kind: input
+  periods:
+  - FY27
+  provenance:
+  - periods:
+    - FY27
+    item: street_margin_pct
+    dossier: docs/pitch-model-v2/dossiers/V1_v1_street.md
+    receipt: data/processed/pitch_model_v2/receipts/V1/receipt_l0_pytest.json
+    grade: B
+    decision: DEC-0013
+    tolerance: 0.01
+    scenario_map:
+      base: street
+      short: street
+      breaker: street
+  values:
+    base:
+      FY27: 36.45
+    short:
+      FY27: 36.45
+    breaker:
+      FY27: 36.45
+- id: MULT
+  label: Exit EV / adj. EBITDA multiple (x)
+  unit: x
+  block: valuation
+  kind: input
+  periods:
+  - FY27
+  provenance:
+  - periods:
+    - FY27
+    item: exit_multiple_x
+    dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+    receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+    grade: B
+    decision: DEC-0014
+    tolerance: 0.01
+    scenario_map:
+      base: base_slope
+      short: bear_slope
+      breaker: bull_slope
+  values:
+    base:
+      FY27: 16.03
+    short:
+      FY27: 12.29
+    breaker:
+      FY27: 20.76
+- id: SLOPE
+  label: Exit multiple slope (turns per pp of growth)
+  unit: x
+  block: valuation
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: slope_turns_per_pt
+    dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+    receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+    grade: B
+    decision: DEC-0015
+    tolerance: 0.01
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 0.486
+    short:
+      ALL: 0.486
+    breaker:
+      ALL: 0.486
+- id: SPOT
+  label: Spot price ($)
+  unit: usd
+  block: valuation
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: spot_usd
+    dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+    receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+    grade: B
+    decision: DEC-0015
+    tolerance: 0.01
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 167.51
+    short:
+      ALL: 167.51
+    breaker:
+      ALL: 167.51
+- id: NETCASH
+  label: Net cash ex client-held float ($M)
+  unit: musd
+  block: valuation
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: net_cash_ex_float_musd
+    dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+    receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+    grade: B
+    decision: DEC-0015
+    tolerance: 0.5
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 9569.0
+    short:
+      ALL: 9569.0
+    breaker:
+      ALL: 9569.0
+- id: SHARES_DIL
+  label: Diluted shares, valuation basis (m)
+  unit: m
+  block: valuation
+  kind: input
+  periods:
+  - ALL
+  provenance:
+  - periods:
+    - ALL
+    item: diluted_shares_m
+    dossier: docs/pitch-model-v2/dossiers/V2_v2_multiple.md
+    receipt: data/processed/pitch_model_v2/receipts/V2/receipt.json
+    grade: B
+    decision: DEC-0015
+    tolerance: 0.1
+    scenario_map:
+      base: base
+      short: base
+      breaker: base
+  values:
+    base:
+      ALL: 597.0
+    short:
+      ALL: 597.0
+    breaker:
+      ALL: 597.0

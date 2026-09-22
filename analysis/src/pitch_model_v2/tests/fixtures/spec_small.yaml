@@ -1,0 +1,57 @@
+meta:
+  price_date: "2026-09-16"
+  spot: 167.51
+  scenarios: [base, short]
+  periods: [1Q26, 2Q26, 3Q26, 4Q26, FY26]
+lines:
+  - id: D1
+    label: Nights (m)
+    unit: m
+    block: drivers
+    kind: input
+    periods: [1Q26, 2Q26, 3Q26, 4Q26]
+    values:
+      base:  {1Q26: 143.1, 2Q26: 134.4, 3Q26: 146.3, 4Q26: 133.2}
+      short: {1Q26: 143.1, 2Q26: 134.4, 3Q26: 145.0, 4Q26: 131.0}
+    provenance: {dossier: docs/pitch-model-v2/dossiers/D1_nights.md, receipt: data/processed/pitch_model_v2/receipts/D1/receipt.json, grade: A, decision: DEC-0001, tolerance: 0.1}
+  - id: D4T
+    label: ADR ($)
+    unit: usd
+    block: drivers
+    kind: input
+    periods: [1Q26, 2Q26, 3Q26, 4Q26]
+    values:
+      base:  {1Q26: 176.0, 2Q26: 179.4, 3Q26: 176.9, 4Q26: 171.0}
+      short: {1Q26: 176.0, 2Q26: 179.4, 3Q26: 174.6, 4Q26: 169.0}
+    provenance: {dossier: docs/pitch-model-v2/dossiers/D4_adr.md, receipt: data/processed/pitch_model_v2/receipts/D4/receipt.json, grade: B, decision: DEC-0002, tolerance: 0.5}
+  - id: D6
+    label: GBV ($M)
+    unit: musd
+    block: drivers
+    kind: formula
+    periods: [1Q26, 2Q26, 3Q26, 4Q26]
+    expr: "D1 * D4T"
+  - id: LAM
+    label: Lambda by season
+    unit: pct
+    block: revenue
+    kind: input
+    periods: [3Q26, 4Q26]
+    values:
+      base:  {3Q26: 0.1724, 4Q26: 0.1203}
+      short: {3Q26: 0.1724, 4Q26: 0.1203}
+    provenance: {dossier: docs/pitch-model-v2/dossiers/R1_kernel.md, receipt: data/processed/pitch_model_v2/receipts/R1/receipt.json, grade: A, decision: DEC-0003, tolerance: 0.0001}
+  - id: R2
+    label: Revenue, kernel ($M)
+    unit: musd
+    block: revenue
+    kind: formula
+    periods: [3Q26, 4Q26]
+    expr: "LAM * (2/3*D6[-1] + 1/3*D6[-2])"
+  - id: R5FY
+    label: FY26 revenue ($M)
+    unit: musd
+    block: revenue
+    kind: formula
+    periods: [FY26]
+    expr: "R2@3Q26 + R2@4Q26"

@@ -62,3 +62,6 @@ data/processed/overnight/29_fred_cache/
 
 # Per-dump aggregate cache for analysis/src/adr/05_size_mix.py (rebuildable in ~30s)
 data/processed/adr/.05_size_cache.csv
+
+# pandas-2.3 fallback interpreter for reproductions (pitch_model_v2)
+.venv-pd2/

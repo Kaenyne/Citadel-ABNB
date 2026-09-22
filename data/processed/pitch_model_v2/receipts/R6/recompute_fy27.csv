@@ -1,0 +1,36 @@
+item,scenario,period,recomputed,committed,diff,unit,source
+fy27_revenue_musd,base,FY27,15828.606600000001,15828.6067,-9.999999929277692e-05,USD m,06 v2b quarterly sum
+fy27_revenue_yoy_pct,base,FY27,10.936694895684163,10.9367,-5.104315837556328e-06,pct,"06 v2b, own FY26"
+revenue_musd,base,1Q27,3053.1293,3053.1293,0.0,USD m,06 v2b
+revenue_musd,base,2Q27,4028.9807,4028.9807,0.0,USD m,06 v2b
+revenue_musd,base,3Q27,5280.7325,5280.7325,0.0,USD m,06 v2b
+revenue_musd,base,4Q27,3465.7641,3465.7641,0.0,USD m,06 v2b
+fy27_revenue_musd,bear,FY27,14948.333900000001,14948.3339,1.8189894035458565e-12,USD m,06 v2b quarterly sum
+fy27_revenue_yoy_pct,bear,FY27,5.53150424146267,5.531504241462648,2.220446049250313e-14,pct,"06 v2b, own FY26"
+revenue_musd,bear,1Q27,2995.1629,2995.1629,0.0,USD m,06 v2b
+revenue_musd,bear,2Q27,3803.7239,3803.7239,0.0,USD m,06 v2b
+revenue_musd,bear,3Q27,4936.538,4936.538,0.0,USD m,06 v2b
+revenue_musd,bear,4Q27,3212.9091,3212.9091,0.0,USD m,06 v2b
+fy27_revenue_musd,bull,FY27,16570.7436,16570.7437,-9.999999747378752e-05,USD m,06 v2b quarterly sum
+fy27_revenue_yoy_pct,bull,FY27,15.139081421467626,15.139082116301129,-6.94833502734582e-07,pct,"06 v2b, own FY26"
+revenue_musd,bull,1Q27,3119.9376,3119.9376,0.0,USD m,06 v2b
+revenue_musd,bull,2Q27,4189.9054,4189.9054,0.0,USD m,06 v2b
+revenue_musd,bull,3Q27,5559.9477,5559.9477,0.0,USD m,06 v2b
+revenue_musd,bull,4Q27,3700.9529,3700.9529,0.0,USD m,06 v2b
+fy27_revenue_musd,short,FY27,14913.511523502642,14913.511523502642,0.0,USD m,40_short_case_revenue_path quarterly sum
+fy27_revenue_yoy_pct_own_base,short,FY27,7.039117225317404,,,pct,short FY27 / short FY26
+fy27_revenue_yoy_pct_vs_base_fy26,short,FY27,4.523140155029859,4.5,0.02314015502985889,pct,short FY27 / base FY26 (the published +4.5%)
+revenue_musd,short,1Q27,2835.534611159138,2835.534611159138,0.0,USD m,40_short_case_revenue_path
+revenue_musd,short,2Q27,3762.971581763706,3762.971581763706,0.0,USD m,40_short_case_revenue_path
+revenue_musd,short,3Q27,4988.174247627799,4988.174247627799,0.0,USD m,40_short_case_revenue_path
+revenue_musd,short,4Q27,3326.831082952,3326.831082952,0.0,USD m,40_short_case_revenue_path
+revenue_yoy_pct,short,1Q27,5.8825470933210555,,,pct,short quarterly / short prior-year quarter
+revenue_yoy_pct,short,2Q27,4.295221224049506,,,pct,short quarterly / short prior-year quarter
+revenue_yoy_pct,short,3Q27,6.564426738862772,,,pct,short quarterly / short prior-year quarter
+revenue_yoy_pct,short,4Q27,12.170583607879593,,,pct,short quarterly / short prior-year quarter
+fy27_band_low_pct,base,FY27,9.17945550566328,9.18,-0.0005444943367205468,pct,"fy27_kernel_band_v2.csv, w=0.33"
+fy27_band_high_pct,base,FY27,11.52282099464208,11.52,0.002820994642080521,pct,"fy27_kernel_band_v2.csv, w=2/3"
+fy27_growth_span_pp,base,FY27,0.0424936245833738,,,pp,kappa_anatomy_and_lambda_refit.csv [lambda_REFIT_at_this_w (B3 caveat 1)]
+fy27_growth_span_pp,base,FY27,2.343365488978801,,,pp,kappa_anatomy_and_lambda_refit.csv [lambda_fixed_at_w=2/3 (B3 convention)]
+fy27_growth_lapaware_low_pct,base,FY27,8.409437113514056,,,pct,turns_vs_street_and_w_band.csv
+fy27_growth_lapaware_high_pct,base,FY27,10.243236523093474,,,pct,turns_vs_street_and_w_band.csv

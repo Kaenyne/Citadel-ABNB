@@ -1,0 +1,45 @@
+Choice-model underlying US nights growth, no product lever
+  2026 +3.31%   2027 +2.31%   (2025 actual NA +2.6%)
+
+Fitted NA product contribution (observed NA Y/Y less underlying, points)
+  RNPL (identified on 3Q25, the only quarter it is live alone): +2.40
+  tranche-1 single fee + cancellation redesign (the 1Q26 step): +2.29
+  peak bundle, 1H26: +4.69 pts
+  implied ex-NA bundle from the global ~3.0 pts: +2.30 pts
+
+=== North America nights Y/Y by quarter ===
+scenario  bear  base  bull  WS10 base
+quarter                              
+3Q26      5.60  5.60  6.80        7.0
+4Q26      2.31  3.31  3.31        7.0
+1Q27      1.31  2.31  4.65        6.0
+2Q27      1.31  2.31  4.65        6.0
+3Q27      1.31  2.31  4.65        6.0
+4Q27      2.31  2.31  4.65        6.0
+
+=== Total nights Y/Y: NA lap only (ex-NA unchanged from WS10) ===
+scenario  bear  base   bull  WS10 base
+quarter                               
+3Q26      9.89  9.89  10.23      10.29
+4Q26      8.62  8.90   8.90       9.94
+1Q27      7.90  8.17   8.79       9.15
+2Q27      7.90  8.17   8.79       9.15
+3Q27      7.90  8.17   8.79       9.15
+4Q27      8.17  8.17   8.79       9.15
+
+=== Total nights Y/Y: the bundle laps everywhere from 1Q27 ===
+scenario  bear  base   bull  WS10 base
+quarter                               
+3Q26      9.89  9.89  10.23      10.29
+4Q26      8.62  8.90   8.90       9.94
+1Q27      6.15  6.42   7.04       9.15
+2Q27      6.15  6.42   7.04       9.15
+3Q27      6.15  6.42   7.04       9.15
+4Q27      6.42  6.42   7.04       9.15
+
+=== The 5 Nov card ===
+  3Q26 model +9.89% (146.8mm)   guide 10-12%   team frozen card +10.2% (147.2mm; no public nights consensus exists)
+  4Q26 model +8.90% (132.7mm)   WS10 +9.94%   <- the guide given on 5 Nov, and the trade
+
+wrote /Users/theomachado/Citadel-ABNB/data/processed/nights_quarterly_na.csv
+wrote /Users/theomachado/Citadel-ABNB/data/processed/nights_quarterly_total.csv

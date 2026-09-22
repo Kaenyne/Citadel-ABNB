@@ -1,0 +1,54 @@
+Base decomposition of U.S. nights growth (percentage points of the prior-year base)
+ year  market_pts  mix_pts  category_pts  share_pts  total
+ 2026        0.65     0.86          2.50      -0.70   3.31
+ 2027        0.41     0.88          2.54      -1.52   2.31
+ 2028        0.53     0.91          2.28       0.00   3.72
+ 2029        0.53     0.94          2.30       0.00   3.76
+ 2030        0.52     0.97          1.98       0.00   3.47
+
+=== 2026: model says U.S. +3.31%. What each lever alone would have to be ===
+  Category adoption (own-category nights growth)  base   +4.0%   bear->   +5.9%  base->   +9.9%  bull->  +13.1%
+  Product shift (logit points, one year)          base    0.00   bear->    0.03  base->    0.10  bull->    0.15
+  U.S. lodging demand growth (contestable pool)   base   +1.7%   bear->   +4.9%  base->  +11.5%  bull->  +16.8%
+  Airbnb ADR growth (share via the price gap)     base   +3.5%   bear->   +2.8%  base->   +1.5%  bull->   +0.4%
+  Switch rate                                     base    5.00   bear->   n/a    base->   n/a    bull->   n/a  
+  Contestable share of Airbnb nights              base  +38.0%   bear->   +9.1%  base->   n/a    bull->   n/a  
+
+=== 2027: model says U.S. +2.31%. What each lever alone would have to be ===
+  Category adoption (own-category nights growth)  base   +4.0%   bear->   +5.1%  base->   +9.8%  bull->  +13.0%
+  Product shift (logit points, one year)          base    0.00   bear->    0.02  base->    0.10  bull->    0.15
+  U.S. lodging demand growth (contestable pool)   base   +1.7%   bear->   +3.0%  base->  +11.4%  bull->  +17.0%
+  Airbnb ADR growth (share via the price gap)     base   +3.5%   bear->   +2.1%  base->   +0.4%  bull->   -0.7%
+  Switch rate                                     base    5.00   bear->    2.67  base->   n/a    bull->   n/a  
+  Contestable share of Airbnb nights              base  +38.0%   bear->  +27.8%  base->   n/a    bull->   n/a  
+
+=== The lap test: is the product lever a level effect or a growth rate? ===
+  0.081 logit pts reproduces management's '~3 pts of nights' (three features, 1Q26 call)
+  0.099 logit pts reaches WS10's NA base of +7.0% for 2026
+                                    scenario   2026   2027   2028   2029   2030
+                      base: no product lever 0.0331 0.0231 0.0372 0.0376 0.0347
+one-off 2026 launch (+0.10 logit), then laps 0.0703 0.0216 0.0368 0.0372 0.0343
+        a launch of the same size every year 0.0703 0.0588 0.0754 0.0767 0.0749
+
+  WS10 NA targets:   2026 base +7.0%   2027 base +6.0%
+
+=== Corroboration: the disclosed NA path is a step, not a trend ===
+quarter  na_nights_yoy_mid             source
+   3Q24               3.35      WS10 estimate
+   4Q24               5.00      WS10 estimate
+   1Q25               2.00      WS10 estimate
+   2Q25               2.00      WS10 estimate
+   3Q25               5.00      WS10 estimate
+   4Q25               5.00      WS10 estimate
+   1Q26               8.00      WS10 estimate
+   2Q26               8.00      WS10 estimate
+   3Q26               7.00 WS10 base forecast
+   4Q26               7.00 WS10 base forecast
+   FY27               6.00 WS10 base forecast
+
+  Model base, no product lever:              +3.3% (2026)
+  NA disclosed FY25 (158/154 10-K):          +2.6%
+  The model's pre-product run rate and the pre-RNPL NA run rate are the same number.
+
+wrote /Users/theomachado/Citadel-ABNB/data/processed/na_nights_reconciliation.csv
+wrote /Users/theomachado/Citadel-ABNB/data/processed/na_nights_decomposition.csv

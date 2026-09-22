@@ -1,0 +1,25 @@
+R4C step 2 -- C1 implied 4Q26 guide at bridge-v3 GBV (base case)
+
+Run from /Users/theomachado/Citadel-ABNB-untracked (branch theo/local-untracked-2026-09-15, d984b14):
+
+  python3 -B analysis/src/forecast_methods/gbv_guidance_inference_v1/forecast.py \
+      --target-quarter 2026Q4 \
+      --gbv-current-musd 22987.263456 \
+      --gbv-lag1-musd  26027.962983 \
+      --gbv-lag2-musd  27200
+
+Inputs and their provenance (all from the MAIN clone /Users/theomachado/Citadel-ABNB):
+  GBV 2Q26 = $27,200M   printed. data/processed/airbnb_quarterly_kpis.csv, row 2026Q2, col gbv_usd_b = 27.2
+  GBV 3Q26 = $26,027.962983M  bridge v3 base. data/processed/h2_bridge_v3/h2_bridge_revenue_dollars.csv,
+                              row 4Q26, col gbv_3q26_assumed_busd = 26.027962983
+                              (= 22.9 x (1 + 13.659227%), h2_bridge_2026_projection.csv gbv_yoy_reported_pct q3_adjusted)
+  GBV 4Q26 = $22,987.263456M  bridge v3 base. data/processed/h2_bridge_v3/h2_bridge_v3_card_check.csv,
+                              row 4Q26 "GBV, $bn", col bridge = 22.987263455999997
+                              (= 20.4 x (1 + 12.682664%), h2_bridge_2026_projection.csv gbv_yoy_reported_pct q4_adjusted)
+
+Driver  X_4Q26 = 0.4(22987.263456) + 0.4(26027.962983) + 0.2(27200) = 25,046.0905756 $M
+Output  guide  = 1199.690910629476 x (25046.0905756/10000)^1.0432632149063203 = 3,126.5119091764896 $M
+
+Coefficient-uncertainty-only 95% bands at this X (t14, canonical/full/C1):
+  OLS  [3,080.66, 3,173.05]      HAC3 [3,056.72, 3,197.90]
+These are NOT prediction intervals: they carry no GBV uncertainty and no residual variance.

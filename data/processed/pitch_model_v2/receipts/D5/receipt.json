@@ -1,0 +1,28 @@
+{
+  "id": "D5",
+  "commit": "e39d9e44f505db978acb31849ac2c54e991a2fe6",
+  "cmd": "python3 analysis/src/forecast_methods/fx_lag_v2/run.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T07:09:55+00:00",
+  "exit_code": 0,
+  "wall_s": 7.7,
+  "watch": [
+    "analysis/src/forecast_methods/fx_lag_v2",
+    "data/processed/forecast_methods/fx_lag_v2",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [],
+  "new_files": [
+    "analysis/src/forecast_methods/fx_lag_v2/__pycache__/baskets.cpython-313.pyc",
+    "analysis/src/forecast_methods/fx_lag_v2/__pycache__/common.cpython-313.pyc",
+    "analysis/src/forecast_methods/fx_lag_v2/__pycache__/exhibit.cpython-313.pyc",
+    "analysis/src/forecast_methods/fx_lag_v2/__pycache__/fits.cpython-313.pyc",
+    "analysis/src/forecast_methods/fx_lag_v2/__pycache__/panel.cpython-313.pyc",
+    "analysis/src/forecast_methods/fx_lag_v2/__pycache__/pit_fx.cpython-313.pyc",
+    "analysis/src/forecast_methods/fx_lag_v2/__pycache__/registry_out.cpython-313.pyc",
+    "analysis/src/forecast_methods/fx_lag_v2/__pycache__/stages.cpython-313.pyc"
+  ],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

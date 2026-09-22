@@ -1,0 +1,24 @@
+input,value,evidence_status,source_or_note
+"unearned fees, 4Q20-2Q26","disclosed quarterly balance, $M",measured,data/processed/overnight/02_kpi_panel_quarterly.csv unearned_fees_musd; FY2025 10-K Note 2 and Item 7 define the pool
+reported nights N(t),disclosed quarterly series,measured,02_kpi_panel_quarterly.csv nights_m; Airbnb quarterly summaries
+ADR(t),disclosed quarterly booking-period ADR,measured,02_kpi_panel_quarterly.csv adr_usd
+GBV(t),disclosed quarterly booked GBV,measured,02_kpi_panel_quarterly.csv gbv_musd
+"fee share of GBV, central",0.133,derived,"LTM revenue / LTM GBV 13.2-13.6% (fee_share_evidence.csv), lag-corrected ~13.5%; 10-K Note 2 puts BOTH host and guest fees in unearned fees, so the 0.124 guest-only divisor used by rnpl_balance_sheet_bridge.py is wrong (audit C3)"
+fee share grid,0.124 / 0.133 / 0.151 / 0.155,grid (prereg),0.124 guest fee only (refuted as the divisor); 0.133 realised; 0.151 posted split total; 0.155 posted single host fee
+"ADR_eff basis, central",quarter's own ADR,derived,"ADR is a BOOKING-period metric, so the backlog's dollars already carry the prices at which they were booked; forward and 2/3-1/3 bases reported as sensitivities in backlog_uf.csv"
+pre-RNPL seasonal norm (UF / next-quarter revenue),Q1 0.880 Q2 0.697 Q3 0.665 Q4 0.689,derived,rnpl_balance_sheet_bridge.py section 2; 2023+2024+1H25 by season; two pre-RNPL years only for Q3 and Q4
+revenue(3Q26) used in the 2Q26 norm,4800 $M,assumed (team point),R2 dossier / bridge REV_3Q26; a 5% error here moves u(2Q26) by ~4pp
+revenue(4Q26) used in the 3Q26 norm,3166 $M,assumed (team point),R5 dossier / bridge REV_4Q26
+"unpaid share u(t), 3Q25-2Q26","UF-only solve, see backlog_total.csv",derived,"reproduces data/processed/rnpl_short_audit/verify_bs_uf_only_solve.csv 'note baseline'; the joint two-line solve is REFUTED (m not identified, audit C3)"
+single-fee migration share m,0 (not identified),refuted,"audit C2/C3: FY2025 10-K Note 2 puts host AND guest fees in unearned fees, so the migration is UF-accretive; the solve returns m = -1.4% for 3Q25, before the migration existed"
+"backlog-scale path B(t), central",ramp,"assumed (shape), justified on inputs","'ramp' scales the lengthening with the RNPL GBV share path (3Q25 4%, 4Q25 9%, 1Q26 20%, 2Q26 21%); 'step' jumps to the full B in 3Q25 and injects a spurious one-year level step into b. Ramp is the only variant whose implied 3Q25 share stays inside D1's registered 2.5-6% range"
+"backlog scale B, central",1.05,assumed (grid midpoint),"grid {1.00, 1.05, 1.10}; the audit says B 1.04-1.06 reconciles u with the disclosed 20-21% flow share; lead-time lengthening is disclosed in every print from 3Q25 (D010, D016, D039, D045) but never quantified"
+"RNPL / non-RNPL ADR ratio r, central",1.33,"derived, upper bound",1Q26 ~4pts GBV on ~3pts nights (D032); audit C5 calls 4/3 an UPPER bound (1.22x against the 1Q26 ADR) and the attribution is RNPL+cancellation+fees combined; D1's own central cell is 1.25
+RNPL GBV share 2Q26,21%,measured (lower bound),"2Q26 call, ledger D043 via a stockanalysis.com mirror, not the official IR PDF"
+RNPL GBV share 3Q26 onward,21-27%,assumed,direction supported by the July 2026 eligibility expansion (D044); no quarterly share has ever been disclosed for 2025
+"lambda, relative unpaid residence",0.906 at B=1.05,"calibrated, not measured","reduced form u = s*lam/((1-s)+s*lam) from research/notes/2026-09-10_rnpl-conversion-framework.md section 3, calibrated on the 2Q26 disclosed 21% share"
+forward nights path,"D1/D2 adopted base, module base as sensitivity",derived (team model),"D1 3Q26 146.3m, D2 4Q26 131.8m / 1Q27 167.1m / 2Q27 157.8m; rnpl_nights_module.csv base path as the alternative"
+ADR 3Q26 / 4Q26,176.88 / 173.94,derived (team model),"D4 dossier base, adr_card_v3.csv variant v3_without_K, midpoint FX"
+3Q26 score-sheet u/m pairs,"7/9, 10/12, 12/18, 7/0, 15/0",grid (bridge section 4),"rnpl_balance_sheet_bridge.py section 4; read here under m=0 accounting, so each cell is reported as an implied u_eff"
+CFO bundle sentences,+2.40 NA pts / ~3.0 global pts,"call statement, NOT verified against a filing",PR #32 fitted NA term and the 1Q26 call 'approximately three points'; X3 dossier owns the provenance
+-3.4pp FX step / 82% determined / +4.05% fee uplift / 9/9 drift / +10.2% consensus,not used,WITHDRAWN,AGENT_BRIEF section 6 kill list

@@ -1,0 +1,19 @@
+printed GBV used  1Q26 = $29,200M   2Q26 = $27,200M
+kernel base       2/3 x 27,200.0 + 1/3 x 29,200.0 = 27,866.6667 musd
+lambda_Q3 cells   17.390785 / 17.145482 / 17.181818  mean 17.239362%
+KERNEL            0.1724 x 27,866.6667 = 4,804.21 musd   (DEC-0006 lambda 17.24%)
+KERNEL            0.1723936185 x 27,866.6667 = 4,804.04 musd   (package lambda)
+GUIDE+CUSHION     4,730 x (1 + 0.01857) = 4,817.84 musd   (DEC-0001 1.857%)
+GUIDE+CUSHION     4,730 x (1 + 0.0185674306) = 4,817.82 musd (full precision)
+GUIDE+CUSHION med 4,730 x (1 + median) = 4,814.69 musd
+BRIDGE v3         4,804.0355 musd = 0.1723936185 x 27,866.6667
+  bridge - kernel: lagged GBV +0.000000 musd, lambda -0.0000000000 pp, revenue +0.000000 musd
+  bridge own card: nights 146.813m x ADR $177.165 = GBV $26,028.0M  -> implied take rate 18.4572%
+STREET            4,744 musd (LSEG-family 2026-09-11)
+LIVE BLOCK v2     4816.1 musd (optimal-mix bma_logscore combination, NOT guide x cushion)
+
+decided GBV (D1 nights x D4 ADR): base 25,877.5  short 25,201.0  breaker 26,235.1
+take rate tying base to the kernel: 18.5645%  (bridge card 18.4572%, live-block-v2 18.1399%, 3Q25 printed 17.882%)
+CARD              base 4,804.0  short 4,678.4  breaker 4,870.4
+same GBV at the live-block take rate 18.14%: base 4,694.2  short 4,571.5  breaker 4,759.0
+wrote /Users/theomachado/Citadel-ABNB/data/processed/pitch_model_v2/receipts/R2/r2_objects.csv and /Users/theomachado/Citadel-ABNB/data/processed/pitch_model_v2/receipts/R2/r2_objects.json

@@ -1,0 +1,36 @@
+origin,dest_region,share_mid,share_lo,share_hi,tier,source,used_in_tilt,W_mid_pct_of_global_nights,W_lo_pct,W_hi_pct
+India,na,0.06,0.03,0.1,ASSUMED,"level and direction MEASURED (NTTO India->US 601,740 in 2Q26, -8.0% y/y, -16.1% in 1Q26); the SHARE needs India's total outbound, which no file here carries (india_mot_fta is PDF-only, MANIFEST 'no access')",True,1.0,0.5,1.5
+India,emea,0.2,0.0,0.4,UNIDENTIFIED,"nothing in these files observes Indian travel to the Gulf, the UK or Europe; Airbnb's EMEA includes the Middle East, where most Indian outbound lands",True,1.0,0.5,1.5
+India,latam,0.005,0.0,0.02,ASSUMED,no file; negligible on any reading,True,1.0,0.5,1.5
+India,apac,0.735,0.535,0.965,UNIDENTIFIED,"residual of the India row; includes Indian DOMESTIC travel (an APAC destination for Airbnb) and SE Asia, neither observed here. JNTO has no India row",True,1.0,0.5,1.5
+Brazil,na,0.032,0.02,0.05,PARTIAL,"NTTO Brazil->US 460,830 (-2.7% y/y) over ANAC Brazilian air trips (pax/2, resident share 0.60 ASSUMED)",True,5.5,4.0,7.000000000000001
+Brazil,emea,0.03,0.015,0.09,ASSUMED,residual of the Brazil row after the measured LatAm floor; no file observes Brazil->Europe,True,5.5,4.0,7.000000000000001
+Brazil,latam,0.933,0.86,0.96,PARTIAL,"ANAC domestic share of Brazilian air trips 78.3% in 2Q26 is a FLOOR (road travel, the larger domestic mode, is uncounted); intra-LatAm international is unobserved and added by judgement",True,5.5,4.0,7.000000000000001
+Brazil,apac,0.005,0.0,0.02,ASSUMED,no file; negligible,True,5.5,4.0,7.000000000000001
+Mexico,na,0.3,0.2,0.45,ASSUMED,"level and direction MEASURED (NTTO Mexico->US 4,866,826 in 2Q26, +15.8% y/y, +13.4% in 1Q26 - the only named origin whose US-bound travel is ACCELERATING); no denominator for Mexican total travel in any file here",True,3.0,2.0,4.0
+Mexico,emea,0.02,0.005,0.04,ASSUMED,no file,True,3.0,2.0,4.0
+Mexico,latam,0.675,0.51,0.79,ASSUMED,residual; Mexican domestic travel is in no file here (datatur / banxico / upm all 'no access' in MANIFEST),True,3.0,2.0,4.0
+Mexico,apac,0.005,0.0,0.02,ASSUMED,no file,True,3.0,2.0,4.0
+Japan,na,0.05,0.03,0.08,ASSUMED,"level and direction MEASURED (NTTO Japan->US 422,551, +4.5% y/y); no Japanese-outbound denominator in any file here (JNTO is INBOUND to Japan)",True,3.0,2.0,4.0
+Japan,emea,0.03,0.015,0.06,ASSUMED,no file,True,3.0,2.0,4.0
+Japan,latam,0.005,0.0,0.02,ASSUMED,no file,True,3.0,2.0,4.0
+Japan,apac,0.915,0.84,0.955,ASSUMED,"JTA measures Japanese DOMESTIC nights (28.2% foreign share in 2Q26, domestic nights -4.1% y/y) but not Japanese outbound, so the domestic-vs-outbound split is judgement",True,3.0,2.0,4.0
+Canada,na,0.677,0.677,0.95,MEASURED,"StatCan 24-10-0053: US share of ALL Canadian outbound trips, 67.7% in 2Q26 (76.1% in 2Q24, 67.0% in 2Q25). Lower bound on the NA cell because Canadian domestic travel is not in the file",False,,,
+Canada,emea,,0.0,0.323,UNIDENTIFIED,'returning from other countries' is a single undifferentiated series; no destination split,False,,,
+Canada,latam,,0.0,0.323,UNIDENTIFIED,same series,False,,,
+Canada,apac,,0.0,0.323,UNIDENTIFIED,same series,False,,,
+Australia,na,0.085,0.085,0.13,MEASURED,"NTTO Australia->US 249,259 over ABS resident short-term returns 2,932,340 = 8.50% of all Australian outbound (10.43% in 2Q24, 9.10% in 2Q25). US only, so a lower bound on NA",False,,,
+Australia,apac,0.085,0.085,0.7,PARTIAL,"JNTO Australia->Japan 248,653 over the same ABS denominator = 8.48% (7.93% in 2Q24, 8.66% in 2Q25). Japan only; NZ, Indonesia, Thailand and Australian domestic travel are not in these files",False,,,
+Australia,emea,,0.0,0.83,UNIDENTIFIED,no file observes Australian travel to Europe,False,,,
+Australia,latam,,0.0,0.83,UNIDENTIFIED,no file,False,,,
+US,na,0.9,0.75,0.96,ASSUMED,"US domestic travel is in no file here; the two measured US outbound cells are US->Canada (StatCan, 3,807,419 overnight, +6.3% y/y) and US->Japan (JNTO, 1,018,248, +3.4%; +27.5% in 2Q25)",False,,,
+US,apac,0.025,0.01,0.06,PARTIAL,JNTO US->Japan measured as a level and a growth rate; no denominator,False,,,
+US,emea,,0.0,0.25,UNIDENTIFIED,"no file observes US->Europe (UK ONS series discontinued, MANIFEST 'no coverage')",False,,,
+US,latam,,0.0,0.25,UNIDENTIFIED,no file,False,,,
+China,na,,0.0,1.0,UNIDENTIFIED,"MEASURED as a level only: NTTO China->US 348,751, -0.2% y/y. No Chinese outbound denominator in any file here",False,,,
+China,apac,,0.0,1.0,UNIDENTIFIED,"MEASURED as a level only: JNTO China->Japan 984,599, -58.2% y/y in 2Q26 (-54.6% in 1Q26). Both measured Chinese cells are flat or collapsing",False,,,
+China,emea,,0.0,1.0,UNIDENTIFIED,no file,False,,,
+China,latam,,0.0,1.0,UNIDENTIFIED,no file,False,,,
+Korea,apac,,0.0,1.0,UNIDENTIFIED,"MEASURED as a level only: JNTO Korea->Japan 2,617,007, +14.9% y/y. NTTO has no Korea row; KTO datalab 'no access' in MANIFEST",False,,,
+UK,na,,0.0,1.0,UNIDENTIFIED,"MEASURED as a level only: NTTO UK->US 1,028,895, -2.2% y/y. UK ONS overseas travel series discontinued after 2023",False,,,
+Germany,na,,0.0,1.0,UNIDENTIFIED,"MEASURED as a level only: NTTO Germany->US 368,401, -22.8% y/y",False,,,

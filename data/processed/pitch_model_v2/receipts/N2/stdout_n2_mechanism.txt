@@ -1,0 +1,40 @@
+Fitted NA product legs (re-derived):
+  RNPL          +2.40 pts of NA nights   (3Q25 bucket 5.0 - FY25 NA 2.6)
+  fee + cancel  +2.29 pts of NA nights   (1Q26 bucket 8.0 - underlying 3.31 - RNPL)
+  peak NA bundle +4.69;  ex-NA bundle +1.649 pts of total nights
+  lap_fee 0.742   lap_rnpl(full) 0.907
+
+ex-NA WS10 rates: 3Q26 11.621  4Q26 11.095  FY27 10.292
+2027 ex-NA phased: {'1Q27': 10.773, '2Q27': 10.452, '3Q27': 10.131, '4Q27': 9.81}
+
+Mechanism base, y/y and level:
+  3Q26   +9.887% (committed +9.890)   146.81m    [+9.311 .. +10.949]  [146.04 .. 148.23]
+  4Q26   +8.157% (committed +8.120)   131.80m    [+7.931 .. +9.055]  [131.57 .. 132.94]
+  1Q27   +8.206% (committed +8.206)   169.02m    [+6.858 .. +9.401]  [166.91 .. 170.88]
+  2Q27   +5.934% (committed +5.934)   157.10m    [+5.396 .. +8.022]  [156.30 .. 160.20]
+  3Q27   +6.229% (committed +6.229)   155.96m    [+5.941 .. +7.517]  [154.72 .. 159.37]
+  4Q27   +6.045% (committed +6.045)   139.77m    [+5.757 .. +7.333]  [139.14 .. 142.69]
+
+FY26  583.111m  [582.11 .. 585.67]
+FY27  621.841m  +6.642%   low 617.07m +6.007%   high 633.14m +8.106%
+
+One-at-a-time swing on 3Q26 / 4Q26 / FY27-relevant quarters (pp):
+  na_3q25_bucket         3Q26 -0.288/+0.288   4Q26 +0.000/+0.000   1Q27 +0.000/+0.000
+  na_1q26_bucket         3Q26 -0.288/+0.288   4Q26 -0.130/+0.130   1Q27 -0.193/+0.193
+  global_bundle_pts      3Q26 +0.000/+0.000   4Q26 +0.000/+0.450   1Q27 +0.000/+0.670
+  fee_split              3Q26 +0.000/+0.000   4Q26 -0.082/+0.082   1Q27 -0.049/+0.049
+  phase_1q27             3Q26 +0.000/+0.000   4Q26 +0.000/+0.000   1Q27 -0.091/+0.091
+  us_lap_partiality      3Q26 +0.000/+0.319   4Q26 +0.000/+0.000   1Q27 +0.000/+0.000
+  july_expansion         3Q26 +0.000/+0.300   4Q26 +0.000/+0.300   1Q27 +0.000/+0.300
+  events                 3Q26 +0.000/+0.000   4Q26 +0.000/+0.000   1Q27 -1.000/+0.000
+
+Cross-check against committed files:
+  nights_quarterly_na 3Q26 NA 5.60 vs mechanism 5.60
+  06_nights_build 1Q27 8.206 vs mechanism 8.206
+  06_nights_build 2Q27 5.934 vs mechanism 5.934
+  06_nights_build 3Q27 6.229 vs mechanism 6.229
+  06_nights_build 4Q27 6.045 vs mechanism 6.045
+
+wrote /Users/theomachado/Citadel-ABNB/data/processed/pitch_model_v2/receipts/N2/n2_mechanism_quarterly.csv
+wrote /Users/theomachado/Citadel-ABNB/data/processed/pitch_model_v2/receipts/N2/n2_band.csv
+wrote /Users/theomachado/Citadel-ABNB/docs/pitch-model-v2/lines/figures/nights_constellation_3q26.csv

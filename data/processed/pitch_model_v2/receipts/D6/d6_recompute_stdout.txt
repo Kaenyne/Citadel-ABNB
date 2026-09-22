@@ -1,0 +1,36 @@
+=== (1) History identity, 1Q23-2Q26, n = 14 ===
+quarter_std  nights_m    adr  gbv_musd  identity_musd  dev_musd   dev_pct
+     2023Q1     121.1 168.43   20400.0      20396.873    -3.127 -0.015328
+     2023Q2     115.1 166.01   19100.0      19107.751     7.751  0.040581
+     2023Q3     113.2 161.38   18300.0      18268.216   -31.784 -0.173683
+     2023Q4      98.8 156.73   15500.0      15484.924   -15.076 -0.097265
+     2024Q1     132.6 172.88   22900.0      22923.888    23.888  0.104314
+     2024Q2     125.1 169.53   21200.0      21208.203     8.203  0.038693
+     2024Q3     122.8 163.64   20100.0      20094.992    -5.008 -0.024915
+     2024Q4     111.0 158.13   17600.0      17552.430   -47.570 -0.270284
+     2025Q1     143.1 171.34   24500.0      24518.754    18.754  0.076547
+     2025Q2     134.4 174.48   23500.0      23450.112   -49.888 -0.212289
+     2025Q3     133.6 171.29   22900.0      22884.344   -15.656 -0.068367
+     2025Q4     121.9 167.51   20400.0      20419.469    19.469  0.095436
+     2026Q1     156.2 186.82   29200.0      29181.284   -18.716 -0.064096
+     2026Q2     148.3 183.73   27200.0      27247.159    47.159  0.173379
+max abs dev pct = 0.2703%  at 2024Q4
+
+=== (2) Regional GBV sum vs consolidated, history n = 22 ===
+max abs dev pct = 0.000000%  (all rows 0.0% -- algebraic same-cell reconstruction per package README/reconciliation.csv basis column)
+regional_gbv_k0.csv rows for 2026Q3/2026Q4: 0 (0 = no live regional GBV forecast split exists; only a regional REVENUE point exists in k0_handoff_check.json for 2026Q3)
+
+=== (3) Decided-input GBV = nights x ADR ===
+period scenario  nights_m  adr_usd  gbv_musd
+  3Q26     base     146.3   176.88 25877.544
+  3Q26    short     145.0   173.80 25201.000
+  3Q26  breaker     147.0   178.47 26235.090
+  4Q26     base     131.8   173.94 22925.292
+  4Q26    short     131.2   170.94 22427.328
+  4Q26  breaker     134.1   177.35 23782.635
+
+=== D-04 block comparison ===
+                           block  nights_m  adr_usd  gbv_musd  dev_vs_decided_musd  dev_vs_decided_pct
+               decided_base_3Q26    146.30   176.88  25877.54                 0.00            0.000000
+     D04_block_i_backtest_winner    146.30   176.47  25816.00               -61.54           -0.237812
+D04_block_ii_registered_headline    147.38   180.15  26550.00               672.46            2.598624

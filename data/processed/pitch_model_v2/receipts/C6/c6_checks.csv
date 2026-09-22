@@ -1,0 +1,71 @@
+check,recomputed,committed,diff,tolerance,unit,match,note
+"A. DEC-0003 identity, max |resid| (line build, n=48)",4.547473508864641e-13,0.0,4.547473508864641e-13,1e-06,USD m,yes,revenue - cash costs + D&A + lodging reserves = adj EBITDA
+"A. margin = EBITDA/revenue, max |resid| (line build)",3.552713678800501e-15,0.0,3.552713678800501e-15,1e-09,pp,yes,
+"A. DEC-0003 identity, max |resid| (short case, n=6)",0.0,0.0,0.0,1e-06,USD m,yes,revenue - cash costs + D&A + lodging reserves = adj EBITDA
+"A. margin = EBITDA/revenue, max |resid| (short case)",1.7763568394002505e-15,0.0,1.7763568394002505e-15,1e-09,pp,yes,
+A. 23 run: five lines - D&A add-back = total cash costs,4.547473508864641e-13,0.0,4.547473508864641e-13,1e-06,USD m,yes,
+A. 23 run: revenue - total cash costs = adj EBITDA,6.821210263296962e-13,0.0,6.821210263296962e-13,1e-06,USD m,yes,
+A. 23 run: D&A add-back equals the line build's D&A,20.63397059990752,20.633970599907517,3.552713678800501e-15,1e-09,USD m,yes,
+"A. DEC-0003 NARROW form on printed actuals 1Q23-2Q26 (n=14), max |resid|",15.0,0.0,15.0,2.0,USD m,no,"FAILS on history: residual = -(acquisition impacts + IPO settlement); worst 2Q23 15.0, mean 4.79"
+A. DEC-0003 FULL form (add-backs = lodging + acq + IPO + restr) on actuals 1Q23-2Q26 (n=14),0.0,0.0,0.0,1e-09,USD m,yes,exact; forward the extra add-backs are zero so the two forms coincide
+A. forward acquisition/IPO add-backs are zero in both builds,0.0,0.0,0.0,1e-12,USD m,yes,40_params lodging_reserves_fwd = 0; no acq/IPO term exists forward
+B. member weights sum to 1,0.9999999999999997,1.0,-3.3306690738754696e-16,1e-09,-,yes,6 members
+"B. 3Q26 combination margin (stack_clip), rebuilt",49.93993908638773,49.93993908638773,0.0,0.005,pct,yes,"clip status <bound method NDFrame.clip of target                                                                       adj_ebitda_margin_pct
+quarter                                                                                     2026Q3
+horizon_q                                                                                        0
+spec_id                                                                                 stack_clip
+point                                                                                    49.939939
+raw_point                                                                                49.939939
+clip                                                                          sentence_not_binding
+sentence_level                                                                            50.08547
+weight_source                                                 invmae_shrunk_lam0.5_full_W1_history
+n_members                                                                                        6
+n_prior_obs                                                                                     14
+qhat80                                                                                    2.203943
+qhat90                                                                                     3.90591
+conformal_n                                                                                     14
+conformal_kind                                                                     split_conformal
+pit_bias                                                                                 -0.669316
+w__street-bias|dispersion_conditioned|rw_hl4_med                                          0.198893
+p__street-bias|dispersion_conditioned|rw_hl4_med                                         50.117773
+w__street-bias|street_plus_flowthrough|rw_hl4                                             0.168447
+p__street-bias|street_plus_flowthrough|rw_hl4                                            50.064958
+w__baselines-margin|street                                                                 0.17212
+p__baselines-margin|street                                                               49.775747
+w__guide-policy-margin|actual_given_guide|nov_sentence_pin                                0.158413
+p__guide-policy-margin|actual_given_guide|nov_sentence_pin                                50.08547
+w__margin-ts|q_sentence_direction|k_fit_median                                            0.152352
+p__margin-ts|q_sentence_direction|k_fit_median                                           48.133798
+w__FAMILY_A                                                                               0.149774
+p__FAMILY_A                                                                              51.435172
+ebitda_musd_base                                                                       2399.132402
+ebitda_musd_bear                                                                       2374.644104
+ebitda_musd_bull                                                                       2436.070229
+w__margin-ts|incremental_margin|k8_median                                                      NaN
+p__margin-ts|incremental_margin|k8_median                                                      NaN
+Name: 0, dtype: object>; sentence ceiling 50.085470085470085"
+B. clip did not bind (raw == clipped),49.93993908638773,49.93993908638773,0.0,1e-12,pct,yes,
+B. raw point is below the sentence ceiling,0.14553099908235367,0.1455,3.0999082353683205e-05,0.01,pp,yes,3Q25 50.0855 - our 49.9399
+C. 3Q26 adj EBITDA = margin x bridge-v3 revenue,2399.132402388442,2399.132402388442,0.0,0.5,USD m,yes,revenue leg 4804.0355
+C. 80% band low,2336.5486173871086,2337.0,-0.45138261289139336,0.6,USD m,yes,
+C. 80% band high,2461.7161873897758,2462.0,-0.2838126102242313,0.6,USD m,yes,
+C. four-member dollar cross-check (NOT the quoted object),2411.001493610793,2411.0,0.0014936107932044251,1.0,USD m,yes,
+D. P(3Q26 adj EBITDA beats Street),0.7794080869036119,0.7794080869036119,0.0,0.002,probability,yes,sd = qhat80/1.2816 = 48.8
+"D. beat vs Street, dollars",37.610612388442405,37.610612388442405,0.0,0.5,USD m,yes,
+E. 1H26 actual revenue,6286.0,6286.0,0.0,0.01,USD m,yes,02_panel_quarterly
+E. 1H26 actual adj EBITDA,1780.0,1780.0,0.0,0.01,USD m,yes,02_panel_quarterly
+E. line build FY26 adj EBITDA,5098.514141325271,5098.514141325271,0.0,0.5,USD m,yes,
+E. line build FY26 margin,35.73355014821916,35.73355014821916,0.0,0.005,pct,yes,
+E. line build FY26 D&A,80.26794119981503,80.26794119981503,0.0,1e-06,USD m,yes,
+E. line build FY27 adj EBITDA,5644.204235291712,5644.204235291712,0.0,0.5,USD m,yes,
+E. line build FY27 margin,35.658250772949984,35.658250772949984,0.0,0.005,pct,yes,
+E. combination FY26 adj EBITDA (1H26 actual + 3Q26 comb + 4Q26 Street),5097.524101685529,5097.524101685529,0.0,0.5,USD m,yes,
+E. combination FY27 adj EBITDA (sum of the four 2027 quarters),5483.329804795625,5483.329804795625,0.0,0.5,USD m,yes,
+E. combination FY27 margin,34.64189810715067,34.64189810715067,0.0,0.005,pct,yes,
+E. 4Q26 combination point equals the Street's margin (h=1 rule),28.897437,28.897437484563262,-4.845632624039808e-07,1e-06,pct,yes,pre-registered secondary test failed at h=1
+F. Street FY27 margin,36.44968403876267,36.449684038762676,-7.105427357601002e-15,1e-06,pct,yes,"LSEG n 44, EBITDA sd 154.2"
+F. combination FY27 incremental margin (SYNTHESIS 24.7),24.72379216544832,24.7,0.02379216544832019,0.1,pct,yes,own FY26 base
+F. Street FY27 incremental margin (SYNTHESIS 43.7),43.709953045934355,43.7,0.009953045934352645,0.1,pct,yes,Street FY26 base
+F. Street-implied FY27 S&M (C4/DEC-0011 3328),3328.4613490604142,3328.0,0.46134906041424983,1.0,USD m,yes,line build other four lines held
+G. 40_vs_run.csv 3Q26 line_build EBITDA == 40_lines_quarterly base,2419.6425,2419.6425,0.0,1e-09,USD m,yes,
+G. 40_vs_run_and_street.csv 3Q26 matches SOME committed scenario,98.87616469580917,0.0,98.87616469580917,1.0,USD m,no,"closest committed scenario evidence_only at 2517.0; orphan says 2615.9 - STALE, not written by the current run.py"

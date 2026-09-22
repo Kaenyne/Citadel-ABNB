@@ -1,0 +1,16 @@
+source,read_yoy_pct,level_m,method,window,ratio_vs_naive,date,independent_of_mechanism
+"mechanism (this file, base)",9.887,146.81,"disclosed regional buckets + fitted NA product legs, US RNPL lapped in full, July expansion at zero","n/a - forward build, no walk-forward window exists",,2026-09-18,no
+"reviews stays index, raw read",10.041,147.01,"OLS of printed nights y/y on the review-date index, 14 quarters, slope 0.3221",fit 1Q23-2Q26,0.683,2026-09-14,yes
+"reviews stays index, W2 bias-corrected",9.523,146.32,raw read less the index's own +0.518pp W2 walk-forward mean error,"W2 scored 1Q24-2Q26, n 10",0.683,2026-09-14,yes
+"reviews stays index, W1 bias-corrected",8.409,144.84,raw read less the index's +1.632pp W1 walk-forward mean error,"W1 scored 1Q23-2Q26, n 14",0.837,2026-09-14,yes
+external stack median (12 series),9.232,145.93,median of 12 in-sample macro fits targeting nights y/y,fit 2023Q1-2026Q2,,2026-09-06,yes
+"NTTO I-94 overseas arrivals, qtd 1 month",9.173,145.85,"single-series OLS nowcast, in-sample fit on the full window",2023Q1..2026Q2,0.743,2026-09-06,yes
+"TSA throughput, qtd",7.455,143.56,"single-series OLS nowcast, in-sample fit on the full window",2023Q1..2026Q2,0.924,2026-09-06,yes
+"INE Spain hotel nights, foreign",9.138,145.81,"single-series OLS nowcast, in-sample fit on the full window",2023Q1..2026Q2,0.839,2026-09-06,yes
+"CPI lodging away from home, SA",11.909,149.51,"single-series OLS nowcast, in-sample fit on the full window",2023Q1..2026Q2,0.956,2026-09-06,yes
+hotel RevPAR (MAR/HLT) -> nights,,,"peer-print read-through; best external feature on this KPI, no 3Q26 point until 4 Nov",W2 n 10 / W1 n 14,0.68,2026-09-06,yes
+BEA hotels nominal -> nights,,,monthly BEA accommodation spend read-through,W2 n 10,0.71,2026-09-06,yes
+"unified RNPL cohort module, base",9.49,146.3,"the 9.89 mechanism reference less M1 +0.304, M2 -0.113, M3 -0.019, M4 -0.568",n/a - forward build,,2026-09-16,no
+"H1-H2 seasonal bridge, pattern only",9.492,146.3,"2023-25 seasonal transition applied to 2026 H1; no lap, no event",n/a - pattern,,2026-09-12,yes
+Street (Bloomberg MODL),11.527,149.0,mean of 28 estimates; low 147.0 high 151.0,n/a,,2026-09-12,yes
+"management guide, 2Q26 letter",10.0,147.0,"low double-digit nights bucket; the >=10.0% mapping is ours, not a company range",n/a,,2026-08-06,yes

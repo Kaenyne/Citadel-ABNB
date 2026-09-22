@@ -1,0 +1,91 @@
+{
+  "id": "D2",
+  "commit": "e6d98321b58f0f226ba1225408462d22edbb4a3f",
+  "cmd": "python3 analysis/src/overnight2/D1_rnpl_cohort_scenarios.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T15:51:01+00:00",
+  "exit_code": 0,
+  "wall_s": 0.6,
+  "watch": [
+    "data/processed/overnight2",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0,
+      "rows_head": 5,
+      "rows_new": 5,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/overnight2/D/D1_bundle_crosscheck.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0,
+      "rows_head": 8,
+      "rows_new": 8,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/overnight2/D/D1_cohort_matrix_cancellation.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0,
+      "rows_head": 8,
+      "rows_new": 8,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/overnight2/D/D1_cohort_matrix_stay.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0,
+      "rows_head": 4,
+      "rows_new": 4,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/overnight2/D/D1_exna_4q26_gap.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0,
+      "rows_head": 7,
+      "rows_new": 7,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/overnight2/D/D1_lap_anniversary.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0,
+      "rows_head": 7,
+      "rows_new": 7,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/overnight2/D/D1_prereg_thresholds.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0,
+      "rows_head": 2025,
+      "rows_new": 2025,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/overnight2/D/D1_rnpl_cohort_scenarios.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0,
+      "rows_head": 19,
+      "rows_new": 19,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/overnight2/D/D1_rnpl_parameters.csv"
+    }
+  ],
+  "new_files": [],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

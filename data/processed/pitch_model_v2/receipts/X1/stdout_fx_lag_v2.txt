@@ -1,0 +1,43 @@
+[1/8] baskets, rebuilt on the 2026-09-11 FX refresh
+  wrote 01_currency_quarterly_yoy.csv  (35 rows)
+  wrote 01b_basket_weights_used.csv  (17 rows)
+  wrote 02_basket_quarterly.csv  (31 rows)
+  wrote 03_basket_reconciliation.csv  (15 rows)
+[2/8] analysis panel
+  wrote 04_analysis_panel.csv  (31 rows)
+[3/8] Object A: joint interval-likelihood lag regression + confidence set
+  wrote 06_object_a_summary.csv  (2 rows)
+  wrote 06b_object_a_hypothesis_tests.csv  (10 rows)
+   free fit  stated a=[0.4471 0.3639 0.0302]  scale=0.841  eff.lag=0.50q  sigma=1.027
+   free fit  gross  a=[0.538  0.4135 0.    ]  scale=0.952  eff.lag=0.43q  sigma=0.878
+   Phi-shape free scale: stated 0.653, gross 0.721
+[4/8] PIT expanding window (H2 rows for the registry) + full-sample replay
+  wrote 09b_pit_expanding_window_forecasts.csv  (96 rows)
+  wrote 09c_pit_window_scores.csv  (12 rows)
+  wrote 09d_pit_forecasts_full_sample_prior.csv  (96 rows)
+  wrote 09e_pit_window_scores_full_sample_prior.csv  (12 rows)
+  wrote 09f_replay_delta_pit_vs_full.csv  (6 rows)
+[5/8] B4 exhibits
+   ADR-FX on the contemporaneous basket: slope 0.872, intercept -0.076, r 0.962
+  wrote 19_baskets_spot_held_v2.csv  (8 rows)
+  wrote 20_observed_share_triple.csv  (20 rows)
+  wrote 21_live_3q26_three_numbers.csv  (9 rows)
+  wrote 22_hedge_gross_vs_after.csv  (18 rows)
+  wrote 23_forecast_4q26_v2.csv  (18 rows)
+  wrote 23b_fy27_annualisation_v2.csv  (15 rows)
+  wrote 24_four_way_4q26.csv  (5 rows)
+  wrote 25_four_way_fy27.csv  (5 rows)
+  wrote 27_kernel_carried_fx_v2.csv  (5 rows)
+  wrote 26_exfx_acceleration_v2.csv  (25 rows)
+[6/8] PIT caveats
+  wrote 00_pit_caveats.csv  (4 rows)
+[7/8] registry (NEW files only, method fx-lag-v2)
+!  COVERAGE: fx-lag-v2/fx_rev_next_q_h2_v2 fx_pts_revenue W1 PIT covers 10 quarters, expected 14.
+!  COVERAGE: fx-lag-v2/fx_rev_next_q_h2_v2 fx_pts_revenue W1 full_sample covers 10 quarters, expected 14.
+registered   40 rows -> fx-lag-v2__fx_rev_next_q_h2_v2.csv
+  harness refused fx_pts_revenue_2026q4_v2 under strict_windows=True: window=LIVE is inconsistent with quarter=2026Q4; that quarter belongs to []. (The 2026-08-06 guide is LIVE only.)
+  -> re-registering with strict_windows=False; harness change request filed
+registered    2 rows -> fx-lag-v2__fx_pts_revenue_2026q4_v2.csv
+   live 4Q26: adopted +0.98pp (Phi x 0.851); Phi x fitted shape-scale 0.653 gives +0.75pp; CS interval +0.31 to +2.16pp
+[8/8] summary
+wrote 00_summary.json

@@ -1,0 +1,106 @@
+
+=== SHORT CASE ===
+                                            0                            1
+case                   short_costs_at_budget  short_with_q4_marketing_cut
+q3_ebitda                            2289.82                      2289.82
+q3_margin                              48.92                        48.92
+q3_revenue                            4680.9                       4680.9
+q4_ebitda                             699.61                       876.32
+q4_margin                              23.59                        29.55
+q4_revenue                           2965.87                      2965.87
+fy26_ebitda                          4769.42                      4946.13
+fy26_margin                            34.23                         35.5
+fy26_revenue                        13932.77                     13932.77
+fy27_ebitda                          4761.44                      4761.44
+fy27_margin                            31.93                        31.93
+fy27_revenue                        14913.51                     14913.51
+q3_eps                                  2.71                         2.71
+fy27_eps                                4.58                         4.58
+q4_marketing_cut_musd                    0.0                       176.71
+quarter  revenue  revenue_vs_team_path_pct  nights_yoy  ops_cash  ops_per_booking  chargebacks  interest_income  sm_pct_rev  total_cash_costs_pct_rev  margin  margin_vs_base_pp
+   3Q26  4680.90                     -2.56         8.5    374.97             9.44        34.55           174.36       16.63                     51.52   48.92              -1.45
+   4Q26  2965.87                     -6.68         5.0    329.18             9.39        30.51           156.17       25.56                     77.11   23.59              -4.69
+   1Q27  2835.53                     -7.13         4.0    329.27             7.30        39.26           167.13       29.25                     88.00   12.72              -5.49
+   2Q27  3762.97                     -6.60         2.0    352.01             8.38        36.56           186.13       24.85                     70.56   29.99              -4.11
+   3Q27  4988.17                     -5.54         3.0    409.42             9.87        36.08           176.88       16.44                     51.32   49.10              -2.87
+   4Q27  3326.83                     -4.01         4.0    360.09             9.74        32.17           160.89       26.31                     75.88   24.74              -3.26
+=== quarterly, base ===
+         revenue  cor_cash  ops_cash  pd_cash  sm_cash  ga_cash  adj_ebitda  adj_ebitda_margin_pct  total_cash_costs_yoy_pct  sm_cash_yoy_pct  eps
+quarter                                                                                                                                           
+3Q26      4804.0     640.8     361.4    359.1    778.3    265.4      2419.6                   50.4                      16.1             33.0  2.9
+4Q26      3178.1     578.0     318.3    369.0    758.1    276.4       898.9                   28.3                       9.6             19.8  0.8
+1Q27      3053.1     706.0     319.1    414.1    829.3    249.2       556.1                   18.2                      15.4             19.1  0.3
+2Q27      4029.0     727.3     341.0    400.8    935.1    271.6      1373.8                   34.1                      13.2             15.7  1.4
+3Q27      5280.7     699.5     381.8    399.7    819.9    256.5      2744.0                   52.0                       6.3              5.3  3.4
+4Q27      3465.8     626.9     336.1    410.7    875.3    267.2       970.3                   28.0                       9.4             15.5  0.8
+
+=== annual ===
+                     period      scenario  revenue  cor_cash  ops_cash  pd_cash  sm_cash  ga_cash  adj_ebitda  adj_ebitda_margin_pct  sm_cash_pct_rev  eps
+                       FY26          base 14268.14   2432.82   1303.73  1477.12  3040.42   995.80     5098.51                  35.73            21.31 5.28
+                       FY27          base 15828.61   2759.61   1377.88  1625.29  3459.62  1044.54     5644.20                  35.66            21.86 5.93
+                       FY26 evidence_only 14268.14   2374.41   1303.73  1477.12  2972.27   995.80     5225.08                  36.62            20.83 5.45
+                       FY27 evidence_only 15828.61   2642.78   1377.88  1625.29  3381.25  1044.54     5839.41                  36.89            21.36 6.21
+                       FY26      rev_bear 14164.81   2413.70   1302.77  1477.12  3040.42   995.80     5015.26                  35.41            21.46 5.16
+                       FY27      rev_bear 14948.33   2619.00   1369.26  1625.29  3459.62  1044.54     4913.16                  32.87            23.14 4.85
+                       FY26      rev_bull 14391.94   2453.50   1304.86  1477.12  3040.42   995.80     5200.50                  36.13            21.13 5.42
+                       FY27      rev_bull 16570.74   2884.89   1385.59  1625.29  3459.62  1044.54     6253.34                  37.74            20.88 6.84
+                       FY26     cost_bear 14268.14   2442.97   1330.86  1490.48  3073.66  1011.28     4999.16                  35.04            21.54 5.12
+                       FY27     cost_bear 15828.61   2830.91   1460.77  1699.53  3692.69  1091.10     5136.13                  32.45            23.33 5.15
+                       FY26     cost_bull 14268.14   2424.96   1281.99  1463.76  3003.14   980.32     5194.24                  36.40            21.05 5.41
+                       FY27     cost_bull 15828.61   2713.09   1313.66  1566.59  3285.64  1008.70     6023.46                  38.05            20.76 6.48
+                       FY26     both_bear 14164.81   2423.15   1330.04  1490.48  3073.66  1011.28     4916.47                  34.71            21.70 5.00
+                       FY27     both_bear 14948.33   2685.03   1453.34  1699.53  3692.69  1091.10     4409.18                  29.50            24.70 4.08
+                       FY26     both_bull 14391.94   2444.88   1283.35  1463.76  3003.14   980.32     5296.76                  36.80            20.87 5.55
+                       FY27     both_bull 16570.74   2833.71   1322.75  1566.59  3285.64  1008.70     6635.88                  40.05            19.83 7.39
+FY28 roll-forward (flagged)          base 17137.44   2987.80   1491.81  1759.68  3745.69  1130.91     6110.91                  35.66            21.86 6.42
+
+=== sentence implied ===
+                                                                                                 item  value
+                                                                                  3Q25 actual margin  50.09
+                                                          'down slightly' target used (3Q25 - 0.5pt)  49.59
+                                                                    evidence-only build: 3Q26 margin  52.39
+                                              evidence-only build: 3Q26 total cash cost growth y/y %  11.43
+               reconciled base: 3Q26 margin at the GUIDE midpoint revenue (by construction = target)  49.59
+                                 reconciled base: 3Q26 margin at OUR revenue ($4,804M; the forecast)  50.37
+                                                  reconciled base: 3Q26 total cash cost growth y/y %  16.13
+                                                   reconciled base: cost gap assigned in 3Q26, USD m  97.36
+2H26 marketing growth % that lands the sentence AT OUR revenue with no hosting step (evidence build)  60.63
+                                                                      3Q26 S&M at that growth, USD m 844.85
+                                                                       3Q26 S&M y/y % at that growth  44.42
+                                                    3Q26 total cash cost growth y/y % at that growth  17.93
+                                                                          FY26 margin at that growth  34.67
+
+=== backcast ===
+                                                                                                          test  predicted  actual                                                                  note  error_pct
+FY25 cost of revenue from FY24-knowable rates (fee % GBV, chargebacks/booking, hosting run-rate, other/night)     2064.3  2086.0                             FY24 fee rate 1.69% of GBV; out of sample       -1.0
+           FY25 ops & support from FY24 cost per booking x FY25 bookings x the pre-AI -2.5%/yr per-unit trend     1294.4  1237.0                out of sample; the -10/-16% AI statements came in 2026        4.6
+                         1H26 cost of revenue with the base rates (1.70% x seasonal factors) and 1H26 drivers     1223.7  1214.0 in sample; the 1H26 fit itself is 1.68% annual-equivalent, FY25 1.76%        0.8
+                                          1H26 ops & support from the rule with v = 0.215 (exact calibration)      624.0   624.0                                      calibration identity, not a test        0.0
+
+=== sensitivities ===
+                     parameter                        shock  d_3q26_ebitda_musd  d_fy27_margin_pp  d_fy27_eps_usd  evidence_only_d_3q26_ebitda_musd  evidence_only_d_fy27_margin_pp
+        marketing_growth_fy27                        +5pts                0.00             -0.67           -0.15                              0.00                           -0.65
+     recon_share_to_marketing           +0.30 to marketing                0.00              0.53            0.12                              0.00                            0.00
+         merchant_fee_pct_gbv                 +10bp of GBV                0.00             -0.39           -0.09                            -26.94                           -0.73
+                 hosting_fy27                 +$50M a year                0.00             -0.32           -0.07                              0.00                           -0.32
+sentence_3q26_margin_delta_pp -0.5pp (a bigger 'slightly')              -23.65             -0.30           -0.07                              0.00                            0.00
+       guide_3q26_revenue_mid         +$40M guide midpoint              -20.16             -0.26           -0.06                              0.00                            0.00
+            field_growth_fy27                        +4pts                0.00             -0.23           -0.05                              0.00                           -0.23
+             ops_fixed_growth                        +3pts                0.00             -0.20           -0.04                             -8.08                           -0.30
+           pd_ai_tooling_fy27                        +$30M                0.00             -0.19           -0.04                              0.00                           -0.19
+               ga_growth_fy27                        +3pts                0.00             -0.19           -0.04                              0.00                           -0.19
+               pd_growth_fy27                        +2pts                0.00             -0.19           -0.04                              0.00                           -0.19
+       chargeback_per_booking           +$0.20 per booking                0.00             -0.12           -0.03                             -8.04                           -0.22
+            hosting_step_2h26               +$15M per half                0.00              0.10            0.02                             -7.50                            0.00
+           ops_variable_share                        +0.10                0.00              0.09            0.02                              4.18                            0.14
+    ops_variable_decline_fy27       +4pts (slower decline)                0.00             -0.08           -0.02                              0.00                           -0.08
+        marketing_growth_2h26                        +5pts                0.00             -0.04           -0.01                            -18.90                           -0.28
+            field_growth_fy26                        +4pts                0.00             -0.03           -0.01                            -15.11                           -0.22
+               pd_growth_2h26                        +2pts                0.00             -0.01           -0.00                             -6.59                           -0.09
+               ga_growth_2h26                        +3pts                0.00             -0.01           -0.00                             -7.58                           -0.10
+    ops_variable_decline_2h26                        +4pts                0.00              0.00            0.00                             -3.29                           -0.04
+         rnpl_share_shift_pts     +10pts of GBV paid later                0.00              0.00           -0.05                              0.00                            0.00
+                     tbill_3m                       +100bp                0.00              0.00            0.29                              0.00                            0.00
+                     etr_fy27                        +2pts                0.00              0.00           -0.14                              0.00                            0.00
+
+wrote /Users/theomachado/Citadel-ABNB/data/processed/margin_build/40_line_build and /Users/theomachado/Citadel-ABNB/model/ABNB_margin_line_build.xlsx

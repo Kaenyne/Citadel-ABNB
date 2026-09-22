@@ -1,0 +1,205 @@
+"""Load and validate model/pitch_model_v2/spec/lines.yaml.
+
+A line is either an input (values per scenario and period, provenance with grade A/B)
+or a formula (an expression in other line ids). Expressions: ids, ids with a relative
+period shift `ID[-n]`, ids with an absolute period `ID@PERIOD`, numbers, + - * / and
+parentheses, and the whitelisted functions EXP(...) and LN(...). Nothing else, so every
+cell in the workbook is traceable by name.
+"""
+from __future__ import annotations
+import re
+from dataclasses import dataclass, field
+from pathlib import Path
+import yaml
+
+ID_RE = re.compile(r"^[A-Z][A-Z0-9_]*$")
+TOKEN_RE = re.compile(r"\s*(?:(?P<num>\d+\.?\d*)|(?P<id>[A-Z][A-Z0-9_]*)(?:\[(?P<shift>-\d+)\]|@(?P<abs>[0-9A-Z]+))?|(?P<op>[-+*/()]))")
+FUNCTIONS = ("EXP", "LN")
+
+class SpecError(ValueError):
+    pass
+
+@dataclass
+class Token:
+    kind: str            # "num" | "id" | "op" | "func"
+    text: str
+    shift: int = 0
+    abs_period: str | None = None
+
+@dataclass
+class Line:
+    id: str
+    label: str
+    unit: str
+    block: str
+    kind: str
+    periods: list[str]
+    values: dict[str, dict[str, float]] = field(default_factory=dict)
+    expr: str = ""
+    provenance: list[dict] = field(default_factory=list)
+
+    def entry_for(self, period: str) -> dict:
+        """Return the provenance entry whose periods cover `period`."""
+        for entry in self.provenance:
+            if period in entry.get("periods", []):
+                return entry
+        raise SpecError(f"{self.id}: no provenance entry covers period {period}")
+
+@dataclass
+class Spec:
+    meta: dict
+    lines: dict[str, Line]
+    order: list[str]
+
+def parse_expr(expr: str) -> list[Token]:
+    pos, out = 0, []
+    while pos < len(expr):
+        m = TOKEN_RE.match(expr, pos)
+        if not m or m.end() == pos:
+            raise SpecError(f"cannot parse expression at {expr[pos:]!r}")
+        pos = m.end()
+        if m.group("num"):
+            out.append(Token("num", m.group("num")))
+        elif m.group("id"):
+            text = m.group("id")
+            if text in FUNCTIONS:
+                if m.group("shift") or m.group("abs"):
+                    raise SpecError(f"{text} is a function and cannot take a period reference")
+                if pos < len(expr) and expr[pos] == "(":
+                    out.append(Token("func", text))
+                else:
+                    raise SpecError(f"{text} must be immediately followed by ( to be used as a function")
+            else:
+                out.append(Token("id", text, int(m.group("shift") or 0), m.group("abs")))
+        else:
+            out.append(Token("op", m.group("op")))
+    return out
+
+def ref_period(tok: Token, period: str, periods: list[str]) -> str:
+    if tok.abs_period:
+        if tok.abs_period not in periods:
+            raise SpecError(f"unknown period {tok.abs_period} in reference {tok.text}@{tok.abs_period}")
+        return tok.abs_period
+    i = periods.index(period) + tok.shift
+    if i < 0 or i >= len(periods):
+        raise SpecError(f"reference {tok.text}[{tok.shift}] from {period} falls outside the period list")
+    return periods[i]
+
+def to_excel(expr: str, period: str, periods: list[str]) -> str:
+    parts = []
+    for t in parse_expr(expr):
+        if t.kind == "id":
+            parts.append(f"{t.text}_{ref_period(t, period, periods)}")
+        else:
+            parts.append(t.text)
+    return "".join(parts)
+
+def _norm_provenance(raw, periods: list[str]) -> list[dict]:
+    """Normalise a line's raw `provenance` (a dict, a list of dicts, or absent) into a
+    list of entry dicts, each carrying its own `periods` (default: the full line period
+    list), `item` (default ""), and `scenario_map` (default {}, i.e. identity)."""
+    if isinstance(raw, dict):
+        entries = [dict(raw)] if raw else []
+    elif isinstance(raw, list):
+        entries = [dict(e) for e in raw]
+    else:
+        entries = []
+    for e in entries:
+        e.setdefault("periods", list(periods))
+        e.setdefault("item", "")
+        e.setdefault("scenario_map", {})
+    return entries
+
+def _line(d: dict) -> Line:
+    for k in ("id", "label", "unit", "block", "kind", "periods"):
+        if k not in d:
+            raise SpecError(f"line {d.get('id','?')}: missing {k}")
+    if not ID_RE.match(d["id"]):
+        raise SpecError(f"bad id {d['id']!r}")
+    if d["id"] in FUNCTIONS:
+        raise SpecError(f"line id {d['id']!r} collides with a whitelisted function name")
+    if d["kind"] not in ("input", "formula"):
+        raise SpecError(f"{d['id']}: kind must be input or formula")
+    periods = list(d["periods"])
+    provenance = _norm_provenance(d.get("provenance", {}), periods)
+    return Line(d["id"], d["label"], d["unit"], d["block"], d["kind"], periods,
+                d.get("values", {}), d.get("expr", ""), provenance)
+
+def load(path: str | Path, check_paths: bool = True) -> Spec:
+    raw = yaml.safe_load(Path(path).read_text())
+    meta = raw["meta"]; periods = list(meta["periods"]); scenarios = list(meta["scenarios"])
+    lines: dict[str, Line] = {}
+    for d in raw["lines"]:
+        ln = _line(d)
+        if ln.id in lines:
+            raise SpecError(f"duplicate id {ln.id}")
+        for p in ln.periods:
+            if p not in periods:
+                raise SpecError(f"{ln.id}: period {p} not in meta.periods")
+        if ln.kind == "input":
+            if ln.expr:
+                raise SpecError(f"{ln.id}: input may not carry expr")
+            entries = ln.provenance
+            if not entries:
+                raise SpecError(f"{ln.id}: input needs at least one provenance entry")
+            root = Path(path).resolve().parents[3] if check_paths else None   # <repo>/model/pitch_model_v2/spec/lines.yaml
+            coverage: dict[str, int] = {p: 0 for p in ln.periods}
+            for entry in entries:
+                if entry.get("grade") not in ("A", "B"):
+                    raise SpecError(f"{ln.id}: input needs grade A or B, got {entry.get('grade')!r}")
+                for k in ("dossier", "receipt", "decision", "tolerance"):
+                    if k not in entry:
+                        raise SpecError(f"{ln.id}: provenance missing {k}")
+                for p in entry.get("periods", []):
+                    if p not in ln.periods:
+                        raise SpecError(f"{ln.id}: provenance entry period {p} not in line periods")
+                    coverage[p] = coverage.get(p, 0) + 1
+                if check_paths:
+                    for k in ("dossier", "receipt"):
+                        if not (root / entry[k]).exists():
+                            raise SpecError(f"{ln.id}: {k} not found at {entry[k]}")
+            for p in ln.periods:
+                n = coverage[p]
+                if n == 0:
+                    raise SpecError(f"{ln.id}: period {p} not covered by any provenance entry")
+                if n > 1:
+                    raise SpecError(f"{ln.id}: period {p} covered by more than one provenance entry")
+            for sc in scenarios:
+                for p in ln.periods:
+                    if p not in ln.values.get(sc, {}):
+                        raise SpecError(f"{ln.id}: missing value for scenario {sc} period {p}")
+        else:
+            if not ln.expr:
+                raise SpecError(f"{ln.id}: formula needs expr")
+        lines[ln.id] = ln
+    # resolve references and order
+    deps: dict[str, set[str]] = {}
+    for ln in lines.values():
+        deps[ln.id] = set()
+        if ln.kind == "formula":
+            for p in ln.periods:
+                for t in parse_expr(ln.expr):
+                    if t.kind != "id":
+                        continue
+                    if t.text not in lines:
+                        raise SpecError(f"{ln.id}: references unknown id {t.text}")
+                    try:
+                        rp = ref_period(t, p, periods)
+                    except SpecError as e:
+                        raise SpecError(f"{ln.id}: {e}") from e
+                    if rp not in lines[t.text].periods:
+                        raise SpecError(f"{ln.id}: {t.text} has no period {rp}")
+                    deps[ln.id].add(t.text)
+    order, seen, temp = [], set(), set()
+    def visit(n: str):
+        if n in seen:
+            return
+        if n in temp:
+            raise SpecError(f"cycle through {n}")
+        temp.add(n)
+        for m in sorted(deps[n]):
+            visit(m)
+        temp.discard(n); seen.add(n); order.append(n)
+    for n in lines:
+        visit(n)
+    return Spec(meta, lines, order)

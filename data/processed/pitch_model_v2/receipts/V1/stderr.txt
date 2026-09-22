@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/theomachado/Citadel-ABNB/analysis/src/forecast_methods/consensus_stamp_v2/run.py", line 185, in <module>
+    verify()
+    ~~~~~~^^
+  File "/Users/theomachado/Citadel-ABNB/analysis/src/forecast_methods/consensus_stamp_v2/run.py", line 167, in verify
+    assert logical_sha256(current) == receipt["after_lf_sha256"], "Register logical contents changed after append"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Register logical contents changed after append

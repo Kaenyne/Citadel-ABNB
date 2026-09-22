@@ -1,0 +1,21 @@
+diagnostic,key,n,value,value2,note
+pre-RNPL b scatter by season,current Q1,3,2.523,2.621,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,current Q2,3,-2.603,2.626,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,current Q3,3,-2.97,1.913,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,current Q4,3,0.709,0.101,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,forward Q1,3,2.105,2.527,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,forward Q2,3,-2.019,2.354,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,forward Q3,3,-2.216,1.371,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,forward Q4,3,-0.514,0.695,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,kernelw Q1,3,3.204,2.955,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,kernelw Q2,3,-2.458,2.042,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,kernelw Q3,3,-3.282,1.705,mean and population sd of b over 2023-2025 same-season quarters
+pre-RNPL b scatter by season,kernelw Q4,3,0.507,0.251,mean and population sd of b over 2023-2025 same-season quarters
+implied vs stated RNPL GBV share,3Q25,1,2.62,4.0,"implied by u via lambda vs the disclosed/assumed share (D031, D043, D1 params)"
+implied vs stated RNPL GBV share,4Q25,1,8.2,9.0,"implied by u via lambda vs the disclosed/assumed share (D031, D043, D1 params)"
+implied vs stated RNPL GBV share,1Q26,1,19.32,20.0,"implied by u via lambda vs the disclosed/assumed share (D031, D043, D1 params)"
+implied vs stated RNPL GBV share,2Q26,1,21.0,21.0,"implied by u via lambda vs the disclosed/assumed share (D031, D043, D1 params)"
+"corr(reviews index, g_nights)",1Q23-2Q26,14,0.863,,descriptive; the index is uncalibrated (N1 owns the calibration)
+"corr(reviews index, g_nights - b)",1Q23-2Q26,14,0.503,,if the backlog term were clean this should be HIGHER than the row above
+"best corr(index, g_nights - b) over the grid",fee 0.155 current B 1.1 r 1.33 step,14,0.603,,upper bound over all 72 registered cells; still below the 0.863 no-b baseline
+b sensitivity to norm and +/-5% revenue,2Q26,4,-0.097,7.945,central cell held; only the norm denominator and the assumed 3Q26 revenue move

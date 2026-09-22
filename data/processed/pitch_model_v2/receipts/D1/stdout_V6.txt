@@ -1,0 +1,6 @@
+[shim] V6_backtest_substituted.py: repointed MAIN -> /Users/theomachado/Citadel-ABNB
+                                                                                variant  n  v_4Q22  v_1Q23  wf_n  wf_rmse  wf_rmse_naive  wf_ratio_vs_naive  n_markets_4Q22  n_markets_1Q23
+                                                          v1 (single 2025/2026 vintage) 14  51.788  51.616    10    1.475          2.159              0.683             114               7
+a: literal, 2023-vintage 4Q22 (114 mkts) and 1Q23 (3 complete months: 7 late-dump mkts) 14  65.517 109.064    10    1.816          2.159              0.841             114               7
+                    b: 2023-vintage 4Q22 (114 mkts) and 1Q23 as Jan-Feb 2023 (103 mkts) 14  65.517  71.800    10    1.634          2.159              0.757             114               7
+                     c: v1 1Q23 rescaled by the pooled T1 wedge factor 1.055 (estimate) 14  51.788  59.985    10    1.538          2.159              0.713             114               7

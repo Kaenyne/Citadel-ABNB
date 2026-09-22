@@ -1,0 +1,16 @@
+measure,test,statistic,value,se_cluster,t,p,n,clusters,extra,pass_line,passed
+yoy_vmatch,A1_elasticity,beta (country FE),0.493642974520435,0.06962926995415498,7.089589979120237,0.001,702,18,within-R2 0.358,p<0.01,True
+yoy_vmatch,A2_first_differences,beta on d(y/y),0.7034092737799591,0.10295847438195799,6.83197063672907,0.001,684,18,,"beta>0, p<0.05",True
+yoy_vmatch,A3_leave_one_country_out,beta range,0.471193135082124,,,,18,18,max 0.547; all same sign True,reported,True
+yoy_vmatch,A4_era_split,beta 2023-24 vs 2025-26,0.45568225857081474,0.08116133748545215,-0.16928240346431883,,702,18,beta late 0.431 se 0.124; |z| 0.17,reported (|z|<2),True
+yoy_vmatch,A5_out_of_sample_by_country,median walk-forward RMSE ratio vs naive,0.5903132677945258,,,,486,18,countries<=0.75: 17/18,median<=0.75,True
+yoy_all,A1_elasticity,beta (country FE),0.518925414227727,0.08211558756724326,6.319450783967009,0.001,702,18,within-R2 0.333,p<0.01,True
+yoy_all,A2_first_differences,beta on d(y/y),0.6902162191226368,0.10582770976103834,6.522074612416375,0.001,684,18,,"beta>0, p<0.05",True
+yoy_all,A3_leave_one_country_out,beta range,0.4928637233923145,,,,18,18,max 0.591; all same sign True,reported,True
+yoy_all,A4_era_split,beta 2023-24 vs 2025-26,0.47798296050751676,0.09248292119540961,-0.5215433645643633,,702,18,beta late 0.394 se 0.132; |z| 0.52,reported (|z|<2),True
+yoy_all,A5_out_of_sample_by_country,median walk-forward RMSE ratio vs naive,0.598600618150938,,,,486,18,countries<=0.75: 17/18,median<=0.75,True
+yoy_mature,A1_elasticity,beta (country FE),0.44636409178338404,0.09204366545671135,4.849481923265122,0.001,702,18,within-R2 0.216,p<0.01,True
+yoy_mature,A2_first_differences,beta on d(y/y),0.6793593858370245,0.10374740763891363,6.548205890613598,0.001,684,18,,"beta>0, p<0.05",True
+yoy_mature,A3_leave_one_country_out,beta range,0.41598435371099085,,,,18,18,max 0.517; all same sign True,reported,True
+yoy_mature,A4_era_split,beta 2023-24 vs 2025-26,0.4506772486544679,0.10658441488622174,-1.2471556412001228,,702,18,beta late 0.270 se 0.099; |z| 1.25,reported (|z|<2),True
+yoy_mature,A5_out_of_sample_by_country,median walk-forward RMSE ratio vs naive,0.662589682679599,,,,486,18,countries<=0.75: 14/18,median<=0.75,True
