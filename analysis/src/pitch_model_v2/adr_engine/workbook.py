@@ -367,7 +367,7 @@ def build():
     cv = wb["Cover"]; cv["A1"] = "Airbnb (ABNB) — official model, built line by line. Line 1: nights. Line 2: ADR."
     for row in cv.iter_rows(min_row=3, max_row=12, max_col=2):
         if row[0].value == "Status":
-            row[1].value = "Nights: built (DEC-0029 base 146.8m). ADR: built (ADR_Engine; pre-registered FX identity promoted, ex-FX mechanism with the bundle lapping on filed dates; proposed DEC-0034/0035 pending Theo), then extended with the v2 geo-mix layer and hardened by the four mitigations of 22 Sep (block G; DEC-0037–0041 pending Theo). Base ADR path unchanged by the mitigations: 3Q26 $177.68, 4Q26 $173.03. GBV = nights × ADR on Income_Statement row 8. Next: take rate / revenue, together, one at a time."
+            row[1].value = "Nights: built (DEC-0029 base 146.8m). ADR: built (ADR_Engine; pre-registered FX identity promoted, ex-FX mechanism with the bundle lapping on filed dates; proposed DEC-0034/0035 pending Theo), then extended with the v2 geo-mix layer and hardened by the four mitigations of 22 Sep (block G; DEC-0037–0041 pending Theo). Base ADR path unchanged by the mitigations: 3Q26 $177.68, 4Q26 $173.03. GBV = nights × ADR on Income_Statement row 8. Income statement: history 1Q23-2Q26 plugged from the reconciled financial panel; forecast cost lines, SBC, D&A and below-the-line plugged from the 40_line_build base (DEC-0022); take rate Street-implied for 3Q26-4Q26 (DEC-0018) and seasonal naive thereafter, so the margin is an output of our own nights x ADR. Open: DEC-0023 hosting step."
         if row[0].value == "Verification":
             row[1].value = "Nights: formulas recalculated in Excel and checked against the engine (block 'Engine reference values'). ADR: formulas written by adr_engine/workbook.py; open in Excel to recalculate, then tie out block E (walk-forward ratios, FX pp, ADR $)."
     src = wb["Sources"]; n0 = src.max_row + 1
@@ -384,6 +384,11 @@ def build():
         ("Origin→destination flows", "NTTO, JNTO, ABS, StatCan arrivals by origin (od_layer.py)", "adr_v2_upgrade2"),
         ("Mitigation outputs (block G)", "adr_engine/: reconcile_pooled_regressions.csv, sizemix_rebased_plug.csv, market_panel_scores.csv, origin_lang_*.csv", "adr_v2_mitigation_A–D")], start=n0):
         put(src, i, 1, a_, F_LBL); put(src, i, 2, b_, F_LBL); put(src, i, 3, c_, F_LBL)
+    # ---------------- Income_Statement rows 12-36 (line 3 onward: revenue, costs, margins) ----------------
+    from .. import income_statement as IS
+    take, how = IS.build(wb, C.ROOT)
+    print("income statement take rate:", {q: round(v, 3) for q, v in take.items()})
+
     wb.save(C.XLSX)
     refs = dict(R_EV=R_EV, R_ADR=R_ADR, R_FXD=R_FXD, R_FXI=R_FXI, R_EXM=R_EXM, R_LVL=R_LVL, R_REP=R_REP, R_GM=R_GM, R_CORE=R_CORE, R_BUN=R_BUN, R_REF=R_REF, R_ALT=R_ALT, R_RMSE=R_RMSE)
     (C.OUT / "workbook_refs.json").write_text(json.dumps(refs)); print("wrote", C.XLSX, refs)
