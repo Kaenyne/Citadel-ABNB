@@ -255,8 +255,79 @@ def build():
         for j, q in enumerate(["3Q26", "4Q26", "1Q27", "2Q27"]):
             put(ws, R_ALT + 1 + i, COL0 + j * 3, float(g.loc[q, "exfx_pct"]), F_IN, NUM2); put(ws, R_ALT + 1 + i, COL0 + j * 3 + 1, float(g.loc[q, "adr_usd"]), F_IN, NUM2); put(ws, R_ALT + 1 + i, COL0 + j * 3 + 2, float(g.loc[q, "gbv_busd"]), F_IN, NUM2)
 
+    # ---------------- G. evidence: the v2 geo-mix layer and the four mitigations of 22 Sep ----------------
+    R_EV = R_ALT + len(scen.rule.unique()) + 2
+    sec(ws, R_EV, "G. Evidence behind line 2 \u2014 the v2 geo-mix layer and the four mitigations of 22 Sep. Labelled attribution and falsifiers; none of this is in the base path above.", ncols)
+    def _csv(name):
+        q = C.OUT / name
+        return pd.read_csv(q) if q.exists() else None
+    ev = []   # (label, [(sublabel, value), ...])
+
+    sg, sgf, h2 = _csv("geomix_subregional_term.csv"), _csv("geomix_subregional_term_forward.csv"), _csv("geomix_h2_scores.csv")
+    if sg is not None and sgf is not None:
+        s = sg.set_index("quarter").subgeo_pp; f2 = sgf.set_index("quarter").subgeo_pp
+        # the file carries a partial quarter-to-date row past HIST_LAST; history stops at HIST_LAST
+        s = s[[q for q in s.index if C.qlabel_to_period(q) <= C.qlabel_to_period(HIST_LAST)]]
+        ev.append(("G1. Sub-regional (within-region country) mix, pp of ADR \u2014 DEC-0038: attribution + forward row, NOT the base",
+                   [("mean 1Q23\u20132Q26", float(s.loc["1Q23":"2Q26"].mean())), ("last 4 q to 2Q26", float(s.iloc[-4:].mean())),
+                    ("fwd 3Q26", float(f2.loc["3Q26"])), ("fwd 4Q26", float(f2.loc["4Q26"])), ("4Q26 ADR effect ($)", -0.24)]))
+    if h2 is not None:
+        ev.append(("      H2 forecast-content test, RMSE ratio vs the residual carry \u2014 pass line 0.75 on BOTH windows \u2192 FAILS, so the term stays out of the base",
+                   [("W1 (n 10)", float(h2[h2.window == "W1"].ratio_v2_vs_carry.iloc[0])), ("W2 (n 6)", float(h2[h2.window == "W2"].ratio_v2_vs_carry.iloc[0])), ("pass line", 0.75)]))
+
+    rp = _csv("reconcile_pooled_regressions.csv")
+    if rp is not None:
+        d = rp[(rp["sample"] == "disclosed_only")].set_index("spec")
+        pr = d.loc["primary: FE + CPI P1 + size/LOS"]
+        ev.append(("G2. Reconciliation to the company's own accounting (mitigation C): disclosed constant-currency rate minus regional accommodation inflation, regressed on our within-region mix. The identity implies a slope of 1.0.",
+                   [("slope", float(pr.b)), ("cluster-by-region p", float(pr.p_b0_cluster)), ("90% lo", float(pr.ci90_lo)), ("90% hi", float(pr.ci90_hi)), ("n prints", float(pr.n))]))
+        alt = [("drop LatAm", "primary, drop LatAm"), ("drop EMEA", "primary, drop EMEA"), ("drop NAM", "primary, drop NAM"), ("drop APAC", "primary, drop APAC")]
+        ev.append(("      the slope is carried by ONE region \u2014 leave-one-region-out (LatAm's own comparator is Brazil alone, 24\u201333% coverage)",
+                   [(lbl, float(d.loc[k].b)) for lbl, k in alt if k in d.index]))
+        em = [("EMEA only, n 7", "EMEA alone, upgrade-3 y and window (n 7 replication)"), ("EMEA only, n 9", "EMEA alone, upgrade-3 y (gap on mix), all 9")]
+        ev.append(("      and the earlier EMEA-only reading is window-dependent: admitting two further disclosed quarters flips its sign",
+                   [(lbl, float(d.loc[k].b)) for lbl, k in em if k in d.index]))
+
+    sz = _csv("sizemix_rebased_plug.csv")
+    if sz is not None:
+        for var, tag in [("B adopted H size, 03 LOS", "H size"), ("C adopted H size and H LOS", "H size + H LOS"), ("A as filed (05 pooled size, 03 LOS)", "as filed (withdrawn)")]:
+            g = sz[sz.variant == var].set_index("year")
+            if len(g) == 3:
+                ev.append((f"G3. Implied like-for-like price by year, pp \u2014 DEC-0040 route: {tag}" if tag == "H size" else f"      same, route: {tag}",
+                           [("2023", float(g.loc[2023].implied_lfl_price_pp)), ("2024", float(g.loc[2024].implied_lfl_price_pp)), ("2025", float(g.loc[2025].implied_lfl_price_pp)),
+                            ("2025 size term", float(g.loc[2025].size_pp))]))
+        ev.append(("      DEC-0040: the filed route's NEGATIVE 2025 size term is a Paris-weighting artefact; the H route is adopted and sits inside the filed bedroom-nights bracket. 2025 like-for-like price is FLAT, so the 2026 core step is LARGER, not smaller \u2014 stated against our own interest.",
+                   [("bracket lo", 0.42), ("bracket hi", 1.29)]))
+
+    mp = _csv("market_panel_scores.csv")
+    if mp is not None:
+        m2 = mp[mp.spec.str.startswith("M2 ")].iloc[0]; mx = mp[mp.spec == "M2-exUS"]
+        pair = [("elasticity b", float(m2.b)), ("p", float(m2.p)), ("CI lo", float(m2.ci_lo)), ("CI hi", float(m2.ci_hi)), ("n pairs", float(m2.n))]
+        if len(mx): pair.append(("ex-US b", float(mx.iloc[0].b)))
+        ev.append(("G4. Price-to-utilisation elasticity, market-level panel (mitigation B) \u2014 registered pass line b>0 and p\u22640.05 \u2192 FAILS. Buys at most 0.6pp of the core and in the wrong direction for a give-back; the fix is a Sept-2026 capture wave.", pair))
+
+    rl, pmx, psum = _csv("origin_lang_rotation_ltm.csv"), _csv("origin_lang_price_mix_effect.csv"), _csv("origin_lang_price_summary.csv")
+    if rl is not None and psum is not None:
+        gl = rl[rl.region == "GLOBAL"].set_index("lang")
+        w = psum.total_reviews_ltm_2026; rel = float((psum.rel_price_vs_en_median * w).sum() / w.sum())
+        row = [("non-English +%", float(gl.loc["ALL_NON_EN"].growth_pct_24_26)), ("English +%", float(gl.loc["en"].growth_pct_24_26)),
+               ("English share 2024 %", float(gl.loc["en"].share_pct_2024)), ("English share 2026 %", float(gl.loc["en"].share_pct_2026)),
+               ("non-En price vs En", rel)]
+        if pmx is not None:
+            g = pmx[pmx.region == "GLOBAL"]
+            if len(g): row.append(("mix effect %/yr", float(g.iloc[0].mix_pct_24_26_wtd) / 2))
+        ev.append(("G5. Guest-origin rotation, priced (mitigation D) \u2014 day-matched LTM windows 2024\u21922026 on 53m reviews; within a market a non-English-reviewed listing is cheaper, so the rotation itself costs price.", row))
+
+    rr = R_EV + 1
+    for lbl, pairs in ev:
+        label(ws, rr, lbl)
+        for j, (sl, v) in enumerate(pairs):
+            put(ws, rr, COL0 + j * 2, sl, F_NOTE); put(ws, rr, COL0 + j * 2 + 1, v, F_IN, NUM3)
+        rr += 1
+    R_EV_END = rr
+
     # ---------------- charts ----------------
-    R_CH = R_ALT + len(scen.rule.unique()) + 3
+    R_CH = R_EV_END + 2
     label(ws, R_CH, "chart helper: ADR $ (printed, then engine)"); label(ws, R_CH + 1, "chart helper: Street ADR $"); label(ws, R_CH + 2, "chart helper: FX identity (pp)"); label(ws, R_CH + 3, "chart helper: disclosed FX (pp)")
     for lab in Q:
         c = col[lab]
@@ -296,7 +367,7 @@ def build():
     cv = wb["Cover"]; cv["A1"] = "Airbnb (ABNB) — official model, built line by line. Line 1: nights. Line 2: ADR."
     for row in cv.iter_rows(min_row=3, max_row=12, max_col=2):
         if row[0].value == "Status":
-            row[1].value = "Nights: built (DEC-0029 base 146.8m). ADR: built (ADR_Engine; pre-registered FX identity promoted, ex-FX mechanism with the bundle lapping on filed dates; proposed DEC-0034/0035 pending Theo). GBV = nights × ADR on Income_Statement row 8. Next: take rate / revenue, together, one at a time."
+            row[1].value = "Nights: built (DEC-0029 base 146.8m). ADR: built (ADR_Engine; pre-registered FX identity promoted, ex-FX mechanism with the bundle lapping on filed dates; proposed DEC-0034/0035 pending Theo), then extended with the v2 geo-mix layer and hardened by the four mitigations of 22 Sep (block G; DEC-0037–0041 pending Theo). Base ADR path unchanged by the mitigations: 3Q26 $177.68, 4Q26 $173.03. GBV = nights × ADR on Income_Statement row 8. Next: take rate / revenue, together, one at a time."
         if row[0].value == "Verification":
             row[1].value = "Nights: formulas recalculated in Excel and checked against the engine (block 'Engine reference values'). ADR: formulas written by adr_engine/workbook.py; open in Excel to recalculate, then tie out block E (walk-forward ratios, FX pp, ADR $)."
     src = wb["Sources"]; n0 = src.max_row + 1
@@ -308,10 +379,13 @@ def build():
         ("Bundle ADR contribution (~1pp, transcript-only)", "ledger D014 (4Q25 call), D032 (1Q26 call); filed substitute D031 'roughly 20% of GBV from RNPL'", "adr_v1_design §3"),
         ("Regional ADR levels and shares", "data/processed/adr/04_regional_quarterly_wide.csv (disclosed-chained)", "adr_v1_design §3.3"),
         ("Street ADR", "Bloomberg MODL screenshot 12 Sep 2026 (3Q26 n 26, 4Q26 n 25)", "DEC-0005 / V1"),
-        ("ADR engine outputs", "data/processed/pitch_model_v2/adr_engine/ (fx_scores.csv, fx_forecast_asof.csv, adr_path.csv, …)", "adr_fx_prereg §9")], start=n0):
+        ("ADR engine outputs", "data/processed/pitch_model_v2/adr_engine/ (fx_scores.csv, fx_forecast_asof.csv, adr_path.csv, …)", "adr_fx_prereg §9"),
+        ("Sub-regional mix inputs (v2)", "Inside Airbnb capture store → refresh_prices.py: 123 markets, 30 priced countries", "adr_v2_geomix_prereg"),
+        ("Origin→destination flows", "NTTO, JNTO, ABS, StatCan arrivals by origin (od_layer.py)", "adr_v2_upgrade2"),
+        ("Mitigation outputs (block G)", "adr_engine/: reconcile_pooled_regressions.csv, sizemix_rebased_plug.csv, market_panel_scores.csv, origin_lang_*.csv", "adr_v2_mitigation_A–D")], start=n0):
         put(src, i, 1, a_, F_LBL); put(src, i, 2, b_, F_LBL); put(src, i, 3, c_, F_LBL)
     wb.save(C.XLSX)
-    refs = dict(R_ADR=R_ADR, R_FXD=R_FXD, R_FXI=R_FXI, R_EXM=R_EXM, R_LVL=R_LVL, R_REP=R_REP, R_GM=R_GM, R_CORE=R_CORE, R_BUN=R_BUN, R_REF=R_REF, R_ALT=R_ALT, R_RMSE=R_RMSE)
+    refs = dict(R_EV=R_EV, R_ADR=R_ADR, R_FXD=R_FXD, R_FXI=R_FXI, R_EXM=R_EXM, R_LVL=R_LVL, R_REP=R_REP, R_GM=R_GM, R_CORE=R_CORE, R_BUN=R_BUN, R_REF=R_REF, R_ALT=R_ALT, R_RMSE=R_RMSE)
     (C.OUT / "workbook_refs.json").write_text(json.dumps(refs)); print("wrote", C.XLSX, refs)
     return C.XLSX, refs
 
