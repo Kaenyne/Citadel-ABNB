@@ -15,8 +15,10 @@ EXERCISE_AT = "stay date: payment is due shortly before the free-cancellation wi
 
 
 def landing_table(M):
-    """Level channel. A cohort's exercised options land at its STAY dates, so each writing wave's cancellations are
-    timed by the K2 kernel (share of a cohort's stays landing 0..3 quarters after booking). Cohort sizes are the
+    """Level channel. NOT FOR QUOTATION — known defect: cohort sizes are the NET observed gaps (x*B - C), fed in as if
+    they were GROSS cohorts, which double counts cancellations already landed. Rebuild on gross cohorts (disclosed
+    x = 16-17% times the RNPL booking flow) before any number here is used. The TIMING logic below is sound.
+    A cohort's exercised options land at its STAY dates, so each writing wave's cancellations are timed by the K2 kernel (share of a cohort's stays landing 0..3 quarters after booking). Cohort sizes are the
     observed gaps (pp of nights, at the historical exercise rate); 3Q26 uses the base writing term (+0.54)."""
     def landing(bq):
         w = np.array([M[((bq - 1 + k) % 4) + 1][k] for k in range(4)]); return w / w.sum()
@@ -42,14 +44,15 @@ def build():
                          street_yoy=np.nan, source="Stage C: mapped = stays-implied, actual = print"))
     base = {b["q"]: b for b in C.BASE_PATH}
     I3 = dict(zero=0.0, mean_gap=float(g.gap_pp.mean()), wave=float(g.gap_pp.max()), base=base["3Q26"]["base_yoy"] - stays_3q26)
-    rows.append(dict(quarter="3Q26", phase="nets: July writing laps the US launch", stays_yoy=stays_3q26, print_yoy=base["3Q26"]["base_yoy"], I_pp=I3["base"],
+    rows.append(dict(quarter="3Q26", phase="nets: July writing laps the US-launch residual", stays_yoy=stays_3q26, print_yoy=base["3Q26"]["base_yoy"], I_pp=I3["base"],
                      street_yoy=(C.STREET["3Q26"]["mean_m"] / C.BASE_3Q25_M - 1) * 100,
                      source=f"stays = v2 read +/-{band:.2f}; print base = DEC-0029; print range {stays_3q26 + I3['zero']:.2f}-{stays_3q26 + I3['wave']:.2f} under I in {{0, +{I3['mean_gap']:.2f}, +{I3['wave']:.2f}}}"))
-    rows.append(dict(quarter="4Q26", phase="small hit: laps 4Q25 writing, little new access", stays_yoy=base["4Q26"]["base_yoy"], print_yoy=base["4Q26"]["base_yoy"], I_pp=0.0,
+    rows.append(dict(quarter="4Q26", phase="small hit: laps the 4Q25 residual, little new access", stays_yoy=base["4Q26"]["base_yoy"], print_yoy=base["4Q26"]["base_yoy"], I_pp=0.0,
                      street_yoy=(C.STREET["4Q26"]["mean_m"] / C.BASE_4Q25_M - 1) * 100,
                      source=f"base carries the -0.78 lap, no drag; short print {SHORT_4Q26_PRINT} (drag -{base['4Q26']['base_yoy'] - SHORT_4Q26_PRINT:.2f}, DEC-0020 deferred)"))
     for q in ["1Q27", "2Q27", "3Q27", "4Q27"]:
-        rows.append(dict(quarter=q, phase={"1Q27": "flat: laps the -0.07", "2Q27": "THE HIT: laps the 2Q26 wave at the ceiling"}.get(q, "laps land"), stays_yoy=base[q]["base_yoy"], print_yoy=base[q]["base_yoy"], I_pp=0.0, street_yoy=np.nan,
+        rows.append(dict(quarter=q, phase={"1Q27": "tailwind: laps a NEGATIVE year-ago residual (I_yoy > 0)",
+                                           "2Q27": "THE HIT: laps the 2Q26 writing wave with no new access to net it"}.get(q, "laps land"), stays_yoy=base[q]["base_yoy"], print_yoy=base[q]["base_yoy"], I_pp=0.0, street_yoy=np.nan,
                          source=base[q]["decomposition"] + f" ({base[q]['dec']})"))
     df = pd.DataFrame(rows)
     # the option term in y/y form: this quarter's net writing minus the year-ago quarter's (what the KPI laps)
