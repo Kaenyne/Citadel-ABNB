@@ -26,6 +26,7 @@ from openpyxl.utils import get_column_letter as L
 
 ROOT_REL = "data/processed"
 PANEL = "margin_build/02_financial_panel/02_panel_quarterly.csv"
+ANNUAL = "margin_build/02_financial_panel/02_panel_annual.csv"
 LINES = "margin_build/40_line_build/40_lines_quarterly.csv"
 
 HIST = [f"{q}Q{y}" for y in range(23, 27) for q in range(1, 5)][:14]      # 1Q23..2Q26
@@ -71,6 +72,7 @@ def build(wb, root):
     ph = panel[panel.quarter.isin(HIST)].set_index("quarter")
     lines = pd.read_csv(root / ROOT_REL / LINES)
     fb = lines[lines.scenario == "base"].set_index("quarter")
+    ann = pd.read_csv(root / ROOT_REL / ANNUAL).set_index("year")
     take, how = take_rate_path(panel)
     ws = wb["Income_Statement"]
 
@@ -140,8 +142,15 @@ def build(wb, root):
         put(R["TOTP"], c, f"={C}{R['TOT']}/{C}{R['REV']}", F_FX, PCT)
         put(R["MARGIN"], c, f"={C}{R['EBITDA']}/{C}{R['REV']}", F_FX, PCT)
         put(R["TAKE"], c, f"={C}{R['REV']}/(SUM({a}8:{b}8)*1000)", F_FX, "0.000%")
-        put(R["SH"], c, f"=AVERAGE({a}{R['SH']}:{b}{R['SH']})", F_FX, NUM1)
-        put(R["EPS"], c, f"={C}{R['NI']}/{C}{R['SH']}", F_FX, NUM2)
+        # fully-historical years take the reported annual share count and EPS: the company weights shares
+        # across the year, which a mean of four quarterly counts does not reproduce (FY23 off by $0.03).
+        yr = 2000 + int(name[2:])
+        if name in ("FY23", "FY24", "FY25") and yr in ann.index:
+            put(R["SH"], c, float(ann.loc[yr, "shares_diluted_m"]), F_IN, NUM1)
+            put(R["EPS"], c, float(ann.loc[yr, "eps_diluted"]), F_IN, NUM2)
+        else:
+            put(R["SH"], c, f"=AVERAGE({a}{R['SH']}:{b}{R['SH']})", F_FX, NUM1)
+            put(R["EPS"], c, f"={C}{R['NI']}/{C}{R['SH']}", F_FX, NUM2)
         if name in ("FY24", "FY25", "FY26", "FY27"):
             put(R["REVY"], c, f"={C}{R['REV']}/{L(c-1)}{R['REV']}-1", F_FX, PCT1)
 
