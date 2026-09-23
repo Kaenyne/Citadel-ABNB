@@ -1,0 +1,14 @@
+offsets (forward construction minus in-core construction at 2Q26): geo +0.132, unit +0.166; LOS switch (I forward 3Q26 minus H 2Q26 fill) -0.244
+quarter                            case             fx  d_exfx_basis_pp  d_subregional_netted_pp  d_fx_pp  adr_usd  vs_street  p_print_ge_street
+   3Q26 A: LOS switch is a basis offset V0 identity FX           -0.054                   -0.037    0.000  177.524      0.464              0.609
+   3Q26 A: LOS switch is a basis offset  V1 FX weights           -0.054                   -0.037   -0.386  176.864     -0.196              0.453
+   3Q26           B: LOS genuinely fell V0 identity FX           -0.298                   -0.037    0.000  177.107      0.047              0.511
+   3Q26           B: LOS genuinely fell  V1 FX weights           -0.298                   -0.037   -0.386  176.446     -0.614              0.357
+   3Q26                      filed base V0 identity FX            0.000                    0.000    0.000  177.681      0.621              0.645
+   4Q26 A: LOS switch is a basis offset V0 identity FX           -0.054                   -0.047    0.000  172.865      1.535              0.682
+   4Q26 A: LOS switch is a basis offset  V1 FX weights           -0.054                   -0.047   -0.231  172.478      1.148              0.639
+   4Q26           B: LOS genuinely fell V0 identity FX           -0.298                   -0.047    0.000  172.456      1.126              0.636
+   4Q26           B: LOS genuinely fell  V1 FX weights           -0.298                   -0.047   -0.231  172.069      0.739              0.590
+   4Q26                      filed base V0 identity FX            0.000                    0.000    0.000  173.034      1.704              0.701
+lap-only 4Q26 filed 171.71 (Street 171.33, +0.38); case A basis-consistent 171.61
+lap-only 4Q26 filed 171.71 (Street 171.33, +0.38); case B basis-consistent 171.21

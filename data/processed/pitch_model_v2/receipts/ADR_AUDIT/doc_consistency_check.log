@@ -1,0 +1,249 @@
+
+## identity_check_pp (H file)
+   n=14
+   max|id|=0.0422
+   quarters listed: ['1Q23', '2Q23', '3Q23', '4Q23', '1Q24', '2Q24', '3Q24', '4Q24', '1Q25', '2Q25', '3Q25', '4Q25', '1Q26', '2Q26']
+
+## kpi panel: reported - exfx - fx_pts_adr
+   n=14
+   max|id|=0.0000
+
+## fx_scores.csv ratios (W1O2/W1O3/W2O2/W2O3)
+   V0_translation ratio 0.344 / 0.303 / 0.383 / 0.317 | boot90hi 0.438 / 0.369 / 0.509 / 0.418 | bias +0.11 / +0.15 / -0.07 / -0.04 | interval 0.211 / 0.151 / 0.240 / 0.153
+   V1_passthrough ratio 0.375 / 0.337 / 0.347 / 0.290 | boot90hi 0.456 / 0.416 / 0.472 / 0.403 | bias +0.29 / +0.34 / +0.12 / +0.17 | interval 0.292 / 0.238 / 0.223 / 0.142
+   V2_eur_ols ratio 0.270 / 0.281 / 0.268 / 0.272 | boot90hi 0.389 / 0.380 / 0.350 / 0.357 | bias -0.33 / -0.27 / -0.34 / -0.27 | interval 0.156 / 0.168 / 0.105 / 0.109
+   V3_usd_broad_ols ratio 0.532 / 0.517 / 0.599 / 0.568 | boot90hi 0.741 / 0.716 / 0.911 / 0.882 | bias -0.52 / -0.50 / -0.47 / -0.46 | interval 0.421 / 0.397 / 0.472 / 0.426
+   naive_last_disclosed ratio 1.000 / 1.000 / 1.000 / 1.000 | boot90hi 1.000 / 1.000 / 1.000 / 1.000 | bias -0.49 / -0.49 / +0.08 / +0.08 | interval 1.000 / 1.000 / 1.000 / 1.000
+
+## O1 cells V0
+   W1 O1 n=13 rmse=1.313 naive=3.002 ratio=0.437 boot=0.728 intr=0.366
+   W2 O1 n=10 rmse=1.473 naive=2.358 ratio=0.625 boot=0.881 intr=0.560
+
+## O2/O3 cells V0 full
+   W1 O2 n=14 rmse=0.724 naive=2.106
+   W1 O3 n=14 rmse=0.637 naive=2.106
+   W2 O2 n=10 rmse=0.754 naive=1.967
+   W2 O3 n=10 rmse=0.624 naive=1.967
+
+## adr_path.csv
+   3Q26: adr=177.68 yoy=3.731 exfx=3.316 fx=0.415 band=0.978 lo=176.01 hi=179.36 street=177.06 z=0.3710120326217151 p=0.6446857152073313 n=26.0 gbv=26.08 nights=146.8 p10=0.3554832912187216 p90=0.4805092671220062 base=171.29
+   4Q26: adr=173.03 yoy=3.298 exfx=2.784 fx=0.514 band=1.932 lo=169.80 hi=176.27 street=171.33 z=0.5265761565348751 p=0.700756023334298 n=25.0 gbv=22.81 nights=131.8 p10=-1.0564431063228892 p90=2.259472345394851 base=167.51
+   1Q27: adr=190.65 yoy=2.048 exfx=2.417 fx=-0.369 band=2.742 lo=185.52 hi=195.77 street=nan z=nan p=nan n=nan gbv=32.22 nights=169.02 p10=-3.200007379665376 p90=2.777955631158125 base=186.82
+   2Q27: adr=188.38 yoy=2.530 exfx=2.957 fx=-0.427 band=3.248 lo=182.41 hi=194.35 street=nan z=nan p=nan n=nan gbv=29.59 nights=157.1 p10=-3.901622399508339 p90=3.680185402603735 base=183.73
+   3Q27: adr=182.51 yoy=2.716 exfx=2.863 fx=-0.147 band=3.757 lo=175.83 hi=189.18 street=nan z=nan p=nan n=nan gbv=28.46 nights=155.96 p10=-4.338399164474799 p90=4.855838910725363 base=177.68122194149538
+   4Q27: adr=178.10 yoy=2.928 exfx=2.928 fx=0.000 band=3.900 lo=171.35 hi=184.85 street=nan z=nan p=nan n=nan gbv=24.89 nights=139.77 p10=-4.335432026064073 p90=5.115411667119529 base=173.0340496165458
+   FY27: adr=185.21 yoy=2.544 exfx=nan fx=nan band=nan lo=nan hi=nan street=nan z=nan p=nan n=nan gbv=115.17 nights=621.85 p10=nan p90=nan base=nan
+   FY26: adr=180.62 yoy=nan exfx=nan fx=nan band=nan lo=nan hi=nan street=nan z=nan p=nan n=nan gbv=105.29 nights=583.1 p10=nan p90=nan base=nan
+
+## check: base * (1+yoy)
+   3Q26: 177.6812
+   4Q26: 173.0340
+
+## geo_mix_method_check 2Q24-2Q26
+   n=9
+   mean|diff|=0.1344
+   max|diff|=0.2181
+   full 1Q23-2Q26 max|diff|=1.6937 (1Q23 -1.694)
+
+## reconcile_annual
+   2023: ours=-1.102 10-K=-1.083 gap=-0.019 | our_core=2.039 our_residual=2.039 implied_price=3.339 rebased=3.258 size=0.387 size10k=0.000
+   2024: ours=-1.325 10-K=-1.244 gap=-0.081 | our_core=2.576 our_residual=2.576 implied_price=3.154 rebased=2.685 size=0.841 size10k=0.441
+   2025: ours=-1.672 10-K=-1.584 gap=-0.088 | our_core=2.272 our_residual=2.624 implied_price=3.925 rebased=2.679 size=0.739 size10k=-0.251
+   sub-regional file tail: [{'quarter': '2Q25', 'subgeo_pp': -0.5482326485224454}, {'quarter': '3Q25', 'subgeo_pp': -0.2592433374372242}, {'quarter': '4Q25', 'subgeo_pp': 0.0107695567074259}, {'quarter': '1Q26', 'subgeo_pp': -0.2583042802822964}, {'quarter': '2Q26', 'subgeo_pp': -0.1000069066450053}, {'quarter': '3Q26', 'subgeo_pp': 0.051052242483569}]
+
+## geomix_subregional_term
+   mean 1Q23-2Q26 n=14: -0.4534
+   last four by label (3Q25..2Q26): -0.1517  values=[-0.259, 0.011, -0.258, -0.1]
+   positional iloc[-4:] ['4Q25', '1Q26', '2Q26', '3Q26']: -0.0741  (trap)
+   2Q26 = -0.100
+   forward 3Q26=-0.1372 4Q26=-0.1468
+   4Q26 $ effect on 173.03: -0.254
+
+## 00_summary.json geomix
+   {'subgeo_3q26_pp': -0.13721926261773845, 'subgeo_4q26_pp': -0.14680777611579668, 'subgeo_hist_mean_1q23_2q26_pp': -0.4533850498510343, 'geo_mix_tiltB_3q26_pp': -1.6739485718353486, 'geo_mix_tiltB_4q26_pp': -1.6998889949451534, 'h2_ratio_W1': 0.908921731098177, 'h2_ratio_W2': 0.7190490218012525}
+   regions: ['APAC', 'EMEA', 'GLOBAL', 'LatAm', 'NAM']  langs: ['ALL_NON_EN', 'TOTAL', 'de', 'en', 'es', 'fr', 'it', 'other', 'pt', 'zh_ja_ko']
+
+## origin_lang_rotation_ltm GLOBAL rows
+   ALL_NON_EN growth 24-26 = 81.04%
+   en growth 24-26 = 39.96%
+   en share 2024=62.9 2026=56.8
+   ALL_NON_EN growth 25-26 = 32.93%  en 25-26 = 18.32%
+
+## trap (a): naive sum of non-en rows incl. GLOBAL/TOTAL/ALL_NON_EN
+   66.2%
+
+## origin_lang_price_summary
+   review-weighted median rel price = 0.8657 -> 13.4% cheaper
+   review-weighted wtd rel price = 0.8333 -> 16.7% cheaper
+   simple mean median = 13.0%
+
+## origin_lang_price_mix_effect GLOBAL
+   mix_pct_24_26_wtd=-0.690 (per yr /2 = -0.345)
+   mix_pct_25_26_wtd=-0.354
+   median 24-26=-0.232
+
+## origin_lang_global_quarter en share_chg_pp last 6
+   {'2025Q1': -3.43, '2025Q2': -3.8, '2025Q3': -2.79, '2025Q4': -3.21, '2026Q1': -2.73, '2026Q2': -2.91}
+
+## EMEA en share last 4
+   {'2025Q3': 51.37, '2025Q4': 49.54, '2026Q1': 46.17, '2026Q2': 49.69}
+
+## annual en share
+   {'2021': np.float64(69.8), '2022': np.float64(69.6), '2023': np.float64(64.5), '2024': np.float64(61.2), '2025': np.float64(58.0), '2026': np.float64(56.1)}
+
+## sizemix_routes
+   10-K annual route (05/07) | 2023 | size_pp=0.0
+   10-K annual route (05/07) | 2024 | size_pp=0.4410509947887275
+   10-K annual route (05/07) | 2025 | size_pp=-0.2513387080576912
+   10-K annual route (05/07) | 2026 | size_pp=0.8722883015478189
+   10-K annual route, REWEIGHTED | 2024 | size_pp=0.4453010683402203
+   10-K annual route, REWEIGHTED | 2025 | size_pp=0.9122624899723596
+   10-K annual route, REWEIGHTED | 2026 | size_pp=1.009293900641106
+   H route (13/H) | 2023 | size_pp=0.3867649566647435
+   H route (13/H) | 2024 | size_pp=0.8406275414723942
+   H route (13/H) | 2025 | size_pp=0.7394814142426782
+   as filed in 07_full_decomposition.csv | 2023 | size_pp=0.0
+   as filed in 07_full_decomposition.csv | 2024 | size_pp=0.4410509947887275
+   as filed in 07_full_decomposition.csv | 2025 | size_pp=-0.2513387080576912
+   filed arbiter: 2Q26 Bedroom Nights Booked | 2Q26 | size_pp=0.416633796610259
+   filed arbiter: 2Q26 Bedroom Nights Booked | 2Q26 | size_pp=0.4124603480156554
+   filed arbiter: 2Q26 Bedroom Nights Booked | 2Q26 | size_pp=0.270277582540175
+   filed arbiter: 2Q26 Bedroom Nights Booked | 2Q26 | size_pp=0.54055516508035
+   filed arbiter: 2Q26 Bedroom Nights Booked | 2Q26 | size_pp=1.2878916766717596
+   filed arbiter: FY25 10-K nights per booking | 2025 | size_pp=nan
+   filed arbiter: FY25 10-K nights per booking | 2025 | size_pp=nan
+   filed arbiter: FY25 10-K nights per booking | 2025 | size_pp=nan
+
+## sizemix_rebased_plug
+   2023 A as filed (05 pooled size, 03 LOS): size=0.0 implied_lfl=3.3394495262007746
+   2023 B adopted H size, 03 LOS: size=0.3867649566647435 implied_lfl=2.9526845695360318
+   2023 C adopted H size and H LOS: size=0.3867649566647435 implied_lfl=3.2582814816847367
+   2023 D 05 pairs reweighted, 03 LOS: size=nan implied_lfl=nan
+   2024 A as filed (05 pooled size, 03 LOS): size=0.4410509947887275 implied_lfl=3.1536917790815258
+   2024 B adopted H size, 03 LOS: size=0.8406275414723942 implied_lfl=2.7541152323978597
+   2024 C adopted H size and H LOS: size=0.8406275414723942 implied_lfl=2.6850302492115925
+   2024 D 05 pairs reweighted, 03 LOS: size=0.4453010683402203 implied_lfl=3.149441705530033
+   2025 A as filed (05 pooled size, 03 LOS): size=-0.2513387080576912 implied_lfl=3.925055242507793
+   2025 B adopted H size, 03 LOS: size=0.7394814142426782 implied_lfl=2.9342351202074237
+   2025 C adopted H size and H LOS: size=0.7394814142426782 implied_lfl=2.6789213514875403
+   2025 D 05 pairs reweighted, 03 LOS: size=0.9122624899723596 implied_lfl=2.7614540444777416
+
+## fx_currency_contributions 3Q26
+   AUD: yoy=+8.07% w=5.0% contrib=+0.402
+   MXN: yoy=+8.23% w=4.4% contrib=+0.365
+   BRL: yoy=+6.08% w=5.1% contrib=+0.313
+   KRW: yoy=-2.28% w=0.9% contrib=-0.021
+   GBP: yoy=-0.22% w=9.4% contrib=-0.021
+   CAD: yoy=-1.51% w=3.5% contrib=-0.053
+   INR: yoy=-8.67% w=0.6% contrib=-0.055
+   JPY: yoy=-7.31% w=1.8% contrib=-0.132
+   EUR: yoy=-1.46% w=26.2% contrib=-0.384
+   sum=+0.4153
+   AUD+MXN+BRL=+1.081
+   obs_frac=0.879
+
+## fx_currency_contributions 4Q26
+   AUD: yoy=+8.28% w=5.0% contrib=+0.413
+   MXN: yoy=+6.09% w=4.4% contrib=+0.270
+   BRL: yoy=+4.60% w=5.1% contrib=+0.237
+   GBP: yoy=+0.51% w=9.4% contrib=+0.047
+   KRW: yoy=+4.36% w=0.9% contrib=+0.039
+   CAD: yoy=-0.50% w=3.5% contrib=-0.018
+   JPY: yoy=-1.79% w=1.8% contrib=-0.032
+   INR: yoy=-7.07% w=0.6% contrib=-0.045
+   EUR: yoy=-1.52% w=26.2% contrib=-0.398
+   sum=+0.5137
+   AUD+MXN+BRL=+0.920
+   obs_frac=0.000
+
+## 4Q27 contributions
+   ccy  yoy_pct  contribution_pp
+EUR      0.0              0.0
+GBP      0.0              0.0
+BRL      0.0              0.0
+MXN      0.0              0.0
+JPY      0.0              0.0
+AUD      0.0              0.0
+KRW      0.0              0.0
+CAD      0.0              0.0
+INR      0.0              0.0
+
+## adr_scenarios 4Q26
+   base: core carry + bundle laps (nights-linked geo) | exfx=2.78 adr=173.03 vs=+0.00
+   base + sub-regional country mix (v2 H3, Inside Airbnb panel) | exfx=2.64 adr=172.79 vs=-0.25
+   base + sub-regional + measured origin-destination tilt (upgrade 2: EME | exfx=2.88 adr=173.19 vs=+0.16
+   base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) | exfx=2.27 adr=172.18 vs=-0.86
+   lap-only (K4 residual steps): every 2025-26 residual step laps at its  | exfx=1.99 adr=171.71 vs=-1.33
+   card v3: last_q residual carry, no lap (card geo) | exfx=3.69 adr=174.55 vs=+1.52
+   full lap: ex-NA RNPL sized at the 1H26 residual steps | exfx=2.78 adr=173.03 vs=+0.00
+   core mean reversion to the 2023-25 mean | exfx=1.33 adr=170.60 vs=-2.43
+   AR(1) on core (K4 rho 0.747) | exfx=2.39 adr=172.38 vs=-0.66
+   base + fee-migration K line (DEC-0008 sensitivity) | exfx=3.16 adr=173.66 vs=+0.63
+
+## adr_scenarios 3Q26
+   base: core carry + bundle laps (nights-linked geo) | exfx=3.32 adr=177.68 vs=+0.00
+   base + sub-regional country mix (v2 H3, Inside Airbnb panel) | exfx=3.18 adr=177.45 vs=-0.24
+   base + sub-regional + measured origin-destination tilt (upgrade 2: EME | exfx=3.44 adr=177.90 vs=+0.22
+   base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) | exfx=2.80 adr=176.79 vs=-0.89
+   lap-only (K4 residual steps): every 2025-26 residual step laps at its  | exfx=2.91 adr=176.99 vs=-0.69
+   card v3: last_q residual carry, no lap (card geo) | exfx=3.69 adr=178.32 vs=+0.64
+   full lap: ex-NA RNPL sized at the 1H26 residual steps | exfx=3.32 adr=177.68 vs=+0.00
+   core mean reversion to the 2023-25 mean | exfx=1.86 adr=175.20 vs=-2.49
+   AR(1) on core (K4 rho 0.747) | exfx=3.09 adr=177.30 vs=-0.38
+   base + fee-migration K line (DEC-0008 sensitivity) | exfx=3.49 adr=177.97 vs=+0.29
+
+## core / residual stats
+   core 2023-25 mean=2.2724 (n=12); residual 2023-25 mean=2.3983
+   2Q26 core=3.8493; gap to core mean=1.577; gap to residual mean=1.451
+   sd of quarterly core changes since 1Q23 = 0.882 (ddof0 0.847)
+   sd of quarterly residual changes = 0.935
+   core steps 3Q25=+0.917 4Q25=+0.877 1Q26=+0.682 2Q26=+0.469
+   core share of exfx 4Q26 = 138% ; of 3Q26 = 116%
+
+## exfx_forward_base
+             core  bundle  geo_mix  unit_size  los_mix  seats  interaction  exfx_yoy
+quarter                                                                          
+3Q26     3.849   0.489   -1.293      0.797    0.056 -0.483         -0.1     3.316
+4Q26     3.849   0.000   -1.336      0.797    0.056 -0.483         -0.1     2.784
+1Q27     3.849   0.000   -1.620      0.797    0.056 -0.565         -0.1     2.417
+2Q27     3.849   0.000   -1.081      0.797    0.056 -0.565         -0.1     2.957
+3Q27     3.849   0.000   -1.174      0.797    0.056 -0.565         -0.1     2.863
+4Q27     3.849   0.000   -1.109      0.797    0.056 -0.565         -0.1     2.928
+
+## mean reversion 4Q26
+   exfx with residual mean 2.398: 1.333 -> ADR 170.60
+   exfx with core mean 2.272: 1.207 -> ADR 170.39
+
+## APAC panel countries: ['australia', 'china', 'new-zealand', 'singapore', 'taiwan', 'thailand']
+   2Q26: AU n_cur 562426 / APAC 1000290 = 56.2%  (countries 6)
+   1Q26: AU n_cur 688356 / APAC 1417704 = 48.6%  (countries 6)
+   4Q25: AU n_cur 639384 / APAC 1183852 = 54.0%  (countries 6)
+   3Q25: AU n_cur 652997 / APAC 1123505 = 58.1%  (countries 6)
+   2Q25: AU n_cur 694065 / APAC 1237833 = 56.1%  (countries 6)
+   LTM 3Q25-2Q26: 53.8%
+   CY2025: 53.7%
+   1H26: 51.7%
+   all panel countries: ['argentina', 'australia', 'austria', 'belgium', 'belize', 'brazil', 'canada', 'chile', 'china', 'czech-republic', 'denmark', 'france', 'germany', 'greece', 'hungary', 'ireland', 'italy', 'latvia', 'malta', 'mexico', 'new-zealand', 'norway', 'portugal', 'singapore', 'south-africa', 'spain', 'sweden', 'switzerland', 'taiwan', 'thailand', 'the-netherlands', 'turkey', 'united-kingdom', 'united-states']
+   india: present=False
+   united-arab-emirates: present=False
+   malaysia: present=False
+   indonesia: present=False
+   vietnam: present=False
+   thailand: present=True
+   singapore: present=True
+
+## geomix_h2_scores
+   window  n  rmse_v2_subgeo  rmse_v1_core  rmse_carry  ratio_v2_vs_carry  ratio_v1_vs_carry
+    W1 10           0.784         0.784       0.863              0.909              0.909
+    W2  6           0.480         0.480       0.668              0.719              0.719
+
+## market_panel_scores primary rows
+                      spec  n  n_markets      b     p  ci_lo  ci_hi
+M2  y_med ~ x_util + FE 94         92  0.083 0.794 -0.539  0.705
+                M2-exUS 70         68  0.041 0.956 -1.412  1.494
+             M2 on y_rw 94         92 -0.165 0.720 -1.070  0.740
+            M2 on y_lfl 94         92 -0.070 0.798 -0.607  0.467
+     M2 with x_util_lfl 94         92  0.000 1.000 -0.861  0.861
+
+## FY
+   FY26=180.62 FY27=185.21 FY27 yoy=2.544 nights=621.85

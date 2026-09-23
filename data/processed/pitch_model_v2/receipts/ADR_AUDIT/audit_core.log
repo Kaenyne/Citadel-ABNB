@@ -1,0 +1,55 @@
+core 1Q23-2Q26: 1Q23 3.48 2Q23 2.47 3Q23 1.01 4Q23 0.83 1Q24 2.26 2Q24 3.23 3Q24 2.08 4Q24 2.76 1Q25 2.23 2Q25 1.91 3Q25 2.31 4Q25 2.70 1Q26 3.38 2Q26 3.85
+core mean 2023-25 2.272 | residual mean 2023-25 2.398 | exfx.CORE_MEAN_2023_25 2.398
+
+h-step carry error on the 14-quarter core:
+ h  n_pairs  sd_filed_ddof1  rmse_carry  mean_change  rmse_carry_from_above_mean  mean_change_from_above_mean  n_from_above_mean
+ 1       13           0.882       0.848        0.029                       0.923                       -0.562                  3
+ 2       12           1.351       1.298        0.107                       1.779                       -1.473                  2
+ 3       11           1.379       1.342        0.270                       1.999                       -1.823                  2
+ 4       10           1.149       1.177        0.445                       1.276                       -1.275                  2
+ 5        9           0.983       1.033        0.456                       0.675                       -0.583                  2
+ 6        8           0.974       0.990        0.387                       1.056                       -0.964                  2
+
+PIT walk-forward on the core (descriptive; the bundle split is only knowable after 4Q25):
+ h        window  n  rmse_carry  rmse_mean  rmse_ar1  ar1_vs_carry  mean_vs_carry
+ 1 targets 1Q24+ 10       0.784      0.758     0.967         1.233          0.966
+ 1 targets 1Q25+  6       0.480      0.796     0.737         1.534          1.657
+ 2 targets 1Q24+  9       1.047      0.825     1.266         1.209          0.787
+ 2 targets 1Q25+  6       0.802      0.833     0.925         1.155          1.039
+ 3 targets 1Q24+  8       0.988      0.775     1.146         1.160          0.784
+ 3 targets 1Q25+  6       1.000      0.839     0.956         0.957          0.839
+ 4 targets 1Q24+  7       1.232      0.836     1.367         1.110          0.679
+ 4 targets 1Q25+  6       1.074      0.840     1.006         0.936          0.782
+
+AR(1) fitted on the core 1Q23-2Q26: const 1.290 rho 0.465 -> implied mean 2.411; filed row uses const 0.750 rho 0.747 -> implied mean 2.964
+core path 3Q26..4Q27 | filed AR(1): {'3Q26': np.float64(3.625), '4Q26': np.float64(3.458), '1Q27': np.float64(3.333), '2Q27': np.float64(3.24), '3Q27': np.float64(3.17), '4Q27': np.float64(3.118)}
+                     | K4 rho, core's own mean: {'3Q26': np.float64(3.45), '4Q26': np.float64(3.152), '1Q27': np.float64(2.93), '2Q27': np.float64(2.763), '3Q27': np.float64(2.639), '4Q27': np.float64(2.546)}
+                     | AR(1) fitted on core: {'3Q26': np.float64(3.08), '4Q26': np.float64(2.722), '1Q27': np.float64(2.556), '2Q27': np.float64(2.478), '3Q27': np.float64(2.442), '4Q27': np.float64(2.426)}
+
+rounding: sd(delta core) 0.882; rounding contributes sd sqrt(2)*0.289 = 0.408 to it; implied sd of the true quarterly change 0.781. The carried 2Q26 level has rounding sd 0.289 (+/-0.5 uniform).
+   1Q26 and 2Q26 both print ex-FX '4'. core 1Q26 3.381 -> 2Q26 3.849: the +0.469 step is entirely the measured terms moving:
+      geo_mix      1Q26 -1.043 -> 2Q26 -1.267  (contributes +0.224 to the residual step)
+      unit_size    1Q26 +0.945 -> 2Q26 +0.700  (contributes +0.245 to the residual step)
+      los_mix      1Q26 +0.300 -> 2Q26 +0.300  (contributes -0.000 to the residual step)
+      seats        1Q26 -0.483 -> 2Q26 -0.483  (contributes -0.000 to the residual step)
+      interaction  1Q26 -0.100 -> 2Q26 -0.100  (contributes -0.000 to the residual step)
+   4Q25 -> 1Q26 residual step +0.682, of which the ASSUMED seats step contributes +0.306
+
+basis: geo bucket-minus-H 2Q26 +0.132 (mean 4Q24-2Q26 +0.134, all 7 positive: True); unit I-minus-H 2Q26 +0.166 (I 2Q26 0.867, H 2Q26 0.700; forward I 3Q26 0.797)
+   core on the forward terms' own basis: 3.849 - 0.132 - 0.166 = 3.551
+
+ladder with the audit's corrections:
+                                                  construction  d_exfx_3q26  d_exfx_4q26  adr_3q26  adr_4q26                                                       note  vs_street_4q26  vs_street_3q26
+                                                    filed base        0.000        0.000   177.681   173.034                                                                      1.704           0.621
+      filed 'base + sub-regional' (adds the full forward term)       -0.137       -0.147   177.446   172.788 double counts 2Q26's term, already inside the carried core           1.458           0.386
+    sub-regional, netted against the 2Q26 term inside the core       -0.037       -0.047   177.617   172.956                                         2Q26 subgeo -0.100           1.626           0.557
+               geo basis: core recomputed on the bucket method       -0.132       -0.132   177.456   172.813                         same arithmetic as the forward geo           1.483           0.396
+               unit basis: core recomputed on I's construction       -0.166       -0.166   177.396   172.755                 same construction as the forward unit term           1.425           0.336
+                                         both bases consistent       -0.298       -0.298   177.171   172.535                                                                      1.205           0.111
+                              both bases + netted sub-regional       -0.335       -0.345   177.107   172.456                         composition, consistently measured           1.126           0.047
+          mean reversion to the core's own mean (brief's flag)       -1.577       -1.577   174.980   170.392                                           filed uses 2.398          -0.938          -2.080
+                        AR(1): K4 rho, core's own 2023-25 mean       -0.399       -0.697   176.998   171.866                filed row's constant implies a mean of 2.96           0.536          -0.062
+                               AR(1) fitted on the core itself       -0.769       -1.127   176.363   171.146                                      rho 0.465, mean 2.411          -0.184          -0.697
+carry the 1H26 core average, not the single rounded 2Q26 value       -0.234       -0.234   177.280   172.641                                      rounding-robust level           1.311           0.220
+World Cup break-even from the filed base: the 2Q26 core must hold 1.017pp of non-recurring event premium; at s = 0.48% of 2Q26 nights (nights line's 0.5pt pull-forward) that is k = 3.12x the average ADR
+World Cup break-even after both basis fixes + netted sub-regional: the 2Q26 core must hold 0.672pp of non-recurring event premium; at s = 0.48% of 2Q26 nights (nights line's 0.5pt pull-forward) that is k = 2.40x the average ADR

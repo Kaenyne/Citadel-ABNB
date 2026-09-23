@@ -1,0 +1,97 @@
+V1 MAP beta (all 17): [0.999 1.203 0.405 1.294] sigma 0.441 | V2 a,b: -0.567 0.451
+      V0_identity  V1_MAP_all17  V1_posterior_mean  V2_eur_ols_all17  V3_broad_ols_all17   X_na  X_emea  X_latam  X_apac  eur_yoy  obs_frac
+3Q26        0.415         0.030              0.059            -1.227               0.975  0.019  -0.404    0.606   0.194   -1.464     0.879
+4Q26        0.514         0.283              0.299            -1.252               1.257  0.036  -0.351    0.453   0.375   -1.520     0.000
+1Q27       -0.369        -0.549             -0.541            -1.488               0.259 -0.058  -0.609    0.162   0.136   -2.043     0.000
+2Q27       -0.427        -0.430             -0.436            -1.207               0.410 -0.036  -0.409   -0.084   0.102   -1.418     0.000
+  quarter             variant  fx_pp  adr_usd  street  vs_street
+0    3Q26         V0_identity  0.415  177.681  177.06      0.621
+1    3Q26        V1_MAP_all17  0.030  177.021  177.06     -0.039
+2    3Q26   V1_posterior_mean  0.059  177.071  177.06      0.011
+3    3Q26    V2_eur_ols_all17 -1.227  174.867  177.06     -2.193
+4    3Q26  V3_broad_ols_all17  0.975  178.639  177.06      1.579
+5    4Q26         V0_identity  0.514  173.034  171.33      1.704
+6    4Q26        V1_MAP_all17  0.283  172.647  171.33      1.317
+7    4Q26   V1_posterior_mean  0.299  172.674  171.33      1.344
+8    4Q26    V2_eur_ols_all17 -1.252  170.076  171.33     -1.254
+9    4Q26  V3_broad_ols_all17  1.257  174.279  171.33      2.949
+
+full-information (print-date) design, 17 quarters:
+           y     h    v0  v0_err    na  emea  latam  apac  eur_yoy
+quarter                                                           
+2Q22    -5.6  0.50 -3.78    1.82 -0.17 -3.34   0.32 -0.59   -11.69
+3Q22    -7.1  0.50 -5.20    1.90 -0.16 -4.31  -0.05 -0.68   -14.56
+4Q22    -5.5  0.50 -3.90    1.60 -0.25 -3.32   0.44 -0.77   -10.61
+1Q23    -2.8  0.50 -2.19    0.61 -0.16 -1.84   0.30 -0.49    -4.38
+2Q23    -0.6  0.50  0.41    1.01 -0.06  0.52   0.36 -0.40     2.27
+3Q23     2.7  0.25  3.27    0.57  0.08  2.57   0.85 -0.24     8.07
+4Q23     2.1  0.25  2.38    0.28  0.11  1.75   0.61 -0.09     5.32
+1Q24     0.6  0.50  0.95    0.35  0.11  0.69   0.53 -0.39     1.20
+2Q24    -0.9  0.50 -0.69    0.21 -0.04 -0.20  -0.14 -0.30    -1.10
+3Q24    -0.6  0.50 -0.51    0.09 -0.16  0.48  -0.85  0.02     0.94
+4Q24    -1.1  0.50 -1.35   -0.25 -0.22  0.06  -1.09 -0.10    -0.90
+1Q25    -1.9  0.50 -2.88   -0.98 -0.38 -0.85  -1.29 -0.37    -3.08
+2Q25     1.9  0.50  0.95   -0.95 -0.15  1.90  -0.77 -0.03     5.37
+3Q25     2.7  0.50  1.94   -0.76 -0.02  1.96   0.13 -0.14     6.39
+4Q25     2.9  0.50  3.44    0.54  0.10  2.67   0.71 -0.05     9.13
+1Q26     5.0  0.50  5.50    0.50  0.31  3.59   1.16  0.44    11.20
+2Q26     1.3  0.50  2.12    0.82  0.11  0.71   1.06  0.24     2.51
+
+RMSE ratio to naive (post-hoc comparators, identical PIT protocol):
+window                                  W1            W2       
+origin                                  O2     O3     O2     O3
+variant                                                        
+P1_identity_plus_intercept           0.507  0.465  0.567  0.515
+P2_scaled_identity                   0.543  0.495  0.559  0.491
+P3_eur_plus_LatAmAPAC_ols            0.300  0.313  0.330  0.345
+P4_two_block_EMEA_vs_rest            0.524  0.495  0.443  0.426
+P5_posterior_mean_weights_HINDSIGHT  0.268  0.231  0.295  0.242
+V0_translation                       0.344  0.303  0.383  0.317
+V2_eur_ols                           0.270  0.281  0.268  0.272
+naive_last_disclosed                 1.000  1.000  1.000  1.000
+
+bias (pp):
+window                                  W1            W2       
+origin                                  O2     O3     O2     O3
+variant                                                        
+P1_identity_plus_intercept          -0.803 -0.770 -0.765 -0.737
+P2_scaled_identity                   0.292  0.335  0.058  0.096
+P3_eur_plus_LatAmAPAC_ols           -0.466 -0.426 -0.532 -0.487
+P4_two_block_EMEA_vs_rest            0.554  0.621  0.368  0.457
+P5_posterior_mean_weights_HINDSIGHT  0.198  0.247  0.136  0.187
+V0_translation                       0.113  0.145 -0.072 -0.044
+V2_eur_ols                          -0.331 -0.272 -0.344 -0.268
+naive_last_disclosed                -0.486 -0.486  0.080  0.080
+
+mean error by episode (pred - disclosed, pp):
+episode                2023  2024  2025  1H26  4Q25-2Q26
+variant        origin                                   
+V0_translation O2      0.57  0.12 -0.76  0.93       0.68
+               O3      0.62  0.10 -0.54  0.66       0.62
+V1_passthrough O2      0.70  0.24 -0.42  0.97       0.80
+               O3      0.75  0.24 -0.15  0.68       0.75
+V2_eur_ols     O2     -0.30 -0.23 -0.35 -0.55      -0.28
+               O3     -0.28 -0.20 -0.09 -0.76      -0.32
+
+O3 errors, W1 quarters, split by divergence (LatAm+APAC opposite sign to EMEA):
+         V0_translation  V1_passthrough  V2_eur_ols  latam  apac  emea    div
+quarter                                                                      
+1Q23               0.61           -0.23        0.13   0.30 -0.49 -1.84  False
+1Q24               0.35            0.32       -0.90   0.53 -0.39  0.69  False
+1Q25              -0.98           -0.95       -0.15  -1.29 -0.37 -0.85  False
+1Q26               0.50            0.90       -0.73   1.16  0.44  3.59  False
+2Q23               1.01            1.18        0.58   0.36 -0.40  0.52   True
+2Q24               0.21            0.13       -0.27  -0.14 -0.30 -0.20  False
+2Q25              -0.95           -0.19       -0.24  -0.77 -0.03  1.90   True
+2Q26               0.82            0.45       -0.79   1.06  0.24  0.71  False
+3Q23               0.57            1.39       -0.94   0.85 -0.24  2.57  False
+3Q24               0.09            0.49        0.36  -0.85  0.02  0.48   True
+3Q25              -0.76           -0.37       -0.55   0.13 -0.14  1.96   True
+4Q23               0.28            0.64       -0.90   0.61 -0.09  1.75  False
+4Q24              -0.25            0.03        0.01  -1.09 -0.10  0.06   True
+4Q25               0.54            0.90        0.57   0.71 -0.05  2.67  False
+                mean                                     rmse                                        n                          
+      V0_translation V1_passthrough V2_eur_ols V0_translation V1_passthrough V2_eur_ols V0_translation V1_passthrough V2_eur_ols
+div                                                                                                                             
+False           0.32           0.40      -0.44           0.59           0.76       0.67              9              9          9
+True           -0.17           0.23       0.03           0.72           0.60       0.40              5              5          5

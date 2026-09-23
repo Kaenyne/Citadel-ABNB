@@ -1,0 +1,29 @@
+V2 3Q26: intercept -0.567 + slope 0.451 x EUR -1.464 = -1.227  (intercept share 46%); identity at zero currency moves is 0 by construction
+V2 4Q26: intercept -0.567 + slope 0.451 x EUR -1.520 = -1.252  (intercept share 45%); identity at zero currency moves is 0 by construction
+  W1 O2: V2 0.270 (bias -0.33) | V2 through origin 0.366 (bias +0.55)
+  W1 O3: V2 0.281 (bias -0.27) | V2 through origin 0.388 (bias +0.62)
+  W2 O2: V2 0.268 (bias -0.34) | V2 through origin 0.274 (bias +0.37)
+  W2 O3: V2 0.272 (bias -0.27) | V2 through origin 0.328 (bias +0.46)
+  V2 through origin, all 17, 3Q26: -0.654
+  V2 through origin, all 17, 4Q26: -0.679
+
+V2 O3 error (W1, n 14) = -0.24 + -0.28 x X_latam (p 0.136); implied V2 at 3Q26: -0.82  implied V2 at 4Q26: -0.88
+
+expanding-mean core (1Q23-2Q26 mean 2.464) for 1Q27-4Q27, carry for 3Q26/4Q26:
+          core   exfx      adr  adr_filed  nights_m
+quarter                                            
+3Q26     3.849  3.316  177.681    177.681    146.80
+4Q26     3.849  2.784  173.034    173.034    131.80
+1Q27     2.464  1.032  188.058    190.646    169.02
+2Q27     2.464  1.571  185.833    188.378    157.10
+3Q27     2.464  1.478  180.046    182.508    155.96
+4Q27     2.464  1.543  175.704    178.100    139.77
+  FY27 ADR 182.71 vs filed 185.21 (-1.35%); FY27 GBV $113.62bn vs $115.17bn (-1.56bn)
+
+quarter                                                         construction  adr_usd  street  vs_street  p_print_ge_street
+   3Q26                                                           filed base  177.681  177.06      0.621              0.645
+   3Q26 composition consistently measured (both bases + netted sub-regional)  177.107  177.06      0.047              0.511
+   3Q26       same + V1 FX weights (pre-registered variant, all 17 quarters)  176.446  177.06     -0.614              0.357
+   4Q26                                                           filed base  173.034  171.33      1.704              0.701
+   4Q26 composition consistently measured (both bases + netted sub-regional)  172.456  171.33      1.126              0.636
+   4Q26       same + V1 FX weights (pre-registered variant, all 17 quarters)  172.069  171.33      0.739              0.590

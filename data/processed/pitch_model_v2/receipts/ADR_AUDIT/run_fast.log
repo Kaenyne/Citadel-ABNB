@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\krish\citadel-abnb-adraudit\analysis\src\pitch_model_v2\adr_engine\run.py", line 230, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\krish\citadel-abnb-adraudit\analysis\src\pitch_model_v2\adr_engine\run.py", line 216, in main
+    gm = geomix_stage(refresh=not a.no_refresh_prices)
+  File "C:\Users\krish\citadel-abnb-adraudit\analysis\src\pitch_model_v2\adr_engine\run.py", line 143, in geomix_stage
+    RP.main(["--quiet"])
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\krish\citadel-abnb-adraudit\analysis\src\pitch_model_v2\adr_engine\refresh_prices.py", line 250, in main
+    mp = market_prices(cmap, fx, root=Path(a.capture_root), verbose=not a.quiet)
+  File "C:\Users\krish\citadel-abnb-adraudit\analysis\src\pitch_model_v2\adr_engine\refresh_prices.py", line 168, in market_prices
+    raise RuntimeError(f"no listings.csv.gz found under {root}")
+RuntimeError: no listings.csv.gz found under C:\Users\krish\abnb_ia_capture
+walk-forward: {'V0_passes': True, 'V1_passes': True, 'promoted_leg': 'V0_translation'}
+geomix stage (adr_v2_geomix_prereg.md):
+refresh_prices: rebuilding the sub-regional geo-mix inputs
+
+real	0m12.721s
+user	0m0.031s
+sys	0m0.015s
+exit=1

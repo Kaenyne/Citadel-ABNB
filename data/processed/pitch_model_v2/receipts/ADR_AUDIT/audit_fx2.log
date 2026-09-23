@@ -1,0 +1,18 @@
+(a) identity error vs its own regional components
+  W1 O2 n=14: err = +0.03 + +0.69*X_latam  (p 0.002, r +0.76);  3-comp slopes emea -0.25 (p 0.07) latam +0.87 (p 0.00) apac +0.60 (p 0.37)
+  W2 O2 n=10: err = -0.04 + +0.66*X_latam  (p 0.011, r +0.76);  3-comp slopes emea -0.37 (p 0.06) latam +0.81 (p 0.01) apac +1.41 (p 0.11)
+  W1 O3 n=14: err = +0.08 + +0.59*X_latam  (p 0.002, r +0.74);  3-comp slopes emea -0.20 (p 0.11) latam +0.75 (p 0.00) apac +0.18 (p 0.77)
+     implied identity error at 3Q26 (X_latam +0.606): +0.43 -> FX -0.02
+     implied identity error at 4Q26 (X_latam +0.453): +0.34 -> FX +0.17
+  W2 O3 n=10: err = -0.01 + +0.55*X_latam  (p 0.012, r +0.76);  3-comp slopes emea -0.27 (p 0.13) latam +0.69 (p 0.02) apac +0.82 (p 0.30)
+  all 17 quarters (print-date information): err = +0.35 + +0.63*X_latam, p 0.0267
+  quarters with X_latam > 0.5pp: 3Q23 +0.57, 4Q23 +0.28, 1Q24 +0.35, 4Q25 +0.54, 1Q26 +0.50, 2Q26 +0.82 | mean +0.51, positive 6/6
+  V2 O3 errors in the same quarters: 3Q23 -0.94, 4Q23 -0.90, 1Q24 -0.90, 4Q25 +0.57, 1Q26 -0.73, 2Q26 -0.79 | mean -0.62
+
+(b) the 3Q26 falsifier: P(printed FX pp in [P10, P90]) when the identity is exactly right
+  band [0.355, 0.481] (width 0.125pp). P(printed point inside) = 0.124; P(printed +/-0.5 interval overlaps band) = 0.995
+
+(c) the FX leg's model error is absent from the reported band
+  quarter  exfx_half  fx_rate_sd  fx_model_err_added  half_band_filed  half_band_with_model_err  p_ge_street_filed  p_ge_street_with_model_err
+0    3Q26      0.976       0.054               0.265            0.978                     1.013              0.645                       0.640
+1    4Q26      1.424       1.305               0.265            1.932                     1.950              0.701                       0.699
