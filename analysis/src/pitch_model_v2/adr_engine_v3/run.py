@@ -250,6 +250,7 @@ def main(argv=None):
             "fx_4q26_pp": float(path.loc["4Q26", "fx_pp"]), "subgeo_4q26_pp": gm["subgeo_4q26_pp"],
             "geo_mix_tiltB_4q26_pp": gm["geo_mix_tiltB_4q26_pp"], "geomix": gm, "seconds": round(time.time() - t0, 1)}
     (C.OUT / "00_summary.json").write_text(json.dumps(meta, indent=2)); print(json.dumps(meta, indent=2))
+    from . import compare_v2; compare_v2.main()                                   # v3 against adr_engine (v2) as filed
 
 
 if __name__ == "__main__":
