@@ -235,6 +235,7 @@ def main(argv=None):
     M.geo_mix_history_check().to_csv(C.OUT / "geo_mix_method_check.csv")
     M.regional_growth_forward().to_csv(C.OUT / "regional_growth_forward.csv"); M.geo_mix_forward().to_csv(C.OUT / "geo_mix_forward.csv")
     M.bundle_schedule().to_csv(C.OUT / "bundle_schedule.csv"); M.envelope(sd).to_csv(C.OUT / "exfx_envelope.csv")
+    M.construction_cases().to_csv(C.OUT / "exfx_construction_cases.csv")          # audit fix (c)
     gm = geomix_stage(refresh=not a.no_refresh_prices)
     M.alternatives().to_csv(C.OUT / "exfx_alternatives.csv", index=False)    # composition rows read the geomix files
     path = A.build(); path.to_csv(C.OUT / "adr_path.csv"); A.scenario_table().to_csv(C.OUT / "adr_scenarios.csv", index=False)

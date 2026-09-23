@@ -35,6 +35,26 @@ CARD_TERMS = {"geo_mix": -1.428426, "unit_size": 0.796672, "los_mix": 0.056264, 
 CARD_BANDS = {"geo_mix": (-1.5709, -0.9353), "unit_size": (0.5299, 0.9985), "los_mix": (-0.0811, 0.2887), "seats": (-0.7503, -0.2262), "interaction": (-0.15, -0.05)}
 
 
+# ---- audit fix (c): forward terms measured on the same construction as the carried core ---------------------------
+CONSTRUCTION_FIX = True        # False reproduces adr_engine (v2) exactly
+
+
+def construction_offsets() -> dict:
+    """The carried 2Q26 core is disclosed ex-FX minus the H decomposition's terms, but the forward adds geo mix from the
+    bucket arithmetic (nights-linked) and unit size / LOS from workstream I. Put the forward on the core's footing:
+    geo offset = bucket(2Q26) - H(2Q26) [positive in all 7 quarters 4Q24-2Q26]; unit offset = I's 2Q26 value on the
+    identical construction as its forward 3Q26 value - H's 2Q26 value [the H 2Q26 capacity was measured on dumps in
+    which 2Q26 was still partly reviewed; see docs/adr-card-v3_1/CARD_V3_1.md on branch krish/cc-search-price]; LOS
+    has no same-construction 2Q26 value (H's 2026 LOS is an assumed fill), so case A carries the in-core 0.30 forward
+    and case B (the measured blocked-run LOS drop is real) is reported as the bound (construction_cases())."""
+    chk = geo_mix_history_check()
+    i = pd.read_csv(C.I_MIX_3Q26); h = pd.read_csv(C.H_COMPONENTS).set_index("quarter")
+    u_i = float(i[(i.term == "unit_size") & (i.quarter == "2Q26")].point_pp.iloc[0])
+    return {"geo_off": float(chk.loc["2Q26", "geo_mix_buckets_pp"] - chk.loc["2Q26", "geo_mix_H_pp"]),
+            "unit_off": u_i - float(h.loc["2Q26", "unit_size_pp"]),
+            "los_in_core": float(h.loc["2Q26", "los_mix_pp"])}
+
+
 def history() -> pd.DataFrame:
     h = pd.read_csv(C.H_COMPONENTS).set_index("quarter")
     out = pd.DataFrame(index=h.index)
@@ -155,10 +175,15 @@ def forward(core_rule="carry", geo_basis="nights_linked", bundle_total=BUNDLE_AD
             sched = pd.read_csv(C.ROOT / "data/processed/adrv3/K/K4_fee_lap_schedule.csv"); sched = sched[sched.variant == "central"].set_index("quarter")
             base_share = float(sched.loc["2Q26", "yoy_change_pp"]); kline = 0.007 * (float(sched.loc[q, "yoy_change_pp"]) - base_share) if q in sched.index else 0.0
         bt = float(b.loc[q, "bundle_total"])
-        exfx = core + bt + geo + terms["unit_size"] + terms["los_mix"] + seats + terms["interaction"] + kline
+        los, basis_adj = terms["los_mix"], 0.0
+        if CONSTRUCTION_FIX:                        # audit fix (c), case A
+            off = construction_offsets()
+            basis_adj = -off["unit_off"] - (off["geo_off"] if geo_basis == "nights_linked" else 0.0)
+            los = off["los_in_core"]
+        exfx = core + bt + geo + terms["unit_size"] + los + seats + terms["interaction"] + kline + basis_adj
         rows.append({"quarter": q, "core": core, "bundle": bt, "rnpl_na_leg": b.loc[q, "rnpl_na_leg"], "fee_cancel_leg": b.loc[q, "fee_cancel_leg"],
                      "rnpl_exna_leg": b.loc[q, "rnpl_exna_leg"], "residual": core + bt, "geo_mix": geo, "unit_size": terms["unit_size"],
-                     "los_mix": terms["los_mix"], "seats": seats, "interaction": terms["interaction"], "fee_k": kline, "exfx_yoy": exfx,
+                     "los_mix": los, "seats": seats, "interaction": terms["interaction"], "fee_k": kline, "basis_adj": basis_adj, "exfx_yoy": exfx,
                      "core_rule": core_rule, "geo_basis": geo_basis})
     return pd.DataFrame(rows).set_index("quarter")
 
@@ -171,7 +196,7 @@ def alternatives() -> pd.DataFrame:
     lap_only = base.copy(); steps = {"3Q26": 3.933, "4Q26": 3.056, "1Q27": 3.056 - 0.68, "2Q27": 3.056 - 0.68 - 0.47, "3Q27": 3.056 - 0.68 - 0.47, "4Q27": 3.056 - 0.68 - 0.47}
     for q in lap_only.index:
         lap_only.loc[q, "residual"] = steps[q]; lap_only.loc[q, "core"] = steps[q] - lap_only.loc[q, "bundle"]
-        lap_only.loc[q, "exfx_yoy"] = steps[q] + lap_only.loc[q, ["geo_mix", "unit_size", "los_mix", "seats", "interaction", "fee_k"]].sum()
+        lap_only.loc[q, "exfx_yoy"] = steps[q] + lap_only.loc[q, ["geo_mix", "unit_size", "los_mix", "seats", "interaction", "fee_k", "basis_adj"]].sum()
     # composition scenarios (adr_v2_geomix_prereg.md): sub-regional term H3 (geomix_subregional_term_forward.csv) and the four-region tilt B
     subf = pd.read_csv(C.OUT / "geomix_subregional_term_forward.csv").set_index("quarter").subgeo_pp if (C.OUT / "geomix_subregional_term_forward.csv").exists() else None
     tilt = pd.read_csv(C.OUT / "geo_mix_tilt_sensitivity.csv") if (C.OUT / "geo_mix_tilt_sensitivity.csv").exists() else None
@@ -213,6 +238,22 @@ def alternatives() -> pd.DataFrame:
     for _, r in k4.iterrows():
         rows.append({"rule": "K4: " + r.scenario, "quarter": r.quarter, "residual_pp": r.residual_pp, "exfx_yoy_pct": np.nan, "geo_mix_pp": np.nan})
     return pd.DataFrame(rows)
+
+
+def construction_cases() -> pd.DataFrame:
+    """Audit fix (c): the base ex-FX as filed (v2), under case A (the default: LOS switch treated as a basis offset)
+    and under case B (the measured LOS drop is real: forward LOS stays at I's 0.056)."""
+    global CONSTRUCTION_FIX
+    keep = CONSTRUCTION_FIX
+    try:
+        CONSTRUCTION_FIX = False; v2 = forward().exfx_yoy
+        CONSTRUCTION_FIX = True; a = forward().exfx_yoy
+    finally:
+        CONSTRUCTION_FIX = keep
+    off = construction_offsets()
+    b = a + (CARD_TERMS["los_mix"] - off["los_in_core"])
+    return pd.DataFrame({"exfx_v2_as_filed": v2, "exfx_case_A": a, "exfx_case_B": b,
+                         "d_case_A_pp": a - v2, "d_case_B_pp": b - v2}).assign(**{k: v for k, v in off.items()})
 
 
 def core_carry_error_sd() -> dict:

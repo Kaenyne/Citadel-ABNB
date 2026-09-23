@@ -45,3 +45,25 @@ def test_old_band_falsifier_failed_a_correct_identity_most_of_the_time():
     rng = np.random.default_rng(7); ex = rng.uniform(2, 5, 20000)
     printed = (ex + 0.415) - np.round(ex)
     assert np.mean((printed >= 0.355) & (printed <= 0.481)) < 0.2
+
+
+# ---- fix (c): forward terms on the carried core's construction -------------------------------------------------------
+def test_construction_offsets_match_the_audit():
+    from pitch_model_v2.adr_engine_v3 import exfx as X
+    off = X.construction_offsets()
+    assert abs(off["geo_off"] - 0.132) < 0.005 and abs(off["unit_off"] - 0.166) < 0.005 and abs(off["los_in_core"] - 0.30) < 1e-9
+
+
+def test_case_a_lowers_the_base_by_about_five_hundredths_and_case_b_bounds_it():
+    d = pd.read_csv(C.OUT / "exfx_construction_cases.csv", index_col=0)
+    assert np.allclose(d.d_case_A_pp, d.d_case_A_pp.iloc[0]) and -0.07 < d.d_case_A_pp.iloc[0] < -0.04
+    assert -0.32 < d.loc["4Q26", "d_case_B_pp"] < -0.28
+
+
+def test_switch_off_reproduces_v2():
+    from pitch_model_v2.adr_engine_v3 import exfx as X
+    X.CONSTRUCTION_FIX = False
+    try:
+        assert abs(X.forward().loc["4Q26", "exfx_yoy"] - 2.784074164) < 1e-6
+    finally:
+        X.CONSTRUCTION_FIX = True

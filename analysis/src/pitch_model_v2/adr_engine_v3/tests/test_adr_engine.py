@@ -74,6 +74,6 @@ def test_geo_mix_sign_and_method_check():
 
 def test_forward_exfx_identity_sums():
     f = X.forward()
-    parts = f[["core", "bundle", "geo_mix", "unit_size", "los_mix", "seats", "interaction", "fee_k"]].sum(axis=1)
+    parts = f[["core", "bundle", "geo_mix", "unit_size", "los_mix", "seats", "interaction", "fee_k", "basis_adj"]].sum(axis=1)
     assert np.allclose(parts.values, f.exfx_yoy.values)
     assert f.loc["4Q26", "residual"] < f.loc["3Q26", "residual"]     # the bundle laps
