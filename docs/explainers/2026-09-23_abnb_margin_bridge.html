@@ -1,0 +1,330 @@
+<title>ABNB Margin Bridge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #f4f5f3;
+  --surface: #fdfdfc;
+  --ink: #15181d;
+  --ink-2: #4f5561;
+  --muted: #868c96;
+  --hair: #e2e3de;
+  --axis: #c7c8c1;
+  --accent: #1d3b5a;
+  --add: #2a78d6;
+  --cut: #e34948;
+  --dot: #15181d;
+  --ring: rgba(21, 24, 29, 0.10);
+  --wash: rgba(29, 59, 90, 0.05);
+  --tip-bg: #15181d;
+  --tip-ink: #f4f5f3;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #101214; --surface: #17191c; --ink: #f1f1ed; --ink-2: #c3c5c0; --muted: #8b9098;
+    --hair: #2a2d30; --axis: #3b3e41; --accent: #9dbde2; --add: #3987e5; --cut: #e66767; --dot: #f1f1ed;
+    --ring: rgba(255, 255, 255, 0.10); --wash: rgba(157, 189, 226, 0.06); --tip-bg: #f1f1ed; --tip-ink: #15181d;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101214; --surface: #17191c; --ink: #f1f1ed; --ink-2: #c3c5c0; --muted: #8b9098;
+  --hair: #2a2d30; --axis: #3b3e41; --accent: #9dbde2; --add: #3987e5; --cut: #e66767; --dot: #f1f1ed;
+  --ring: rgba(255, 255, 255, 0.10); --wash: rgba(157, 189, 226, 0.06); --tip-bg: #f1f1ed; --tip-ink: #15181d;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 940px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 36px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-size: clamp(28px, 4.2vw, 38px); line-height: 1.12; font-weight: 600; letter-spacing: -0.015em; margin: 0; text-wrap: balance; color: var(--ink); }
+.dek { max-width: 66ch; color: var(--ink-2); margin: 0; font-size: 16px; }
+h2 { font-size: 20px; font-weight: 600; margin: 0; letter-spacing: -0.005em; text-wrap: balance; }
+h3 { font-size: 16px; font-weight: 600; margin: 0; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.sum { background: var(--surface); border: 1px solid var(--ring); border-radius: 8px; padding: 14px 16px; display: grid; gap: 4px; }
+.sum .k { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.sum .v { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+.sum .v .arrow { color: var(--muted); font-weight: 400; margin-inline: 4px; }
+.sum .d { font-size: 13px; color: var(--ink-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: var(--ink-2); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 18px; height: 10px; border-radius: 2px; display: inline-block; }
+.sw.add { background: var(--add); } .sw.cut { background: var(--cut); }
+.sw.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--dot); }
+.charts { display: grid; gap: 20px; }
+.panel { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 18px 20px 14px; display: grid; gap: 14px; }
+.panel-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; }
+.panel-head .meta { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.bridge { display: grid; gap: 4px; }
+.row { display: grid; grid-template-columns: minmax(0, 40%) minmax(0, 1fr); gap: 12px; align-items: center; min-height: 30px; }
+.row .lab { font-size: 13px; color: var(--ink-2); line-height: 1.3; }
+.row.total .lab { color: var(--ink); font-weight: 600; }
+.track { position: relative; height: 30px; }
+.grid-line { position: absolute; top: -2px; bottom: -6px; width: 1px; background: var(--hair); }
+.bar { position: absolute; top: 8px; height: 14px; border-radius: 3px; outline: none; cursor: default; }
+.bar.add { background: var(--add); } .bar.cut { background: var(--cut); }
+.bar:hover, .bar:focus-visible { filter: brightness(1.12); box-shadow: 0 0 0 2px var(--surface), 0 0 0 3.5px var(--ink-2); }
+.hit { position: absolute; top: 0; bottom: 0; }
+.conn { position: absolute; width: 1px; background: var(--axis); top: 15px; height: 34px; }
+.dotm { position: absolute; top: 9px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--dot); box-shadow: 0 0 0 2px var(--surface); }
+.val { position: absolute; top: 5px; font-size: 12px; color: var(--ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; }
+.row.total .val { color: var(--ink); font-weight: 600; font-size: 13px; top: 4px; }
+.axis { position: relative; height: 20px; }
+.tick { position: absolute; top: 2px; font-size: 11px; color: var(--muted); transform: translateX(-50%); font-variant-numeric: tabular-nums; white-space: nowrap; }
+#tip { position: fixed; z-index: 10; pointer-events: none; background: var(--tip-bg); color: var(--tip-ink); border-radius: 6px; padding: 8px 10px; font-size: 12.5px; line-height: 1.45; max-width: 280px; box-shadow: 0 6px 24px rgba(0,0,0,0.18); }
+#tip strong { font-size: 14px; display: block; }
+.note { font-size: 13px; color: var(--ink-2); max-width: 78ch; display: grid; gap: 8px; }
+.note b { color: var(--ink); font-weight: 600; }
+section { display: grid; gap: 14px; }
+.copyblock { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 16px 18px; display: grid; gap: 10px; }
+.copyhead { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.copyhead .where { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.copytext { font-size: 15px; line-height: 1.62; max-width: 72ch; }
+.copytext ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+button.copy { font: 500 12.5px var(--sans); color: var(--accent); background: transparent; border: 1px solid var(--ring); border-radius: 6px; padding: 5px 10px; cursor: pointer; }
+button.copy:hover { background: var(--wash); }
+button.copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+details { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 12px 16px; }
+summary { cursor: pointer; font-weight: 500; }
+summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.tables { display: grid; gap: 18px; margin-top: 12px; }
+.tw { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--hair); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; white-space: normal; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; }
+tr.t td { font-weight: 600; }
+.sources { font-size: 12.5px; color: var(--muted); max-width: 80ch; display: grid; gap: 4px; }
+.sources code { font-family: var(--mono); font-size: 11.5px; }
+@media (max-width: 640px) {
+  .summary { grid-template-columns: 1fr; }
+  .row { grid-template-columns: 1fr; gap: 2px; }
+  .row .lab { font-size: 12.5px; }
+  .axis { margin-left: 0; }
+  .conn { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">ABNB short &middot; Thesis 3 &middot; Costs</div>
+    <h1>From the Street&rsquo;s margin to ours</h1>
+    <p class="dek">Adjusted EBITDA margin, step by step: first what our lower revenue does if costs follow the Street&rsquo;s own plan, then where each of our cost lines differs from that plan.</p>
+  </header>
+
+  <div class="summary" id="summary"></div>
+
+  <section>
+    <div class="legend" aria-label="Legend">
+      <span><i class="sw dot"></i>Margin level</span>
+      <span><i class="sw add"></i>Adds to margin</span>
+      <span><i class="sw cut"></i>Cuts margin</span>
+      <span class="muted">Bars in basis points of margin; hover or tab to a bar for EBITDA dollars.</span>
+    </div>
+    <div class="charts" id="charts"></div>
+    <div class="note">
+      <p><b>Revenue step.</b> Our revenue (official model: nights &times; ADR &times; the Street&rsquo;s take rate) with the Street&rsquo;s total costs allowed to fall with revenue at Airbnb&rsquo;s historical rate (0.36% of costs per 1% of revenue). This is operating deleverage and does not depend on any view of costs.</p>
+      <p><b>Cost steps.</b> Our cost lines are the line build the official model uses. No broker or data vendor publishes the Street&rsquo;s cost lines, only its total, so the Street&rsquo;s plan is spread across lines at one common growth rate on last year&rsquo;s base. Each bar shows how far our line sits above (red) or below (blue) that common rate. AI support automation is the build&rsquo;s fall in support cost per booking in the period; hosting and AI compute includes the AI inference ramp and the hosting share of the Q3 spending step management guided to.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Text for the two-pager</h2>
+    <p class="muted" style="font-size:13.5px">Numbers match branch <code style="font-family:var(--mono);font-size:12.5px">krish/cost-leg</code> (notes 43, 45, 46), checked by Codex. Trim to fit; the long versions are in <code style="font-family:var(--mono);font-size:12.5px">43_thesis3_integration.md</code>.</p>
+    <div id="copies"></div>
+  </section>
+
+  <details id="tbl">
+    <summary>Bridge numbers as a table</summary>
+    <div class="tables" id="tables"></div>
+  </details>
+
+  <div class="sources">
+    <p>Street: LSEG consensus means, 11 Sep 2026 (3Q26 n 36, 4Q26 n 36, FY27 n 44); a 23 Sep re-pull gave the same FY27 figures within $3M. Ours: official income statement v2 (DEC-0042), cost lines from the 40 line build.</p>
+    <p>Rebuild: <code>py -3.13 analysis/src/margin_build/46_margin_bridge/run.py</code>, then <code>build_page.py</code>.</p>
+  </div>
+</div>
+<div id="tip" hidden></div>
+
+<script>
+const DATA = {"steps": [{"period": "3Q26", "item": "Street consensus", "kind": "total", "value_pp": 49.7757, "start": 0.0, "end": 49.7757, "ebitda_impact_musd": null}, {"period": "3Q26", "item": "Revenue below the Street, costs flexing at the historical rate", "kind": "step", "value_pp": -0.3637, "start": 49.7757, "end": 49.4121, "ebitda_impact_musd": -43.6431}, {"period": "3Q26", "item": "Payments & other cost of revenue", "kind": "step", "value_pp": 0.6467, "start": 49.4121, "end": 50.0588, "ebitda_impact_musd": 30.338}, {"period": "3Q26", "item": "Hosting & AI compute", "kind": "step", "value_pp": -0.7537, "start": 50.0588, "end": 49.3051, "ebitda_impact_musd": -35.3576}, {"period": "3Q26", "item": "Ops & support: AI support automation", "kind": "step", "value_pp": 0.2452, "start": 49.3051, "end": 49.5502, "ebitda_impact_musd": 11.5008}, {"period": "3Q26", "item": "Ops & support: payroll, make-goods, insurance", "kind": "step", "value_pp": 0.5173, "start": 49.5502, "end": 50.0675, "ebitda_impact_musd": 24.2642}, {"period": "3Q26", "item": "Product development", "kind": "step", "value_pp": 0.5656, "start": 50.0675, "end": 50.6331, "ebitda_impact_musd": 26.5328}, {"period": "3Q26", "item": "Sales & marketing", "kind": "step", "value_pp": -2.1502, "start": 50.6331, "end": 48.483, "ebitda_impact_musd": -100.8618}, {"period": "3Q26", "item": "General & administrative", "kind": "step", "value_pp": 0.687, "start": 48.483, "end": 49.17, "ebitda_impact_musd": 32.2275}, {"period": "3Q26", "item": "Our model (official income statement)", "kind": "total", "value_pp": 49.17, "start": 0.0, "end": 49.17, "ebitda_impact_musd": null}, {"period": "4Q26", "item": "Street consensus", "kind": "total", "value_pp": 28.8974, "start": 0.0, "end": 28.8974, "ebitda_impact_musd": null}, {"period": "4Q26", "item": "Revenue below the Street, costs flexing at the historical rate", "kind": "step", "value_pp": -0.3026, "start": 28.8974, "end": 28.5948, "ebitda_impact_musd": -15.5772}, {"period": "4Q26", "item": "Payments & other cost of revenue", "kind": "step", "value_pp": 0.1848, "start": 28.5948, "end": 28.7797, "ebitda_impact_musd": 5.8045}, {"period": "4Q26", "item": "Hosting & AI compute", "kind": "step", "value_pp": -1.1898, "start": 28.7797, "end": 27.5899, "ebitda_impact_musd": -37.3689}, {"period": "4Q26", "item": "Ops & support: AI support automation", "kind": "step", "value_pp": 0.3183, "start": 27.5899, "end": 27.9081, "ebitda_impact_musd": 9.996}, {"period": "4Q26", "item": "Ops & support: payroll, make-goods, insurance", "kind": "step", "value_pp": 0.3732, "start": 27.9081, "end": 28.2813, "ebitda_impact_musd": 11.721}, {"period": "4Q26", "item": "Product development", "kind": "step", "value_pp": 0.2193, "start": 28.2813, "end": 28.5006, "ebitda_impact_musd": 6.8869}, {"period": "4Q26", "item": "Sales & marketing", "kind": "step", "value_pp": -1.522, "start": 28.5006, "end": 26.9786, "ebitda_impact_musd": -47.8021}, {"period": "4Q26", "item": "General & administrative", "kind": "step", "value_pp": 0.4527, "start": 26.9786, "end": 27.4313, "ebitda_impact_musd": 14.2196}, {"period": "4Q26", "item": "Our model (official income statement)", "kind": "total", "value_pp": 27.4313, "start": 0.0, "end": 27.4313, "ebitda_impact_musd": null}, {"period": "FY27", "item": "Street consensus", "kind": "total", "value_pp": 36.4497, "start": 0.0, "end": 36.4497, "ebitda_impact_musd": null}, {"period": "FY27", "item": "Revenue below the Street, costs flexing at the historical rate", "kind": "step", "value_pp": -1.034, "start": 36.4497, "end": 35.4157, "ebitda_impact_musd": -303.3295}, {"period": "FY27", "item": "Payments & other cost of revenue", "kind": "step", "value_pp": -0.1703, "start": 35.4157, "end": 35.2454, "ebitda_impact_musd": -26.2612}, {"period": "FY27", "item": "Hosting & AI compute", "kind": "step", "value_pp": -0.5916, "start": 35.2454, "end": 34.6538, "ebitda_impact_musd": -91.2513}, {"period": "FY27", "item": "Ops & support: AI support automation", "kind": "step", "value_pp": 0.1963, "start": 34.6538, "end": 34.8502, "ebitda_impact_musd": 30.2859}, {"period": "FY27", "item": "Ops & support: payroll, make-goods, insurance", "kind": "step", "value_pp": 0.05, "start": 34.8502, "end": 34.9002, "ebitda_impact_musd": 7.716}, {"period": "FY27", "item": "Product development", "kind": "step", "value_pp": -0.1368, "start": 34.9002, "end": 34.7634, "ebitda_impact_musd": -21.1068}, {"period": "FY27", "item": "Sales & marketing", "kind": "step", "value_pp": -1.0221, "start": 34.7634, "end": 33.7412, "ebitda_impact_musd": -157.6612}, {"period": "FY27", "item": "General & administrative", "kind": "step", "value_pp": 0.2323, "start": 33.7412, "end": 33.9735, "ebitda_impact_musd": 35.8333}, {"period": "FY27", "item": "Our model (official income statement)", "kind": "total", "value_pp": 33.9735, "start": 0.0, "end": 33.9735, "ebitda_impact_musd": null}], "meta": [{"period": "3Q26", "street_revenue": 4744.3221, "street_ebitda": 2361.5218, "street_margin": 49.7757, "our_revenue": 4690.9154, "our_ebitda": 2306.5224, "our_margin": 49.17, "revenue_gap_pct": -1.1257, "street_costs_flexed": 2373.0367, "margin_after_revenue": 49.4121, "street_cost_growth_uniform_pct": 15.8041, "ours_cash_costs": 2405.027, "street_flexed_cash_costs": 2393.6707, "ebitda_gap": -54.9994}, {"period": "4Q26", "street_revenue": 3161.8163, "street_ebitda": 913.6839, "street_margin": 28.8974, "our_revenue": 3140.7997, "our_ebitda": 861.5636, "our_margin": 27.4313, "revenue_gap_pct": -0.6647, "street_costs_flexed": 2242.693, "margin_after_revenue": 28.5948, "street_cost_growth_uniform_pct": 12.2125, "ours_cash_costs": 2299.8701, "street_flexed_cash_costs": 2263.327, "ebitda_gap": -52.1203}, {"period": "FY27", "street_revenue": 15819.3392, "street_ebitda": 5766.0992, "street_margin": 36.4497, "our_revenue": 15424.7268, "our_ebitda": 5240.3244, "our_margin": 33.9735, "revenue_gap_pct": -2.4945, "street_costs_flexed": 9961.9571, "margin_after_revenue": 35.4157, "street_cost_growth_uniform_pct": 8.6021, "ours_cash_costs": 10266.9382, "street_flexed_cash_costs": 10044.4929, "ebitda_gap": -525.7748}]};
+const COPY = [{"where": "Investment thesis, point (3)", "text": "(3) Operating leverage runs in reverse: Airbnb’s costs behave like a budget, so even if FY27 costs follow the Street’s own plan, our lower nights and ADR take the FY27 margin about 100bp below consensus and put the FY26 “at least 35.5%” floor at risk."}, {"where": "Thesis Point 3: Costs", "text": "Sales and marketing has grown faster than revenue for nine straight quarters, rising from 16.5% of revenue in FY23 to 19.4% in FY25 (23.9% in 1H26), and when revenue growth slowed from 18% to 12% and then 10%, S&M growth rose to 21% and held at 20%. Management describes brand spend as “effectively a fixed amount of spend for each market” and plans to “reinvest most of these efficiencies into marketing, product and technology.” AI savings are real but small: the 2Q26 10-Q credits AI with a $17M fall in support costs, in a quarter when S&M rose $184M and ops and product payroll $89M, and the 2026 guide absorbs “a material increase” in AI spend. Our model already credits AI (ops, product and G&A fall from 29.2% to 26.2% of revenue by FY27), and the call does not rest on it: on our revenue, the Street’s own cost plan, flexed down at the historical rate, gives an FY27 margin of 35.4% against 36.4%, and FY26 35.4%, below the floor. Holding consensus would take FY27 cost growth of 7.3%, slower than any year since the IPO. Our FY27: adjusted EBITDA $5.24bn (34.0%) against the Street’s $5.77bn."}, {"where": "Valuation (cost leg)", "text": "Our $143.6 value is FY27 adjusted EBITDA of $5.24bn at 14.5x EV/EBITDA: today’s 15.6x on the Street’s FY27, less 0.49 turns per point of lower growth (95% CI 0.32–0.65, giving $140–147). Thesis 3 accounts for $3.4–5.8 of the $23 a share between $167 and $143.6, depending on the order of the steps; if FY27 costs grow at their FY24–25 pace (12.6%), the value is $140."}, {"where": "Catalysts (cost lines)", "text": ["Nov 5, 2026: the Q4 margin sentence and the FY26 floor. In November 2024 a Q4 guide of margin “decline … due to higher marketing and product development expenses” cut Q4 EBITDA consensus 9.6% and the stock 8.7% on a beat.", "Feb 2027 (expected ~11 Feb): the FY27 margin framework. We put a down-year or “investment year” guide at 49%; each 100bp below the Street’s 36.4% is $158M of FY27 EBITDA."]}, {"where": "Risk & mitigant (cost lines)", "text": ["Risk: management trims Q4 marketing to hold 35.5% (about $64M on our revenue). Mitigant: a one-quarter trim caps the FY26 miss but does not change FY27, where holding consensus would need $251M of cuts beyond the Street’s own plan.", "Risk: AI savings arrive faster than we model. Mitigant: a generous AI case (support costs per booking −10% across the whole line, slower product and G&A hiring, lower compute) still leaves FY27 at 35.8%, below the Street’s 36.4%."]}];
+
+const fmtPct = v => v.toFixed(2) + "%";
+const fmtBp = v => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(Math.round(v * 100)) + "bp";
+const fmtUsd = v => (v > 0 ? "+" : v < 0 ? "−" : "") + "$" + Math.abs(Math.round(v)).toLocaleString("en-US") + "M";
+const SHORT = {
+  "Street consensus": "Street consensus",
+  "Revenue below the Street, costs flexing at the historical rate": "Revenue below the Street (costs flex down with it)",
+  "Our model (official income statement)": "Our model"
+};
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+function niceTicks(lo, hi) {
+  const span = hi - lo;
+  const steps = [0.1, 0.2, 0.25, 0.5, 1, 2];
+  let step = steps.find(s => span / s <= 8) || 2;
+  const out = [];
+  for (let t = Math.ceil(lo / step) * step; t <= hi + 1e-9; t += step) out.push(+t.toFixed(4));
+  return { ticks: out, step };
+}
+
+const measure = (() => { const c = document.createElement("canvas").getContext("2d"); return (t, px, w) => { c.font = (w || 400) + " " + px + "px IBM Plex Sans, system-ui, sans-serif"; return c.measureText(t).width; }; })();
+
+const tip = document.getElementById("tip");
+function showTip(target, html) {
+  tip.replaceChildren();
+  html.forEach(([cls, t]) => { const n = el(cls === "strong" ? "strong" : "div", null, t); tip.appendChild(n); });
+  tip.hidden = false;
+  const r = target.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = r.left + r.width / 2 - tw / 2; x = Math.max(8, Math.min(window.innerWidth - tw - 8, x));
+  let y = r.top - th - 10; if (y < 8) y = r.bottom + 10;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.hidden = true; }
+
+function renderSummary() {
+  const box = document.getElementById("summary");
+  DATA.meta.forEach(m => {
+    const s = el("div", "sum");
+    s.appendChild(el("div", "k", m.period));
+    const v = el("div", "v"); v.append(fmtPct(m.street_margin)); v.appendChild(el("span", "arrow", "→")); v.append(fmtPct(m.our_margin));
+    s.appendChild(v);
+    s.appendChild(el("div", "d", fmtBp(m.our_margin - m.street_margin) + " vs Street · EBITDA " + fmtUsd(m.ebitda_gap)));
+    box.appendChild(s);
+  });
+}
+
+function renderChart(period) {
+  const rows = DATA.steps.filter(r => r.period === period);
+  const meta = DATA.meta.find(m => m.period === period);
+  const vals = rows.flatMap(r => r.kind === "total" ? [r.end] : [r.start, r.end]);
+  let lo = Math.min(...vals), hi = Math.max(...vals); const pad = (hi - lo) * 0.16; lo -= pad; hi += pad;
+  const { ticks, step } = niceTicks(lo, hi); const dp = step >= 1 ? 0 : step === 0.25 ? 2 : 1;
+  lo = Math.min(lo, ticks[0]); hi = Math.max(hi, ticks[ticks.length - 1]);
+  const X = v => (v - lo) / (hi - lo) * 100;
+
+  const panel = el("div", "panel");
+  const head = el("div", "panel-head");
+  head.appendChild(el("h3", null, period === "FY27" ? "FY27" : period));
+  head.appendChild(el("div", "meta", "Revenue " + fmtUsd(meta.our_revenue - meta.street_revenue).replace("+", "") + " vs Street (" + meta.revenue_gap_pct.toFixed(1) + "%) · EBITDA " + fmtUsd(meta.ebitda_gap)));
+  panel.appendChild(head);
+  const bridge = el("div", "bridge");
+  bridge.setAttribute("role", "img");
+  bridge.setAttribute("aria-label", period + " margin bridge from " + fmtPct(meta.street_margin) + " (Street) to " + fmtPct(meta.our_margin) + " (ours). Full values in the table below.");
+
+  const tracks = [];
+  rows.forEach((r, i) => {
+    const row = el("div", "row" + (r.kind === "total" ? " total" : ""));
+    row.appendChild(el("div", "lab", SHORT[r.item] || r.item));
+    const tr = el("div", "track"); tracks.push(tr);
+    ticks.forEach(t => { const g = el("div", "grid-line"); g.style.left = X(t) + "%"; tr.appendChild(g); });
+    if (r.kind === "total") {
+      const d = el("div", "dotm"); d.style.left = X(r.end) + "%"; tr.appendChild(d);
+      const v = el("div", "val", fmtPct(r.end)); v.dataset.anchor = X(r.end); v.dataset.side = "right"; v.dataset.gap = 12; tr.appendChild(v);
+    } else {
+      const a = Math.min(r.start, r.end), b = Math.max(r.start, r.end);
+      const bar = el("div", "bar " + (r.value_pp >= 0 ? "add" : "cut"));
+      bar.style.left = X(a) + "%"; bar.style.width = Math.max(0.35, X(b) - X(a)) + "%";
+      bar.tabIndex = 0;
+      const label = (SHORT[r.item] || r.item);
+      bar.setAttribute("aria-label", label + ": " + fmtBp(r.value_pp) + ", EBITDA " + fmtUsd(r.ebitda_impact_musd) + " versus the Street");
+      const lines = [["strong", fmtBp(r.value_pp) + " of margin"], ["", label], ["", "EBITDA " + fmtUsd(r.ebitda_impact_musd) + " vs Street"], ["", fmtPct(r.start) + " → " + fmtPct(r.end)]];
+      const on = () => showTip(bar, lines);
+      bar.addEventListener("pointerenter", on); bar.addEventListener("pointerleave", hideTip);
+      bar.addEventListener("focus", on); bar.addEventListener("blur", hideTip);
+      tr.appendChild(bar);
+      const v = el("div", "val", fmtBp(r.value_pp));
+      v.dataset.anchor = r.value_pp >= 0 ? X(b) : X(a); v.dataset.side = r.value_pp >= 0 ? "right" : "left"; v.dataset.gap = 6;
+      tr.appendChild(v);
+    }
+    if (i < rows.length - 1) {
+      const c = el("div", "conn"); c.style.left = X(r.end) + "%"; tr.appendChild(c);
+    }
+    row.appendChild(tr);
+    bridge.appendChild(row);
+  });
+  const axisRow = el("div", "row");
+  axisRow.appendChild(el("div", "lab", ""));
+  const ax = el("div", "axis");
+  ticks.forEach(t => { const k = el("div", "tick", t.toFixed(dp) + "%"); k.style.left = X(t) + "%"; ax.appendChild(k); });
+  axisRow.appendChild(ax); bridge.appendChild(axisRow);
+  panel.appendChild(bridge);
+  document.getElementById("charts").appendChild(panel);
+  return tracks;
+}
+
+function placeLabels() {
+  document.querySelectorAll(".track").forEach(tr => {
+    const w = tr.clientWidth;
+    tr.querySelectorAll(".val").forEach(v => {
+      const ax = +v.dataset.anchor / 100 * w, gap = +v.dataset.gap;
+      const tw = measure(v.textContent, v.closest(".total") ? 13 : 12, v.closest(".total") ? 600 : 400);
+      let side = v.dataset.side;
+      if (side === "right" && ax + gap + tw > w) side = "left";
+      if (side === "left" && ax - gap - tw < 0) side = "right";
+      v.style.left = (side === "right" ? ax + gap : ax - gap - tw) + "px";
+    });
+  });
+}
+
+function renderTables() {
+  const box = document.getElementById("tables");
+  DATA.meta.forEach(m => {
+    const w = el("div", "tw");
+    const t = el("table");
+    const cap = el("caption", null, m.period); cap.style.textAlign = "left"; cap.style.fontWeight = "600"; cap.style.padding = "0 0 6px";
+    t.appendChild(cap);
+    const hr = el("tr"); ["Step", "Margin change", "EBITDA vs Street", "Margin after"].forEach(h => hr.appendChild(el("th", null, h)));
+    const thead = el("thead"); thead.appendChild(hr); t.appendChild(thead);
+    const tb = el("tbody");
+    DATA.steps.filter(r => r.period === m.period).forEach(r => {
+      const tr = el("tr", r.kind === "total" ? "t" : "");
+      tr.appendChild(el("td", null, SHORT[r.item] || r.item));
+      tr.appendChild(el("td", null, r.kind === "total" ? "" : fmtBp(r.value_pp)));
+      tr.appendChild(el("td", null, r.kind === "total" ? "" : fmtUsd(r.ebitda_impact_musd)));
+      tr.appendChild(el("td", null, fmtPct(r.end)));
+      tb.appendChild(tr);
+    });
+    t.appendChild(tb); w.appendChild(t); box.appendChild(w);
+  });
+}
+
+function renderCopies() {
+  const box = document.getElementById("copies"); box.style.display = "grid"; box.style.gap = "14px";
+  COPY.forEach((c, i) => {
+    const b = el("div", "copyblock");
+    const h = el("div", "copyhead");
+    h.appendChild(el("div", "where", c.where));
+    const btn = el("button", "copy", "Copy"); btn.type = "button"; btn.id = "copy-" + i;
+    h.appendChild(btn); b.appendChild(h);
+    const body = el("div", "copytext");
+    if (Array.isArray(c.text)) { const ul = el("ul"); c.text.forEach(t => ul.appendChild(el("li", null, t))); body.appendChild(ul); }
+    else body.appendChild(el("p", null, c.text));
+    b.appendChild(body); box.appendChild(b);
+    btn.addEventListener("click", () => {
+      const plain = Array.isArray(c.text) ? c.text.map(t => "• " + t).join("\n") : c.text;
+      const done = () => { btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy"), 1600); };
+      const fallback = () => { const r = document.createRange(); r.selectNodeContents(body); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Selected — press Ctrl+C"; };
+      try { navigator.clipboard.writeText(plain).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+}
+
+renderSummary();
+["3Q26", "4Q26", "FY27"].forEach(renderChart);
+renderTables();
+renderCopies();
+placeLabels();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeLabels);
+new ResizeObserver(placeLabels).observe(document.getElementById("charts"));
+</script>
