@@ -4,7 +4,7 @@ Krish with Claude (Opus 5.5), 22-23 Sep 2026, branch `krish/cost-leg`. Synthesis
 `43a_sm_evidence.md` (the S&M statistics rebuilt, pre-registered), `43b_valuation_link.md` (how costs enter the target, updated
 simulation), `43c_catalyst_path.md` (5 Nov / 11 Feb decision tree, does cutting marketing cost nights, pre-registered),
 `43d_red_team.md` (the bull case against thesis 3), on top of `40_line_build.md`, `41_cost_leg.md`, `42_margin_reaction.md`,
-`42_event_reasons.md` and `44_short_case_v2.md`. Revised after a Codex Astra check of this text (`audit/CODEX_THESIS3_TEXT_CHECK.md`,
+`42_event_reasons.md`, `44_short_case_v2.md` and `45_ai_margin.md` (the AI question, added 23 Sep). Revised after a Codex Astra check of this text (`audit/CODEX_THESIS3_TEXT_CHECK.md`,
 11 findings, all applied; see §7). Every number below traces to those files. Where the draft memo's numbers conflict with these, these
 win (the draft's were unaudited).
 
@@ -17,16 +17,17 @@ survives is narrower and more defensible: **Airbnb's cost base has behaved like 
 faster than revenue for nine straight quarters and rose, then held near 20%, while revenue growth slowed in 2024-25; the Street's FY27 margin needs
 total cost growth to fall from ~15% to 10%. Thesis 3 is a **scenario about spending persisting**, not a claim to out-forecast consensus
 on costs: without the persistence assumption our FY27 EBITDA would be $5.44bn rather than $5.24bn, against the Street's $5.77bn. Its
-job is to turn the nights slowdown of theses 1-2 into an EBITDA miss. **In the valuation it is worth $3.4-5.8 of the $23 per share
+job is to turn the nights slowdown of theses 1-2 into an EBITDA miss, and the AI argument does not change that: on our revenue even the
+Street's own cost plan gives a FY27 margin about 100bp below consensus (`45_ai_margin.md`). **In the valuation it is worth $3.4-5.8 of the $23 per share
 between today's price and the target (15-25% depending on the order of the steps, ~20% averaged), and more if costs grow at their
 FY24-25 pace.** If nights hold, most of it disappears; management's ability to trim is its main risk.
 
 ## 1. Replacement text for the memo
 
 **In the Investment Thesis list (replaces point 3):**
-> (3) Airbnb's cost base behaves like a budget, not a function of revenue: sales and marketing has grown faster than revenue for nine
-> straight quarters, and the Street's FY27 margin needs total cost growth to fall from 15% to 10%, so if nights slow as in (1) and (2),
-> the miss falls through to EBITDA.
+> (3) Operating leverage runs in reverse: Airbnb's costs behave like a budget (sales and marketing has grown faster than revenue for
+> nine straight quarters, and management reinvests its AI savings rather than banking them), so even if FY27 costs follow the Street's
+> own plan, our lower nights and ADR take the FY27 margin about 100bp below consensus and put the FY26 "at least 35.5%" floor at risk.
 
 **Optional line for Market/Variant View:**
 > The Street's FY27 adjusted EBITDA margin of 36.4% needs total cost growth to slow from about 15% in FY26 to 10% in FY27, the slowest
@@ -41,9 +42,17 @@ FY24-25 pace.** If nights hold, most of it disappears; management's ability to t
 > headcount", and attributes the 1H26 increase to "higher paid growth marketing initiatives in emerging markets and partnerships"; the
 > ratio of incremental revenue to incremental S&M has fallen from $6.6 in FY23 to $3.4 in FY24, $2.9 in FY25 and $2.7 in 1H26 (against
 > 1H25). The Street has been late to the ramp: costs came in above consensus in three of the last four prints after coming in below in
-> 16 of the previous 18. Our FY27 case assumes the spending step persists while revenue slows, producing adjusted EBITDA of $5.24bn (34.0%
-> margin) against the Street's $5.77bn (36.4%); without that assumption it would be $5.44bn. This is a scenario about spending, not a
-> claim to out-forecast consensus on costs, and management's ability to trim is its main risk.
+> 16 of the previous 18.
+>
+> The bull answer is AI. The savings are real but small in dollars and are being reinvested: the 2Q26 10-Q credits AI with a $17M fall
+> in third-party support costs in the quarter, against $27M more ops payroll, $62M more product-development payroll and $184M more S&M,
+> and management said in February it would "reinvest most of these efficiencies into marketing, product and technology" and in August
+> that its guide absorbs "a material increase" in AI spend. Our model already credits the savings (ops, product and G&A fall from 29.2%
+> of revenue in FY25 to 26.2% in FY27), and the margin call does not rest on them: on our revenue, the Street's own cost plan, allowed to
+> come down with revenue at the historical rate, still gives a FY27 margin of 35.4% against 36.4% ($303M less EBITDA) and a FY26 margin
+> of 35.4%, below the floor. Holding the Street's FY27 margin would take cost growth of 7.3%, slower than any year since the IPO. In our
+> own case, where the spending step persists, FY27 adjusted EBITDA is $5.24bn (34.0%) against the Street's $5.77bn ($5.44bn if the step
+> does not persist); a cut beyond the Street's own plan is the main risk.
 
 **Valuation (replaces the Monte Carlo sentence; keep the ADR paragraph above it):**
 > We value ABNB on EV/FY27 adjusted EBITDA, which the market prices at 15.6x on the Street's numbers at $166.84 (21 Sep). Our FY27 is
@@ -94,7 +103,11 @@ FY24-25 pace.** If nights hold, most of it disappears; management's ability to t
 4. **Its expected value at 5 Nov is small; its value is the tail and February.** Weighted over the team's audited probabilities, the
    cost leg adds about −1% to the 5 Nov relative move: the "Q4 down y/y" branch (22%) is worth −5% to −6%, the "Q4 up y/y" branch (25%)
    +2% to +3% against us. February is where it bites: B12 puts a FY27 down-guide or "investment year" at 49%.
-5. **What it does not claim.** Do not print "heads we win, tails we win". The pre-registered 2023 test found no evidence that the
+5. **AI does not rescue the Street's margin on our revenue.** The Street's own cost plan (whatever AI it embeds), flexed down with our
+   revenue at the historical rate, gives FY27 35.4% (−103bp, −$303M) and FY26 35.4%, below the floor; holding the Street's FY27 margin
+   needs cost growth of 7.3%, $251M below the Street's own plan. Our build already credits AI (ops, PD and G&A −2.9pp of revenue by
+   FY27 on official revenue); a generous AI case closes about 60% of that $251M, leaving FY27 at 35.8% (`45_ai_margin.md`).
+6. **What it does not claim.** Do not print "heads we win, tails we win". The pre-registered 2023 test found no evidence that the
    marketing cut cost nights, so a Q4 trim to hold the floor would most likely neutralise the FY26 part of the cost leg rather than
    confirm the short. One brand-phasing episode cannot tell us what cutting 2026's paid growth spend would do, so the memo should make no
    claim either way.
@@ -171,6 +184,15 @@ shrank from 140bp in FY24 to 60bp in FY25.
 does. Our FY27 is a scenario in which the step persists; without that assumption FY27 EBITDA is $5.44bn instead of $5.24bn. The case for
 persistence is management's own description (fixed brand spend per market, launch headcount carried forward, new launches next year) and
 the absence of any cut signal in five Novembers. If they trim, the FY26 floor holds and the cost leg shrinks; the revenue leg does not.
+
+**"Consensus has spending coming down because of AI. Aren't you ignoring AI?"** No: our model already credits it (ops, product and G&A
+fall from 29.2% to 26.2% of revenue by FY27; support automation alone is worth $53.5M in FY27). But the filed saving so far is $17M a
+quarter, management says it is reinvesting efficiencies in marketing, product and technology, and AI's running cost (hosting and compute)
+is where our costs sit above the Street ($101M of our $131M excess). More to the point, the call does not need our cost view: take the
+Street's own cost plan, let it fall with our lower revenue, and FY27 margin is still 35.4% against 36.4%. Holding 36.4% on our revenue
+needs FY27 cost growth of 7.3%; a generous AI case (including lower compute spending) gets to 35.8%, and closing the rest needs another
+~$100M of cuts. If everything on costs goes right the margin can land near consensus, but EBITDA is still $100-300M short and growth, and
+so the multiple, is lower (`45_ai_margin.md`).
 
 **Bonus, "Booking spends 30% of revenue on marketing":** Booking's is performance spend that has moved with revenue (elasticity 0.9-1.0).
 Airbnb's is brand and field operations whose measured response to a slowdown is close to zero, on a multiple paid for a 35% margin that a

@@ -1,0 +1,47 @@
+line,name,base,bear,bull,unit,source
+volume,nights_per_booking_fy26,3.65,3.65,3.65,nights per booking,"WS02 nights_per_booking_fy 3.9 (2023), 3.8 (2024), 3.7 (2025); trend continued"
+volume,nights_per_booking_fy27,3.6,3.6,3.6,nights per booking,same trend
+cor,merchant_fee_pct_gbv,1.7,1.76,1.64,"% of GBV, annual-equivalent rate","FY24 1.69%, FY25 1.76% (cost of revenue less chargebacks, hosting, other per night; 07_cost_components payment processing $1,665M incl. $67M chargebacks); 1H26 fits 1.68% annual-equivalent after 'higher payment processor rebates and incentives' (1Q26 10-Q). Base 1.70 = rebates persist, do not widen."
+cor,chargeback_per_booking,0.72,0.85,0.6,USD per booking,FY25 $67M / 144M bookings = $0.47; 1H26 +$12M and +$13M y/y (10-Q MD&A) implies ~$0.72 on 1H26 bookings; held flat
+cor,hosting_fy25,224.0,224.0,224.0,USD m per year,Run-rate of the $672M hosting commitment through 2027 in the FY24 10-K (~$224M a year); FY25 10-K re-cut to $1.7bn through 2031 (~$283M a year)
+cor,hosting_step_2h26,30.0,45.0,20.0,USD m per half vs 2H25,1H26 server costs +$12M y/y (2Q26 10-Q) and reserved-instance amortisation +$12-15M (WS05 H14); Mertz 2Q26 'a material increase in AI spend' ramping in 2H
+cor,hosting_fy27,330.0,400.0,290.0,USD m per year,Between the old run-rate ($224M) and the new commitment ($283M a year) plus the unsized AI inference ramp; WS05 H03 total purchase obligations ~$465M a year in 2027-28
+cor,cor_other_per_night,0.36,0.36,0.36,USD per night,"FY25 residual: 2,086 - 1,598 fees - 67 chargebacks - 224 hosting = $197M on 533M nights (AirCover claims, payment operations)"
+cor,xborder_fee_bp_per_pt,1.0,1.0,1.0,bp of GBV per +1pt non-NA revenue share,Cross-border card volume carries higher interchange and FX cost; non-NA share of revenue 2Q26 55.8% vs 55.5% 2Q25 (WS02). Small at current drift.
+ops,ops_variable_share,0.215,0.17,0.27,share of the line that behaves like mgmt's 'support cost per booking',"Calibrated on 1H26 with the rule itself: ops 1H26/1H25 = 624/591 = 1.056 = v x (1 - 0.13) x 1.112 (bookings) + (1 - v) x 1.08 -> v = 0.215; mgmt's metric fell -10% (1Q26) and -16% (2Q26). Consistent with the metric being third-party contact cost (13,000 contingent workers, FY25 10-K), not the whole line."
+ops,ops_variable_decline_2h26,-14.0,-8.0,-18.0,"% y/y per booking, 2H26","Support cost per booking -10% (1Q26 call), -16% (2Q26 call); >40% of issues resolved without an agent"
+ops,ops_variable_decline_fy27,-10.0,-4.0,-14.0,"% y/y per booking, FY27",Chesky 4Q25/2Q26: 'continue to decline' as AI moves to voice; no number (31a: medium confidence)
+ops,ops_fixed_growth,8.0,11.0,6.0,"% y/y, the non-variable part","1H26 10-Q: payroll +$14M/+$27M, customer relations +$3M/+$10M, insurance +$7M; headcount +12% in 2025 slowing"
+pd,pd_growth_2h26,9.0,11.0,7.0,"% y/y, 2H26","1H26 +12% / +10%, all payroll from average headcount (10-Q); headcount growth below FY25's +12% (2Q26 call)"
+pd,pd_growth_fy27,8.0,10.0,6.0,"% y/y, FY27",Headcount ~+5% plus ~3% comp; 31b took 9.5%
+pd,pd_ai_tooling_fy27,30.0,60.0,15.0,"USD m, FY27 incremental",The engineering-tools part of the unsized 'material increase in AI spend'; judgement
+sm,marketing_fy25,1595.0,1595.0,1595.0,USD m,"FY25 10-K S&M split: brand and performance marketing $1,595M"
+sm,marketing_1h_share,0.51,0.51,0.51,1H share of FY marketing,2023-25 mean S&M quarterly shares Q1 24.0% + Q2 27.0% (02_seasonality)
+sm,marketing_growth_1h26,32.0,32.0,32.0,"% y/y, 1H26 (reported)","10-Q: marketing spend +$126M (1Q26) and +$132M (2Q26), 'paid growth initiatives in emerging markets and partnerships' = +$258M on ~$813M"
+sm,marketing_growth_2h26,25.0,32.0,18.0,"% y/y, 2H26",2Q26 call: 'some incremental investment ... in sales and marketing' in 2H; Sep 2026 Goldman (WS05 V022-V026): marketing stays elevated into next year's launches. 1H26 ran +32%; 31b took +21% for 2H. Base 25 = partial deceleration.
+sm,marketing_growth_fy27,15.0,22.0,10.0,"% y/y, FY27","Expansion-market spend grows while core markets lever ('relative floor', 2Q26); 31b 15%"
+sm,field_cash_fy25,781.0,781.0,781.0,USD m,FY25 10-K field operations and policy $993M less S&M SBC $212M (WS02) = cash $781M; includes the ~$200M new-businesses launch spend
+sm,field_growth_fy26,18.0,22.0,14.0,% y/y,1H26 S&M payroll +$42M/+$48M (10-Q) of which ~$26M SBC; 1H26 implied field cash +$88M (+21%); FY25 grew 43%; 31b 18%
+sm,field_growth_fy27,11.0,16.0,8.0,% y/y,Services/Experiences launch spend laps (Chesky: each new business cheaper to launch); 31b 13%
+recon,reconcile_to_sentence,1.0,1.0,1.0,"1 = on, 0 = evidence-only build","Management's quarterly margin sentence has not been sandbagged (WS22 group A: realised gap to the sentence mean -0.19pp, above in 4 of 10, W2), so the 2H26 cost budget is anchored to it; the un-reconciled build is kept as scenario evidence_only"
+recon,guide_3q26_revenue_mid,4730.0,4730.0,4730.0,USD m,"6 Aug 2026 guide $4,690-4,770M (02_guidance_ledger)"
+recon,sentence_3q26_margin_delta_pp,-0.5,-1.0,0.0,pp y/y,"'Adjusted EBITDA margin down slightly vs 3Q25' (6 Aug 2026); 'slightly' has meant 0.8-1.5pp in past quarters (M3), base -0.5"
+recon,recon_share_to_marketing,0.7,0.7,0.7,share of the cost gap assigned to 2H26 marketing,Management named S&M ('some incremental investment') and AI spend ('material increase') as the 2H26 step-ups; the rest of the gap goes to hosting/AI in cost of revenue
+ga,ga_growth_2h26,5.0,8.0,2.0,"% y/y, 2H26 (ex reserves)",1H26 -5.4% because non-income taxes fell $38M; underlying payroll +$32M in 2Q26 alone (10-Q); 'extremely disciplined' (2Q26)
+ga,ga_growth_fy27,5.0,8.0,3.0,"% y/y, FY27",31b 5%; highest fixed share of any line
+ga,lodging_reserves_fwd,0.0,0.0,0.0,USD m per quarter (added back),None assumed; 4Q25's $81M was a one-off
+overlay,rnpl_ops_uplift_pct,0.0,0.0,0.0,% uplift on ops & support per completed booking,"Cancellations raise contacts, refunds and make-goods per completed stay: 2Q26 10-Q customer relations +$10M on higher make-good payouts and related case reserves, 1Q26 +$3M refunds and credits; short case 4%"
+overlay,chargeback_add_per_booking,0.0,0.0,0.0,USD per booking added,1H26 chargebacks +$25M y/y (+37%) after two years of declines; short case +$0.15
+overlay,q4_marketing_cut_musd,0.0,0.0,0.0,USD m cut from 4Q26 marketing,Management protected the FY floor in 4Q24 by phasing brand marketing down; the short case reports the cut needed
+below,da_per_q,20.633970599907517,20.633970599907517,20.633970599907517,USD m per quarter,M7 parameter sheet
+below,sbc_growth,13.177740767185675,13.177740767185675,13.177740767185675,% y/y on SBC[q-4],M7 (recency-weighted last-4 y/y); mgmt: SBC growth below FY25's
+below,interest_income_beta,0.8764975067193741,0.8764975067193741,0.8764975067193741,x 3m T-bill x avg earning base / 4,"M7 / WS04 rule (r 0.83, n 18)"
+below,tbill_3m,3.76,3.76,3.76,"% (3Q26 QTD average, held)",FRED DTB3 via M7
+below,cash_plus_sti,12069.0,12069.0,12069.0,"USD m, held flat",WS02 2Q26
+below,rnpl_share_shift_pts,0.0,10.0,0.0,"pts of GBV paid at check-in rather than at booking, vs 2025",No RNPL share series exists in the repo; sensitivity only: each 10 pts of GBV paid later cuts average funds held by ~10%
+below,interest_expense_per_q,37.0,37.0,37.0,USD m per quarter,"M7: $2.5bn notes (~$119M a year, WS05 H10)"
+below,other_income_per_q,3.7,3.7,3.7,USD m per quarter,M7 recency-weighted mean
+below,etr_2h26,18.0,18.0,18.0,% applied to 2H26 forecast quarters (1H26 printed 17.1%),M7; mgmt high teens (2Q26)
+below,etr_fy27,17.5,17.5,17.5,%,M7; long-term mid-to-high teens under OBBBA (WS05 H09)
+below,diluted_shares_2q26,597.0,597.0,597.0,m,WS02 2Q26
+below,diluted_shares_delta_per_q,-5.324186618094461,-5.324186618094461,-5.324186618094461,m per quarter,M7: -buyback/price + issuance; authorisation runs out ~1Q27 (WS05 H11)
