@@ -274,7 +274,7 @@ vectorised replication agreed with it 1.00000 on 200k reviews). Only **one revie
 (119 June-2026 dumps + Vaud 2026-08-10), so levels carry delisting attrition — the panel's LTM total grows
 +24.2% against company nights +9.5% — and every claim is made on shares, on y/y share changes, or on growth net
 of scope, never on levels. Quarterly, **English review share falls 2.79 / 3.21 / 2.73 / 2.91pp y/y in the last
-four quarters with no deceleration**, EMEA prints its **first sub-50% English quarter (49.7% in 2Q26)**, and on
+four quarters with no deceleration**, EMEA prints another **sub-50% English quarter (49.7% in 2Q26; the first was 4Q25 at 49.5%, corrected 23 Sep)**, and on
 day-matched LTM windows non-English reviews grew **+81.0% vs English +40.0%** 2024→2026 (non-English share
 37.1 → 43.2%), led by **Portuguese +124%, "other" +94%, Spanish +83%**; French and Italian are losing share.
 Against the filings: cross-border Portuguese runs **+11.9pp above its scope** where the filed Brazil-origin

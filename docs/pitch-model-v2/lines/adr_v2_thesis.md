@@ -18,7 +18,9 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
    disclosed the effect: RMSE ratio 0.34 at day 60 and 0.30 pre-print on the 14-quarter window and 0.38 / 0.32 on the
    10-quarter window, with moving-block bootstrap 90% upper bounds of 0.44 to 0.51 against a pre-registered pass
    line of 0.75, and a fitted pass-through posterior (EMEA 1.20, 90% interval 1.09 to 1.31; Latin America 0.46,
-   0.17 to 0.78) that explains its small misses without improving it out of sample.**
+   0.17 to 0.78) that explains its small misses and beats it on the recent window (W2) but not on W1, so the
+   pre-registered rule keeps the identity; for 3Q26, a Latin-American-heavy quarter, the fitted variant puts FX at
+   +0.03pp against the identity's +0.42.**
 4. The constant-currency half decelerates from +4.0% to +3.3% in 3Q26 and +2.8% in 4Q26 because the three dated
    product effects management sized at about one point of ADR (US RNPL from August 2025, the cancellation redesign
    and single fee from October 2025) lap on their filed anniversaries, not because of any assumption on pricing.
@@ -45,8 +47,8 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
    ex-NA split of EMEA 10.5 / LatAm 16.4 / APAC 14.9 rather than the letters' 8 / 20 / 18, so the steeper "tilt B"
    is retired.
 8. **The origin-to-destination layer passes an ordering test against the disclosed regional buckets in 4 of 7
-   quarters (binomial p 0.018; 4 of 5 on the quarters where the ordering is identified, p 0.003), the sub-regional
-   term's construction reproduces the disclosed-share four-region term within 0.13pp on 2Q24–2Q26, and re-weighting
+   quarters (binomial p 0.018; 4 of 5 on the quarters where the ordering is identified, p 0.003), the four-region
+   bucket arithmetic reproduces the H decomposition's term to a mean of 0.13pp (maximum 0.22) on 2Q24–2Q26, and re-weighting
    Europe with Eurostat platform nights instead of panel shares moves France from 10% to 21% of EMEA yet changes the
    term by 0.02pp, so the conclusion does not rest on the scrape's footprint.**
 9. Putting the pieces together, 3Q26 ADR is $177.68 (+3.7%, band $176.01 to $179.36) on a Street of $177.06 and
@@ -54,7 +56,8 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
    $172.79 to $173.19 and FY27 at $185.21 (+2.5%).
 10. The defensible ADR claim is therefore shape, not level: ex-FX ADR decelerates by more than a point through
     4Q26 as the product effects lap and the incremental night keeps landing in $95–$159 regions, FX turns from a
-    3–5pp tailwind to zero, and a below-Street 4Q26 ADR ($171.71 lap-only, $170.60 mean reversion) requires the
+    3–5pp tailwind to zero, and a below-Street 4Q26 ADR (mean reversion $170.60; lap-only lands on the Street at $171.71; the corrected ladder
+    is in adr_v3_corrections.md) requires the
     unobserved core to give back its 2026 step, which we carry as a labelled scenario with its argument and its
     one-quarter error of 0.88pp, not as an engine output.
 
@@ -81,9 +84,9 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
   the price-to-utilisation elasticity at +0.08 (p 0.79; cannot reject 0.32, rules out above 0.7), which buys at
   most 0.6pp of the core in the wrong direction for a give-back; the fix is a September-2026 capture wave against
   the September-2025 one, not more analysis.
-- The bundle's one point of ADR is transcript-only, and that label is now exhaustive: the FY25 10-K, the 1Q26 and
-  2Q26 10-Qs and both letters were read; no filing carries a magnitude; Airbnb did not even name RNPL in a filing
-  until 2Q26.
+- The bundle's one point of ADR is transcript-only, and the label survives a ten-document search (FY25 10-K, three
+  10-Qs, five letters, the 2026 proxy): no filing carries a magnitude. The letters name RNPL from 3Q25; the 10-Q
+  series from 2Q26.
 - The sub-regional term is small and fading (−0.15pp), has no demonstrated forecast content (H2 failed), and the
   panel cannot see India, the Gulf or South-East Asia as destinations; the origin rotation is priced within
   markets (−0.35% a year) but from a single review vintage and a snapshot price.

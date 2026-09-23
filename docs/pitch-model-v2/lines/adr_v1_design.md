@@ -5,7 +5,7 @@ official model. Proposed decisions **DEC-0034** (FX-on-ADR = translation identit
 **DEC-0035** (ex-FX ADR = mechanism with the product bundle lapping on filed dates) and **DEC-0036** (line 2 in the
 workbook), all **pending Theo's confirmation**. Rationale file: [`final_adr.md`](final_adr.md). Pre-registration
 (fixed before any fit, blob `0495e5f3`): [`adr_fx_prereg.md`](adr_fx_prereg.md). Engine:
-`analysis/src/pitch_model_v2/adr_engine/` (README there; `run.py` rebuilds everything, exit 0, 10 tests).
+`analysis/src/pitch_model_v2/adr_engine/` (README there; `run.py` rebuilds everything, exit 0, 27 tests as of v2).
 Research inputs, archived verbatim: `dossiers/ADR_A_disclosure_ledger.md` (what management said, dated),
 `ADR_B_fx_translation_inventory.md` (every FX object in the repo), `ADR_C_exfx_mechanism_inventory.md` (every
 ex-FX series). Branch `theo/pitch-model-v2`, base HEAD `2a77a36`. Web fetches: **zero** (FRED H.10 CSV only).
@@ -194,7 +194,7 @@ content where the record says it lives: the residual's carry, the bundle's dated
 
 The residual is the one unobserved line (D4 §2). Its 2023–25 mean is 2.40; it stepped to 4.4–4.9 in 1H26. The
 split assigns **~1pp** of that level to the product bundle (§3.2) and leaves the rest — the core — at **3.85**,
-still 1.45pp above its 2023–25 mean. **That gap is the unexplained half of the 2026 step, and it stays
+still 1.45pp above the residual's 2023–25 mean (1.58pp above the core's own 2.27). **That gap is the unexplained half of the 2026 step, and it stays
 unexplained here**: the design carries it, labels it, bands it with its own history, and names its reversion
 as the downside. It does not dress it as a mechanism.
 
@@ -517,7 +517,7 @@ listed under "core".
 | bundle_leg_rnpl_na_pp | base | 3Q25-2Q26 | 0.511 | pp | split by K4 residual steps 0.92 to 0.88; laps 3Q26 |
 | bundle_leg_fee_cancel_pp | base | 4Q25-3Q26 | 0.489 | pp | laps 4Q26 |
 | bundle_leg_rnpl_exna_pp | base | all | 0.00 | pp | unsized by management; high alternative 1.15 laps 1H27 |
-| core_pp | base | 3Q26-4Q27 | 3.849 | pp | 2Q26 residual 4.849 less bundle 1.00, carried; 2023-25 mean 2.398 is the downside |
+| core_pp | base | 3Q26-4Q27 | 3.849 | pp | 2Q26 residual 4.849 less bundle 1.00, carried; 2023-25 residual mean 2.398 (the core's own is 2.272) is the downside |
 | core_carry_sd_h1 | base | all | 0.882 | pp | sd of the one-quarter change of core, 1Q23-2Q26; h2 1.351 h3 1.379 h4 1.149 |
 | geo_mix_pp | base | 3Q26 | -1.293 | pp | nights-line regional path on 3Q25 shares and anchored regional ADR; card -1.428 |
 | geo_mix_pp | base | 4Q26 | -1.336 | pp | same |
