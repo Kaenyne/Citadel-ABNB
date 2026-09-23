@@ -14,6 +14,8 @@ from . import config as C
 
 # ---- bundle sizing (points of ADR) -------------------------------------------------------------------------------
 BUNDLE_ADR_PP = 1.0            # management: 4Q25 ">200bp nights / ~300bp GBV" (D014), 1Q26 "~3 pts nights / ~4 pts GBV" (D032) -> ~1pp ADR
+BUNDLE_BAND = (0.5, 1.5)       # audit fix (f): the rounding permits 0-1.5 (4Q25) and 0-2.0 (1Q26); v2 used 0.8-1.2. The 1Q26
+                               # figure also includes ~6 weeks of ex-NA RNPL (live 17 Feb 2026), so "did not rise" cannot size that leg
 STEP_3Q25, STEP_4Q25 = 0.92, 0.88      # K4 residual steps on the filed dates (US RNPL live 3Q25; cancellation redesign + fee tranche 1 4Q25)
 SPLIT_RNPL_NA = STEP_3Q25 / (STEP_3Q25 + STEP_4Q25)                     # 0.511 of the ~1pp is the NA RNPL (larger-home mix) leg
 RNPL_EXNA_ADR_PP_BASE, RNPL_EXNA_ADR_PP_HIGH = 0.0, 0.68 + 0.47       # base: unsized by management (1Q26 "~1" did not rise); high: the 1H26 residual steps
@@ -295,13 +297,13 @@ def core_carry_error_sd() -> dict:
 
 
 def envelope(fx_sd: pd.Series) -> pd.DataFrame:
-    """Parameter envelope (RSS of half-ranges, J3 convention) on the base: bundle total 0.8-1.2, ex-NA RNPL leg 0-1.15,
+    """Parameter envelope (RSS of half-ranges, J3 convention) on the base: bundle total BUNDLE_BAND (0.5-1.5; v2 0.8-1.2), ex-NA RNPL leg 0-1.15,
     geo (nights-linked vs card), unit, LOS, seats, interaction bands, the core carry's own h-step error; plus the FX
     predictive sd. Returns per-quarter half-band."""
     base = forward(); rows = []; cse = core_carry_error_sd()
     for h, (q, r) in enumerate(base.iterrows(), start=1):
         half = [cse[h]]
-        half.append(abs(forward(bundle_total=1.2).loc[q, "exfx_yoy"] - forward(bundle_total=0.8).loc[q, "exfx_yoy"]) / 2)
+        half.append(abs(forward(bundle_total=BUNDLE_BAND[1]).loc[q, "exfx_yoy"] - forward(bundle_total=BUNDLE_BAND[0]).loc[q, "exfx_yoy"]) / 2)
         half.append(abs(forward(exna_pp=RNPL_EXNA_ADR_PP_HIGH).loc[q, "exfx_yoy"] - r.exfx_yoy) / 2)
         half.append(abs(r.geo_mix - CARD_TERMS["geo_mix"]) / 2)
         for k, key in (("unit_size", "unit_size"), ("los_mix", "los_mix"), ("seats", "seats"), ("interaction", "interaction")):

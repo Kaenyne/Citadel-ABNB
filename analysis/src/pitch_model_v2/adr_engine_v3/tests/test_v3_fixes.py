@@ -97,3 +97,10 @@ def test_subregional_row_adds_only_the_change_from_2q26():
     term = pd.read_csv(C.OUT / "geomix_subregional_term.csv").set_index("quarter").subgeo_pp
     fwd = pd.read_csv(C.OUT / "geomix_subregional_term_forward.csv").set_index("quarter").subgeo_pp
     assert abs((sub - base) - (fwd["4Q26"] - term["2Q26"])) < 1e-9 and -0.06 < sub - base < -0.03
+
+
+# ---- fix (f): bundle band from management's rounding -----------------------------------------------------------------
+def test_bundle_band_is_half_a_point_either_side_in_4q26():
+    e = pd.read_csv(C.OUT / "exfx_envelope.csv", index_col=0)
+    bundle_half = float(e.loc["4Q26", "halfwidths"].split("=")[1].split("|")[1])
+    assert abs(bundle_half - 0.5) < 1e-6
