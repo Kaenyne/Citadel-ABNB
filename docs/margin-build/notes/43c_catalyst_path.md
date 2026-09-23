@@ -264,3 +264,10 @@ list and the four kill criteria in §3 *before* reading the print reaction, and 
 and neutral for the cost leg); (3) if 43a/43b/43d produce a cost-flex elasticity or a hosting schedule, re-run the tree with their branch
 revisions in place of the −100/−50/0/+50 assumptions; (4) the 10-K S&M split (brand+performance $1,595M / field $993M, FY25) should
 replace the line build's $781M field figure if that was cash ex-SBC — check `40_params.csv` before quoting either.
+
+## Erratum (23 Sep 2026, Codex check `audit/CODEX_THESIS3_TEXT_CHECK.md`)
+
+- The E-2023 code takes `min` over peers while labelling it the least-decelerating peer, and the two-year stacked condition was
+  computable (−31pp) though pandemic-confounded. The verdict (FAIL: no evidence the 2023 cut cost nights relative to peers) is unchanged.
+- One brand-phasing episode cannot establish that trimming 2026's paid growth spend would be cheap in nights; memo text should make no
+  claim either way.

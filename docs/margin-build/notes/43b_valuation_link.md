@@ -211,3 +211,13 @@ re-anchors) and after the September Inside Airbnb dumps move the official revenu
 `final_income_statement.md`). Two open choices for Theo: (i) spot-anchored versus DEC-0014-literal multiple line ($4-5 on every row);
 (ii) which cost path is the base for the memo's Point 3 (line build 11.1% gives $143.6; history 12.6% gives $140.1). On 5 Nov the 3Q26 cost
 print against the Street's $2,383m (41's live call) is the first test of the cost PERT's mode.
+
+## Erratum (23 Sep 2026, Codex check `audit/CODEX_THESIS3_TEXT_CHECK.md`)
+
+- "Each point of revenue growth = $1.5 via EBITDA" is wrong: at the final multiple it is ~$3.4 a share with fixed costs and ~$2.6 with the
+  0.364 flex (the $4.3 via the multiple stands).
+- Jessie's simulation does link growth and the multiple, through its 0.5 Gaussian copula (reproduced correlation 0.497); the difference
+  is that the link is generic, not the cost mechanism. The updated median is $158.5 with revenue centred on the Street.
+- The thesis-3 share is order-dependent: $5.82 (25%) revenue first, $3.43 (15%) costs first, $4.62 (20%) order average. Step (c)
+  includes $37M from the line build's higher FY26 cost base.
+- The 0.49 slope is estimated on changes in the trailing EV/LTM EBITDA multiple; applying it to the forward multiple is an assumption.

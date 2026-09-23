@@ -265,3 +265,12 @@ and re-run — the live question Thesis 3 poses is whether 3Q26 marketing grows 
 S&M (a print above the +25% the line build carries would extend the 1H26 step, below +15% would mean management is already flexing);
 (3) do not re-run Jessie's levels regression on a longer window and quote it — every extension makes the trend ratio, not an elasticity;
 (4) 43b/43c/43d are the other three legs of the same Thesis 3 pass and were written in parallel; reconcile the memo wording once.
+
+## Erratum (23 Sep 2026, Codex check `audit/CODEX_THESIS3_TEXT_CHECK.md`)
+
+- The streak is **nine** consecutive quarters (2Q24-2Q26), not ten: 1Q24 S&M grew 13.5% against revenue 17.8%. The counts 11 of 14
+  (since 1Q23) and 9 of 10 (since 1Q24) stand. FY23 S&M growth (16.5%) was below revenue growth (18.1%), so "for three years" is wrong.
+- "12-17% a year at zero revenue growth" is an exponentiated regression intercept; revenue growth never fell below 6.1% in either window
+  (W2 interval about −3.5% to +29.7%). Quote it only as an extrapolation.
+- The incremental revenue per incremental S&M dollar is a ratio of increments that assigns all incremental revenue to S&M; it is not a
+  marketing return. The last point is a half-year comparison.
