@@ -67,3 +67,22 @@ def test_switch_off_reproduces_v2():
         assert abs(X.forward().loc["4Q26", "exfx_yoy"] - 2.784074164) < 1e-6
     finally:
         X.CONSTRUCTION_FIX = True
+
+
+# ---- fix (d): the downside rows on the core's own statistics ---------------------------------------------------------
+def test_mean_reversion_uses_the_cores_own_mean():
+    from pitch_model_v2.adr_engine_v3 import exfx as X
+    assert abs(X.core_mean_2023_25() - 2.272) < 0.001
+
+
+def test_ar1_is_fitted_on_the_core():
+    from pitch_model_v2.adr_engine_v3 import exfx as X
+    const, rho = X.core_ar1()
+    assert abs(rho - 0.465) < 0.005 and abs(const / (1 - rho) - 2.411) < 0.01
+
+
+def test_downside_rows_moved_down_and_ar1_now_below_the_street():
+    s = pd.read_csv(C.OUT / "adr_scenarios.csv")
+    q = s[s.quarter == "4Q26"].set_index("rule").adr_usd
+    assert q["core mean reversion to the 2023-25 mean"] < 170.45
+    assert q["AR(1) fitted on core"] < C.STREET_ADR["4Q26"][0]

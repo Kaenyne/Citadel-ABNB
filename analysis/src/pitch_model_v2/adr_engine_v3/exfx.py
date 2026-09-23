@@ -19,7 +19,7 @@ SPLIT_RNPL_NA = STEP_3Q25 / (STEP_3Q25 + STEP_4Q25)                     # 0.511 
 RNPL_EXNA_ADR_PP_BASE, RNPL_EXNA_ADR_PP_HIGH = 0.0, 0.68 + 0.47       # base: unsized by management (1Q26 "~1" did not rise); high: the 1H26 residual steps
 PHASE_1Q26_EXNA = 0.5          # ex-NA RNPL live 17 Feb 2026: about half of 1Q26
 PHASE_1Q27_LAP = 0.40          # nights line convention (phase_1q27)
-CORE_MEAN_2023_25 = 2.398      # K4 mean-reversion floor (2023-25 mean of the residual)
+CORE_MEAN_2023_25 = 2.398      # v2 value: the 2023-25 mean of the RESIDUAL, not the core. Superseded by core_mean_2023_25() (audit fix d)
 
 # ---- the nights line's regional path (nights_v2_design.md §2.1 / §2a), used for the geo-mix term -----------------
 NIGHTS_LINE = pd.DataFrame({
@@ -161,11 +161,12 @@ def forward(core_rule="carry", geo_basis="nights_linked", bundle_total=BUNDLE_AD
     hist["bundle"] = [b.loc[q, "bundle_total"] for q in hist.index]; hist["core"] = hist.residual - hist.bundle
     gm = geo_mix_forward(); terms = terms or CARD_TERMS
     core_last = float(hist.core.iloc[-1])
-    rho, const = 0.747, 0.750                     # K4's AR(1) on the residual (rho .747, const .750), applied to core
+    const, rho = core_ar1()                       # audit fix (d): fitted on the core (v2: K4's residual AR(1) .750 / .747)
+    core_mean = core_mean_2023_25()               # audit fix (d): the core's own 2023-25 mean (v2: the residual's 2.398)
     rows = []; prev_core = core_last
     for i, q in enumerate(C.FORWARD_QUARTERS):
         if core_rule == "carry": core = core_last
-        elif core_rule == "mean_reversion": core = CORE_MEAN_2023_25
+        elif core_rule == "mean_reversion": core = core_mean
         elif core_rule == "ar1": core = const + rho * prev_core; prev_core = core
         else: raise ValueError(core_rule)
         geo = float(gm.loc[q, "geo_mix_nights_linked_pp"]) if geo_basis == "nights_linked" else terms["geo_mix"]
@@ -226,7 +227,7 @@ def alternatives() -> pd.DataFrame:
         "card v3: last_q residual carry, no lap (card geo)": forward(bundle_total=0.0, geo_basis="card"),
         "full lap: ex-NA RNPL sized at the 1H26 residual steps": forward(exna_pp=RNPL_EXNA_ADR_PP_HIGH),
         "core mean reversion to the 2023-25 mean": forward(core_rule="mean_reversion"),
-        "AR(1) on core (K4 rho 0.747)": forward(core_rule="ar1"),
+        "AR(1) fitted on core": forward(core_rule="ar1"),
         "base + fee-migration K line (DEC-0008 sensitivity)": forward(fee_k=True),
     }
     rows = []
@@ -238,6 +239,26 @@ def alternatives() -> pd.DataFrame:
     for _, r in k4.iterrows():
         rows.append({"rule": "K4: " + r.scenario, "quarter": r.quarter, "residual_pp": r.residual_pp, "exfx_yoy_pct": np.nan, "geo_mix_pp": np.nan})
     return pd.DataFrame(rows)
+
+
+# ---- audit fix (d): the downside rows on the core's own statistics ---------------------------------------------------
+CORE_FIX = True                # False reproduces the v2 rows (residual mean 2.398; K4's residual AR(1) 0.750 / 0.747)
+YEARS_2023_25 = ["1Q23", "2Q23", "3Q23", "4Q23", "1Q24", "2Q24", "3Q24", "4Q24", "1Q25", "2Q25", "3Q25", "4Q25"]
+
+
+def core_mean_2023_25() -> float:
+    """The core's own 2023-25 mean (2.272), not the residual's (2.398): the residual includes the bundle in 3Q25-4Q25."""
+    return float(history().core.loc[YEARS_2023_25].mean()) if CORE_FIX else CORE_MEAN_2023_25
+
+
+def core_ar1() -> tuple[float, float]:
+    """(const, rho) of an AR(1) fitted by OLS on the core itself, 1Q23-2Q26 (13 pairs). v2 used K4's residual AR(1)
+    (const 0.750, rho 0.747), whose implied mean 2.96 is the residual's, not the core's."""
+    if not CORE_FIX:
+        return 0.750, 0.747
+    c = history().core.to_numpy()
+    rho, const = np.polyfit(c[:-1], c[1:], 1)
+    return float(const), float(rho)
 
 
 def construction_cases() -> pd.DataFrame:
