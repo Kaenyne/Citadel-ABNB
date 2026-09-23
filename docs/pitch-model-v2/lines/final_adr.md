@@ -386,8 +386,14 @@ minus regional accommodation inflation on our within-region mix, with region fix
 |---|---:|---:|---|---:|
 | pooled, primary | **1.127** | 0.042 | 0.349 – 1.905 | 23 |
 
-The identity implies a slope of 1.0, and the data **cannot reject it** (p 0.73 against the null of 1). That is
-the good news, and it is real.
+The identity implies a slope of 1.0 and the point estimate sits near it, but **the regression cannot test it**
+(corrected 23 Sep after the audit, receipt `data/processed/pitch_model_v2/receipts/ADR_AUDIT/C4_pooled_reconciliation.md`).
+With four regions as clusters the cluster-robust p-values in the table are not valid: a fully enumerated
+wild-cluster bootstrap (Webb weights, 1,296 draws) gives p 0.89 against a slope of 0 and p 0.90 against 1. Of Latin
+America's slope of 1.375, 1.04 (76%) comes from the Brazil hotel-CPI comparator moving inversely with the mix term
+during a Brazilian stays boom (1Q25–2Q25), and only 0.36 from Airbnb's own disclosed ex-FX; with a neutral
+Latin-American comparator the pooled slope is 0.24. **The quarterly reconciliation is not established.** The annual
+reconciliation to the 10-K above stands, and it is the evidence for the between-region term.
 
 The bad news is equally real and is stated in the thesis: **one region carries it.**
 
@@ -569,7 +575,9 @@ corrected, the 2026 step sits on a flat base. We say so rather than banking the 
 
 **"Your reconciliation rests on Brazil."** Also correct. The pooled slope of 1.13 collapses to −0.30 without
 Latin America, whose comparator is Brazil alone at 24–33% coverage, and the EMEA-only reading flips sign on two
-more quarters. The right claim is "compatible with the identity", not "validated".
+more quarters. The right claim is "not established": with four clusters the regression has no valid p-value
+(wild-cluster bootstrap p 0.89), and three-quarters of the Latin-American slope is Brazil's hotel CPI rather than
+Airbnb's numbers. The annual 10-K reconciliation is the evidence that stands.
 
 **"The bundle is a transcript number."** Yes, and the search for a filed magnitude is now exhaustive across the
 FY25 10-K, two 10-Qs and both letters. Airbnb did not name RNPL in a filing until 2Q26.

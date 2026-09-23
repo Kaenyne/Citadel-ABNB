@@ -29,11 +29,11 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
 6. **The between-region term reconciles to the company's own accounting: annualised, ours is −1.10 / −1.33 / −1.67pp
    for 2023–25 against the 10-K's −1.08 / −1.24 / −1.58, within 0.02 to 0.09pp in each of three years from
    independent sources; pooled across the 23 disclosed constant-currency regional prints, the disclosed rate minus
-   regional accommodation inflation regresses on our within-region mix with a slope of 1.13 (cluster-by-region
-   p 0.04, 90% interval 0.35 to 1.91) and cannot reject the identity's 1.0 — but Latin America alone carries that
-   slope (1.38 there; −0.30 without it), and the earlier EMEA-only reading of 1.09 turns to −0.38 when two further
-   disclosed quarters are admitted, so the scale is compatible with the identity and not pinned down by anything
-   Airbnb has published.**
+   regional accommodation inflation regresses on our within-region mix with a slope of 1.13, but with four regional
+   clusters no valid p-value exists (wild-cluster bootstrap p 0.89), three-quarters of Latin America's slope is the
+   Brazil hotel-CPI comparator rather than Airbnb's own numbers (−0.30 without Latin America), and the earlier
+   EMEA-only reading of 1.09 turns to −0.38 when two further disclosed quarters are admitted, so the quarterly scale
+   is not established by anything Airbnb has published.**
 7. The composition story management tells is real in the data but flatter than its letters imply: on 53 million
    reviews, non-English-origin guests grew 81% against 40% for English on day-matched windows from 2024 to 2026
    (English share 62.9 → 56.8% on those windows, and on the quarterly series the y/y drop has been flat at about
@@ -87,8 +87,9 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
 - The sub-regional term is small and fading (−0.15pp), has no demonstrated forecast content (H2 failed), and the
   panel cannot see India, the Gulf or South-East Asia as destinations; the origin rotation is priced within
   markets (−0.35% a year) but from a single review vintage and a snapshot price.
-- The reconciliation evidence is real but carried by one region: the pooled slope of 1.13 rests on Latin America
-  (whose accommodation-CPI comparator is Brazil alone at 24–33% coverage); the EMEA-only slope is window-dependent
+- The quarterly reconciliation is not established: the pooled slope of 1.13 rests on Latin America, three-quarters of
+  whose slope is the Brazil hotel-CPI comparator (Brazil alone, 24–33% coverage), and with four clusters no valid
+  p-value exists (wild-cluster bootstrap p 0.89); the EMEA-only slope is window-dependent
   (1.09 on n 7, −0.38 on n 9); and the Eurostat-weighted and panel-weighted EMEA mix series correlate −0.30 quarter
   by quarter even though the sub-regional term moves 0.02pp between them.
 - Composition, measured as far as the data allow, does not put 4Q26 ADR below the Street; a short that needs that
