@@ -263,3 +263,32 @@ is actually true:
 
 A single whole-point-rounded print can separate the identity from the euro fit, but not reliably from V1 or the
 fx_lag_v2 basket (+0.44). That is stated now so it is not discovered on 5 Nov.
+
+## 12. Dated addendum — 23 September 2026, before the 3Q26 print: if the owner adopts the midpoint as the leg
+
+Appended; nothing above is changed, and the V0 promotion result in §10 stands.
+
+**Context.** On 23 Sep the ADR owner proposed (DEC-0048) that the FX leg for 3Q26 and 4Q26 be the card's method:
+the midpoint of V0 and V2, refreshed on this engine's data. Scored point in time on this registration's own
+protocol, it has the lowest RMSE ratio in all four promotion cells (0.223 / 0.199 / 0.247 / 0.201, against V0's
+0.344 / 0.303 / 0.383 / 0.317; `adr_engine_v3/fx_scores.csv`). That comparison was run after the registration and is
+labelled as such. The registration's promotion rule governs whether the identity has skill; it does not oblige its
+adoption.
+
+**Falsifier for a midpoint leg.** A leg in the middle of the candidate range can never rank last, so §11's rule
+(withdraw only if worst) has no teeth for it. For the midpoint leg, scored with §11's likelihood L_c:
+
+- The named candidates are §11's four plus the refreshed midpoint (−0.406 at 21 Sep, recomputed at O3 before
+  scoring).
+- **The leg is withdrawn if the best candidate's L is at least 3× the leg's L.**
+
+Simulated before the print, the share of prints that would withdraw the leg, by which candidate is actually true:
+
+| true FX | withdrawn |
+|---|---:|
+| the midpoint's −0.41 | 0% |
+| V1's +0.03 | 14% |
+| the euro fit's −1.12 | 41% |
+| the identity's +0.42 | 53% |
+
+One rounded print gives this much power and no more; it is stated now so it is not discovered on 5 Nov.

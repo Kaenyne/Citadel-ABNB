@@ -18,27 +18,38 @@ from scipy import stats
 
 SIGMA = 0.44
 CANDIDATES_3Q26 = {"V0_identity": 0.415, "V1_fitted": 0.030, "card_midpoint": -0.43, "euro_fit": -1.12}   # named 21-23 Sep 2026
+# audit fix (j), named 23 Sep: the card-method midpoint refreshed on the engine's data ((V0 + V2) / 2), the proposed leg
+CANDIDATES_3Q26_J = CANDIDATES_3Q26 | {"midpoint_refreshed": -0.406}
 
 
 def interval_likelihood(mu: float, y: float, h: float = 0.5, sigma: float = SIGMA) -> float:
     return float(stats.norm.cdf((y + h - mu) / sigma) - stats.norm.cdf((y - h - mu) / sigma))
 
 
-def score_print(y: float, candidates: dict[str, float] | None = None, h: float = 0.5, sigma: float = SIGMA) -> dict:
-    """Score a printed ADR-FX pp against the named candidates and apply the amended rules."""
+def score_print(y: float, candidates: dict[str, float] | None = None, h: float = 0.5, sigma: float = SIGMA,
+                leg: str = "V0_identity") -> dict:
+    """Score a printed ADR-FX pp against the named candidates and apply the amended rules. `leg` is the candidate that
+    is the adopted FX leg (V0 under DEC-0034/0044; midpoint_refreshed under DEC-0048): it is withdrawn only if it
+    scores worst."""
     cands = candidates or CANDIDATES_3Q26
     t = pd.DataFrame({"candidate": list(cands), "point_pp": list(cands.values())})
     t["likelihood"] = [interval_likelihood(m, y, h, sigma) for m in t.point_pp]
     t = t.sort_values("likelihood", ascending=False).reset_index(drop=True)
     L = t.set_index("candidate").likelihood
     withdraw_v0 = bool(t.candidate.iloc[-1] == "V0_identity")
+    withdraw_leg = bool(t.candidate.iloc[-1] == leg)
+    # adr_fx_prereg.md section 12 (fix j): a leg in the middle of the candidate range can never rank last, so for the
+    # midpoint leg the rule is a likelihood ratio: withdraw if the best candidate explains the print >= 3x better.
+    withdraw_leg_ratio3 = bool(L.iloc[0] >= 3 * L[leg]) if leg in L.index else False
     promote_v1 = bool(t.candidate.iloc[0] == "V1_fitted" and L["V1_fitted"] >= 3 * L["V0_identity"])
-    return {"table": t, "withdraw_v0": withdraw_v0, "promote_v1": promote_v1}
+    return {"table": t, "withdraw_v0": withdraw_v0, "withdraw_leg": withdraw_leg, "withdraw_leg_ratio3": withdraw_leg_ratio3,
+            "promote_v1": promote_v1}
 
 
-def false_withdrawal_rate(true_fx: float, n: int = 20000, seed: int = 11, candidates: dict[str, float] | None = None) -> float:
-    """Share of simulated prints that withdraw V0 when true FX = true_fx (ex-FX uniform, rounded to a whole point)."""
+def false_withdrawal_rate(true_fx: float, n: int = 20000, seed: int = 11, candidates: dict[str, float] | None = None,
+                          leg: str = "V0_identity", rule: str = "withdraw_leg") -> float:
+    """Share of simulated prints that withdraw the leg when true FX = true_fx (ex-FX uniform, rounded to a whole point)."""
     rng = np.random.default_rng(seed)
     ex = rng.uniform(2.0, 5.0, n)
     printed = (ex + true_fx) - np.round(ex)
-    return float(np.mean([score_print(float(y), candidates)["withdraw_v0"] for y in printed]))
+    return float(np.mean([score_print(float(y), candidates, leg=leg)[rule] for y in printed]))

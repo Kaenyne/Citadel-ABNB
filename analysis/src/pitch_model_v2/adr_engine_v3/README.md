@@ -26,6 +26,7 @@ The corrections and their before/after numbers are in `docs/pitch-model-v2/lines
 | (e) sub-regional netting | `exfx.alternatives()` | `exfx.SUBGEO_NETTING = False` |
 | (f) bundle band | `exfx.BUNDLE_BAND` | set to (0.8, 1.2) |
 | (h) labels | `assemble.build()` `note`, `band_basis` | — |
+| (j) FX leg = card-method midpoint for 3Q26 and 4Q26 | `config.FX_LEG`, `config.FX_MIDPOINT_QUARTERS`; `walkforward.py` (`M_card_midpoint`); `forecast.py` (`fx_pp_point_mid`, `sd_mid`); `assemble.py` (`fx_pp_identity` alternative) | `config.FX_LEG = "identity"` |
 
 `compare_v2.py` writes `v3_vs_v2_path.csv` and `v3_vs_v2_ladder.csv` (every rule, 3Q26 and 4Q26, both FX legs).
 Tests: `tests/test_adr_engine.py` and `tests/test_geomix.py` (copied), `tests/test_v3_fixes.py` (one block per fix).

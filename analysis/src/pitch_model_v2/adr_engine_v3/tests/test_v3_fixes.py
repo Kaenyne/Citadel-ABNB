@@ -22,7 +22,7 @@ def test_v1_fits_latam_below_one_and_emea_above():
 
 def test_v1_puts_3q26_fx_below_the_identity():
     p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
-    assert p.loc["3Q26", "fx_pp_v1"] < p.loc["3Q26", "fx_pp"] - 0.2
+    assert p.loc["3Q26", "fx_pp_v1"] < p.loc["3Q26", "fx_pp_identity"] - 0.2      # fx_pp is the adopted leg since fix (j)
 
 
 def test_v0_error_rises_with_its_latam_component_in_every_promotion_cell():
@@ -111,3 +111,40 @@ def test_4q27_and_fy27_carry_the_artefact_label():
     p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
     assert "artefact" in p.loc["4Q27", "note"] and "artefact" in p.loc["FY27", "note"]
     assert p.loc["3Q26", "band_basis"].startswith("+/-1 sd")
+
+
+# ---- fix (j): the card-method midpoint as the FX leg ------------------------------------------------------------------
+def test_midpoint_beats_identity_and_euro_fit_in_every_promotion_cell():
+    sc = pd.read_csv(C.OUT / "fx_scores.csv")
+    cell = sc[sc.origin.isin(["O2", "O3"])].pivot_table(index=["window", "origin"], columns="variant", values="ratio_vs_naive")
+    assert (cell.M_card_midpoint < cell.V0_translation).all() and (cell.M_card_midpoint < cell.V2_eur_ols).all()
+
+
+def test_path_uses_the_midpoint_leg_and_keeps_the_identity_beside_it():
+    p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
+    assert (p.loc[["3Q26", "4Q26"], "fx_leg"] == "midpoint").all()
+    assert abs(p.loc["3Q26", "adr_usd_fx_identity"] - 177.588) < 0.01 and abs(p.loc["4Q26", "adr_usd_fx_identity"] - 172.943) < 0.01
+    assert p.loc["3Q26", "adr_usd"] < p.loc["3Q26", "adr_usd_fx_v1"] < p.loc["3Q26", "adr_usd_fx_identity"]
+
+
+def test_identity_switch_reproduces_the_previous_leg():
+    from pitch_model_v2.adr_engine_v3 import assemble as A
+    C.FX_LEG = "identity"
+    try:
+        p = A.build()
+        assert abs(p.loc["3Q26", "adr_usd"] - 177.588) < 0.01 and abs(p.loc["4Q26", "adr_usd"] - 172.943) < 0.01
+    finally:
+        C.FX_LEG = "midpoint"
+
+
+def test_falsifier_rarely_withdraws_a_correct_midpoint_leg():
+    from pitch_model_v2.adr_engine_v3 import fx_falsifier as FF
+    kw = dict(n=4000, candidates=FF.CANDIDATES_3Q26_J, leg="midpoint_refreshed", rule="withdraw_leg_ratio3")
+    assert FF.false_withdrawal_rate(-0.406, **kw) < 0.10          # a correct midpoint is rarely withdrawn
+    assert FF.false_withdrawal_rate(0.415, **kw) > 0.30           # and the rule has teeth if the identity is right
+
+
+def test_midpoint_is_confined_to_the_tested_horizon():
+    p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
+    assert (p.loc[["1Q27", "2Q27", "3Q27", "4Q27"], "fx_leg"] == "identity").all()
+    assert (p.loc[["1Q27", "2Q27"], "fx_pp"] == p.loc[["1Q27", "2Q27"], "fx_pp_identity"]).all()

@@ -17,6 +17,7 @@ import argparse, json, shutil, time, warnings
 import numpy as np
 import pandas as pd
 from . import config as C, fx_data as F, walkforward as W, forecast as X, exfx as M, assemble as A, figures as G
+from . import exposure as E
 from . import geomix as GX
 
 # ---- the geo-mix layer's frozen rules (adr_v2_geomix_prereg.md §2 H3; the four-region tilt of adr_v1_design.md) ----
@@ -223,14 +224,17 @@ def main(argv=None):
     # audit fix (a): the registered V1 variant beside V0 (V0 stays the leg), and V0's LatAm-conditional error
     from . import fx_diagnostics as D
     beta_v1 = D.fit_v1_all(full); pd.DataFrame([beta_v1]).to_csv(C.OUT / "fx_v1_map_beta_all17.csv", index=False)
-    fc = X.run(daily, shares, beta_v1={r: beta_v1[r] for r in C.REGIONS}); fc.to_csv(C.OUT / "fx_forecast_asof.csv", index=False)
+    a2, b2 = E.fit_ols(full.eur_yoy.values, full.y.values)                  # audit fix (j): V2 on every disclosed quarter
+    pd.DataFrame([{"intercept_pp": a2, "slope_per_eur_pct": b2, "n": len(full)}]).to_csv(C.OUT / "fx_v2_fit_all17.csv", index=False)
+    fc = X.run(daily, shares, beta_v1={r: beta_v1[r] for r in C.REGIONS}, v2_coef=(a2, b2)); fc.to_csv(C.OUT / "fx_forecast_asof.csv", index=False)
     fwd_latam = {q: F.design_row(daily, shares, q, None)["latam"] for q in ("3Q26", "4Q26")}
     D.v0_error_on_latam(wf, full, fwd_latam).to_csv(C.OUT / "fx_v0_error_on_latam.csv", index=False)
     D.latam_strong_quarters(full).to_csv(C.OUT / "fx_v0_latam_strong_quarters.csv")
     X.currency_table(daily).to_csv(C.OUT / "fx_currency_contributions.csv", index=False)
     if not a.no_posterior:
         from . import posterior; posterior.main()
-    sd = fc[fc["asof"] == "2026-09-21"].set_index("quarter").sd
+    _f = fc[fc["asof"] == "2026-09-21"].set_index("quarter")                  # the leg's own FX band, per quarter (fix j)
+    sd = pd.Series({q: float(_f.loc[q, "sd_mid" if (C.FX_LEG == "midpoint" and q in C.FX_MIDPOINT_QUARTERS) else "sd"]) for q in C.FORWARD_QUARTERS})
     M.history().to_csv(C.OUT / "exfx_history.csv"); M.forward().to_csv(C.OUT / "exfx_forward_base.csv")
     M.geo_mix_history_check().to_csv(C.OUT / "geo_mix_method_check.csv")
     M.regional_growth_forward().to_csv(C.OUT / "regional_growth_forward.csv"); M.geo_mix_forward().to_csv(C.OUT / "geo_mix_forward.csv")
@@ -245,7 +249,9 @@ def main(argv=None):
         print("workbook stage disabled in v3: model/ is protected (CLAUDE.md rule 1); use --no-workbook")
     meta = {"run_at": pd.Timestamp.now().isoformat(timespec="seconds"), "fx_last_obs": str(daily.index.max().date()), "promotion": promo,
             "adr_3q26": float(path.loc["3Q26", "adr_usd"]), "adr_4q26": float(path.loc["4Q26", "adr_usd"]),
+            "fx_leg": C.FX_LEG,
             "adr_3q26_fx_v1": float(path.loc["3Q26", "adr_usd_fx_v1"]), "adr_4q26_fx_v1": float(path.loc["4Q26", "adr_usd_fx_v1"]),
+            "adr_3q26_fx_identity": float(path.loc["3Q26", "adr_usd_fx_identity"]), "adr_4q26_fx_identity": float(path.loc["4Q26", "adr_usd_fx_identity"]),
             "fx_v1_beta_all17": beta_v1, "fx_3q26_pp": float(path.loc["3Q26", "fx_pp"]),
             "fx_4q26_pp": float(path.loc["4Q26", "fx_pp"]), "subgeo_4q26_pp": gm["subgeo_4q26_pp"],
             "geo_mix_tiltB_4q26_pp": gm["geo_mix_tiltB_4q26_pp"], "geomix": gm, "seconds": round(time.time() - t0, 1)}

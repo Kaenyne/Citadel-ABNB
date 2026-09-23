@@ -60,7 +60,7 @@ def fx_pp_from_avgs(cur: np.ndarray, base: np.ndarray, g: pd.Series, beta: dict 
     return total
 
 
-def run(daily=None, shares=None, beta_v1: dict | None = None) -> pd.DataFrame:
+def run(daily=None, shares=None, beta_v1: dict | None = None, v2_coef: tuple[float, float] | None = None) -> pd.DataFrame:
     daily = F.load_daily() if daily is None else daily
     shares = F.gbv_shares() if shares is None else shares
     g, fy = F.shares_at(shares, None)
@@ -92,6 +92,14 @@ def run(daily=None, shares=None, beta_v1: dict | None = None) -> pd.DataFrame:
                 rec[tag] = float(fx_pp_from_avgs(shifted.mean().values[None, :], bgrid.mean().values[None, :], g)[0])
             if beta_v1:
                 rec["fx_pp_point_v1"] = float(fx_pp_from_avgs(cur_sh, base_sh, g, beta_v1)[0])
+            if v2_coef:                              # audit fix (j): V2 euro-only OLS and the card-method midpoint
+                a2, b2 = v2_coef; iE = C.CCYS.index("EUR")
+                v2_pt = a2 + b2 * (cur_sh[0, iE] / base_sh[0, iE] - 1.0) * 100.0
+                v2_paths = a2 + b2 * (cur[:, iE] / base[:, iE] - 1.0) * 100.0
+                mid_paths = 0.5 * (pp + v2_paths)
+                rec.update({"fx_pp_point_v2": float(v2_pt), "fx_pp_point_mid": float(0.5 * (point + v2_pt)),
+                            "sd_mid": float(mid_paths.std()), "p10_mid": float(np.percentile(mid_paths, 10)),
+                            "p90_mid": float(np.percentile(mid_paths, 90))})
             rows.append(rec)
     return pd.DataFrame(rows)
 

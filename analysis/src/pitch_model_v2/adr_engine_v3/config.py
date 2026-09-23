@@ -24,6 +24,14 @@ FX_DAILY = OUT / "fx_daily_2026-09-21.csv"          # FRED refresh, this engine'
 FX_LAST_OBS = pd.Timestamp("2026-09-18")
 XLSX = ROOT / "model/ABNB_official_model.xlsx"      # never written by v3 (model/ is protected; the workbook stage is disabled)
 
+# audit fix (j): the FX leg. "midpoint" = (V0 identity + V2 euro-only OLS) / 2, the card's method (DEC-0027), which beats
+# every other variant point in time (fx_scores.csv); "identity" reproduces the v2 leg (V0).
+FX_LEG = "midpoint"
+# ... applied only where it has been tested: forecasts of the current or next quarter (origins O1-O3). For 2027 every
+# variant is an untested spot-held extrapolation, and V2's -0.57pp intercept (no translation content) would drag each
+# 2027 quarter ~0.28pp; those quarters keep the identity at held spot.
+FX_MIDPOINT_QUARTERS = ["3Q26", "4Q26"]
+
 H10_LAG_DAYS = 7          # H.10 publishes weekly with about a one-week lag (B4 §2 convention)
 TENK_LAG_DAYS = 7         # 10-K Geographic Mix table knowable 7 days after the 4Q letter print date
 BDAY_60 = 59              # "day 60" origin = first day of quarter + 59 days

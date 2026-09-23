@@ -46,6 +46,8 @@ def run(daily=None, shares=None, targets=None) -> tuple[pd.DataFrame, pd.DataFra
             preds = {"V0_translation": E.predict_v0(Xt), "V1_passthrough": E.predict_v1(Xt, m1["beta"]),
                      "V2_eur_ols": a2 + b2 * xt["eur_yoy"], "V3_usd_broad_ols": a3 + b3 * xt["usd_broad_yoy"],
                      "naive_last_disclosed": naive, "zero": 0.0}
+            # audit fix (j): the card's method, the average of the identity and the euro-only fit, scored point in time
+            preds["M_card_midpoint"] = 0.5 * (preds["V0_translation"] + preds["V2_eur_ols"])
             y, h = float(full.loc[q, "y"]), float(full.loc[q, "h"])
             for v, p in preds.items():
                 err = p - y

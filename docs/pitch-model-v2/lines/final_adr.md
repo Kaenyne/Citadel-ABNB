@@ -160,6 +160,13 @@ It is not the leg for three reasons, and the first is the one that counts:
    real or the Australian dollar; those three contribute **+1.08pp of the +0.42pp** 3Q26 effect and +0.92pp of
    the +0.51pp in 4Q26. 3Q26 is their quarter, not the euro's.
 
+**Update, 23 Sep (ADR owner; `adr_v3_corrections.md` fix j).** Scored point in time on this engine's own walk-forward,
+the card's method, the midpoint of V0 and V2, beats every variant in all four promotion cells (0.223 / 0.199 / 0.247
+/ 0.201 against V0's 0.344 / 0.303 / 0.383 / 0.317): the identity's LatAm over-prediction and the euro fit's
+under-prediction partly cancel. The registration's promotion result stands, but the proposed v3 leg for 3Q26 and 4Q26
+is the midpoint (DEC-0048), with the identity and V1 as labelled alternatives. That comparison was run after the
+registration and is labelled so.
+
 This is not a footnote for the thesis, it is a live disagreement with the committed card: the card's FX leg of
 −0.43pp is the midpoint of a euro-only fit and a basket, so **it inherits the −0.3pp euro bias**. The 5 November
 print adjudicates between four numbers named in advance (§7.1).

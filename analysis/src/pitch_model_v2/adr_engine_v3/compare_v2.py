@@ -13,7 +13,8 @@ def main() -> dict[str, pd.DataFrame]:
     a = v2s[v2s.quarter.isin(keep)].pivot(index="rule", columns="quarter", values="adr_usd").add_prefix("v2_")
     b = v3s[v3s.quarter.isin(keep)].pivot(index="rule", columns="quarter", values="adr_usd").add_prefix("v3_")
     c = v3s[v3s.quarter.isin(keep)].pivot(index="rule", columns="quarter", values="adr_usd_fx_v1").add_prefix("v3_fxV1_")
-    lad = a.join(b, how="outer").join(c, how="outer")
+    d = v3s[v3s.quarter.isin(keep)].pivot(index="rule", columns="quarter", values="adr_usd_fx_identity").add_prefix("v3_fxV0_")
+    lad = a.join(b, how="outer").join(c, how="outer").join(d, how="outer")
     for q in keep:
         lad[f"d_{q}"] = lad[f"v3_{q}"] - lad[f"v2_{q}"]
         lad[f"v3_vs_street_{q}"] = lad[f"v3_{q}"] - C.STREET_ADR[q][0]
@@ -21,10 +22,11 @@ def main() -> dict[str, pd.DataFrame]:
     p2 = pd.read_csv(C.SEED_FROM / "adr_path.csv", index_col=0); p3 = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
     rows = ["3Q26", "4Q26", "1Q27", "2Q27", "3Q27", "4Q27", "FY27"]
     path = pd.DataFrame({"v2_adr_usd": p2.loc[rows, "adr_usd"], "v3_adr_usd": p3.loc[rows, "adr_usd"],
-                         "v3_adr_usd_fx_v1": p3.loc[rows, "adr_usd_fx_v1"],
+                         "v3_adr_usd_fx_v1": p3.loc[rows, "adr_usd_fx_v1"], "v3_adr_usd_fx_identity": p3.loc[rows, "adr_usd_fx_identity"],
                          "v2_band_half_pp": p2.loc[rows, "band_half_pp"], "v3_band_half_pp": p3.loc[rows, "band_half_pp"],
                          "v2_p_ge_street": p2.loc[rows, "p_print_ge_street"], "v3_p_ge_street": p3.loc[rows, "p_print_ge_street"],
-                         "v3_p_ge_street_fx_v1": p3.loc[rows, "p_print_ge_street_fx_v1"]})
+                         "v3_p_ge_street_fx_v1": p3.loc[rows, "p_print_ge_street_fx_v1"],
+                         "v3_p_ge_street_fx_identity": p3.loc[rows, "p_print_ge_street_fx_identity"]})
     path["d_usd"] = path.v3_adr_usd - path.v2_adr_usd
     lad.to_csv(C.OUT / "v3_vs_v2_ladder.csv"); path.to_csv(C.OUT / "v3_vs_v2_path.csv")
     return {"ladder": lad, "path": path}
