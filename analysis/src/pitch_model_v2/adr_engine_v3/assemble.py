@@ -46,6 +46,11 @@ def build(fx_asof: str = "2026-09-21") -> pd.DataFrame:
     fy26_adr = (156.2 * 186.82 + 148.3 * 183.73 + 146.8 * d.loc["3Q26", "adr_usd"] + 131.8 * d.loc["4Q26", "adr_usd"]) / (156.2 + 148.3 + 146.8 + 131.8)
     d.loc["FY26", "adr_usd"] = fy26_adr; d.loc["FY26", "nights_m"] = 583.1; d.loc["FY26", "gbv_busd"] = (29.2 + 27.2 + d.loc["3Q26", "gbv_busd"] + d.loc["4Q26", "gbv_busd"])
     d.loc["FY27", "adr_yoy_reported_pct"] = (d.loc["FY27", "adr_usd"] / fy26_adr - 1) * 100
+    # audit fix (h): labels that must travel with the numbers
+    d["band_basis"] = ""; d.loc[C.FORWARD_QUARTERS, "band_basis"] = "+/-1 sd (~68%): RSS of parameter half-ranges and sds plus FX rate bootstrap sd"
+    d["note"] = ""
+    d.loc["4Q27", "note"] = "FX 0.000 is an artefact: 4Q27 and its base 4Q26 are both spot-held; the band is the content"
+    d.loc["FY27", "note"] = "contains 4Q27's spot-held FX artefact: ~$0.40 of FY27 ADR per 1pp of 4Q27 FX"
     return d
 
 

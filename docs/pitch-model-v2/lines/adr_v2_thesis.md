@@ -53,7 +53,8 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
    term by 0.02pp, so the conclusion does not rest on the scrape's footprint.**
 9. Putting the pieces together, 3Q26 ADR is $177.68 (+3.7%, band $176.01 to $179.36) on a Street of $177.06 and
    4Q26 is $173.03 (+3.3%, band $169.80 to $176.27) on a Street of $171.33, with the full composition case at
-   $172.79 to $173.19 and FY27 at $185.21 (+2.5%).
+   $172.79 to $173.19 and FY27 at $185.21 (+2.5%; it includes 4Q27 at a spot-held FX of exactly zero, an artefact
+   worth about $0.40 of FY27 ADR per point of 4Q27 FX).
 10. The defensible ADR claim is therefore shape, not level: ex-FX ADR decelerates by more than a point through
     4Q26 as the product effects lap and the incremental night keeps landing in $95–$159 regions, FX turns from a
     3–5pp tailwind to zero, and a below-Street 4Q26 ADR (mean reversion $170.60; lap-only lands on the Street at $171.71; the corrected ladder

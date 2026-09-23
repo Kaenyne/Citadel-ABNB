@@ -33,7 +33,7 @@ core host-pricing rate (3.85pp); the bundle's two legs lap on the nights line's 
 in 3Q26, cancellation redesign and single fee in 4Q26), geographic mix is computed from the nights line's own
 regional path and the 10-K regional ADR levels (it reproduces the H term within 0.13pp on 2Q24–2Q26), and the
 measured mix terms are carried as the card carries them. Base: **3Q26 $177.68 (+3.7%), 4Q26 $173.03 (+3.3%),
-FY27 $185.21 (+2.5%)**; Street (Bloomberg MODL, 12 Sep) $177.06 and $171.33; P(print ≥ Street) 65% and 70%.
+FY27 $185.21 (+2.5%; its 4Q27 FX is a spot-held 0.000 artefact)**; Street (Bloomberg MODL, 12 Sep) $177.06 and $171.33; P(print ≥ Street) 65% and 70%.
 The ADR line is therefore **on the Street in 3Q26 and 1.0% above it in 4Q26**, for two reasons the pitch can name:
 FX is positive not negative, and the bundle lap takes 0.5pp out in 3Q26 and 1.0pp out from 4Q26 — a
 deceleration in ex-FX ADR (3.3 → 2.8 → 2.4) that the Street's 4Q26 ADR (+2.3%) already more than prices.
@@ -541,7 +541,7 @@ listed under "core".
 | adr_total_usd | base | 2Q27 | 188.38 | USD | 183.73 times 1.02530; band 182.41 to 194.35 |
 | adr_total_usd | base | 3Q27 | 182.51 | USD | 177.68 times 1.02716 |
 | adr_total_usd | base | 4Q27 | 178.10 | USD | 173.03 times 1.02928 |
-| adr_total_usd | base | FY27 | 185.21 | USD | nights-weighted on the nights line; FY26 180.62; plus 2.54 pct |
+| adr_total_usd | base | FY27 | 185.21 | USD | nights-weighted on the nights line; FY26 180.62; plus 2.54 pct; contains the 4Q27 spot-held FX artefact |
 | adr_total_usd | card_v3_carry | 3Q26 | 178.32 | USD | residual carried, no lap, at the identity FX |
 | adr_total_usd | card_v3_carry | 4Q26 | 174.55 | USD | same |
 | adr_total_usd | core_mean_reversion | 3Q26 | 175.20 | USD | the named downside |

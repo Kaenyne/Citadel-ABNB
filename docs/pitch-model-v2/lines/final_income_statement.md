@@ -216,7 +216,9 @@ Q4 with it, 33.27 → 30.85 → 28.29. FY margin has compressed 174bp over two y
 | Diluted EPS $ | 2.75 | 0.71 | 0.17 | 1.24 | 3.19 | 0.76 |
 
 FY26 revenue $14,118M, adjusted EBITDA $4,948M, margin **35.05%**, EPS $5.07.
-FY27 $15,425M, $5,240M, **33.97%**, EPS $5.35, against a Street FY27 margin of 36.45%.
+FY27 $15,425M, $5,240M, **33.97%**, EPS $5.35, against a Street FY27 margin of 36.45%. FY27 revenue embeds 4Q27 ADR
+at a spot-held FX of exactly zero, an artefact of holding spot on both 4Q27 and its base quarter (ADR line §2.8);
+each 1pp of 4Q27 FX is about $0.40 of FY27 ADR (labelled 23 Sep).
 
 ---
 

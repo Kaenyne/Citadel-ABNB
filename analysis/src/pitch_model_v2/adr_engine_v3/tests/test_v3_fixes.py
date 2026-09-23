@@ -104,3 +104,10 @@ def test_bundle_band_is_half_a_point_either_side_in_4q26():
     e = pd.read_csv(C.OUT / "exfx_envelope.csv", index_col=0)
     bundle_half = float(e.loc["4Q26", "halfwidths"].split("=")[1].split("|")[1])
     assert abs(bundle_half - 0.5) < 1e-6
+
+
+# ---- fix (h): labels travel with the numbers -------------------------------------------------------------------------
+def test_4q27_and_fy27_carry_the_artefact_label():
+    p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
+    assert "artefact" in p.loc["4Q27", "note"] and "artefact" in p.loc["FY27", "note"]
+    assert p.loc["3Q26", "band_basis"].startswith("+/-1 sd")

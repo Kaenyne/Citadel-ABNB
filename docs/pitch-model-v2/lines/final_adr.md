@@ -494,9 +494,9 @@ the origin rotation alone costs about **−0.35% a year** of the price of the li
 | 1Q27 | $190.65 | +2.05% | 2.417 | −0.369 | 185.52 – 195.77 | none | | |
 | 2Q27 | $188.38 | +2.53% | 2.957 | −0.427 | 182.41 – 194.35 | none | | |
 | 3Q27 | $182.51 | +2.72% | 2.863 | −0.147 | 175.83 – 189.18 | none | | |
-| 4Q27 | $178.10 | +2.93% | 2.928 | 0.000 | 171.35 – 184.85 | none | | |
+| 4Q27 | $178.10 | +2.93% | 2.928 | 0.000† | 171.35 – 184.85 | none | | |
 | **FY26** | **$180.62** | | | | | | | |
-| **FY27** | **$185.21** | +2.54% | | | | none exists | | |
+| **FY27** | **$185.21**† | +2.54% | | | | none exists | | |
 
 GBV on the nights line: $26.08bn (3Q26), $22.81bn (4Q26), FY26 $105.29bn, FY27 $115.17bn.
 
@@ -504,6 +504,12 @@ Three mechanical warnings, all real:
 
 1. **4Q27's FX of 0.000 is an artefact** of both quarters being spot-held (§2.8).
 2. **3Q27 and 4Q27 chain on our own 3Q26 and 4Q26**, so any 5 November revision propagates forward.
+† **4Q27's FX of 0.000 is a spot-held artefact, and FY27 contains it** (labelled 23 Sep): 4Q27 is 22.5% of FY27
+nights, so each 1pp of 4Q27 FX moves FY27 ADR by about $0.40; against the 4Q27 FX P10–P90 of −4.3 to +5.1pp that
+is ±$1.7–2.0 of FY27 ADR inside one "exactly zero" cell. **The band is ±1σ (about 68%)**: the half-width is an RSS of
+parameter half-ranges and standard deviations plus the FX rate bootstrap sd, and it is used as one sd for
+P(print ≥ Street).
+
 3. **The band widens fast** — ±0.98pp in 3Q26 to ±3.90pp in 4Q27, almost all of it FX. A 2027 ADR is a
    statement about ex-FX shape plus a currency view, and the pitch must present it that way.
 
@@ -680,7 +686,7 @@ is the carry, the laps and the FX identity.
 | adr_total_usd | base | 3Q27 | 182.51 | USD | ex-FX 2.863, FX −0.147 |
 | adr_total_usd | base | 4Q27 | 178.10 | USD | ex-FX 2.928, FX 0.000 (artefact) |
 | adr_total_usd | base | FY26 | 180.62 | USD | nights-weighted |
-| adr_total_usd | base | FY27 | 185.21 | USD | nights-weighted, 621.85m nights |
+| adr_total_usd | base | FY27 | 185.21 | USD | nights-weighted, 621.85m nights; contains the 4Q27 spot-held FX artefact (~$0.40 of FY27 ADR per 1pp of 4Q27 FX) |
 | adr_yoy_reported_pct | base | FY27 | 2.544 | pct | |
 | adr_total_usd | street | 3Q26 | 177.06 | USD | MODL 12 Sep 2026, n 26 |
 | adr_total_usd | street | 4Q26 | 171.33 | USD | MODL 12 Sep 2026, n 25 |
