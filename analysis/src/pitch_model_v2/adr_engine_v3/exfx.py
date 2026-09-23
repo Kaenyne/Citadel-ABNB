@@ -202,9 +202,16 @@ def alternatives() -> pd.DataFrame:
     subf = pd.read_csv(C.OUT / "geomix_subregional_term_forward.csv").set_index("quarter").subgeo_pp if (C.OUT / "geomix_subregional_term_forward.csv").exists() else None
     tilt = pd.read_csv(C.OUT / "geo_mix_tilt_sensitivity.csv") if (C.OUT / "geo_mix_tilt_sensitivity.csv").exists() else None
     comp = base.copy()
+    # audit fix (e): the carried 2Q26 core already contains 2Q26's sub-regional term (the residual is ex-FX minus the
+    # four-region terms only), so the scenario adds the CHANGE from 2Q26, not the level. Read by label, never by position
+    # (geomix_subregional_term.csv carries a partial quarter-to-date row after 2Q26).
+    sub_2q26 = 0.0
+    if SUBGEO_NETTING and (C.OUT / "geomix_subregional_term.csv").exists():
+        sub_2q26 = float(pd.read_csv(C.OUT / "geomix_subregional_term.csv").set_index("quarter").subgeo_pp.loc["2Q26"])
     if subf is not None:
         for q in comp.index:
-            comp.loc[q, "geo_mix"] = comp.loc[q, "geo_mix"] + float(subf.get(q, 0.0)); comp.loc[q, "exfx_yoy"] = comp.loc[q, "exfx_yoy"] + float(subf.get(q, 0.0))
+            inc = float(subf.get(q, 0.0)) - sub_2q26
+            comp.loc[q, "geo_mix"] = comp.loc[q, "geo_mix"] + inc; comp.loc[q, "exfx_yoy"] = comp.loc[q, "exfx_yoy"] + inc
     tiltb = comp.copy()
     if tilt is not None:
         tb = tilt[tilt.pattern.str.startswith("tilt B")].set_index("quarter").geo_mix_pp; tbase = tilt[tilt.pattern.str.startswith("base")].set_index("quarter").geo_mix_pp
@@ -239,6 +246,9 @@ def alternatives() -> pd.DataFrame:
     for _, r in k4.iterrows():
         rows.append({"rule": "K4: " + r.scenario, "quarter": r.quarter, "residual_pp": r.residual_pp, "exfx_yoy_pct": np.nan, "geo_mix_pp": np.nan})
     return pd.DataFrame(rows)
+
+
+SUBGEO_NETTING = True          # audit fix (e); False reproduces v2's double count
 
 
 # ---- audit fix (d): the downside rows on the core's own statistics ---------------------------------------------------

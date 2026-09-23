@@ -86,3 +86,14 @@ def test_downside_rows_moved_down_and_ar1_now_below_the_street():
     q = s[s.quarter == "4Q26"].set_index("rule").adr_usd
     assert q["core mean reversion to the 2023-25 mean"] < 170.45
     assert q["AR(1) fitted on core"] < C.STREET_ADR["4Q26"][0]
+
+
+# ---- fix (e): the sub-regional scenario adds the change from 2Q26 ----------------------------------------------------
+def test_subregional_row_adds_only_the_change_from_2q26():
+    s = pd.read_csv(C.OUT / "adr_scenarios.csv")
+    q = s[s.quarter == "4Q26"].set_index("rule")
+    base = q.loc["base: core carry + bundle laps (nights-linked geo)", "exfx_pct"]
+    sub = q.loc["base + sub-regional country mix (v2 H3, Inside Airbnb panel)", "exfx_pct"]
+    term = pd.read_csv(C.OUT / "geomix_subregional_term.csv").set_index("quarter").subgeo_pp
+    fwd = pd.read_csv(C.OUT / "geomix_subregional_term_forward.csv").set_index("quarter").subgeo_pp
+    assert abs((sub - base) - (fwd["4Q26"] - term["2Q26"])) < 1e-9 and -0.06 < sub - base < -0.03
