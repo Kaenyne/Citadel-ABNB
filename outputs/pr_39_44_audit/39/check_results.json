@@ -1,0 +1,22 @@
+{
+  "materiality": {
+    "thresholds": 10,
+    "scenarios": 48,
+    "all_values_match_committed": true,
+    "source_hash_matches_after_CRLF_reconstruction": true,
+    "source_hash_note": "Connector/apply_patch copied text with LF and an extra trailing newline; original saved fingerprint matches CRLF representation exactly."
+  },
+  "pilot_self_test": "passed",
+  "missing_date_run_boundary": "passed",
+  "pilot_report": {
+    "regenerated": true,
+    "identical_except_trailing_newline": true,
+    "manifest_url_size_checks": 15
+  },
+  "calendar_vintage_counts_after_PR41": {
+    "austin": 20,
+    "rome": 22,
+    "sydney": 6
+  },
+  "extra_vintage_failure": "Expected five vintages for austin"
+}

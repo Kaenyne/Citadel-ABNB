@@ -1,0 +1,454 @@
+{
+  "status": "illustrative materiality thresholds; no exposure or hazard is estimated",
+  "units": "nights in millions; growth and probability changes in percentage points",
+  "denominator_source": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526337928/d70413dex991.htm",
+  "local_validation_source": "data\\processed\\overnight\\02_kpi_panel_quarterly.csv",
+  "local_source_sha256": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+  "definitions": {
+    "haircut": "reduction versus an existing reported-net-nights forecast with prior-year denominator fixed",
+    "exposure": "unique RNPL nights still live at a specified forecast date; hypothetical",
+    "hazard": "revision versus forecast to conditional probability of cancellation during target quarter, not lifetime rate",
+    "rebooking": "incremental net nights from replacement bookings recognized in the same quarter; excludes later-quarter offsets",
+    "scope": "opening-backlog sensitivity only; future booking flow, its cancellations, product uplift and pull-forward modeled separately",
+    "identification": "does not prove RNPL causality; comparison to a no-RNPL counterfactual requires modeling both years"
+  },
+  "thresholds": [
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 0.5,
+      "net_lost_nights_m": 0.6679999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.5,
+      "net_lost_nights_m": 2.0039999999999996
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 3.0,
+      "net_lost_nights_m": 4.007999999999999
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 0.5,
+      "net_lost_nights_m": 0.6095
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.5,
+      "net_lost_nights_m": 1.8285000000000002
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 3.0,
+      "net_lost_nights_m": 3.6570000000000005
+    }
+  ],
+  "required_hazards": [
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 13.36,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 17.813333333333333,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 26.72,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 6.68,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 8.906666666666666,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 13.36,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 3.34,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 4.453333333333333,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 6.68,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 2.2266666666666666,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 2.9688888888888885,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 4.453333333333333,
+      "net_lost_nights_m": 1.3359999999999999
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 26.72,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 35.626666666666665,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 53.44,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 13.36,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 17.813333333333333,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 26.72,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 6.68,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 8.906666666666666,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 13.36,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 4.453333333333333,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 5.937777777777777,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q3",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 8.906666666666666,
+      "net_lost_nights_m": 2.6719999999999997
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 12.190000000000001,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 16.253333333333337,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 24.380000000000003,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 6.095000000000001,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 8.126666666666669,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 12.190000000000001,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 3.0475000000000003,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 4.063333333333334,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 6.095000000000001,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 2.0316666666666667,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 2.708888888888889,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 1.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 4.0633333333333335,
+      "net_lost_nights_m": 1.219
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 24.380000000000003,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 32.506666666666675,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 10.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 48.760000000000005,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 12.190000000000001,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 16.253333333333337,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 20.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 24.380000000000003,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 6.095000000000001,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 8.126666666666669,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 40.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 12.190000000000001,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.0,
+      "required_incremental_quarter_cancellation_probability_pp": 4.0633333333333335,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.25,
+      "required_incremental_quarter_cancellation_probability_pp": 5.417777777777778,
+      "net_lost_nights_m": 2.438
+    },
+    {
+      "quarter": "2026Q4",
+      "haircut_pp": 2.0,
+      "live_rnpl_nights_m_assumed": 60.0,
+      "incremental_same_quarter_net_rebooking_offset_assumed": 0.5,
+      "required_incremental_quarter_cancellation_probability_pp": 8.126666666666667,
+      "net_lost_nights_m": 2.438
+    }
+  ]
+}
+
