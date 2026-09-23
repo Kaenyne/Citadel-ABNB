@@ -7,7 +7,8 @@ and its tracked outputs are untouched. Numbers: `data/processed/pitch_model_v2/a
 
 ```bash
 PYTHONPATH=analysis/src py -3.13 -m pitch_model_v2.adr_engine_v3.run --no-posterior --no-workbook --no-refresh-prices   # exit 0
-PYTHONPATH=analysis/src py -3.13 -m pytest analysis/src/pitch_model_v2/adr_engine_v3/tests -q                           # 48 pass
+PYTHONPATH=analysis/src py -3.13 -m pitch_model_v2.los_nowcast.run --workers 3                                          # fix (k) input, exit 0
+PYTHONPATH=analysis/src py -3.13 -m pytest analysis/src/pitch_model_v2/adr_engine_v3/tests analysis/src/pitch_model_v2/los_nowcast/tests -q   # 55 pass
 ```
 
 ## 1. The line after the corrections
@@ -16,43 +17,56 @@ The recommended FX leg is the card-method midpoint: the average of the V0 identi
 for 3Q26 and 4Q26 only (fix j). The identity (v2's leg) and the registered fitted variant V1 are shown as labelled
 alternatives.
 
+Fixes (k) and (l) were added later on 23 Sep:
+- **(k)** LOS is measured, not carried;
+- **(l)** the World Cup premium is taken out of the carried core.
+
+The note is `los_nowcast.md`. The table shows the line with all fixes.
+
 | | v2 as filed | **v3 (midpoint FX)** | v3, identity FX | v3, V1 FX | Street |
 |---|---:|---:|---:|---:|---:|
 | 3Q26 FX (pp) | +0.42 | **−0.41** | +0.42 | +0.03 | |
-| 3Q26 ADR | $177.68 | **$176.18** | $177.59 | $176.93 | $177.06 |
-| 3Q26 P(print ≥ Street) | 0.645 | **0.305** | 0.620 | 0.469 | |
+| 3Q26 ADR | $177.68 | **$175.66** | $177.07 | $176.41 | $177.06 |
+| 3Q26 P(print ≥ Street) | 0.645 | **0.207** | 0.502 | 0.352 | |
 | 4Q26 FX (pp) | +0.51 | **−0.37** | +0.51 | +0.28 | |
-| 4Q26 ADR | $173.03 | **$171.46** | $172.94 | $172.56 | $171.33 |
-| 4Q26 P(print ≥ Street) | 0.701 | **0.517** | 0.694 | 0.650 | |
-| FY27 ADR | $185.21 | **$184.36** | $185.07 | | none exists |
-| half-band 3Q26 / 4Q26 (±1σ) | 0.978 / 1.932pp | 1.005 / 1.895pp | 1.005 / 1.985pp | | |
+| 4Q26 ADR | $173.03 | **$170.96** | $172.44 | $172.05 | $171.33 |
+| 4Q26 P(print ≥ Street) | 0.701 | **0.453** | 0.636 | 0.590 | |
+| FY27 ADR | $185.21 | **$184.00** | | | none exists |
+| half-band 3Q26 / 4Q26 (±1σ) | 0.978 / 1.932pp | 0.999 / 1.892pp | | | |
+
+Through fix (j) only, the line read 3Q26 $176.18 (P 0.31) and 4Q26 $171.46 (P 0.52). Fix (k) takes about $0.43 off
+each quarter, and fix (l) about $0.09 (`los_wc_ladder.csv`).
 
 **What this means for the pitch.**
 
-- **3Q26 ADR is more likely below the Street than above it** on the best-tested FX estimate ($176.18, P 0.31).
-  The three FX estimates span $176.2–$177.6 around a Street of $177.06.
-- **4Q26 sits on the Street** on the recommended leg ($171.46, P 0.52), and $1.2–$1.6 above it on the identity
-  or V1.
+- **3Q26 ADR is likely below the Street** on the best-tested FX estimate ($175.66, P 0.21). The three FX
+  estimates span $175.7–$177.1 around a Street of $177.06.
+- **4Q26 sits $0.37 below the Street** on the recommended leg ($170.96, P 0.45), and $0.7–$1.1 above it on the
+  identity or V1.
 - **The FX estimate is now the largest single swing in the ADR line.** The 5 Nov print is the test.
 
-**The 4Q26 ladder.** 4Q26 ADR under each rule:
+**The 4Q26 ladder.** 4Q26 ADR under each rule, with all fixes:
 
 | rule | v3 (midpoint FX) | identity FX | V1 FX | vs Street (v3) |
 |---|---:|---:|---:|---:|
-| core mean reversion (to the core's own mean) | $168.82 | $170.30 | $169.91 | −$2.51 |
-| AR(1) fitted on the core | $169.58 | $171.05 | $170.67 | −$1.75 |
-| lap-only (every 2025–26 step laps) | $170.13 | $171.61 | $171.23 | −$1.20 |
-| tilt B (retired) | $170.78 | $172.25 | $171.87 | −$0.55 |
-| sub-regional country mix (netted) | $171.39 | $172.86 | $172.48 | +$0.06 |
-| **base** | **$171.46** | **$172.94** | **$172.56** | **+$0.13** |
-| measured origin–destination tilt | $171.79 | $173.27 | $172.88 | +$0.46 |
-| fee-migration K line | $172.09 | $173.57 | $173.18 | +$0.76 |
-| card v3 carry, no lap | $173.20 | $174.68 | $174.30 | +$1.87 |
+| core mean reversion (to the core's own mean) | $168.40 | $169.88 | $169.49 | −$2.93 |
+| AR(1) fitted on the core | $169.13 | $170.61 | $170.23 | −$2.20 |
+| lap-only (every 2025–26 step laps) | $169.71 | $171.19 | $170.80 | −$1.62 |
+| tilt B (retired) | $170.27 | $171.75 | $171.36 | −$1.06 |
+| sub-regional country mix (netted) | $170.88 | $172.36 | $171.97 | −$0.45 |
+| **base** | **$170.96** | **$172.44** | **$172.05** | **−$0.37** |
+| measured origin–destination tilt | $171.28 | $172.76 | $172.37 | −$0.05 |
+| fee-migration K line | $171.58 | $173.06 | $172.68 | +$0.25 |
+| card v3 carry, no lap | $172.70 | $174.18 | $173.79 | +$1.37 |
 
-**The binding negative, restated.** On the identity or V1 FX, no mix-only row reaches the Street, as the audit
-found. On the recommended midpoint FX, the base is $0.13 above the Street, and the best mix-only row (sub-regional)
-sits $0.06 above it. The World Cup premium measured on `krish/worldcup-premium` (0.05–0.20pp, $0.08–$0.33) would
-take the base below. So: **the FX estimate, not mix, is what decides whether 4Q26 is below the Street.**
+**The binding negative, restated.**
+- **On the identity or V1 FX,** no mix-only row reaches the Street, as the audit found.
+- **On the recommended midpoint FX,** the base is $0.37 below the Street. The measured LOS change (fix k, −$0.42)
+  and the World Cup row (fix l, −$0.08) together moved it from $0.13 above.
+- **Every composition row on that leg sits at or below the Street.** Only the K line and the card's no-lap carry
+  sit above.
+- **So:** the FX estimate still decides the sign of 4Q26 against the Street, but on the best-tested FX, measured mix
+  now points below it.
 
 ## 2. The corrections, one commit each
 
@@ -68,6 +82,8 @@ take the base below. So: **the FX estimate, not mix, is what decides whether 4Q2
 | **(h) labels** | 4Q27 FX 0.000 (a spot-held artefact) unlabelled where it flows into FY27; the band unlabelled. | Labelled in the docs, the income-statement note and `adr_path.csv`. | Labels |
 | **(i) factual errors** | "Core is 40% of ex-FX" (it is 116–138%), "lap-only crosses", "RNPL not named in a filing until 2Q26", "EMEA's first sub-50% English quarter 2Q26", "within 0.13pp", thesis sentence 3, the V0 bias range. | Corrected in place, with the evidence. | Text |
 | **(j) FX leg** | The identity was the leg because the V0 registration promotes it; accuracy was never compared with the card's method on the same footing. | **Recommended leg: the card-method midpoint (V0 + V2)/2 for 3Q26 and 4Q26.** It beats every variant point in time in all four promotion cells (section 3). 2027 keeps the identity: see section 3 on V2's intercept. `config.FX_LEG = "identity"` restores the v2 leg. | 3Q26 −$1.41, 4Q26 −$1.48 against the identity |
+| **(k) LOS measured** | LOS was held at H's assumed 0.30 in 2Q26, 3Q26 and 4Q26, so the forecast assumed it never changes. | Measured from the calendars already in the repo: the change in the LOS term from 2Q26 to 3Q26 bookings, on a new-bookings flow and I2's stock, both reproduced (gate passed to 0.0003pp). All four constructions: −0.17 to −0.38pp; point −0.253. Forward LOS 3Q26 = 4Q26 = +0.047pp. Pre-registered (`los_nowcast_prereg.md`); note `los_nowcast.md`. `exfx.LOS_NOWCAST=False` reverts. | 3Q26 −$0.43, 4Q26 −$0.42 |
+| **(l) World Cup out of the core** | The carried 2Q26 core holds the World Cup booking premium (audit F5). | −0.05pp in every forward quarter, plus the 2Q27 lap of the 2Q26 base. Band 0 to the 0.20pp bound. A post-hoc translation (`docs/worldcup-premium/RESULTS.md` §3b). The World Cup's LOS effect was also tested: +0.46pp in host cities, 0.005pp globally, not added. `exfx.WC_CORE_ADJ=False` reverts. | 3Q26 −$0.09, 4Q26 −$0.08 |
 
 ## 3. The FX leg: the evidence behind fix (j)
 
@@ -129,11 +145,10 @@ stay-dated, while ADR FX is booking-dated. Its 4Q26 +1.66pp should not enter the
 2. **FX leg** (DEC-0048, superseding DEC-0044): the midpoint for 3Q26 and 4Q26, with the identity and V1 as
    labelled alternatives. Recommend yes, on the test in section 3. The alternative keeps the identity: 3Q26 +$1.41,
    4Q26 +$1.48.
-3. **LOS in fix (c):** case A (−$0.09) or case B (−$0.50). Recommend A until a same-construction 2Q26 LOS exists.
+3. **LOS in fix (c): resolved by fix (k).** A same-construction 2Q26 LOS now exists. The measured change (−0.253pp) lands where case B had assumed (forward +0.047 vs I's +0.056). Recommend adopting (k) (DEC-0049).
 4. **The 2027 core rule.** Not changed here. The core's point-in-time record favours its expanding mean at h ≥ 3,
    which puts FY27 ADR about $2.5 lower. It deserves its own pre-registration.
-5. **World Cup row.** Add −0.05 to −0.20pp from 4Q26 once `krish/worldcup-premium` is committed. On the midpoint
-   leg it takes the 4Q26 base below the Street.
+5. **World Cup row: fix (l),** 0.05pp point and 0.20pp bound, from 3Q26 (the tournament ended 19 Jul) with the 2Q27 lap. Recommend adopting (DEC-0050), labelled post-hoc. `krish/worldcup-premium` still needs committing so the source is on a branch.
 6. **Workbook.** `model/ABNB_official_model.xlsx` still reads `adr_engine` (v2). It needs an approved rebuild.
 7. **Posterior.** Not re-run (no PyMC here); its draws are seeded from v2.
 8. **FX refresh.** Everything uses FRED through 18 Sep. Refresh before the memo (`run.py --fetch` writes a new
@@ -144,8 +159,10 @@ stay-dated, while ADR FX is booking-dated. Its 4Q26 +1.66pp should not enter the
 The next agent should read this note, then `git log origin/main..krish/adr-audit-fixes`: one commit per fix.
 
 - **Switches** reproduce v2 behaviour: `config.FX_LEG = "identity"`, and in `exfx.py` `CONSTRUCTION_FIX`,
-  `CORE_FIX`, `SUBGEO_NETTING`.
+  `CORE_FIX`, `SUBGEO_NETTING`, `LOS_NOWCAST` (k) and `WC_CORE_ADJ` (l).
+- **LOS nowcast:** `los_nowcast.md` RESUME. Rerun on the September calendars before 5 Nov, after amending the
+  pre-registration.
 - **On 5 Nov:** recompute the V0, V1 and midpoint points at O3. Then run
   `fx_falsifier.score_print(y, FF.CANDIDATES_3Q26_J, leg="midpoint_refreshed")` with the printed ADR-FX pp, and apply
   the §12 ratio rule.
-- **Choices 2, 3 and 4 move numbers.** Refresh FRED before the memo.
+- **Choices 2 and 4 move numbers**, and 2027 LOS belongs with choice 4. Refresh FRED before the memo.
