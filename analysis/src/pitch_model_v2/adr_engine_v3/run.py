@@ -199,13 +199,14 @@ def geomix_stage(refresh: bool = True) -> dict:
 
 # ---------------------------------------------------------------------------------------------------------------- #
 def ladder_kl() -> pd.DataFrame:
-    """ADR with fix (k) LOS nowcast switched off and on."""
-    rows, keep = [], M.LOS_NOWCAST
-    steps = (("v3 through fix (j): LOS and seats carried from 2Q26", False),
-             ("+ fix (k): LOS = 2Q26 fill + measured 2Q26->3Q26 change", True))
+    """ADR with fixes (k) LOS nowcast and (l) World Cup core adjustment switched on one at a time."""
+    rows, keep = [], (M.LOS_NOWCAST, M.WC_CORE_ADJ)
+    steps = (("v3 through fix (j): LOS and seats carried from 2Q26", False, False),
+             ("+ fix (k): LOS = 2Q26 fill + measured 2Q26->3Q26 change", True, False),
+             ("+ fix (l): World Cup premium out of the carried core", True, True))
     try:
-        for label, k in steps:
-            M.LOS_NOWCAST = k
+        for label, k, l in steps:
+            M.LOS_NOWCAST, M.WC_CORE_ADJ = k, l
             p, f = A.build(), M.forward()
             row = {"step": label}
             for q in ("3Q26", "4Q26"):
@@ -215,7 +216,7 @@ def ladder_kl() -> pd.DataFrame:
             row["adr_FY27"] = float(p.loc["FY27", "adr_usd"])
             rows.append(row)
     finally:
-        M.LOS_NOWCAST = keep
+        M.LOS_NOWCAST, M.WC_CORE_ADJ = keep
     return pd.DataFrame(rows)
 
 
@@ -264,7 +265,7 @@ def main(argv=None):
     gm = geomix_stage(refresh=not a.no_refresh_prices)
     M.alternatives().to_csv(C.OUT / "exfx_alternatives.csv", index=False)    # composition rows read the geomix files
     path = A.build(); path.to_csv(C.OUT / "adr_path.csv"); A.scenario_table().to_csv(C.OUT / "adr_scenarios.csv", index=False)
-    ladder_kl().to_csv(C.OUT / "los_wc_ladder.csv", index=False)                  # fix (k), off and on
+    ladder_kl().to_csv(C.OUT / "los_wc_ladder.csv", index=False)                  # fixes (k) and (l), one step at a time
     if not a.no_figures:
         G.main()
     if not a.no_workbook:

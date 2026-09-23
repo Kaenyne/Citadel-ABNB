@@ -45,6 +45,11 @@ CONSTRUCTION_FIX = True        # False reproduces adr_engine (v2) exactly
 # the 3Q26 read; 2027 unchanged. False reproduces v3 through fix (j).
 LOS_NOWCAST = True
 LOS_NOWCAST_FILE = C.ROOT / "data/processed/pitch_model_v2/los_nowcast/los_nowcast_result.csv"
+# ---- fix (l): the World Cup booking premium out of the carried 2Q26 core (docs/worldcup-premium/RESULTS.md s3b, a
+# post-hoc translation): the carried core drops WC_CORE_PP in every forward quarter, and 2Q27 laps the 2Q26 base's
+# premium (-WC_CORE_PP again). Band: 0 to the 0.20pp bound. False reproduces v3 through fix (k).
+WC_CORE_ADJ = True
+WC_CORE_PP, WC_CORE_BOUND_PP = 0.05, 0.20
 
 
 def los_nowcast() -> pd.DataFrame | None:
@@ -172,7 +177,8 @@ def forward(core_rule="carry", geo_basis="nights_linked", bundle_total=BUNDLE_AD
     b = bundle_schedule(bundle_total, split_na, exna_pp)
     hist["bundle"] = [b.loc[q, "bundle_total"] for q in hist.index]; hist["core"] = hist.residual - hist.bundle
     gm = geo_mix_forward(); terms = terms or CARD_TERMS
-    core_last = float(hist.core.iloc[-1])
+    wc = WC_CORE_PP if WC_CORE_ADJ else 0.0         # fix (l)
+    core_last = float(hist.core.iloc[-1]) - wc
     ln = los_nowcast()                             # fix (k)
     const, rho = core_ar1()                       # audit fix (d): fitted on the core (v2: K4's residual AR(1) .750 / .747)
     core_mean = core_mean_2023_25()               # audit fix (d): the core's own 2023-25 mean (v2: the residual's 2.398)
@@ -196,10 +202,12 @@ def forward(core_rule="carry", geo_basis="nights_linked", bundle_total=BUNDLE_AD
             los = off["los_in_core"]
         if ln is not None and q in ln.index:       # fix (k): in-core fill + measured change 2Q26 -> 3Q26
             los = float(ln.loc[q, "los_forward_pp"])
-        exfx = core + bt + geo + terms["unit_size"] + los + seats + terms["interaction"] + kline + basis_adj
+        wc_lap = -wc if q == "2Q27" else 0.0       # fix (l): 2Q27 laps the 2Q26 base's World Cup premium
+        exfx = core + bt + geo + terms["unit_size"] + los + seats + terms["interaction"] + kline + basis_adj + wc_lap
         rows.append({"quarter": q, "core": core, "bundle": bt, "rnpl_na_leg": b.loc[q, "rnpl_na_leg"], "fee_cancel_leg": b.loc[q, "fee_cancel_leg"],
                      "rnpl_exna_leg": b.loc[q, "rnpl_exna_leg"], "residual": core + bt, "geo_mix": geo, "unit_size": terms["unit_size"],
-                     "los_mix": los, "seats": seats, "interaction": terms["interaction"], "fee_k": kline, "basis_adj": basis_adj, "exfx_yoy": exfx,
+                     "los_mix": los, "seats": seats, "interaction": terms["interaction"], "fee_k": kline, "basis_adj": basis_adj,
+                     "wc_core_adj": -wc if core_rule in ("carry", "ar1") else 0.0, "wc_lap": wc_lap, "exfx_yoy": exfx,
                      "core_rule": core_rule, "geo_basis": geo_basis})
     return pd.DataFrame(rows).set_index("quarter")
 
@@ -289,14 +297,14 @@ def core_ar1() -> tuple[float, float]:
 def construction_cases() -> pd.DataFrame:
     """Audit fix (c): the base ex-FX as filed (v2), under case A (the default: LOS switch treated as a basis offset)
     and under case B (the measured LOS drop is real: forward LOS stays at I's 0.056)."""
-    global CONSTRUCTION_FIX, LOS_NOWCAST
-    keep = (CONSTRUCTION_FIX, LOS_NOWCAST)
+    global CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ
+    keep = (CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ)
     try:
-        LOS_NOWCAST = False                         # fix (c)'s own cases, before fix (k)
+        LOS_NOWCAST = WC_CORE_ADJ = False          # fix (c)'s own cases, before fixes (k) and (l)
         CONSTRUCTION_FIX = False; v2 = forward().exfx_yoy
         CONSTRUCTION_FIX = True; a = forward().exfx_yoy
     finally:
-        CONSTRUCTION_FIX, LOS_NOWCAST = keep
+        CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ = keep
     off = construction_offsets()
     b = a + (CARD_TERMS["los_mix"] - off["los_in_core"])
     return pd.DataFrame({"exfx_v2_as_filed": v2, "exfx_case_A": a, "exfx_case_B": b,
@@ -325,8 +333,9 @@ def envelope(fx_sd: pd.Series) -> pd.DataFrame:
             if key == "los_mix" and ln is not None and q in ln.index:    # fix (k): the nowcast's own band
                 lo, hi = float(ln.loc[q, "band_lo_pp"]), float(ln.loc[q, "band_hi_pp"])
             half.append((hi - lo) / 2)
+        half.append(WC_CORE_BOUND_PP / 2 if WC_CORE_ADJ else 0.0)       # fix (l): premium between 0 and the 0.20 bound
         rss = float(np.sqrt(np.sum(np.square(half))))
         fxsd = float(fx_sd.get(q, 0.0))
         rows.append({"quarter": q, "exfx_half_band_pp": rss, "core_carry_sd_pp": cse[h], "fx_sd_pp": fxsd, "reported_half_band_pp": float(np.sqrt(rss ** 2 + fxsd ** 2)),
-                     "halfwidths": "core_carry|bundle|exna|geo|unit|los|seats|interaction=" + "|".join(f"{x:.3f}" for x in half)})
+                     "halfwidths": "core_carry|bundle|exna|geo|unit|los|seats|interaction|wc=" + "|".join(f"{x:.3f}" for x in half)})
     return pd.DataFrame(rows).set_index("quarter")
