@@ -220,7 +220,13 @@ def main(argv=None):
     wf, full = W.run(daily, shares, tg); sc = W.score(wf); promo = W.promotion(sc)
     wf.to_csv(C.OUT / "fx_pit_walkforward.csv", index=False); sc.to_csv(C.OUT / "fx_scores.csv", index=False); full.to_csv(C.OUT / "fx_design_full.csv")
     print("walk-forward:", promo)
-    fc = X.run(daily, shares); fc.to_csv(C.OUT / "fx_forecast_asof.csv", index=False)
+    # audit fix (a): the registered V1 variant beside V0 (V0 stays the leg), and V0's LatAm-conditional error
+    from . import fx_diagnostics as D
+    beta_v1 = D.fit_v1_all(full); pd.DataFrame([beta_v1]).to_csv(C.OUT / "fx_v1_map_beta_all17.csv", index=False)
+    fc = X.run(daily, shares, beta_v1={r: beta_v1[r] for r in C.REGIONS}); fc.to_csv(C.OUT / "fx_forecast_asof.csv", index=False)
+    fwd_latam = {q: F.design_row(daily, shares, q, None)["latam"] for q in ("3Q26", "4Q26")}
+    D.v0_error_on_latam(wf, full, fwd_latam).to_csv(C.OUT / "fx_v0_error_on_latam.csv", index=False)
+    D.latam_strong_quarters(full).to_csv(C.OUT / "fx_v0_latam_strong_quarters.csv")
     X.currency_table(daily).to_csv(C.OUT / "fx_currency_contributions.csv", index=False)
     if not a.no_posterior:
         from . import posterior; posterior.main()
@@ -237,7 +243,9 @@ def main(argv=None):
     if not a.no_workbook:
         print("workbook stage disabled in v3: model/ is protected (CLAUDE.md rule 1); use --no-workbook")
     meta = {"run_at": pd.Timestamp.now().isoformat(timespec="seconds"), "fx_last_obs": str(daily.index.max().date()), "promotion": promo,
-            "adr_3q26": float(path.loc["3Q26", "adr_usd"]), "adr_4q26": float(path.loc["4Q26", "adr_usd"]), "fx_3q26_pp": float(path.loc["3Q26", "fx_pp"]),
+            "adr_3q26": float(path.loc["3Q26", "adr_usd"]), "adr_4q26": float(path.loc["4Q26", "adr_usd"]),
+            "adr_3q26_fx_v1": float(path.loc["3Q26", "adr_usd_fx_v1"]), "adr_4q26_fx_v1": float(path.loc["4Q26", "adr_usd_fx_v1"]),
+            "fx_v1_beta_all17": beta_v1, "fx_3q26_pp": float(path.loc["3Q26", "fx_pp"]),
             "fx_4q26_pp": float(path.loc["4Q26", "fx_pp"]), "subgeo_4q26_pp": gm["subgeo_4q26_pp"],
             "geo_mix_tiltB_4q26_pp": gm["geo_mix_tiltB_4q26_pp"], "geomix": gm, "seconds": round(time.time() - t0, 1)}
     (C.OUT / "00_summary.json").write_text(json.dumps(meta, indent=2)); print(json.dumps(meta, indent=2))
