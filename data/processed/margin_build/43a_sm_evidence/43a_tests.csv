@@ -1,0 +1,15 @@
+test,pre_registered,result,verdict
+H1a reproduce 1.41,"expect 1.41 +- 0.02, DW ~0.93","1.410 (NW se 0.088), DW 0.93, n 18",reproduced
+H1b levels elasticity within 0.15 of trend ratio,|elasticity - trend ratio| <= 0.15 (J),"elasticity 1.410, trend ratio 1.435, diff -0.025",holds
+H1c add trend: log(rev) loses significance,95% NW interval includes 1 or sign unstable,"coef 0.051, CI [-0.98, 1.08], trend t 2.45",holds
+H1d spurious-regression risk,DW < 1.2 => high,"DW 0.93, resid AR1 0.52, BG p 0.076, EG-ADF p 0.027",high
+H2b S&M grows faster than revenue (W1),"mean gap > 0, HAC p <= 0.10, positive in >= 10 of 14","mean 5.6 log-pp, p 0.047, positive 11/14",PASS
+H2b S&M grows faster than revenue (W2),"mean gap > 0, HAC p <= 0.10, positive in >= 7 of 10","mean 8.5 log-pp, p 0.000, positive 9/10",PASS
+H2b both windows,must pass W1 and W2 to be quoted,,PASS
+"H3/H5c trend on time: (a) S&M cash share of revenue, T4Q",one-sided p <= 0.10 in both windows,W1 slope 0.0028 p 0.001 (n 14); W2 slope 0.0046 p 0.000 (n 10),PASS both
+"H3/H5c trend on time: (b) incremental S&M per incremental revenue $, T4Q y/y",one-sided p <= 0.10 in both windows,W1 slope 0.0216 p 0.000 (n 14); W2 slope 0.0301 p 0.000 (n 10),PASS both
+H3/H5c trend on time: (c) growth gap log(sm_T4Q y/y) - log(rev_T4Q y/y),one-sided p <= 0.10 in both windows,W1 slope 0.0129 p 0.000 (n 14); W2 slope 0.0177 p 0.000 (n 10),PASS both
+"H3/H5c trend on time: (H5c) incremental revenue per incremental S&M $, T4Q y/y",one-sided p <= 0.10 in both windows,W1 slope -0.4006 p 0.000 (n 14); W2 slope -0.6149 p 0.003 (n 10),PASS both
+"H3/H5c trend on time: (H5c) incremental nights (m) per incremental S&M $M, T4Q y/y",one-sided p <= 0.10 in both windows,W1 slope -0.0144 p 0.000 (n 14); W2 slope -0.0193 p 0.000 (n 10),PASS both
+"H5a 'this quarter's nights, not the next' rule: g_sm (S&M cash y/y)","contemporaneous r outside band AND leads 1,2 inside band, in J and W1","J L+0 r 0.60 (band 0.46, n 18); J L+1 r 0.45 (band 0.48, n 17); J L+2 r 0.65 (band 0.49, n 16); W1 L+0 r 0.04 (band 0.52, n 14); W1 L+1 r 0.24 (band 0.54, n 13); W1 L+2 r 0.30 (band 0.57, n 12)",NOT supported
+"H5a 'this quarter's nights, not the next' rule: g_bpm (brand & performance marketing y/y, GAAP)","contemporaneous r outside band AND leads 1,2 inside band, in J and W1","J L+0 r 0.23 (band 0.57, n 12); J L+1 r 0.28 (band 0.59, n 11); J L+2 r 0.11 (band 0.62, n 10); W1 L+0 r 0.23 (band 0.57, n 12); W1 L+1 r 0.28 (band 0.59, n 11); W1 L+2 r 0.11 (band 0.62, n 10)",NOT supported
