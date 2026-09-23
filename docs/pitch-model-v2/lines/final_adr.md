@@ -524,7 +524,7 @@ call, not a mix call, and a lodging analyst will say so within a minute of seein
 ### 7.1 5 November 2026 (the 3Q26 print)
 
 - **Printed FX effect** against four numbers named in advance: **identity +0.42**, card midpoint −0.43, euro
-  fit −1.12, fx_lag_v2 basket +0.44. This adjudicates §2.6 directly.
+  fit −1.12, fx_lag_v2 basket +0.44. Scored by the comparative interval rule filed 23 Sep 2026 (adr_fx_prereg.md §11). One whole-point-rounded print separates the identity from the euro fit, but not reliably from V1 (+0.03) or the basket (+0.44), so it settles §2.6 only partly.
 - **Printed ex-FX** against 3.3 (base) versus 3.7 (card): at or below 3.3 the bundle lapped; at or above 3.7 it
   did not.
 - **The 4Q26 ADR outlook sentence**: whether FX is named at all.
@@ -534,7 +534,7 @@ call, not a mix call, and a lodging analyst will say so within a minute of seein
 
 ### 7.2 11 February 2027 (the 4Q26 print)
 
-Printed FX against [−0.78, +1.97]; ex-FX against 2.8 / 3.7 / 1.3 (base / card / mean reversion) — the first
+Printed FX against [−0.78, +1.97], scored by the comparative interval rule (adr_fx_prereg.md §11); ex-FX against 2.8 / 3.7 / 1.3 (base / card / mean reversion) — the first
 fully lapped quarter. Also 4Q26 cost of revenue against $575M, which resolves DEC-0023 on the hosting step.
 
 ### 7.3 Any disclosure

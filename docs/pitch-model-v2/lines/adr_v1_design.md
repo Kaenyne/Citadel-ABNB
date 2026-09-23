@@ -467,12 +467,12 @@ listed under "core".
 ## 9. Falsifiers and tells, pre-registered (adr_fx_prereg §7)
 
 - **5 Nov 2026, 3Q26 print.** (a) Printed ADR-FX pp (reported y/y − the letter's ex-FX figure) vs the 21 Sep band
-  [0.36, 0.48]: inside keeps the identity as the leg; outside withdraws it. The four candidates named before
+  [0.36, 0.48]: inside keeps the identity as the leg; outside withdraws it. **Amended 23 Sep 2026 (adr_fx_prereg.md §11): the band test cannot work on a figure carrying ±0.5pp of rounding; it is replaced by a comparative interval score of the named candidates, and the identity is withdrawn only if it scores worst.** The four candidates named before
   the print: identity **+0.42**, card midpoint −0.43, euro fit −1.12, fx_lag_v2 basket +0.44. (b) Printed ex-FX
   ADR y/y vs the base 3.3 and the card's 3.7: at or below 3.3 says the bundle laps; at or above 3.7 says it does
   not; in between, both stay on the slide. (c) The letter's 4Q26 ADR outlook: if it names FX again, the tell of
   §2.5 reverses.
-- **11 Feb 2027, 4Q26 print.** Printed FX vs the 5 Nov band [−0.78, +1.97]; printed ex-FX vs 2.8 (base) / 3.7
+- **11 Feb 2027, 4Q26 print.** Printed FX vs the 5 Nov band [−0.78, +1.97] (amended 23 Sep: scored by the comparative interval rule of adr_fx_prereg.md §11); printed ex-FX vs 2.8 (base) / 3.7
   (card) / 1.3 (mean reversion) — the full-lap quarter, and the first the harness has ever scored.
 - **Any quarter**: an RNPL GBV share alongside an RNPL nights share (pins the premium and splits the bundle);
   Bedroom Nights Booked returning or not.

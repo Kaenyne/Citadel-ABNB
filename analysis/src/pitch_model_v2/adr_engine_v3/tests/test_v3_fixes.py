@@ -28,3 +28,20 @@ def test_v1_puts_3q26_fx_below_the_identity():
 def test_v0_error_rises_with_its_latam_component_in_every_promotion_cell():
     d = pd.read_csv(C.OUT / "fx_v0_error_on_latam.csv")
     assert len(d) == 4 and (d.slope > 0.4).all() and (d.p_slope < 0.05).all()
+
+
+# ---- fix (b): the re-specified FX falsifier ----------------------------------------------------------------------------
+def test_amended_falsifier_rarely_withdraws_a_correct_identity():
+    from pitch_model_v2.adr_engine_v3 import fx_falsifier as FF
+    assert FF.false_withdrawal_rate(true_fx=0.415, n=4000) < 0.05
+
+
+def test_amended_falsifier_can_withdraw_the_identity_when_the_euro_fit_is_right():
+    from pitch_model_v2.adr_engine_v3 import fx_falsifier as FF
+    assert FF.false_withdrawal_rate(true_fx=-1.12, n=4000) > 0.8
+
+
+def test_old_band_falsifier_failed_a_correct_identity_most_of_the_time():
+    rng = np.random.default_rng(7); ex = rng.uniform(2, 5, 20000)
+    printed = (ex + 0.415) - np.round(ex)
+    assert np.mean((printed >= 0.355) & (printed <= 0.481)) < 0.2
