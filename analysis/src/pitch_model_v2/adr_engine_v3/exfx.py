@@ -40,6 +40,16 @@ CARD_BANDS = {"geo_mix": (-1.5709, -0.9353), "unit_size": (0.5299, 0.9985), "los
 # ---- audit fix (c): forward terms measured on the same construction as the carried core ---------------------------
 CONSTRUCTION_FIX = True        # False reproduces adr_engine (v2) exactly
 
+# ---- fix (k): LOS measured, not carried. The 3Q26 forward LOS is the in-core 2Q26 fill plus the measured change in the LOS
+# term between 2Q26 and 3Q26 bookings (los_nowcast package, docs/pitch-model-v2/lines/los_nowcast_prereg.md); 4Q26 carries
+# the 3Q26 read; 2027 unchanged. False reproduces v3 through fix (j).
+LOS_NOWCAST = True
+LOS_NOWCAST_FILE = C.ROOT / "data/processed/pitch_model_v2/los_nowcast/los_nowcast_result.csv"
+
+
+def los_nowcast() -> pd.DataFrame | None:
+    return pd.read_csv(LOS_NOWCAST_FILE).set_index("quarter") if LOS_NOWCAST else None
+
 
 def construction_offsets() -> dict:
     """The carried 2Q26 core is disclosed ex-FX minus the H decomposition's terms, but the forward adds geo mix from the
@@ -163,6 +173,7 @@ def forward(core_rule="carry", geo_basis="nights_linked", bundle_total=BUNDLE_AD
     hist["bundle"] = [b.loc[q, "bundle_total"] for q in hist.index]; hist["core"] = hist.residual - hist.bundle
     gm = geo_mix_forward(); terms = terms or CARD_TERMS
     core_last = float(hist.core.iloc[-1])
+    ln = los_nowcast()                             # fix (k)
     const, rho = core_ar1()                       # audit fix (d): fitted on the core (v2: K4's residual AR(1) .750 / .747)
     core_mean = core_mean_2023_25()               # audit fix (d): the core's own 2023-25 mean (v2: the residual's 2.398)
     rows = []; prev_core = core_last
@@ -183,6 +194,8 @@ def forward(core_rule="carry", geo_basis="nights_linked", bundle_total=BUNDLE_AD
             off = construction_offsets()
             basis_adj = -off["unit_off"] - (off["geo_off"] if geo_basis == "nights_linked" else 0.0)
             los = off["los_in_core"]
+        if ln is not None and q in ln.index:       # fix (k): in-core fill + measured change 2Q26 -> 3Q26
+            los = float(ln.loc[q, "los_forward_pp"])
         exfx = core + bt + geo + terms["unit_size"] + los + seats + terms["interaction"] + kline + basis_adj
         rows.append({"quarter": q, "core": core, "bundle": bt, "rnpl_na_leg": b.loc[q, "rnpl_na_leg"], "fee_cancel_leg": b.loc[q, "fee_cancel_leg"],
                      "rnpl_exna_leg": b.loc[q, "rnpl_exna_leg"], "residual": core + bt, "geo_mix": geo, "unit_size": terms["unit_size"],
@@ -276,13 +289,14 @@ def core_ar1() -> tuple[float, float]:
 def construction_cases() -> pd.DataFrame:
     """Audit fix (c): the base ex-FX as filed (v2), under case A (the default: LOS switch treated as a basis offset)
     and under case B (the measured LOS drop is real: forward LOS stays at I's 0.056)."""
-    global CONSTRUCTION_FIX
-    keep = CONSTRUCTION_FIX
+    global CONSTRUCTION_FIX, LOS_NOWCAST
+    keep = (CONSTRUCTION_FIX, LOS_NOWCAST)
     try:
+        LOS_NOWCAST = False                         # fix (c)'s own cases, before fix (k)
         CONSTRUCTION_FIX = False; v2 = forward().exfx_yoy
         CONSTRUCTION_FIX = True; a = forward().exfx_yoy
     finally:
-        CONSTRUCTION_FIX = keep
+        CONSTRUCTION_FIX, LOS_NOWCAST = keep
     off = construction_offsets()
     b = a + (CARD_TERMS["los_mix"] - off["los_in_core"])
     return pd.DataFrame({"exfx_v2_as_filed": v2, "exfx_case_A": a, "exfx_case_B": b,
@@ -300,14 +314,17 @@ def envelope(fx_sd: pd.Series) -> pd.DataFrame:
     """Parameter envelope (RSS of half-ranges, J3 convention) on the base: bundle total BUNDLE_BAND (0.5-1.5; v2 0.8-1.2), ex-NA RNPL leg 0-1.15,
     geo (nights-linked vs card), unit, LOS, seats, interaction bands, the core carry's own h-step error; plus the FX
     predictive sd. Returns per-quarter half-band."""
-    base = forward(); rows = []; cse = core_carry_error_sd()
+    base = forward(); rows = []; cse = core_carry_error_sd(); ln = los_nowcast()
     for h, (q, r) in enumerate(base.iterrows(), start=1):
         half = [cse[h]]
         half.append(abs(forward(bundle_total=BUNDLE_BAND[1]).loc[q, "exfx_yoy"] - forward(bundle_total=BUNDLE_BAND[0]).loc[q, "exfx_yoy"]) / 2)
         half.append(abs(forward(exna_pp=RNPL_EXNA_ADR_PP_HIGH).loc[q, "exfx_yoy"] - r.exfx_yoy) / 2)
         half.append(abs(r.geo_mix - CARD_TERMS["geo_mix"]) / 2)
         for k, key in (("unit_size", "unit_size"), ("los_mix", "los_mix"), ("seats", "seats"), ("interaction", "interaction")):
-            lo, hi = CARD_BANDS[key]; half.append((hi - lo) / 2)
+            lo, hi = CARD_BANDS[key]
+            if key == "los_mix" and ln is not None and q in ln.index:    # fix (k): the nowcast's own band
+                lo, hi = float(ln.loc[q, "band_lo_pp"]), float(ln.loc[q, "band_hi_pp"])
+            half.append((hi - lo) / 2)
         rss = float(np.sqrt(np.sum(np.square(half))))
         fxsd = float(fx_sd.get(q, 0.0))
         rows.append({"quarter": q, "exfx_half_band_pp": rss, "core_carry_sd_pp": cse[h], "fx_sd_pp": fxsd, "reported_half_band_pp": float(np.sqrt(rss ** 2 + fxsd ** 2)),

@@ -1,0 +1,89 @@
+{
+ "gate": "PASS",
+ "reproduction": [
+  {
+   "quarter": "2Q26",
+   "weighting": "occupancy_weighted",
+   "los_pp_here": 0.25745187868980834,
+   "los_pp_I2": 0.2571493895746469,
+   "diff": 0.0003024891151614528
+  },
+  {
+   "quarter": "2Q26",
+   "weighting": "unweighted",
+   "los_pp_here": 0.2888720172392923,
+   "los_pp_I2": 0.2887059735483112,
+   "diff": 0.00016604369098111027
+  },
+  {
+   "quarter": "3Q26",
+   "weighting": "occupancy_weighted",
+   "los_pp_here": 0.030887368383140965,
+   "los_pp_I2": 0.0308675882197641,
+   "diff": 1.9780163376864612e-05
+  },
+  {
+   "quarter": "3Q26",
+   "weighting": "unweighted",
+   "los_pp_here": 0.0817276253150102,
+   "los_pp_I2": 0.0816606046136037,
+   "diff": 6.702070140650329e-05
+  }
+ ],
+ "panel_S": [
+  "austin",
+  "bangkok",
+  "barwon-south-west-vic",
+  "belize",
+  "buenos-aires",
+  "chicago",
+  "hong-kong",
+  "mexico-city",
+  "mid-north-coast",
+  "mornington-peninsula",
+  "nashville",
+  "new-orleans",
+  "northern-rivers",
+  "paris",
+  "rio-de-janeiro",
+  "rome",
+  "san-diego",
+  "santiago",
+  "singapore",
+  "sunshine-coast",
+  "taipei",
+  "tasmania",
+  "tokyo",
+  "western-australia"
+ ],
+ "panel_F": [
+  "austin",
+  "bangkok",
+  "barwon-south-west-vic",
+  "belize",
+  "chicago",
+  "hong-kong",
+  "mornington-peninsula",
+  "nashville",
+  "northern-rivers",
+  "paris",
+  "rome",
+  "san-diego",
+  "singapore",
+  "tasmania",
+  "tokyo",
+  "western-australia"
+ ],
+ "f_used": true,
+ "point_delta_pp": -0.25290206269373494,
+ "bootstrap_p10": -0.3191299793250491,
+ "bootstrap_p90": -0.1936380701198771,
+ "band": [
+  -0.38346551778962706,
+  -0.16669973799088206
+ ],
+ "worldcup_central_pp": 0.004715089957710647,
+ "worldcup_added": false,
+ "final_delta_pp": -0.25290206269373494,
+ "los_forward_pp": 0.04709793730626505
+}

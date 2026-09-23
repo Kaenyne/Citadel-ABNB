@@ -198,6 +198,27 @@ def geomix_stage(refresh: bool = True) -> dict:
 
 
 # ---------------------------------------------------------------------------------------------------------------- #
+def ladder_kl() -> pd.DataFrame:
+    """ADR with fix (k) LOS nowcast switched off and on."""
+    rows, keep = [], M.LOS_NOWCAST
+    steps = (("v3 through fix (j): LOS and seats carried from 2Q26", False),
+             ("+ fix (k): LOS = 2Q26 fill + measured 2Q26->3Q26 change", True))
+    try:
+        for label, k in steps:
+            M.LOS_NOWCAST = k
+            p, f = A.build(), M.forward()
+            row = {"step": label}
+            for q in ("3Q26", "4Q26"):
+                row.update({f"los_{q}": float(f.loc[q, "los_mix"]), f"exfx_{q}": float(f.loc[q, "exfx_yoy"]), f"adr_{q}": float(p.loc[q, "adr_usd"]),
+                            f"band_half_pp_{q}": float(p.loc[q, "band_half_pp"]), f"p_ge_street_{q}": float(p.loc[q, "p_print_ge_street"]),
+                            f"adr_identity_{q}": float(p.loc[q, "adr_usd_fx_identity"])})
+            row["adr_FY27"] = float(p.loc["FY27", "adr_usd"])
+            rows.append(row)
+    finally:
+        M.LOS_NOWCAST = keep
+    return pd.DataFrame(rows)
+
+
 def seed_inputs() -> list[str]:
     """Copy the frozen inputs v3 does not rebuild from adr_engine's outputs, once, if absent (never overwrites)."""
     C.OUT.mkdir(parents=True, exist_ok=True); copied = []
@@ -243,6 +264,7 @@ def main(argv=None):
     gm = geomix_stage(refresh=not a.no_refresh_prices)
     M.alternatives().to_csv(C.OUT / "exfx_alternatives.csv", index=False)    # composition rows read the geomix files
     path = A.build(); path.to_csv(C.OUT / "adr_path.csv"); A.scenario_table().to_csv(C.OUT / "adr_scenarios.csv", index=False)
+    ladder_kl().to_csv(C.OUT / "los_wc_ladder.csv", index=False)                  # fix (k), off and on
     if not a.no_figures:
         G.main()
     if not a.no_workbook:

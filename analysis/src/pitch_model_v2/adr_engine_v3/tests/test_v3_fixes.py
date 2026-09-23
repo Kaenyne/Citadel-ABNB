@@ -62,11 +62,11 @@ def test_case_a_lowers_the_base_by_about_five_hundredths_and_case_b_bounds_it():
 
 def test_switch_off_reproduces_v2():
     from pitch_model_v2.adr_engine_v3 import exfx as X
-    X.CONSTRUCTION_FIX = False
+    X.CONSTRUCTION_FIX = X.LOS_NOWCAST = False
     try:
         assert abs(X.forward().loc["4Q26", "exfx_yoy"] - 2.784074164) < 1e-6
     finally:
-        X.CONSTRUCTION_FIX = True
+        X.CONSTRUCTION_FIX = X.LOS_NOWCAST = True
 
 
 # ---- fix (d): the downside rows on the core's own statistics ---------------------------------------------------------
@@ -121,20 +121,26 @@ def test_midpoint_beats_identity_and_euro_fit_in_every_promotion_cell():
 
 
 def test_path_uses_the_midpoint_leg_and_keeps_the_identity_beside_it():
+    from pitch_model_v2.adr_engine_v3 import assemble as A, exfx as X
     p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
     assert (p.loc[["3Q26", "4Q26"], "fx_leg"] == "midpoint").all()
-    assert abs(p.loc["3Q26", "adr_usd_fx_identity"] - 177.588) < 0.01 and abs(p.loc["4Q26", "adr_usd_fx_identity"] - 172.943) < 0.01
     assert p.loc["3Q26", "adr_usd"] < p.loc["3Q26", "adr_usd_fx_v1"] < p.loc["3Q26", "adr_usd_fx_identity"]
+    X.LOS_NOWCAST = False                                        # fix (j)'s numbers, before fix (k)
+    try:
+        q = A.build()
+        assert abs(q.loc["3Q26", "adr_usd_fx_identity"] - 177.588) < 0.01 and abs(q.loc["4Q26", "adr_usd_fx_identity"] - 172.943) < 0.01
+    finally:
+        X.LOS_NOWCAST = True
 
 
 def test_identity_switch_reproduces_the_previous_leg():
-    from pitch_model_v2.adr_engine_v3 import assemble as A
-    C.FX_LEG = "identity"
+    from pitch_model_v2.adr_engine_v3 import assemble as A, exfx as X
+    C.FX_LEG = "identity"; X.LOS_NOWCAST = False
     try:
         p = A.build()
         assert abs(p.loc["3Q26", "adr_usd"] - 177.588) < 0.01 and abs(p.loc["4Q26", "adr_usd"] - 172.943) < 0.01
     finally:
-        C.FX_LEG = "midpoint"
+        C.FX_LEG = "midpoint"; X.LOS_NOWCAST = True
 
 
 def test_falsifier_rarely_withdraws_a_correct_midpoint_leg():
@@ -148,3 +154,30 @@ def test_midpoint_is_confined_to_the_tested_horizon():
     p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
     assert (p.loc[["1Q27", "2Q27", "3Q27", "4Q27"], "fx_leg"] == "identity").all()
     assert (p.loc[["1Q27", "2Q27"], "fx_pp"] == p.loc[["1Q27", "2Q27"], "fx_pp_identity"]).all()
+
+
+# ---- fix (k): LOS measured (2Q26 fill + measured 2Q26 -> 3Q26 change), 4Q26 carries the 3Q26 read ------------------------
+def test_los_nowcast_enters_3q26_and_4q26_only():
+    from pitch_model_v2.adr_engine_v3 import exfx as X
+    n = pd.read_csv(X.LOS_NOWCAST_FILE).set_index("quarter")
+    f = pd.read_csv(C.OUT / "exfx_forward_base.csv", index_col=0)
+    assert abs(f.loc["3Q26", "los_mix"] - n.loc["3Q26", "los_forward_pp"]) < 1e-9
+    assert abs(f.loc["4Q26", "los_mix"] - f.loc["3Q26", "los_mix"]) < 1e-9
+    assert (f.loc[["1Q27", "2Q27", "3Q27", "4Q27"], "los_mix"] == 0.30).all()
+    assert abs(n.loc["3Q26", "los_forward_pp"] - (0.30 + n.loc["3Q26", "delta_pp"])) < 1e-9
+
+
+def test_los_band_is_the_nowcasts_own():
+    from pitch_model_v2.adr_engine_v3 import exfx as X
+    n = pd.read_csv(X.LOS_NOWCAST_FILE).set_index("quarter")
+    e = pd.read_csv(C.OUT / "exfx_envelope.csv", index_col=0)
+    los_half = float(e.loc["3Q26", "halfwidths"].split("=")[1].split("|")[5])
+    assert abs(los_half - (n.loc["3Q26", "band_hi_pp"] - n.loc["3Q26", "band_lo_pp"]) / 2) < 1e-3
+
+
+def test_ladder_starts_at_fix_j_and_each_step_is_recorded():
+    d = pd.read_csv(C.OUT / "los_wc_ladder.csv")
+    assert len(d) == 2
+    assert abs(d.adr_identity_3Q26.iloc[0] - 177.588) < 0.01 and abs(d.adr_identity_4Q26.iloc[0] - 172.943) < 0.01
+    p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
+    assert abs(d.adr_4Q26.iloc[-1] - p.loc["4Q26", "adr_usd"]) < 1e-9
