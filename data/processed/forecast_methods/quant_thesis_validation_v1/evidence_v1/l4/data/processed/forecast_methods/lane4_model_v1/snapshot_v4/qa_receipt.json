@@ -1,0 +1,31 @@
+{
+  "source_hashes_verified": 78,
+  "source_hash_mismatches": [],
+  "workbook_sha256": "7301722b233041baca2738c76a6aeaa239dda712f43fc42e5d28efcadacf7e4a",
+  "builder_max_abs_tieout": 3.637978807091713e-10,
+  "final_workbook": "model/lane4_v1/outputs/lane4_model/snapshot_v4/ABNB_L4_review.xlsx",
+  "render_exit_status": "1 after successful PNG writes; limitation documented",
+  "rendered_final_views": [
+    "Summary",
+    "Case_comparison",
+    "Valuation",
+    "Source_rates",
+    "Assumptions_financial_final"
+  ],
+  "earlier_reviewed_views": [
+    "snapshot_v1/Costs.png",
+    "snapshot_v1/Cash.png",
+    "snapshot_v1/Assumptions_operating.png",
+    "snapshot_v2/Source.png",
+    "snapshot_v2/Assumptions_inheritance.png",
+    "development_run_04/Revenue.png"
+  ],
+  "earlier_view_scope": "Earlier full-sheet views reviewed; numerical structures unchanged. Later label/format repairs separately inspected on final output and financial/source-rate ranges.",
+  "parent_independent_final_and_recapture": {
+    "cached_checks": 91,
+    "formulas": 1576,
+    "errors": 0,
+    "external_links": 0,
+    "max_abs_difference": 7.375e-06
+  }
+}

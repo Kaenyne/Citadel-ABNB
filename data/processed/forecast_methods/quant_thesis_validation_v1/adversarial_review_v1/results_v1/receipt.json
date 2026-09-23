@@ -1,0 +1,37 @@
+{
+  "review": "independent counterfactual-level financial and cash-flow integration",
+  "code_imported_from_author": false,
+  "l4_commit": "29b2d9ae2d66da5f1f5086ba7dc36e4c2d96ab70",
+  "checks": 540,
+  "all_checks_pass": true,
+  "max_absolute_difference": 4.352784799266374e-11,
+  "empirical_validation_n": 0,
+  "estimated_parameters": 0,
+  "q4_revenue_gap_musd": 18.32216428640004,
+  "source_hashes": {
+    "data/processed/forecast_methods/lane4_model_v1/snapshot_v4/annual.csv": "333fb4da18fce8e87285dfdb824447e82b9365e43282a4d441ade0f353c3a329",
+    "data/processed/forecast_methods/lane4_model_v1/snapshot_v4/model_input.json": "7d9b725b8e4a9f81b4eacb5d70f02857c2b9ca01ee76477dff7b09bb96333bb2",
+    "data/processed/forecast_methods/lane4_revenue_v1/snapshot_v1/forecast.csv": "afba9714d56c09b72323b9a9795db28dda0aa1e2e8800457aa3adb698aa5c087",
+    "data/processed/forecast_methods/lane4_revenue_v1/snapshot_v1/consensus_selection.csv": "7f7c265b1e14f0589191d2cb7a8cfd9157d18b38baaf614d195d9ce7d6af0fa5"
+  },
+  "reviewed_author_file_hashes": {
+    "accounting_diagnostics.csv": "594fedf5707703a55181b181a88cb5f4a855fce3f99b7d01c68643b9e216c870",
+    "annual_operating_contrast.csv": "e8d1191395cf37be5164ebbde5432a9c126505342d8100749595205df2e58d02",
+    "cash_share_horizons.csv": "32225be1c7d1217557ae8fc742b80a9c55d03c232cb25a633a2791480ec6328b",
+    "equation_checks.csv": "f7bce9120f0d3553beeeeaa87f18b0a2f5b4c97c8588d5e6a173857eae9a808d",
+    "horizon_convention.csv": "f43e5ae98489d7c66179a4847208fb6a5232654684cb7b51b53ab842e7d94fbb",
+    "horizon_operating_contrast.csv": "e2bb135b4f13327ef77af60d41bc21ea5a653e0361ba973880e295caca0babdc",
+    "multiple_cash_share_sensitivity.csv": "b7cdc9088b6e43e1cf2fc4223c0e0ca566780f9b7c1e1be4c22192c3a85826b4",
+    "numerical_receipt_v1.json": "6b587a5a2751e418992cf5f6b976702d76d7d490722c08305b08a2a5204eaad7",
+    "receipt.json": "daa0b82f6a6f1bae01bdeb5ca0757503023d0de104caed2cee69afa056ff31c7",
+    "repurchase_price_sensitivity.csv": "5b39fa997ac03f80d8498ac0048f8a4f02fcdcf7dead1a2c81d37929a9455d76",
+    "source_hashes.json": "0cb47ec0f2f5f8624f6d54dc3807509364e98bd21dd85b1e768c3c8aae72f72b"
+  },
+  "source_code_sha256": "66d54dd3ddacefea663c7fe6a08636c248488542eb126c728dd38200ed4f4ef6",
+  "source_limitations": [
+    "Weighted-average starting shares remain proxy",
+    "No actual future endpoint cash/shares",
+    "Marginal cash-tax and addback conventions drive eta1 artifacts",
+    "No current stock/consensus adoption"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "reviewer": "/root/test_designer",
+  "author": "/root/uncertainty_auditor",
+  "status": "PASS_INDEPENDENT_ACCEPTED_ARITHMETIC_REVIEW",
+  "numeric_checks": 246,
+  "max_difference": 3.3334799809381366e-08,
+  "tolerance": 2e-07,
+  "failures": [],
+  "new_models": 0,
+  "new_resamples": 0,
+  "empirical_regimes_added": 0,
+  "author_functions_imported": false,
+  "own_economics_reviewed": false,
+  "bound_inputs_and_reviewed_outputs_sha256": {
+    "data\\processed\\overnight\\02_kpi_panel_quarterly.csv": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\uncertainty_audit_v1\\results_v2\\historical_arithmetic.csv": "4753829a5a2bd034b9ea6e2172996990bf5ac9068c43750e200f2daa514e5229",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\uncertainty_audit_v1\\results_v2\\arithmetic_window_summary.csv": "0ac3d90e03fdcb4c3c8a4153afa2ed29489531f2c995a99f2eae624dae3a4ee3",
+    "data\\processed\\forecast_methods\\l3_bundle_v1\\payload\\conversion\\chronological_paths.csv": "64ff45666729ce552c16e3b62f9ffb3a7f028035c352b8fec30fa0c1ce66ee6e",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\uncertainty_audit_v1\\results_v2\\accepted_score_reproduction.csv": "1c2a86a4cf4b2525bc6578dbf25024918b74d5712f30c3a9a22d8aba7ab9f115",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\uncertainty_audit_v1\\results_v2\\accepted_interval_reproduction.csv": "6ed5c7cb4c3827ca6ee53248ec1614f7859d0c20bb444a88657f1a7598696589",
+    "data\\processed\\forecast_methods\\l3_bundle_v1\\payload\\conversion\\parameter_bootstrap.csv": "5f89aeeb8c14c3304728554c4e57794c3e565c7c805636c2a9d2372eb8ca6b3e",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\uncertainty_audit_v1\\results_v2\\joint_parameter_compensation.csv": "4bf47fa38a421fbad3bc695340a4840d728334cca2f2bda4661084bce7885a78"
+  }
+}

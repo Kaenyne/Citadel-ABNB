@@ -1,0 +1,18 @@
+{
+  "review": "independent counterfactual-level financial and cash-flow integration",
+  "code_imported_from_author": false,
+  "l4_commit": "29b2d9ae2d66da5f1f5086ba7dc36e4c2d96ab70",
+  "checks": 567,
+  "all_checks_pass": true,
+  "max_absolute_difference": 4.352784799266374e-11,
+  "empirical_validation_n": 0,
+  "estimated_parameters": 0,
+  "q4_revenue_gap_musd": 18.32216428640004,
+  "source_code_sha256": "01b1e5c6d01e7eeb15900b53e2b52536d20066eb45c72320cd517755fcb844b9",
+  "source_limitations": [
+    "Weighted-average starting shares remain proxy",
+    "No actual future endpoint cash/shares",
+    "Marginal cash-tax and addback conventions drive eta1 artifacts",
+    "No current stock/consensus adoption"
+  ]
+}

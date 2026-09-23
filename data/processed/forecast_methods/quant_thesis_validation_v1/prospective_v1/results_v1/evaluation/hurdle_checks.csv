@@ -1,0 +1,5 @@
+window,baseline,n,seasons,years,coverage_ok,rmse_candidate,rmse_baseline,rmse_ratio,mae_candidate,mae_baseline,rmse_lower,mae_no_worse,all_year_deletions_lower
+W1,B1_guide_growth,12,4,4,True,63.444677571614,74.3307856042955,0.853545096501006,52.1337494308342,64.0640479914167,True,True,False
+W1,B2_revenue_naive_cushion,12,4,4,True,63.444677571614,117.30903382322,0.540833689477166,52.1337494308342,95.5180921696458,True,True,True
+W2,B1_guide_growth,10,4,3,True,63.6961894760117,60.8344413654164,1.04704157786879,51.220820324888,57.22649383996,False,True,False
+W2,B2_revenue_naive_cushion,10,4,3,True,63.6961894760117,121.925894589593,0.522417241148121,51.220820324888,99.790032536683,True,True,True

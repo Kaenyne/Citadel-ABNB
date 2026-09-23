@@ -1,0 +1,15 @@
+choice_id,choice,reason,tradeoff,status
+ORIGIN,fixed target-quarter start minus18 calendar days rolled to prior US session,September-to-November relevant and schedule independent,lead time varies across releases,parent agreed
+TIME,date-only release unavailable until after source day,prevents same-day after-close contamination,conservative versus unknown exact release timestamp,proposed
+GBV,latest actual YoY growth times prior-year same-quarter GBV,simple season-preserving persistence without fitted growth coefficient,reconstructed and misses within-quarter news,proposed after archive inventory
+LAMBDA,exact K0 pit_lambda variant None,fixed operational policy retained under failed L3 free-weight hurdle,inherits sparse seasonal samples and documented adaptive variant selection,binding existing contract
+CUSHION,median of trailing8 realized actual-guide ratios with minimum3,same operational guide transform and explicit minimum,management policy may change,proposed
+BASELINE1,direct guide YoY persistence,uses guides actually known before release rather than unavailable actuals,no current-quarter operational detail,proposed
+BASELINE2,frozen revenue-naive point divided by same cushion,matches inherited canonical baseline without granting target guide,shares cushion risk with candidate,proposed
+PRECISION,midpoint plus-minus0.5 USDm administrative scoring interval,implements parent-requested interval-fair comparison,not empirical midpoint measurement uncertainty,resolved by source clarification
+PRIMARY_LOSS,interval-fair USDm RMSE with raw midpoint companion,no percentage loss selected to favor outcome,large seasonal dollar levels influence loss,proposed
+HURDLE,lower RMSE both baselines both windows and MAE no worse and lower paired MSE after every year deletion,requires stable paired numerical improvement,small samples do not yield statistical superiority,proposed
+DIAGNOSTIC,no day-before duplicate with same quarterly information,no extra observation would change the point forecast,does not test benefit of unavailable daily vintages,proposed
+INTERVALS,last6-to8 previously issued guide residuals same method and origin,avoids conversion-only or post-letter calibration leakage,sparse and descriptive coverage only,proposed
+ATTRIBUTION,seven product-expansion terms plus rounding correction and all cross moments,exact reconciliation without independence assumption,accounting identities are not causal shares,proposed
+REGISTRY,no shared registration use actual-origin local research ledger,formats1.0and1.1 reject historical off-guide origins,requires future reviewed harness extension for shared scoring,parent agreed
