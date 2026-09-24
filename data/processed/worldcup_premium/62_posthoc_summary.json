@@ -1,0 +1,40 @@
+{
+  "chicago_only": {
+    "premium": 0.031689415000533,
+    "lo": 0.023993705262905167,
+    "hi": 0.039442960980768035,
+    "n": 259312
+  },
+  "window_means": [
+    {
+      "series": "los-angeles_minus_controls",
+      "pre_T": -0.04459857902791121,
+      "T": 0.05218418572428272,
+      "post_T": 0.01973230249561519,
+      "T_minus_avg_pre_post": 0.06461732399043073,
+      "n_weeks_pre": 9,
+      "n_weeks_T": 6,
+      "n_weeks_post": 7
+    },
+    {
+      "series": "mexico-city_minus_controls",
+      "pre_T": -0.05161468269102027,
+      "T": 0.08687649071100183,
+      "post_T": -0.022795781886505634,
+      "T_minus_avg_pre_post": 0.12408172299976478,
+      "n_weeks_pre": 9,
+      "n_weeks_T": 6,
+      "n_weeks_post": 7
+    },
+    {
+      "series": "chicago_only_LA",
+      "pre_T": 0.03958431994496287,
+      "T": 6.470554230640867e-05,
+      "post_T": -0.05607707768465491,
+      "T_minus_avg_pre_post": 0.008311084412152428,
+      "n_weeks_pre": 9,
+      "n_weeks_T": 6,
+      "n_weeks_post": 7
+    }
+  ]
+}
