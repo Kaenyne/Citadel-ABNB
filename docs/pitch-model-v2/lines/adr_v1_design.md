@@ -5,7 +5,7 @@ official model. Proposed decisions **DEC-0034** (FX-on-ADR = translation identit
 **DEC-0035** (ex-FX ADR = mechanism with the product bundle lapping on filed dates) and **DEC-0036** (line 2 in the
 workbook), all **pending Theo's confirmation**. Rationale file: [`final_adr.md`](final_adr.md). Pre-registration
 (fixed before any fit, blob `0495e5f3`): [`adr_fx_prereg.md`](adr_fx_prereg.md). Engine:
-`analysis/src/pitch_model_v2/adr_engine/` (README there; `run.py` rebuilds everything, exit 0, 10 tests).
+`analysis/src/pitch_model_v2/adr_engine/` (README there; `run.py` rebuilds everything, exit 0, 27 tests as of v2).
 Research inputs, archived verbatim: `dossiers/ADR_A_disclosure_ledger.md` (what management said, dated),
 `ADR_B_fx_translation_inventory.md` (every FX object in the repo), `ADR_C_exfx_mechanism_inventory.md` (every
 ex-FX series). Branch `theo/pitch-model-v2`, base HEAD `2a77a36`. Web fetches: **zero** (FRED H.10 CSV only).
@@ -33,7 +33,7 @@ core host-pricing rate (3.85pp); the bundle's two legs lap on the nights line's 
 in 3Q26, cancellation redesign and single fee in 4Q26), geographic mix is computed from the nights line's own
 regional path and the 10-K regional ADR levels (it reproduces the H term within 0.13pp on 2Q24–2Q26), and the
 measured mix terms are carried as the card carries them. Base: **3Q26 $177.68 (+3.7%), 4Q26 $173.03 (+3.3%),
-FY27 $185.21 (+2.5%)**; Street (Bloomberg MODL, 12 Sep) $177.06 and $171.33; P(print ≥ Street) 65% and 70%.
+FY27 $185.21 (+2.5%; its 4Q27 FX is a spot-held 0.000 artefact)**; Street (Bloomberg MODL, 12 Sep) $177.06 and $171.33; P(print ≥ Street) 65% and 70%.
 The ADR line is therefore **on the Street in 3Q26 and 1.0% above it in 4Q26**, for two reasons the pitch can name:
 FX is positive not negative, and the bundle lap takes 0.5pp out in 3Q26 and 1.0pp out from 4Q26 — a
 deceleration in ex-FX ADR (3.3 → 2.8 → 2.4) that the Street's 4Q26 ADR (+2.3%) already more than prices.
@@ -194,7 +194,7 @@ content where the record says it lives: the residual's carry, the bundle's dated
 
 The residual is the one unobserved line (D4 §2). Its 2023–25 mean is 2.40; it stepped to 4.4–4.9 in 1H26. The
 split assigns **~1pp** of that level to the product bundle (§3.2) and leaves the rest — the core — at **3.85**,
-still 1.45pp above its 2023–25 mean. **That gap is the unexplained half of the 2026 step, and it stays
+still 1.45pp above the residual's 2023–25 mean (1.58pp above the core's own 2.27). **That gap is the unexplained half of the 2026 step, and it stays
 unexplained here**: the design carries it, labels it, bands it with its own history, and names its reversion
 as the downside. It does not dress it as a mechanism.
 
@@ -467,12 +467,12 @@ listed under "core".
 ## 9. Falsifiers and tells, pre-registered (adr_fx_prereg §7)
 
 - **5 Nov 2026, 3Q26 print.** (a) Printed ADR-FX pp (reported y/y − the letter's ex-FX figure) vs the 21 Sep band
-  [0.36, 0.48]: inside keeps the identity as the leg; outside withdraws it. The four candidates named before
+  [0.36, 0.48]: inside keeps the identity as the leg; outside withdraws it. **Amended 23 Sep 2026 (adr_fx_prereg.md §11): the band test cannot work on a figure carrying ±0.5pp of rounding; it is replaced by a comparative interval score of the named candidates, and the identity is withdrawn only if it scores worst.** The four candidates named before
   the print: identity **+0.42**, card midpoint −0.43, euro fit −1.12, fx_lag_v2 basket +0.44. (b) Printed ex-FX
   ADR y/y vs the base 3.3 and the card's 3.7: at or below 3.3 says the bundle laps; at or above 3.7 says it does
   not; in between, both stay on the slide. (c) The letter's 4Q26 ADR outlook: if it names FX again, the tell of
   §2.5 reverses.
-- **11 Feb 2027, 4Q26 print.** Printed FX vs the 5 Nov band [−0.78, +1.97]; printed ex-FX vs 2.8 (base) / 3.7
+- **11 Feb 2027, 4Q26 print.** Printed FX vs the 5 Nov band [−0.78, +1.97] (amended 23 Sep: scored by the comparative interval rule of adr_fx_prereg.md §11); printed ex-FX vs 2.8 (base) / 3.7
   (card) / 1.3 (mean reversion) — the full-lap quarter, and the first the harness has ever scored.
 - **Any quarter**: an RNPL GBV share alongside an RNPL nights share (pins the premium and splits the bundle);
   Bedroom Nights Booked returning or not.
@@ -517,7 +517,7 @@ listed under "core".
 | bundle_leg_rnpl_na_pp | base | 3Q25-2Q26 | 0.511 | pp | split by K4 residual steps 0.92 to 0.88; laps 3Q26 |
 | bundle_leg_fee_cancel_pp | base | 4Q25-3Q26 | 0.489 | pp | laps 4Q26 |
 | bundle_leg_rnpl_exna_pp | base | all | 0.00 | pp | unsized by management; high alternative 1.15 laps 1H27 |
-| core_pp | base | 3Q26-4Q27 | 3.849 | pp | 2Q26 residual 4.849 less bundle 1.00, carried; 2023-25 mean 2.398 is the downside |
+| core_pp | base | 3Q26-4Q27 | 3.849 | pp | 2Q26 residual 4.849 less bundle 1.00, carried; 2023-25 residual mean 2.398 (the core's own is 2.272) is the downside |
 | core_carry_sd_h1 | base | all | 0.882 | pp | sd of the one-quarter change of core, 1Q23-2Q26; h2 1.351 h3 1.379 h4 1.149 |
 | geo_mix_pp | base | 3Q26 | -1.293 | pp | nights-line regional path on 3Q25 shares and anchored regional ADR; card -1.428 |
 | geo_mix_pp | base | 4Q26 | -1.336 | pp | same |
@@ -541,7 +541,7 @@ listed under "core".
 | adr_total_usd | base | 2Q27 | 188.38 | USD | 183.73 times 1.02530; band 182.41 to 194.35 |
 | adr_total_usd | base | 3Q27 | 182.51 | USD | 177.68 times 1.02716 |
 | adr_total_usd | base | 4Q27 | 178.10 | USD | 173.03 times 1.02928 |
-| adr_total_usd | base | FY27 | 185.21 | USD | nights-weighted on the nights line; FY26 180.62; plus 2.54 pct |
+| adr_total_usd | base | FY27 | 185.21 | USD | nights-weighted on the nights line; FY26 180.62; plus 2.54 pct; contains the 4Q27 spot-held FX artefact |
 | adr_total_usd | card_v3_carry | 3Q26 | 178.32 | USD | residual carried, no lap, at the identity FX |
 | adr_total_usd | card_v3_carry | 4Q26 | 174.55 | USD | same |
 | adr_total_usd | core_mean_reversion | 3Q26 | 175.20 | USD | the named downside |

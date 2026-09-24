@@ -1,0 +1,44 @@
+walk-forward: {'V0_passes': True, 'V1_passes': True, 'promoted_leg': 'V0_translation'}
+geomix stage (adr_v2_geomix_prereg.md):
+  --no-refresh-prices: reusing the saved stays panel and price levels
+  reproduction checks (against the outputs on disk, before overwriting):
+    geomix_subregional_term.csv            max |diff| 1.232e-14  -> reproduced (<1e-6)
+    geomix_subregional_term_forward.csv    max |diff| 9.881e-15  -> reproduced (<1e-6)
+    geo_mix_tilt_sensitivity.csv           max |diff| 3.553e-15  -> reproduced (<1e-6)
+    geomix_within_region.csv               max |diff| 5.684e-14  -> reproduced (<1e-6)
+    geomix_within_region_forward.csv       max |diff| 2.226e-14  -> reproduced (<1e-6)
+    geomix_h2_scores.csv                   max |diff| 2.220e-16  -> reproduced (<1e-6)
+  sub-regional term 3Q26 -0.137pp / 4Q26 -0.147pp; 1Q23-2Q26 mean -0.453pp; tilt-B four-region geo mix 4Q26 -1.700pp
+C:\Users\krish\citadel-abnb-adraudit\docs\pitch-model-v2\lines\figures\adr_fx_walkforward.png
+C:\Users\krish\citadel-abnb-adraudit\docs\pitch-model-v2\lines\figures\adr_fx_currency_contributions.png
+C:\Users\krish\citadel-abnb-adraudit\docs\pitch-model-v2\lines\figures\adr_exfx_mechanism.png
+C:\Users\krish\citadel-abnb-adraudit\docs\pitch-model-v2\lines\figures\adr_path_vs_street.png
+C:\Users\krish\citadel-abnb-adraudit\docs\pitch-model-v2\lines\figures\adr_fx_passthrough_posterior.png
+C:\Users\krish\citadel-abnb-adraudit\docs\pitch-model-v2\lines\figures\adr_constellation.png
+C:\Users\krish\citadel-abnb-adraudit\docs\pitch-model-v2\lines\figures\adr_full_logic.png
+{
+  "run_at": "2026-09-22T15:24:13",
+  "fx_last_obs": "2026-09-18",
+  "promotion": {
+    "V0_passes": true,
+    "V1_passes": true,
+    "promoted_leg": "V0_translation"
+  },
+  "adr_3q26": 177.68122194149538,
+  "adr_4q26": 173.03404961654581,
+  "fx_3q26_pp": 0.4152814166247513,
+  "fx_4q26_pp": 0.5136690253172425,
+  "subgeo_4q26_pp": -0.14680777611579668,
+  "geo_mix_tiltB_4q26_pp": -1.6998889949451534,
+  "geomix": {
+    "subgeo_3q26_pp": -0.13721926261773845,
+    "subgeo_4q26_pp": -0.14680777611579668,
+    "subgeo_hist_mean_1q23_2q26_pp": -0.45338504985103256,
+    "geo_mix_tiltB_3q26_pp": -1.6739485718353486,
+    "geo_mix_tiltB_4q26_pp": -1.6998889949451534,
+    "h2_ratio_W1": 0.9089217310981771,
+    "h2_ratio_W2": 0.7190490218012526
+  },
+  "seconds": 16.9
+}
+exit=0

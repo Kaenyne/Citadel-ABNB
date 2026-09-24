@@ -214,3 +214,81 @@ RMSE in pp, V0: W1 1.31 / 0.72 / 0.64 (naive 3.00 / 2.11); W2 1.47 / 0.75 / 0.62
   carry −0.88 / −0.68 / −0.47 (identical when no leg changes; better in the one quarter a leg went live).
 - Files: as §9. Figures `adr_fx_walkforward`, `adr_fx_currency_contributions`, `adr_exfx_mechanism`, `adr_path_vs_street`,
   `adr_fx_passthrough_posterior`, `adr_constellation`, `adr_full_logic`. Nothing in §0–§9 was changed after the run.
+
+---
+
+## 11. Dated amendment — 23 September 2026, filed before the 3Q26 print (5 Nov 2026)
+
+Appended; nothing above is changed. Source: the 22 Sep adversarial audit
+(`docs/pitch-model-v2/dossiers/ADR_AUDIT_krish.md`, finding F11). Code: `analysis/src/pitch_model_v2/adr_engine_v3/fx_falsifier.py`.
+
+**Why.** Falsifier §7(a) required the printed 3Q26 ADR-FX pp to fall inside the 21 Sep 80% band [0.36, 0.48]. The
+printed figure is reported ADR y/y (unrounded, from disclosed levels) minus the letter's **whole-point** ex-FX, so it
+carries ±0.5pp of rounding. A perfectly correct identity would land inside a 0.125pp band only about 12% of the time,
+so the test would withdraw a correct leg about 88% of the time. §7(b) has the same defect on a wider band.
+
+**Replacement (applies to both 7a and 7b).** For each named candidate c with point μ_c, with y the printed ADR-FX pp
+and h the rounding half-width (0.5; 0.25 if the letter gives a half-point ex-FX), compute
+
+L_c = P(μ_c + e ∈ [y − h, y + h]), where e ~ N(0, 0.44²) (0.44 = V1's MAP model error on all 17 quarters).
+
+1. **The identity (V0) is withdrawn as the leg only if its L is the lowest** of the named candidates.
+2. **V1 replaces it only if V1's L is the highest and at least 3× V0's.** Otherwise V0 stays and the ranking is
+   reported.
+
+**Named candidates for 3Q26, fixed now:**
+
+| candidate | point (pp) |
+|---|---:|
+| V0 identity | +0.415 |
+| V1 fitted pass-through | +0.030 |
+| committed card midpoint | −0.43 |
+| euro-only fit | −1.12 |
+
+The V0 and V1 points are re-computed at O3 (FRED through the print date minus 7 days) before scoring, as the
+walk-forward does; the card and euro-fit points are fixed as above.
+
+**Candidates for 4Q26 (scored 11 Feb 2027)** are fixed on 5 Nov 2026 at that as-of date: V0 and V1 recomputed, the
+card's +0.15, and the euro fit recomputed.
+
+**Operating characteristics, simulated before the print.** Share of prints that would withdraw V0, by which candidate
+is actually true:
+
+| true FX | withdrawn |
+|---|---:|
+| the identity's +0.415 | 0% |
+| V1's +0.03 | 11% |
+| the card's −0.43 | 57% |
+| the euro fit's −1.12 | 100% |
+
+A single whole-point-rounded print can separate the identity from the euro fit, but not reliably from V1 or the
+fx_lag_v2 basket (+0.44). That is stated now so it is not discovered on 5 Nov.
+
+## 12. Dated addendum — 23 September 2026, before the 3Q26 print: if the owner adopts the midpoint as the leg
+
+Appended; nothing above is changed, and the V0 promotion result in §10 stands.
+
+**Context.** On 23 Sep the ADR owner proposed (DEC-0048) that the FX leg for 3Q26 and 4Q26 be the card's method:
+the midpoint of V0 and V2, refreshed on this engine's data. Scored point in time on this registration's own
+protocol, it has the lowest RMSE ratio in all four promotion cells (0.223 / 0.199 / 0.247 / 0.201, against V0's
+0.344 / 0.303 / 0.383 / 0.317; `adr_engine_v3/fx_scores.csv`). That comparison was run after the registration and is
+labelled as such. The registration's promotion rule governs whether the identity has skill; it does not oblige its
+adoption.
+
+**Falsifier for a midpoint leg.** A leg in the middle of the candidate range can never rank last, so §11's rule
+(withdraw only if worst) has no teeth for it. For the midpoint leg, scored with §11's likelihood L_c:
+
+- The named candidates are §11's four plus the refreshed midpoint (−0.406 at 21 Sep, recomputed at O3 before
+  scoring).
+- **The leg is withdrawn if the best candidate's L is at least 3× the leg's L.**
+
+Simulated before the print, the share of prints that would withdraw the leg, by which candidate is actually true:
+
+| true FX | withdrawn |
+|---|---:|
+| the midpoint's −0.41 | 0% |
+| V1's +0.03 | 14% |
+| the euro fit's −1.12 | 41% |
+| the identity's +0.42 | 53% |
+
+One rounded print gives this much power and no more; it is stated now so it is not discovered on 5 Nov.

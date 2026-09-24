@@ -154,11 +154,18 @@ It is not the leg for three reasons, and the first is the one that counts:
 1. **It was excluded before the scores existed.** The pre-registration states that V2 and V3 are comparators and
    cannot be promoted. That sentence was written before any variant was run. Picking it up now because it won
    would be exactly the selection the registration exists to prevent.
-2. **It is biased by −0.27 to −0.34pp in every single cell**, while the identity's bias is +0.11 to −0.07.
+2. **It is biased by −0.27 to −0.34pp in every single cell**, while the identity's bias is +0.15 to −0.07.
    A single-currency proxy fits the average quarter well and is systematically wrong about level.
 3. **It is structurally blind to the currencies that drive the forecast quarters.** It cannot see the peso, the
    real or the Australian dollar; those three contribute **+1.08pp of the +0.42pp** 3Q26 effect and +0.92pp of
    the +0.51pp in 4Q26. 3Q26 is their quarter, not the euro's.
+
+**Update, 23 Sep (ADR owner; `adr_v3_corrections.md` fix j).** Scored point in time on this engine's own walk-forward,
+the card's method, the midpoint of V0 and V2, beats every variant in all four promotion cells (0.223 / 0.199 / 0.247
+/ 0.201 against V0's 0.344 / 0.303 / 0.383 / 0.317): the identity's LatAm over-prediction and the euro fit's
+under-prediction partly cancel. The registration's promotion result stands, but the proposed v3 leg for 3Q26 and 4Q26
+is the midpoint (DEC-0048), with the identity and V1 as labelled alternatives. That comparison was run after the
+registration and is labelled so.
 
 This is not a footnote for the thesis, it is a live disagreement with the committed card: the card's FX leg of
 −0.43pp is the midpoint of a euro-only fit and a basket, so **it inherits the −0.3pp euro bias**. The 5 November
@@ -277,9 +284,12 @@ Management sized a three-feature bundle — US Reserve Now Pay Later, the cancel
 fee — at "over 200bp of nights / roughly 300bp of GBV" on the 4Q25 call and "approximately three points of
 nights / approximately four points of GBV" on the 1Q26 call. Both imply **about 1pp of ADR**.
 
-**This is transcript-only, and as of 22 September that label is exhaustive.** Mitigation A read the FY25 10-K,
-the 1Q26 and 2Q26 10-Qs and both shareholder letters end to end. No filing carries a magnitude. Airbnb did not
-name RNPL in a filing at all until 2Q26. The filed substitutes are "roughly 20% of global GBV came from Reserve
+**This is transcript-only, and the label survives a wider search** (corrected 23 Sep). Mitigation A read the FY25
+10-K and the 1Q26 and 2Q26 10-Qs, and X3 checked the 4Q25 and 1Q26 letters through a keyword extraction; the audit's
+C5 search added the 2Q25, 3Q25 and 2Q26 letters, the 3Q25 10-Q, the 2026 DEF 14A and the 8-K list. Across those ten
+filed documents no filing carries a magnitude. RNPL itself is named in filings from the 3Q25 letter (8-K Ex 99.1,
+filed 6 Nov 2025: "In August, we launched our Reserve Now, Pay Later payment option within the U.S."); only the
+10-K/10-Q series waits for the 2Q26 10-Q. The filed substitutes are "roughly 20% of global GBV came from Reserve
 Now, Pay Later" and the 2Q26 10-Q's "the increase in ADR was driven in part by the continued adoption of RNPL".
 DEC-0041 proposes that this closes the search.
 
@@ -304,8 +314,9 @@ Regional nights growth comes from the nights line (3Q26: NA +5.6%, EMEA +7.1%, L
 The lever is easy to check on a napkin, which is exactly why it is credible: **one point of nights share moving
 from North America to Latin America costs 0.89pp of blended ADR**, because $255 against $95 is a 2.7× ratio.
 
-Method validation: this bucket arithmetic reproduces the repo's independent H-decomposition term to within
-**0.13pp on 2Q24–2Q26**. The card's alternative (−1.428 flat, from the E stays split) is carried beside it.
+Method validation: this bucket arithmetic reproduces the repo's independent H-decomposition term to a mean of
+**0.13pp (maximum 0.22pp) on 2Q24–2Q26**, one-signed from 4Q24: the bucket method runs 0.08–0.18pp less negative
+than H in every quarter, which the corrected engine accounts for (`adr_v3_corrections.md`, fix c). The card's alternative (−1.428 flat, from the E stays split) is carried beside it.
 
 ### 3.6 Unit size, and why the filed metric matters
 
@@ -386,8 +397,14 @@ minus regional accommodation inflation on our within-region mix, with region fix
 |---|---:|---:|---|---:|
 | pooled, primary | **1.127** | 0.042 | 0.349 – 1.905 | 23 |
 
-The identity implies a slope of 1.0, and the data **cannot reject it** (p 0.73 against the null of 1). That is
-the good news, and it is real.
+The identity implies a slope of 1.0 and the point estimate sits near it, but **the regression cannot test it**
+(corrected 23 Sep after the audit, receipt `data/processed/pitch_model_v2/receipts/ADR_AUDIT/C4_pooled_reconciliation.md`).
+With four regions as clusters the cluster-robust p-values in the table are not valid: a fully enumerated
+wild-cluster bootstrap (Webb weights, 1,296 draws) gives p 0.89 against a slope of 0 and p 0.90 against 1. Of Latin
+America's slope of 1.375, 1.04 (76%) comes from the Brazil hotel-CPI comparator moving inversely with the mix term
+during a Brazilian stays boom (1Q25–2Q25), and only 0.36 from Airbnb's own disclosed ex-FX; with a neutral
+Latin-American comparator the pooled slope is 0.24. **The quarterly reconciliation is not established.** The annual
+reconciliation to the 10-K above stands, and it is the evidence for the between-region term.
 
 The bad news is equally real and is stated in the thesis: **one region carries it.**
 
@@ -410,8 +427,8 @@ last-twelve-month windows, non-English-origin guests grew **+81.0%** against **+
 2026, with English share going 62.9% → 56.8%.
 
 On the quarterly series the y/y drop in English share has been **flat at about 2.9pp for four straight
-quarters** (−2.79, −3.21, −2.73, −2.91) after running faster earlier. EMEA printed its first sub-50% English
-quarter in 2Q26.
+quarters** (−2.79, −3.21, −2.73, −2.91) after running faster earlier. EMEA's English share first fell below 50% in
+4Q25 (49.5%), then 46.2% in 1Q26 and 49.7% in 2Q26.
 
 Against the filings: cross-border Portuguese runs **11.9pp above its own scope** where the filed Brazil-origin
 statement runs 14pp above company nights — two independent measurements of the same excess agreeing within
@@ -484,9 +501,9 @@ the origin rotation alone costs about **−0.35% a year** of the price of the li
 | 1Q27 | $190.65 | +2.05% | 2.417 | −0.369 | 185.52 – 195.77 | none | | |
 | 2Q27 | $188.38 | +2.53% | 2.957 | −0.427 | 182.41 – 194.35 | none | | |
 | 3Q27 | $182.51 | +2.72% | 2.863 | −0.147 | 175.83 – 189.18 | none | | |
-| 4Q27 | $178.10 | +2.93% | 2.928 | 0.000 | 171.35 – 184.85 | none | | |
+| 4Q27 | $178.10 | +2.93% | 2.928 | 0.000† | 171.35 – 184.85 | none | | |
 | **FY26** | **$180.62** | | | | | | | |
-| **FY27** | **$185.21** | +2.54% | | | | none exists | | |
+| **FY27** | **$185.21**† | +2.54% | | | | none exists | | |
 
 GBV on the nights line: $26.08bn (3Q26), $22.81bn (4Q26), FY26 $105.29bn, FY27 $115.17bn.
 
@@ -494,6 +511,12 @@ Three mechanical warnings, all real:
 
 1. **4Q27's FX of 0.000 is an artefact** of both quarters being spot-held (§2.8).
 2. **3Q27 and 4Q27 chain on our own 3Q26 and 4Q26**, so any 5 November revision propagates forward.
+† **4Q27's FX of 0.000 is a spot-held artefact, and FY27 contains it** (labelled 23 Sep): 4Q27 is 22.5% of FY27
+nights, so each 1pp of 4Q27 FX moves FY27 ADR by about $0.40; against the 4Q27 FX P10–P90 of −4.3 to +5.1pp that
+is ±$1.7–2.0 of FY27 ADR inside one "exactly zero" cell. **The band is ±1σ (about 68%)**: the half-width is an RSS of
+parameter half-ranges and standard deviations plus the FX rate bootstrap sd, and it is used as one sd for
+P(print ≥ Street).
+
 3. **The band widens fast** — ±0.98pp in 3Q26 to ±3.90pp in 4Q27, almost all of it FX. A 2027 ADR is a
    statement about ex-FX shape plus a currency view, and the pitch must present it that way.
 
@@ -513,8 +536,9 @@ Three mechanical warnings, all real:
 | | | **Street $171.33** | | |
 
 **The binding negative, and it must be stated in the memo.** Composition, measured as far as the alt data allow,
-runs from $172.18 to $173.19. **None of it crosses the Street.** Only assumptions about the unobserved core do
-($171.71 lap-only, $170.60 mean reversion). A short that needs a below-Street 4Q26 ADR is leaning on a core
+runs from $172.18 to $173.19. **None of it crosses the Street.** Only assumptions about the unobserved core get
+there: lap-only lands on it ($171.71, $0.38 above) and mean reversion crosses ($170.60). With the audit's corrections
+(`adr_v3_corrections.md`) an AR(1) fitted on the core also crosses ($171.05) and lap-only moves to $171.61. A short that needs a below-Street 4Q26 ADR is leaning on a core
 call, not a mix call, and a lodging analyst will say so within a minute of seeing the ladder.
 
 ---
@@ -524,7 +548,7 @@ call, not a mix call, and a lodging analyst will say so within a minute of seein
 ### 7.1 5 November 2026 (the 3Q26 print)
 
 - **Printed FX effect** against four numbers named in advance: **identity +0.42**, card midpoint −0.43, euro
-  fit −1.12, fx_lag_v2 basket +0.44. This adjudicates §2.6 directly.
+  fit −1.12, fx_lag_v2 basket +0.44. Scored by the comparative interval rule filed 23 Sep 2026 (adr_fx_prereg.md §11). One whole-point-rounded print separates the identity from the euro fit, but not reliably from V1 (+0.03) or the basket (+0.44), so it settles §2.6 only partly.
 - **Printed ex-FX** against 3.3 (base) versus 3.7 (card): at or below 3.3 the bundle lapped; at or above 3.7 it
   did not.
 - **The 4Q26 ADR outlook sentence**: whether FX is named at all.
@@ -534,7 +558,7 @@ call, not a mix call, and a lodging analyst will say so within a minute of seein
 
 ### 7.2 11 February 2027 (the 4Q26 print)
 
-Printed FX against [−0.78, +1.97]; ex-FX against 2.8 / 3.7 / 1.3 (base / card / mean reversion) — the first
+Printed FX against [−0.78, +1.97], scored by the comparative interval rule (adr_fx_prereg.md §11); ex-FX against 2.8 / 3.7 / 1.3 (base / card / mean reversion) — the first
 fully lapped quarter. Also 4Q26 cost of revenue against $575M, which resolves DEC-0023 on the hosting step.
 
 ### 7.3 Any disclosure
@@ -548,8 +572,8 @@ disclosed again.
 
 - FX identity closes against the disclosed effect to **≤ 0.042pp on 14 quarters**.
 - Walk-forward: **0.303–0.383** at the four promotion cells, pass line 0.75, bootstrap 90% upper 0.37–0.51.
-- Geo-mix method reproduces the independent H term within **0.13pp** on 2Q24–2Q26.
-- Sub-regional construction reproduces the disclosed-share four-region term within **0.13pp**.
+- Geo-mix method reproduces the independent H term to a mean of **0.13pp** (maximum 0.22pp) on 2Q24–2Q26,
+  one-signed from 4Q24.
 - Annual mix reconciles to the 10-K within **0.02–0.09pp** in each of three years.
 - Price-level reproduction from raw stores: max |diff| **2.8e-14 USD** on 30 countries.
 - **27 tests** pass. The workbook's `ADR_Engine` block E ties to the Python engine at **1e-12**.
@@ -562,17 +586,21 @@ disclosed again.
 any score existed, it is biased −0.3pp in every window, and it is blind to the three currencies that drive the
 forecast quarters. §2.6 gives the full table rather than hiding it.
 
-**"The core is 40% of your ex-FX number and you can't explain it."** Correct, and it is labelled that way
-everywhere. It is carried flat at 3.85 with its own 0.88pp one-quarter error in the band, and its full reversion
+**"The core is bigger than your whole ex-FX number and you can't explain it."** Correct: 3.85 against an ex-FX of
+3.32 in 3Q26 and 2.78 in 4Q26 (the other terms net negative), and 1.58 of it is an unexplained 2026 step. It is
+labelled that way everywhere. It is carried flat at 3.85 with its own 0.88pp one-quarter error in the band, and its full reversion
 is the named downside. The mitigations made this exposure **larger**, not smaller: with 2025's size term
 corrected, the 2026 step sits on a flat base. We say so rather than banking the difference.
 
 **"Your reconciliation rests on Brazil."** Also correct. The pooled slope of 1.13 collapses to −0.30 without
 Latin America, whose comparator is Brazil alone at 24–33% coverage, and the EMEA-only reading flips sign on two
-more quarters. The right claim is "compatible with the identity", not "validated".
+more quarters. The right claim is "not established": with four clusters the regression has no valid p-value
+(wild-cluster bootstrap p 0.89), and three-quarters of the Latin-American slope is Brazil's hotel CPI rather than
+Airbnb's numbers. The annual 10-K reconciliation is the evidence that stands.
 
-**"The bundle is a transcript number."** Yes, and the search for a filed magnitude is now exhaustive across the
-FY25 10-K, two 10-Qs and both letters. Airbnb did not name RNPL in a filing until 2Q26.
+**"The bundle is a transcript number."** Yes. The search for a filed magnitude covers ten filed documents (FY25
+10-K, three 10-Qs, five letters, the 2026 proxy, the 8-K list) and finds none. The letters name RNPL from 3Q25; the
+10-Q series from 2Q26.
 
 **"Your composition work doesn't actually get you below the Street."** It does not, and §6.2 says so on the
 page. That is the most important honest statement in this line.
@@ -665,7 +693,7 @@ is the carry, the laps and the FX identity.
 | adr_total_usd | base | 3Q27 | 182.51 | USD | ex-FX 2.863, FX −0.147 |
 | adr_total_usd | base | 4Q27 | 178.10 | USD | ex-FX 2.928, FX 0.000 (artefact) |
 | adr_total_usd | base | FY26 | 180.62 | USD | nights-weighted |
-| adr_total_usd | base | FY27 | 185.21 | USD | nights-weighted, 621.85m nights |
+| adr_total_usd | base | FY27 | 185.21 | USD | nights-weighted, 621.85m nights; contains the 4Q27 spot-held FX artefact (~$0.40 of FY27 ADR per 1pp of 4Q27 FX) |
 | adr_yoy_reported_pct | base | FY27 | 2.544 | pct | |
 | adr_total_usd | street | 3Q26 | 177.06 | USD | MODL 12 Sep 2026, n 26 |
 | adr_total_usd | street | 4Q26 | 171.33 | USD | MODL 12 Sep 2026, n 25 |

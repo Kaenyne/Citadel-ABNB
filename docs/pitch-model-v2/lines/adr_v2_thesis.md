@@ -18,7 +18,9 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
    disclosed the effect: RMSE ratio 0.34 at day 60 and 0.30 pre-print on the 14-quarter window and 0.38 / 0.32 on the
    10-quarter window, with moving-block bootstrap 90% upper bounds of 0.44 to 0.51 against a pre-registered pass
    line of 0.75, and a fitted pass-through posterior (EMEA 1.20, 90% interval 1.09 to 1.31; Latin America 0.46,
-   0.17 to 0.78) that explains its small misses without improving it out of sample.**
+   0.17 to 0.78) that explains its small misses and beats it on the recent window (W2) but not on W1, so the
+   pre-registered rule keeps the identity; for 3Q26, a Latin-American-heavy quarter, the fitted variant puts FX at
+   +0.03pp against the identity's +0.42.**
 4. The constant-currency half decelerates from +4.0% to +3.3% in 3Q26 and +2.8% in 4Q26 because the three dated
    product effects management sized at about one point of ADR (US RNPL from August 2025, the cancellation redesign
    and single fee from October 2025) lap on their filed anniversaries, not because of any assumption on pricing.
@@ -29,11 +31,11 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
 6. **The between-region term reconciles to the company's own accounting: annualised, ours is −1.10 / −1.33 / −1.67pp
    for 2023–25 against the 10-K's −1.08 / −1.24 / −1.58, within 0.02 to 0.09pp in each of three years from
    independent sources; pooled across the 23 disclosed constant-currency regional prints, the disclosed rate minus
-   regional accommodation inflation regresses on our within-region mix with a slope of 1.13 (cluster-by-region
-   p 0.04, 90% interval 0.35 to 1.91) and cannot reject the identity's 1.0 — but Latin America alone carries that
-   slope (1.38 there; −0.30 without it), and the earlier EMEA-only reading of 1.09 turns to −0.38 when two further
-   disclosed quarters are admitted, so the scale is compatible with the identity and not pinned down by anything
-   Airbnb has published.**
+   regional accommodation inflation regresses on our within-region mix with a slope of 1.13, but with four regional
+   clusters no valid p-value exists (wild-cluster bootstrap p 0.89), three-quarters of Latin America's slope is the
+   Brazil hotel-CPI comparator rather than Airbnb's own numbers (−0.30 without Latin America), and the earlier
+   EMEA-only reading of 1.09 turns to −0.38 when two further disclosed quarters are admitted, so the quarterly scale
+   is not established by anything Airbnb has published.**
 7. The composition story management tells is real in the data but flatter than its letters imply: on 53 million
    reviews, non-English-origin guests grew 81% against 40% for English on day-matched windows from 2024 to 2026
    (English share 62.9 → 56.8% on those windows, and on the quarterly series the y/y drop has been flat at about
@@ -45,16 +47,18 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
    ex-NA split of EMEA 10.5 / LatAm 16.4 / APAC 14.9 rather than the letters' 8 / 20 / 18, so the steeper "tilt B"
    is retired.
 8. **The origin-to-destination layer passes an ordering test against the disclosed regional buckets in 4 of 7
-   quarters (binomial p 0.018; 4 of 5 on the quarters where the ordering is identified, p 0.003), the sub-regional
-   term's construction reproduces the disclosed-share four-region term within 0.13pp on 2Q24–2Q26, and re-weighting
+   quarters (binomial p 0.018; 4 of 5 on the quarters where the ordering is identified, p 0.003), the four-region
+   bucket arithmetic reproduces the H decomposition's term to a mean of 0.13pp (maximum 0.22) on 2Q24–2Q26, and re-weighting
    Europe with Eurostat platform nights instead of panel shares moves France from 10% to 21% of EMEA yet changes the
    term by 0.02pp, so the conclusion does not rest on the scrape's footprint.**
 9. Putting the pieces together, 3Q26 ADR is $177.68 (+3.7%, band $176.01 to $179.36) on a Street of $177.06 and
    4Q26 is $173.03 (+3.3%, band $169.80 to $176.27) on a Street of $171.33, with the full composition case at
-   $172.79 to $173.19 and FY27 at $185.21 (+2.5%).
+   $172.79 to $173.19 and FY27 at $185.21 (+2.5%; it includes 4Q27 at a spot-held FX of exactly zero, an artefact
+   worth about $0.40 of FY27 ADR per point of 4Q27 FX).
 10. The defensible ADR claim is therefore shape, not level: ex-FX ADR decelerates by more than a point through
     4Q26 as the product effects lap and the incremental night keeps landing in $95–$159 regions, FX turns from a
-    3–5pp tailwind to zero, and a below-Street 4Q26 ADR ($171.71 lap-only, $170.60 mean reversion) requires the
+    3–5pp tailwind to zero, and a below-Street 4Q26 ADR (mean reversion $170.60; lap-only lands on the Street at $171.71; the corrected ladder
+    is in adr_v3_corrections.md) requires the
     unobserved core to give back its 2026 step, which we carry as a labelled scenario with its argument and its
     one-quarter error of 0.88pp, not as an engine output.
 
@@ -81,14 +85,15 @@ sub-regional term) and the four upgrade notes filed today: `adr_v2_upgrade1_euro
   the price-to-utilisation elasticity at +0.08 (p 0.79; cannot reject 0.32, rules out above 0.7), which buys at
   most 0.6pp of the core in the wrong direction for a give-back; the fix is a September-2026 capture wave against
   the September-2025 one, not more analysis.
-- The bundle's one point of ADR is transcript-only, and that label is now exhaustive: the FY25 10-K, the 1Q26 and
-  2Q26 10-Qs and both letters were read; no filing carries a magnitude; Airbnb did not even name RNPL in a filing
-  until 2Q26.
+- The bundle's one point of ADR is transcript-only, and the label survives a ten-document search (FY25 10-K, three
+  10-Qs, five letters, the 2026 proxy): no filing carries a magnitude. The letters name RNPL from 3Q25; the 10-Q
+  series from 2Q26.
 - The sub-regional term is small and fading (−0.15pp), has no demonstrated forecast content (H2 failed), and the
   panel cannot see India, the Gulf or South-East Asia as destinations; the origin rotation is priced within
   markets (−0.35% a year) but from a single review vintage and a snapshot price.
-- The reconciliation evidence is real but carried by one region: the pooled slope of 1.13 rests on Latin America
-  (whose accommodation-CPI comparator is Brazil alone at 24–33% coverage); the EMEA-only slope is window-dependent
+- The quarterly reconciliation is not established: the pooled slope of 1.13 rests on Latin America, three-quarters of
+  whose slope is the Brazil hotel-CPI comparator (Brazil alone, 24–33% coverage), and with four clusters no valid
+  p-value exists (wild-cluster bootstrap p 0.89); the EMEA-only slope is window-dependent
   (1.09 on n 7, −0.38 on n 9); and the Eurostat-weighted and panel-weighted EMEA mix series correlate −0.30 quarter
   by quarter even though the sub-regional term moves 0.02pp between them.
 - Composition, measured as far as the data allow, does not put 4Q26 ADR below the Street; a short that needs that

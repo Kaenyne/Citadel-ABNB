@@ -1,0 +1,73 @@
+====================================================================================================
+1. POOLED SLOPE AS A FUNCTION OF THE BRAZIL WEIGHT IN THE LATAM COMPARATOR (X neutral)
+====================================================================================================
+ w_brazil          blend  pooled_b  se_crv  p_b0_crv  p_b1_crv  ci90_lo  ci90_hi  latam_b  latam_r  in_band
+    1.000   as published     1.127   0.331     0.042     0.727    0.349    1.905    1.375    0.922     True
+    0.900                    1.038   0.310     0.044     0.910    0.308    1.768    1.271    0.926     True
+    0.800                    0.949   0.290     0.047     0.872    0.267    1.631    1.167    0.931     True
+    0.700                    0.861   0.269     0.049     0.640    0.227    1.494    1.062    0.934     True
+    0.657    BR+CL blend     0.822   0.260     0.051     0.544    0.209    1.435    1.018    0.935     True
+    0.600                    0.772   0.249     0.053     0.426    0.186    1.357    0.958    0.935     True
+    0.500                    0.683   0.228     0.058     0.259    0.146    1.220    0.854    0.932     True
+    0.455    BR+MX blend     0.643   0.219     0.061     0.202    0.127    1.158    0.807    0.928     True
+    0.400                    0.594   0.208     0.065     0.146    0.105    1.083    0.750    0.920     True
+    0.368 BR+MX+CL blend     0.566   0.201     0.067     0.120    0.092    1.039    0.716    0.914     True
+    0.300                    0.505   0.187     0.074     0.078    0.064    0.946    0.645    0.895     True
+    0.200                    0.416   0.167     0.088     0.040    0.024    0.809    0.541    0.845    False
+    0.100                    0.328   0.146     0.111     0.019   -0.017    0.672    0.437    0.755    False
+    0.000      no Brazil     0.239   0.126     0.155     0.009   -0.058    0.536    0.333    0.616    False
+
+====================================================================================================
+2. REQUIRED CO-MOVEMENT OF THE MEXICO+CHILE COMPONENT WITH THE MIX TERM
+====================================================================================================
+within-LatAm slopes on mix: ex-FX +0.358, Brazil CPI -1.042 (r -0.805), size +0.013, LOS +0.012
+                blend  pooled_b_if_X_neutral  d_pooled_per_unit_bX  bX_for_pooled_1_0  bX_for_pooled_0_5  bX_for_pooled_1_127  brazil_bX_actual
+BR+MX+CL (w_BR 0.368)                  0.566                 0.538              0.807             -0.122                1.042            -1.042
+        BR+MX (0.455)                  0.643                 0.464              0.769             -0.308                1.042            -1.042
+        BR+CL (0.657)                  0.822                 0.292              0.608             -1.103                1.042            -1.042
+  reading: b_X is the slope of the Mexico+Chile accommodation-CPI y/y on the LatAm mix term. Brazil's own is -1.04pp of CPI per pp of mix. For the blended comparator to keep the pooled slope at the band floor the unobserved component must co-move at least as shown; at 1.0 it must co-move roughly as Brazil does.
+
+====================================================================================================
+3. MECHANISM: BRAZIL STAYS GROWTH vs BRAZIL HOTEL INFLATION vs THE LATAM MIX TERM
+====================================================================================================
+      brazil_stays_yoy  ibge_hosp_yoy  latam_mix_pp  disclosed
+1Q22             82.93          12.98          4.53      False
+2Q22            135.46          19.07         -0.49      False
+3Q22            108.65          22.61         -0.81      False
+4Q22             36.56          20.38          1.37      False
+1Q23             51.09          18.08         -0.41      False
+2Q23             41.84          16.28         -1.26      False
+3Q23             11.60          13.31          1.31      False
+4Q23             55.17          11.92         -1.20      False
+1Q24              6.40           9.23          1.90      False
+2Q24             14.32           8.24          0.48      False
+3Q24             38.17           8.67         -1.13      False
+4Q24              7.29           8.30          0.50       True
+1Q25             50.82          10.86         -2.67       True
+2Q25             57.97          10.87         -2.54       True
+3Q25             20.34           9.16         -0.24       True
+4Q25             30.19          10.77         -0.68       True
+1Q26             20.20           7.88         -0.47       True
+2Q26             14.83           6.65          0.44       True
+  1Q22 on (n 18): r(Brazil stays y/y, IBGE hosp) +0.688; r(Brazil stays y/y, LatAm mix) -0.124; r(IBGE hosp, LatAm mix) +0.002
+  disclosed 4Q24-2Q26 (n 7): r(Brazil stays y/y, IBGE hosp) +0.807; r(Brazil stays y/y, LatAm mix) -0.979; r(IBGE hosp, LatAm mix) -0.805
+
+====================================================================================================
+4. FOR THE RECORD: LatAm cells outside the disclosed set
+====================================================================================================
+quarter          basis_04  is_disclosed  in_chained_sample  disclosed_exfx_pct  mix_pp  cpi_p1_pct  y_full_p1
+   1Q23          modelled         False              False              -2.462  -0.407      18.080    -21.466
+   2Q23          modelled         False              False              -2.217  -1.261      16.283    -18.981
+   3Q23          modelled         False              False              -3.728   1.308      13.313    -17.753
+   4Q23          modelled         False              False              -2.799  -1.202      11.920    -15.374
+   1Q24          modelled         False              False              -4.400   1.898       9.233    -14.810
+   2Q24          modelled         False              False              -0.175   0.480       8.243     -9.423
+   3Q24          modelled         False              False               4.724  -1.125       8.667     -5.086
+   4Q24 disclosed-chained          True               True               4.000   0.498       8.297     -5.435
+   1Q25 disclosed-chained          True               True               2.000  -2.669      10.863     -9.811
+   2Q25 disclosed-chained          True               True               2.000  -2.542      10.870     -9.951
+   3Q25 disclosed-chained          True               True               3.000  -0.244       9.160     -7.216
+   4Q25 disclosed-chained          True               True               3.000  -0.677      10.770     -8.813
+   1Q26 disclosed-chained          True               True               3.000  -0.472       7.883     -6.128
+   2Q26 disclosed-chained          True               True               2.000   0.443       6.650     -5.650
+  (every LatAm chained cell is also a disclosed cell: there is no wider LatAm sample to test on)
