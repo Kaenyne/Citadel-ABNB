@@ -1,0 +1,260 @@
+{
+  "prereg_blob": "e2dda55945778c960f207ef91a0d8b744d138794",
+  "run_at": "2026-09-23T23:14:18",
+  "seconds": 874.9,
+  "p1": {
+    "n": 362470,
+    "listings": 76615,
+    "pooled": {
+      "m_bar": 0.3205128205128205,
+      "premium": 0.11137469375932449,
+      "premium_lo": 0.10774085260722192,
+      "premium_hi": 0.11502045539037989,
+      "log_premium": 0.10559771190796347
+    },
+    "by_host": {
+      "los-angeles": {
+        "m_bar": 0.41025641025641024,
+        "log_premium": 0.11448931328577805,
+        "lo": 0.11111105714892107,
+        "hi": 0.11786756942263503,
+        "premium": 0.12130065798024414,
+        "premium_lo": 0.1175190084380889,
+        "premium_hi": 0.12509510450674746
+      },
+      "mexico-city": {
+        "m_bar": 0.23076923076923078,
+        "log_premium": 0.09670611053014887,
+        "lo": 0.09343840513042956,
+        "hi": 0.09997381592986818,
+        "premium": 0.10153659603969842,
+        "premium_lo": 0.09794297360424362,
+        "premium_hi": 0.10514198058167341
+      }
+    },
+    "loco": {
+      "chicago": 0.1245252732979039,
+      "austin": 0.10833967639868276,
+      "nashville": 0.11500035587890242,
+      "new-orleans": 0.09168179922716155
+    },
+    "perm_rank_of_15": 1,
+    "p3": {
+      "premium": 0.10656815954051696,
+      "premium_lo": 0.10212658304189728,
+      "premium_hi": 0.11102763561809305
+    }
+  },
+  "p2": {
+    "n": 164637,
+    "markets": 33,
+    "hosts": [
+      "boston",
+      "broward-county",
+      "cambridge",
+      "fort-worth",
+      "jersey-city",
+      "los-angeles",
+      "mexico-city",
+      "newark",
+      "oakland",
+      "rhode-island",
+      "san-francisco",
+      "san-mateo-county",
+      "santa-clara-county",
+      "santa-cruz-county",
+      "seattle",
+      "toronto",
+      "vancouver"
+    ],
+    "controls": [
+      "asheville",
+      "austin",
+      "chicago",
+      "clark-county-nv",
+      "columbus",
+      "denver",
+      "hawaii",
+      "montreal",
+      "nashville",
+      "new-brunswick",
+      "new-orleans",
+      "ottawa",
+      "portland",
+      "salem-or",
+      "twin-cities-msa",
+      "winnipeg"
+    ],
+    "host_match_quotes": 36361,
+    "leave_one_host_out": {
+      "boston": 0.086707378661181,
+      "broward-county": 0.0902354731084842,
+      "cambridge": 0.08925283827505687,
+      "fort-worth": 0.08962499727943549,
+      "jersey-city": 0.0905597090426305,
+      "los-angeles": 0.11265952132529158,
+      "mexico-city": 0.04965935434706555,
+      "newark": 0.09087206518454315,
+      "oakland": 0.08967894737982737,
+      "rhode-island": 0.08932010225406242,
+      "san-francisco": 0.08919590255310257,
+      "san-mateo-county": 0.09087967597887318,
+      "santa-clara-county": 0.08808661037477979,
+      "santa-cruz-county": 0.09519015874199756,
+      "seattle": 0.082537721224958,
+      "toronto": 0.08867857842599104,
+      "vancouver": 0.08901667821637445
+    }
+  },
+  "v1_did": [
+    {
+      "round": "Dec",
+      "host": "los-angeles",
+      "X_host": 0.045259373551934906,
+      "X_controls_mean": 0.02522528944515938,
+      "excess_pp": 2.0034084106775527
+    },
+    {
+      "round": "Dec",
+      "host": "mexico-city",
+      "X_host": 0.07684219113547203,
+      "X_controls_mean": 0.02522528944515938,
+      "excess_pp": 5.161690169031265
+    },
+    {
+      "round": "Mar",
+      "host": "los-angeles",
+      "X_host": 0.04135139917891131,
+      "X_controls_mean": -0.007555088174181816,
+      "excess_pp": 4.890648735309313
+    },
+    {
+      "round": "Mar",
+      "host": "mexico-city",
+      "X_host": 0.027106059423601697,
+      "X_controls_mean": -0.007555088174181816,
+      "excess_pp": 3.4661147597783515
+    },
+    {
+      "round": "Jun",
+      "host": "los-angeles",
+      "X_host": 0.16464882393430158,
+      "X_controls_mean": 0.1486048897173328,
+      "excess_pp": 1.6043934216968787
+    },
+    {
+      "round": "Jun",
+      "host": "mexico-city",
+      "X_host": 0.10426757277349818,
+      "X_controls_mean": 0.1486048897173328,
+      "excess_pp": -4.433731694383461
+    }
+  ],
+  "v3_timing": [
+    {
+      "host": "los-angeles",
+      "excess_Dec_pp": 0.31804027569299553,
+      "excess_Mar_pp": 0.42261502974093523,
+      "excess_Jun_pp": -1.1195817142280517,
+      "share_before_Dec": -0.2840706235652333,
+      "share_Dec_to_Mar": -0.093405200101936,
+      "share_Mar_to_Jun": 1.3774758236671694
+    },
+    {
+      "host": "mexico-city",
+      "excess_Dec_pp": 4.472156399181173,
+      "excess_Mar_pp": -1.7811756468058,
+      "excess_Jun_pp": -8.869039421817437,
+      "share_before_Dec": -0.5042436036736819,
+      "share_Dec_to_Mar": 0.705074332018872,
+      "share_Mar_to_Jun": 0.7991692716548099
+    }
+  ],
+  "v3b_placebo_2025": {
+    "X_LA": 0.035973437635080235,
+    "X_controls_mean": 0.024208706429107645,
+    "excess_pp": 1.176473120597259
+  },
+  "a1_did": [
+    {
+      "round": "Mar",
+      "paris_snap": "2024-03-16",
+      "rome_snap": "2024-03-22",
+      "price_premium_did": 0.00035121583237193287,
+      "U_excess_did_pp": -0.998577310872967
+    },
+    {
+      "round": "May",
+      "paris_snap": "2024-05-11",
+      "rome_snap": "2024-05-17",
+      "price_premium_did": 0.00036071369398269225,
+      "U_excess_did_pp": -2.5447559789220744
+    },
+    {
+      "round": "Jun",
+      "paris_snap": "2024-06-10",
+      "rome_snap": "2024-06-15",
+      "price_premium_did": 0.00033026918868964524,
+      "U_excess_did_pp": -2.1864478054438417
+    }
+  ],
+  "v4": {
+    "host_pre": 10.884613352277729,
+    "host_event": 14.959133674053394,
+    "control_pre": 4.862095810048106,
+    "control_event": 1.0508880807167609,
+    "did_pp": 7.8857280511070105
+  },
+  "translation": {
+    "matches_covered": 69,
+    "scale": 1.5072463768115942,
+    "f": {
+      "los-angeles": {
+        "4Q25": -0.30879552947456934,
+        "1Q26": -0.0686802941926,
+        "2Q26": 1.3774758236671694
+      },
+      "mexico-city": {
+        "4Q25": -0.488747464508432,
+        "1Q26": 0.6895781928536221,
+        "2Q26": 0.7991692716548099
+      }
+    },
+    "premium": {
+      "low": 0.10774085260722192,
+      "central": 0.11137469375932449,
+      "high": 0.11502045539037989
+    },
+    "effects": [
+      {
+        "case": "central",
+        "2Q26": 0.2617921917790991,
+        "4Q25": -0.07452330771636033,
+        "overstatement_4Q26_pp": 0.18726888406273878,
+        "adr_4Q26_move_usd_from_base": -0.3136941076934937,
+        "adr_4Q26_filed_base": 172.7203058923065,
+        "adr_4Q26_audit_consistent_row": 172.1423058923065
+      },
+      {
+        "case": "high",
+        "2Q26": 0.4225769781131672,
+        "4Q25": -0.12029325229207036,
+        "overstatement_4Q26_pp": 0.30228372582109686,
+        "adr_4Q26_move_usd_from_base": -0.5063554691229193,
+        "adr_4Q26_filed_base": 172.52764453087707,
+        "adr_4Q26_audit_consistent_row": 171.94964453087707
+      },
+      {
+        "case": "low",
+        "2Q26": 0.18181347474890208,
+        "4Q25": -0.05175609491487853,
+        "overstatement_4Q26_pp": 0.13005737983402355,
+        "adr_4Q26_move_usd_from_base": -0.21785911695997282,
+        "adr_4Q26_filed_base": 172.81614088304002,
+        "adr_4Q26_audit_consistent_row": 172.23814088304002
+      }
+    ],
+    "label": "measured composition term",
+    "host_nights_share_nyc": 0.11258570600272876
+  }
+}
