@@ -120,8 +120,9 @@ same-construction 2Q26 value. It is now measured: +0.047 here, against I's +0.05
 3. **EMEA is two markets carrying 40% of the weight.** Both agree, but two is two.
 4. **4Q26 carries the 3Q26 read.** No 4Q26 bookings exist yet, and past Q3→Q4 LOS moves were +0.06, +0.18 and −0.09
    (H history).
-5. **2027 LOS stays at the 0.30 fill** (unchanged by the registration). 3Q27 and 4Q27 now chain on lower 3Q26 and
-   4Q26 levels and still add 0.30 y/y. A 2027 rule for LOS belongs with the 2027 core rule (open choice 4).
+5. **2027 LOS stayed at the 0.30 fill under this registration.** Later the same day, fix (m)
+   (`core_2027_prereg.md`) set 2027 LOS to its expanding mean, 0.279, on the quarters where the core moves to its
+   mean. The carried +0.047 is the low bound.
 6. **The World Cup core adjustment (fix l) is a post-hoc translation.** It is labelled as such. The point is 0.05pp,
    the Chicago-controlled and match-night estimates. The band runs from 0 to the 0.20pp pooled bound (±0.10pp in the
    envelope).

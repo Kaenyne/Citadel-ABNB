@@ -8,7 +8,7 @@ and its tracked outputs are untouched. Numbers: `data/processed/pitch_model_v2/a
 ```bash
 PYTHONPATH=analysis/src py -3.13 -m pitch_model_v2.adr_engine_v3.run --no-posterior --no-workbook --no-refresh-prices   # exit 0
 PYTHONPATH=analysis/src py -3.13 -m pitch_model_v2.los_nowcast.run --workers 3                                          # fix (k) input, exit 0
-PYTHONPATH=analysis/src py -3.13 -m pytest analysis/src/pitch_model_v2/adr_engine_v3/tests analysis/src/pitch_model_v2/los_nowcast/tests -q   # 55 pass
+PYTHONPATH=analysis/src py -3.13 -m pytest analysis/src/pitch_model_v2/adr_engine_v3/tests analysis/src/pitch_model_v2/los_nowcast/tests -q   # 59 pass
 ```
 
 ## 1. The line after the corrections
@@ -19,7 +19,8 @@ alternatives.
 
 Fixes (k) and (l) were added later on 23 Sep:
 - **(k)** LOS is measured, not carried;
-- **(l)** the World Cup premium is taken out of the carried core.
+- **(l)** the World Cup premium is taken out of the carried core;
+- **(m)** 2027 uses the core's expanding mean instead of the 2Q26 carry (`core_2027_prereg.md`).
 
 The note is `los_nowcast.md`. The table shows the line with all fixes.
 
@@ -31,11 +32,24 @@ The note is `los_nowcast.md`. The table shows the line with all fixes.
 | 4Q26 FX (pp) | +0.51 | **−0.37** | +0.51 | +0.28 | |
 | 4Q26 ADR | $173.03 | **$170.96** | $172.44 | $172.05 | $171.33 |
 | 4Q26 P(print ≥ Street) | 0.701 | **0.453** | 0.636 | 0.590 | |
-| FY27 ADR | $185.21 | **$184.00** | | | none exists |
+| FY27 ADR | $185.21 | **$181.56** | | | none exists |
 | half-band 3Q26 / 4Q26 (±1σ) | 0.978 / 1.932pp | 0.999 / 1.892pp | | | |
 
 Through fix (j) only, the line read 3Q26 $176.18 (P 0.31) and 4Q26 $171.46 (P 0.52). Fix (k) takes about $0.43 off
-each quarter, and fix (l) about $0.09 (`los_wc_ladder.csv`).
+each quarter, and fix (l) about $0.09 (`los_wc_ladder.csv`). Fix (m) leaves 2026 alone and lowers FY27 from
+$184.00 to $181.56.
+
+**The trajectory with all fixes** (midpoint FX for 2026, the identity at held spot for 2027):
+
+| | 3Q26 | 4Q26 | 1Q27 | 2Q27 |
+|---|---:|---:|---:|---:|
+| ex-FX y/y | +2.96% | +2.43% | +0.95% | +1.44% |
+| FX (pp) | −0.41 | −0.37 | −0.37 | −0.43 |
+| reported y/y | +2.55% | +2.06% | +0.58% | +1.01% |
+| ADR | **$175.66** | **$170.96** | **$187.91** | **$185.59** |
+| ±1σ band | $173.95–177.37 | $167.79–174.13 | $183.22–192.60 | $179.91–191.28 |
+| core rule | carry 3.80 | carry 3.80 | mean 2.46 | mean 2.46 |
+| Street | $177.06 | $171.33 | none | none |
 
 **What this means for the pitch.**
 
@@ -84,6 +98,7 @@ each quarter, and fix (l) about $0.09 (`los_wc_ladder.csv`).
 | **(j) FX leg** | The identity was the leg because the V0 registration promotes it; accuracy was never compared with the card's method on the same footing. | **Recommended leg: the card-method midpoint (V0 + V2)/2 for 3Q26 and 4Q26.** It beats every variant point in time in all four promotion cells (section 3). 2027 keeps the identity: see section 3 on V2's intercept. `config.FX_LEG = "identity"` restores the v2 leg. | 3Q26 −$1.41, 4Q26 −$1.48 against the identity |
 | **(k) LOS measured** | LOS was held at H's assumed 0.30 in 2Q26, 3Q26 and 4Q26, so the forecast assumed it never changes. | Measured from the calendars already in the repo: the change in the LOS term from 2Q26 to 3Q26 bookings, on a new-bookings flow and I2's stock, both reproduced (gate passed to 0.0003pp). All four constructions: −0.17 to −0.38pp; point −0.253. Forward LOS 3Q26 = 4Q26 = +0.047pp. Pre-registered (`los_nowcast_prereg.md`); note `los_nowcast.md`. `exfx.LOS_NOWCAST=False` reverts. | 3Q26 −$0.43, 4Q26 −$0.42 |
 | **(l) World Cup out of the core** | The carried 2Q26 core holds the World Cup booking premium (audit F5). | −0.05pp in every forward quarter, plus the 2Q27 lap of the 2Q26 base. Band 0 to the 0.20pp bound. A post-hoc translation (`docs/worldcup-premium/RESULTS.md` §3b). The World Cup's LOS effect was also tested: +0.46pp in host cities, 0.005pp globally, not added. `exfx.WC_CORE_ADJ=False` reverts. | 3Q26 −$0.09, 4Q26 −$0.08 |
+| **(m) 2027 core rule** | The core was carried at its 2Q26 level (a 14-quarter high) into 2027. The core's point-in-time record favours its expanding mean from 3 quarters out: the audit found this at h = 3–4 in both windows (post-hoc). | Carry at h ≤ 2. The expanding mean (2.46, 2Q26 net of the World Cup) at h = 3–4, and at h = 5 / 6 only where a newly registered test passes (`core_2027_prereg.md`, `core_horizon.py`, which reproduces the audit's h = 1–4 exactly). h = 5 passed (0.81, n 6). h = 6 passed on the letter at 0.99 (n 5), which is effectively a tie. On the mean quarters, LOS enters as its own expanding mean (0.279), bounded by the carried 3Q26 read (0.047). The band's core term is the mean rule's own RMSE. `exfx.CORE_HORIZON_RULE=False` reverts. | 2026 unchanged; 1Q27 −$2.54, 2Q27 −$2.50, FY27 −$2.44 |
 
 ## 3. The FX leg: the evidence behind fix (j)
 
@@ -146,8 +161,9 @@ stay-dated, while ADR FX is booking-dated. Its 4Q26 +1.66pp should not enter the
    labelled alternatives. Recommend yes, on the test in section 3. The alternative keeps the identity: 3Q26 +$1.41,
    4Q26 +$1.48.
 3. **LOS in fix (c): resolved by fix (k).** A same-construction 2Q26 LOS now exists. The measured change (−0.253pp) lands where case B had assumed (forward +0.047 vs I's +0.056). Recommend adopting (k) (DEC-0049).
-4. **The 2027 core rule.** Not changed here. The core's point-in-time record favours its expanding mean at h ≥ 3,
-   which puts FY27 ADR about $2.5 lower. It deserves its own pre-registration.
+4. **The 2027 core rule: fix (m)** (DEC-0051). Carry at h ≤ 2, the expanding mean at h ≥ 3. It was registered
+   before the h = 5 / 6 test was run, and adopted at h = 3–4 on the audit's already-seen result, labelled post-hoc.
+   FY27 is $181.56. 4Q27's mean-vs-carry margin is a tie (0.99). Recommend adopting it, and stating the tie.
 5. **World Cup row: fix (l),** 0.05pp point and 0.20pp bound, from 3Q26 (the tournament ended 19 Jul) with the 2Q27 lap. Recommend adopting (DEC-0050), labelled post-hoc. `krish/worldcup-premium` still needs committing so the source is on a branch.
 6. **Workbook.** `model/ABNB_official_model.xlsx` still reads `adr_engine` (v2). It needs an approved rebuild.
 7. **Posterior.** Not re-run (no PyMC here); its draws are seeded from v2.
@@ -159,10 +175,10 @@ stay-dated, while ADR FX is booking-dated. Its 4Q26 +1.66pp should not enter the
 The next agent should read this note, then `git log origin/main..krish/adr-audit-fixes`: one commit per fix.
 
 - **Switches** reproduce v2 behaviour: `config.FX_LEG = "identity"`, and in `exfx.py` `CONSTRUCTION_FIX`,
-  `CORE_FIX`, `SUBGEO_NETTING`, `LOS_NOWCAST` (k) and `WC_CORE_ADJ` (l).
+  `CORE_FIX`, `SUBGEO_NETTING`, `LOS_NOWCAST` (k), `WC_CORE_ADJ` (l) and `CORE_HORIZON_RULE` (m).
 - **LOS nowcast:** `los_nowcast.md` RESUME. Rerun on the September calendars before 5 Nov, after amending the
   pre-registration.
 - **On 5 Nov:** recompute the V0, V1 and midpoint points at O3. Then run
   `fx_falsifier.score_print(y, FF.CANDIDATES_3Q26_J, leg="midpoint_refreshed")` with the printed ADR-FX pp, and apply
   the §12 ratio rule.
-- **Choices 2 and 4 move numbers**, and 2027 LOS belongs with choice 4. Refresh FRED before the memo.
+- **Choice 2 (FX) moves 2026 numbers; choice 4 (fix m) moves 2027.** Refresh FRED before the memo.
