@@ -62,11 +62,11 @@ def test_case_a_lowers_the_base_by_about_five_hundredths_and_case_b_bounds_it():
 
 def test_switch_off_reproduces_v2():
     from pitch_model_v2.adr_engine_v3 import exfx as X
-    X.CONSTRUCTION_FIX = X.LOS_NOWCAST = X.WC_CORE_ADJ = False
+    X.CONSTRUCTION_FIX = X.LOS_NOWCAST = X.WC_CORE_ADJ = X.CORE_HORIZON_RULE = False
     try:
         assert abs(X.forward().loc["4Q26", "exfx_yoy"] - 2.784074164) < 1e-6
     finally:
-        X.CONSTRUCTION_FIX = X.LOS_NOWCAST = X.WC_CORE_ADJ = True
+        X.CONSTRUCTION_FIX = X.LOS_NOWCAST = X.WC_CORE_ADJ = X.CORE_HORIZON_RULE = True
 
 
 # ---- fix (d): the downside rows on the core's own statistics ---------------------------------------------------------
@@ -163,7 +163,11 @@ def test_los_nowcast_enters_3q26_and_4q26_only():
     f = pd.read_csv(C.OUT / "exfx_forward_base.csv", index_col=0)
     assert abs(f.loc["3Q26", "los_mix"] - n.loc["3Q26", "los_forward_pp"]) < 1e-9
     assert abs(f.loc["4Q26", "los_mix"] - f.loc["3Q26", "los_mix"]) < 1e-9
-    assert (f.loc[["1Q27", "2Q27", "3Q27", "4Q27"], "los_mix"] == 0.30).all()
+    X.CORE_HORIZON_RULE = False                                  # before fix (m), 2027 kept the in-core fill
+    try:
+        assert (X.forward().loc[["1Q27", "2Q27", "3Q27", "4Q27"], "los_mix"] == 0.30).all()
+    finally:
+        X.CORE_HORIZON_RULE = True
     assert abs(n.loc["3Q26", "los_forward_pp"] - (0.30 + n.loc["3Q26", "delta_pp"])) < 1e-9
 
 
@@ -179,13 +183,51 @@ def test_los_band_is_the_nowcasts_own():
 def test_world_cup_premium_is_removed_from_the_carry_and_lapped_in_2q27():
     from pitch_model_v2.adr_engine_v3 import exfx as X
     f = pd.read_csv(C.OUT / "exfx_forward_base.csv", index_col=0); h = X.history()
-    assert np.allclose(f.core, float(h.core.iloc[-1]) - X.WC_CORE_PP)
+    assert np.allclose(f.loc[["3Q26", "4Q26"], "core"], float(h.core.iloc[-1]) - X.WC_CORE_PP)
     assert f.loc["2Q27", "wc_lap"] == -X.WC_CORE_PP and (f.drop(index="2Q27").wc_lap == 0).all()
 
 
 def test_ladder_starts_at_fix_j_and_each_step_is_recorded():
     d = pd.read_csv(C.OUT / "los_wc_ladder.csv")
-    assert len(d) == 3
+    assert len(d) == 4
     assert abs(d.adr_identity_3Q26.iloc[0] - 177.588) < 0.01 and abs(d.adr_identity_4Q26.iloc[0] - 172.943) < 0.01
     p = pd.read_csv(C.OUT / "adr_path.csv", index_col=0)
     assert abs(d.adr_4Q26.iloc[-1] - p.loc["4Q26", "adr_usd"]) < 1e-9
+
+
+# ---- fix (m): the 2027 core rule -----------------------------------------------------------------------------------------
+def test_core_horizon_reproduces_the_audits_h1_to_h4_scores():
+    s = pd.read_csv(C.OUT / "core_horizon_scores.csv")
+    a = pd.read_csv(C.ROOT / "data/processed/pitch_model_v2/receipts/ADR_AUDIT/C1_core_pit_scores.csv")
+    m = s.merge(a, on=["h", "window"], suffixes=("", "_audit"))
+    assert len(m) == 8 and np.allclose(m.mean_vs_carry, m.mean_vs_carry_audit) and (m.n == m.n_audit).all()
+
+
+def test_rule_is_carry_to_h2_and_mean_where_it_wins_after():
+    r = pd.read_csv(C.OUT / "core_horizon_rule.csv", index_col=0)
+    s = pd.read_csv(C.OUT / "core_horizon_scores.csv")
+    assert (r.loc[["3Q26", "4Q26"], "core_rule"] == "carry").all() and (r.loc[["1Q27", "2Q27"], "core_rule"] == "mean").all()
+    for q, h in (("3Q27", 5), ("4Q27", 6)):                     # read from the registered test, never typed in
+        wins = bool((s[s.h == h].mean_vs_carry < 1).all())
+        assert r.loc[q, "core_rule"] == ("mean" if wins else "carry")
+
+
+def test_2027_core_is_the_expanding_mean_net_of_the_world_cup_and_los_its_own_mean():
+    from pitch_model_v2.adr_engine_v3 import exfx as X
+    f = pd.read_csv(C.OUT / "exfx_forward_base.csv", index_col=0); r = pd.read_csv(C.OUT / "core_horizon_rule.csv", index_col=0)
+    cv = X.history().core.to_numpy(dtype=float).copy(); cv[-1] -= X.WC_CORE_PP
+    n = pd.read_csv(X.LOS_NOWCAST_FILE).set_index("quarter")
+    los_mean = np.mean(list(X.history().los_mix) + [n.loc["3Q26", "los_forward_pp"]])
+    for q in [q for q in r.index if r.loc[q, "core_rule"] == "mean"]:
+        assert abs(f.loc[q, "core"] - cv.mean()) < 1e-9 and abs(f.loc[q, "los_mix"] - los_mean) < 1e-9
+    assert 2.40 < cv.mean() < 2.50
+
+
+def test_switching_m_off_restores_the_carry_in_2027():
+    from pitch_model_v2.adr_engine_v3 import exfx as X
+    X.CORE_HORIZON_RULE = False
+    try:
+        f = X.forward()
+        assert np.allclose(f.core, float(X.history().core.iloc[-1]) - X.WC_CORE_PP)
+    finally:
+        X.CORE_HORIZON_RULE = True

@@ -199,24 +199,25 @@ def geomix_stage(refresh: bool = True) -> dict:
 
 # ---------------------------------------------------------------------------------------------------------------- #
 def ladder_kl() -> pd.DataFrame:
-    """ADR with fixes (k) LOS nowcast and (l) World Cup core adjustment switched on one at a time."""
-    rows, keep = [], (M.LOS_NOWCAST, M.WC_CORE_ADJ)
-    steps = (("v3 through fix (j): LOS and seats carried from 2Q26", False, False),
-             ("+ fix (k): LOS = 2Q26 fill + measured 2Q26->3Q26 change", True, False),
-             ("+ fix (l): World Cup premium out of the carried core", True, True))
+    """ADR with fixes (k) LOS nowcast, (l) World Cup core adjustment and (m) 2027 core rule switched on one at a time."""
+    rows, keep = [], (M.LOS_NOWCAST, M.WC_CORE_ADJ, M.CORE_HORIZON_RULE)
+    steps = (("v3 through fix (j): LOS and seats carried from 2Q26", False, False, False),
+             ("+ fix (k): LOS = 2Q26 fill + measured 2Q26->3Q26 change", True, False, False),
+             ("+ fix (l): World Cup premium out of the carried core", True, True, False),
+             ("+ fix (m): core's expanding mean at h >= 3 (2027)", True, True, True))
     try:
-        for label, k, l in steps:
-            M.LOS_NOWCAST, M.WC_CORE_ADJ = k, l
+        for label, k, l, m in steps:
+            M.LOS_NOWCAST, M.WC_CORE_ADJ, M.CORE_HORIZON_RULE = k, l, m
             p, f = A.build(), M.forward()
             row = {"step": label}
-            for q in ("3Q26", "4Q26"):
+            for q in ("3Q26", "4Q26", "1Q27", "2Q27"):
                 row.update({f"los_{q}": float(f.loc[q, "los_mix"]), f"exfx_{q}": float(f.loc[q, "exfx_yoy"]), f"adr_{q}": float(p.loc[q, "adr_usd"]),
-                            f"band_half_pp_{q}": float(p.loc[q, "band_half_pp"]), f"p_ge_street_{q}": float(p.loc[q, "p_print_ge_street"]),
+                            f"band_half_pp_{q}": float(p.loc[q, "band_half_pp"]), f"p_ge_street_{q}": float(p.loc[q, "p_print_ge_street"]) if q in ("3Q26", "4Q26") else np.nan,
                             f"adr_identity_{q}": float(p.loc[q, "adr_usd_fx_identity"])})
             row["adr_FY27"] = float(p.loc["FY27", "adr_usd"])
             rows.append(row)
     finally:
-        M.LOS_NOWCAST, M.WC_CORE_ADJ = keep
+        M.LOS_NOWCAST, M.WC_CORE_ADJ, M.CORE_HORIZON_RULE = keep
     return pd.DataFrame(rows)
 
 
@@ -257,6 +258,7 @@ def main(argv=None):
         from . import posterior; posterior.main()
     _f = fc[fc["asof"] == "2026-09-21"].set_index("quarter")                  # the leg's own FX band, per quarter (fix j)
     sd = pd.Series({q: float(_f.loc[q, "sd_mid" if (C.FX_LEG == "midpoint" and q in C.FX_MIDPOINT_QUARTERS) else "sd"]) for q in C.FORWARD_QUARTERS})
+    from . import core_horizon; core_horizon.main()                                # fix (m): the registered h = 5 / 6 test
     M.history().to_csv(C.OUT / "exfx_history.csv"); M.forward().to_csv(C.OUT / "exfx_forward_base.csv")
     M.geo_mix_history_check().to_csv(C.OUT / "geo_mix_method_check.csv")
     M.regional_growth_forward().to_csv(C.OUT / "regional_growth_forward.csv"); M.geo_mix_forward().to_csv(C.OUT / "geo_mix_forward.csv")

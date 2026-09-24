@@ -1,46 +1,46 @@
 rule,quarter,residual_pp,exfx_yoy_pct,geo_mix_pp
 base: core carry + bundle laps (nights-linked geo),3Q26,4.288215265375379,2.95866537336942,-1.292633806119825
 base: core carry + bundle laps (nights-linked geo),4Q26,3.7993263764864897,2.4267920781857986,-1.3356182124145577
-base: core carry + bundle laps (nights-linked geo),1Q27,3.7993263764864897,2.312497103947024,-1.6203852493470672
-base: core carry + bundle laps (nights-linked geo),2Q27,3.7993263764864897,2.8021430268916,-1.0807393264024912
-base: core carry + bundle laps (nights-linked geo),3Q27,3.7993263764864897,2.758699233036925,-1.1741831202571662
-base: core carry + bundle laps (nights-linked geo),4Q27,3.7993263764864897,2.823566603843157,-1.1093157494509343
+base: core carry + bundle laps (nights-linked geo),1Q27,2.460588999722346,0.9522876278549856,-1.6203852493470672
+base: core carry + bundle laps (nights-linked geo),2Q27,2.460588999722346,1.4419335507995614,-1.0807393264024912
+base: core carry + bundle laps (nights-linked geo),3Q27,2.460588999722346,1.3984897569448864,-1.1741831202571662
+base: core carry + bundle laps (nights-linked geo),4Q27,2.460588999722346,1.4633571277511184,-1.1093157494509343
 "base + sub-regional country mix (v2 H3, Inside Airbnb panel)",3Q26,4.288215265375379,2.9214530173966873,-1.3298461620925581
 "base + sub-regional country mix (v2 H3, Inside Airbnb panel)",4Q26,3.7993263764864897,2.3799912087150075,-1.382419081885349
-"base + sub-regional country mix (v2 H3, Inside Airbnb panel)",1Q27,3.7993263764864897,2.2575503736721636,-1.6753319796219275
-"base + sub-regional country mix (v2 H3, Inside Airbnb panel)",2Q27,3.7993263764864897,2.7374760970462906,-1.1454062562478005
-"base + sub-regional country mix (v2 H3, Inside Airbnb panel)",3Q27,3.7993263764864897,2.6858125294909243,-1.2470698238031668
-"base + sub-regional country mix (v2 H3, Inside Airbnb panel)",4Q27,3.7993263764864897,2.7421814823461284,-1.1907008709479627
+"base + sub-regional country mix (v2 H3, Inside Airbnb panel)",1Q27,2.460588999722346,0.8973408975801253,-1.6753319796219275
+"base + sub-regional country mix (v2 H3, Inside Airbnb panel)",2Q27,2.460588999722346,1.3772666209542521,-1.1454062562478005
+"base + sub-regional country mix (v2 H3, Inside Airbnb panel)",3Q27,2.460588999722346,1.3256030533988858,-1.2470698238031668
+"base + sub-regional country mix (v2 H3, Inside Airbnb panel)",4Q27,2.460588999722346,1.38197200625409,-1.1907008709479627
 base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),3Q26,4.288215265375379,3.184699244557983,-1.0665999349312625
 base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),4Q26,3.7993263764864897,2.6210779845884855,-1.141332306011871
-base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),1Q27,3.7993263764864897,2.542865605435991,-1.3900167478581
-base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),2Q27,3.7993263764864897,2.923187078890158,-0.9596952744039331
-base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),3Q27,3.7993263764864897,2.8618537466852136,-1.0710286066088774
-base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),4Q27,3.7993263764864897,2.925896548434159,-1.0069858048599323
+base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),1Q27,2.460588999722346,1.1826561293439526,-1.3900167478581
+base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),2Q27,2.460588999722346,1.5629776027981195,-0.9596952744039331
+base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),3Q27,2.460588999722346,1.5016442705931752,-1.0710286066088774
+base + sub-regional + measured origin-destination tilt (upgrade 2: EMEA 10.5 / LatAm 16.4 / APAC 14.9),4Q27,2.460588999722346,1.5656870723421203,-1.0069858048599323
 base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,3Q26,4.288215265375379,2.5401382516811637,-1.7111609278080817
 base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,4Q26,3.7993263764864897,2.0157204261844117,-1.7466898644159448
-base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,1Q27,3.7993263764864897,1.8376516896285566,-2.0952306636655345
-base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,2Q27,3.7993263764864897,2.4565452244420114,-1.4263371288520796
-base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,3Q27,3.7993263764864897,2.6858125294909243,-1.2470698238031668
-base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,4Q27,3.7993263764864897,2.7421814823461284,-1.1907008709479627
+base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,1Q27,2.460588999722346,0.4774422135365183,-2.0952306636655345
+base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,2Q27,2.460588999722346,1.096335748349973,-1.4263371288520796
+base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,3Q27,2.460588999722346,1.3256030533988858,-1.2470698238031668
+base + sub-regional + composition tilt B (EMEA 5 / LatAm 30 / APAC 25) — retired by upgrade 2,4Q27,2.460588999722346,1.38197200625409,-1.1907008709479627
 lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,3Q26,3.933,2.6034501079940413,-1.292633806119825
 lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,4Q26,3.056,1.6834657016993089,-1.3356182124145577
-lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,1Q27,2.376,0.889170727460534,-1.6203852493470672
-lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,2Q27,1.906,0.9588166504051103,-1.0807393264024912
-lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,3Q27,1.906,0.8653728565504353,-1.1741831202571662
-lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,4Q27,1.906,0.9302402273566672,-1.1093157494509343
+lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,1Q27,2.376,0.8676986281326395,-1.6203852493470672
+lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,2Q27,1.906,0.9373445510772158,-1.0807393264024912
+lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,3Q27,1.906,0.8439007572225408,-1.1741831202571662
+lap-only (K4 residual steps): every 2025-26 residual step laps at its anniversary,4Q27,1.906,0.9087681280287727,-1.1093157494509343
 "card v3: last_q residual carry, no lap (card geo)",3Q26,4.79932637648649,3.46574066681118,-1.428426
 "card v3: last_q residual carry, no lap (card geo)",4Q26,4.79932637648649,3.46574066681118,-1.428426
-"card v3: last_q residual carry, no lap (card geo)",1Q27,4.79932637648649,3.6362127295049143,-1.428426
-"card v3: last_q residual carry, no lap (card geo)",2Q27,4.79932637648649,3.5862127295049144,-1.428426
-"card v3: last_q residual carry, no lap (card geo)",3Q27,4.79932637648649,3.6362127295049143,-1.428426
-"card v3: last_q residual carry, no lap (card geo)",4Q27,4.79932637648649,3.6362127295049143,-1.428426
+"card v3: last_q residual carry, no lap (card geo)",1Q27,2.7113826505159966,1.5267969042065266,-1.428426
+"card v3: last_q residual carry, no lap (card geo)",2Q27,2.7113826505159966,1.4767969042065265,-1.428426
+"card v3: last_q residual carry, no lap (card geo)",3Q27,2.7113826505159966,1.5267969042065266,-1.428426
+"card v3: last_q residual carry, no lap (card geo)",4Q27,2.7113826505159966,1.5267969042065266,-1.428426
 full lap: ex-NA RNPL sized at the 1H26 residual steps,3Q26,4.288215265375379,2.95866537336942,-1.292633806119825
 full lap: ex-NA RNPL sized at the 1H26 residual steps,4Q26,3.7993263764864897,2.4267920781857986,-1.3356182124145577
-full lap: ex-NA RNPL sized at the 1H26 residual steps,1Q27,3.33932637648649,1.852497103947024,-1.6203852493470672
-full lap: ex-NA RNPL sized at the 1H26 residual steps,2Q27,2.64932637648649,1.6521430268916,-1.0807393264024912
-full lap: ex-NA RNPL sized at the 1H26 residual steps,3Q27,2.64932637648649,1.608699233036925,-1.1741831202571662
-full lap: ex-NA RNPL sized at the 1H26 residual steps,4Q27,2.64932637648649,1.673566603843157,-1.1093157494509343
+full lap: ex-NA RNPL sized at the 1H26 residual steps,1Q27,3.02737471400806,1.5190733421406994,-1.6203852493470672
+full lap: ex-NA RNPL sized at the 1H26 residual steps,2Q27,2.33737471400806,1.3187192650852755,-1.0807393264024912
+full lap: ex-NA RNPL sized at the 1H26 residual steps,3Q27,2.33737471400806,1.2752754712306005,-1.1741831202571662
+full lap: ex-NA RNPL sized at the 1H26 residual steps,4Q27,2.33737471400806,1.3401428420368324,-1.1093157494509343
 core mean reversion to the 2023-25 mean,3Q26,2.761249777967514,1.4316998859615553,-1.292633806119825
 core mean reversion to the 2023-25 mean,4Q26,2.272360889078625,0.8998265907779336,-1.3356182124145577
 core mean reversion to the 2023-25 mean,1Q27,2.272360889078625,0.7855316165391591,-1.6203852493470672
@@ -55,10 +55,10 @@ AR(1) fitted on core,3Q27,2.441381862464347,1.400754719014782,-1.174183120257166
 AR(1) fitted on core,4Q27,2.425237366211988,1.449477593568655,-1.1093157494509343
 base + fee-migration K line (DEC-0008 sensitivity),3Q26,4.288215265375379,3.13016537336942,-1.292633806119825
 base + fee-migration K line (DEC-0008 sensitivity),4Q26,3.7993263764864897,2.8012920781857984,-1.3356182124145577
-base + fee-migration K line (DEC-0008 sensitivity),1Q27,3.7993263764864897,2.657597103947024,-1.6203852493470672
-base + fee-migration K line (DEC-0008 sensitivity),2Q27,3.7993263764864897,3.1129430268916,-1.0807393264024912
-base + fee-migration K line (DEC-0008 sensitivity),3Q27,3.7993263764864897,2.896599233036925,-1.1741831202571662
-base + fee-migration K line (DEC-0008 sensitivity),4Q27,3.7993263764864897,2.6730666038431568,-1.1093157494509343
+base + fee-migration K line (DEC-0008 sensitivity),1Q27,2.460588999722346,1.2973876278549854,-1.6203852493470672
+base + fee-migration K line (DEC-0008 sensitivity),2Q27,2.460588999722346,1.7527335507995614,-1.0807393264024912
+base + fee-migration K line (DEC-0008 sensitivity),3Q27,2.460588999722346,1.5363897569448866,-1.1741831202571662
+base + fee-migration K line (DEC-0008 sensitivity),4Q27,2.460588999722346,1.3128571277511183,-1.1093157494509343
 "K4: cohort model, fitted (central, b 0.114)",3Q26,7.645,,
 "K4: cohort model, fitted (central, b 0.114)",4Q26,10.951,,
 "K4: cohort model, fitted (low_migrant, b 0.262)",3Q26,10.035,,

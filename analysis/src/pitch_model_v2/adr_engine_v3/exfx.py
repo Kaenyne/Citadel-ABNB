@@ -50,6 +50,18 @@ LOS_NOWCAST_FILE = C.ROOT / "data/processed/pitch_model_v2/los_nowcast/los_nowca
 # premium (-WC_CORE_PP again). Band: 0 to the 0.20pp bound. False reproduces v3 through fix (k).
 WC_CORE_ADJ = True
 WC_CORE_PP, WC_CORE_BOUND_PP = 0.05, 0.20
+# ---- fix (m): the 2027 core rule (docs/pitch-model-v2/lines/core_2027_prereg.md). The base carries the core at h <= 2 and
+# uses the core's expanding mean at h = 3-4 (post-hoc, the audit's two-window result) and at h = 5 / 6 only where the
+# registered test passes (core_horizon.py, read live). On the mean quarters LOS enters as its own expanding mean.
+# False reverts to the carry everywhere.
+CORE_HORIZON_RULE = True
+
+
+def core_rule_by_quarter() -> pd.DataFrame | None:
+    if not CORE_HORIZON_RULE:
+        return None
+    from . import core_horizon as K
+    return K.rule_by_quarter(K.scores(K.walkforward()))
 
 
 def los_nowcast() -> pd.DataFrame | None:
@@ -180,11 +192,17 @@ def forward(core_rule="carry", geo_basis="nights_linked", bundle_total=BUNDLE_AD
     wc = WC_CORE_PP if WC_CORE_ADJ else 0.0         # fix (l)
     core_last = float(hist.core.iloc[-1]) - wc
     ln = los_nowcast()                             # fix (k)
+    rq = core_rule_by_quarter() if core_rule == "carry" else None       # fix (m): per-quarter rule for the base
+    cv = hist.core.to_numpy(dtype=float).copy(); cv[-1] -= wc
+    core_exp_mean = float(cv.mean())               # fix (m): expanding mean 1Q23-2Q26, 2Q26 net of the World Cup
+    los_seq = list(hist.los_mix.astype(float)) + ([float(ln.loc["3Q26", "los_forward_pp"])] if ln is not None and "3Q26" in ln.index else [])
+    los_exp_mean = float(np.mean(los_seq))         # fix (m): LOS expanding mean through the latest measured quarter
     const, rho = core_ar1()                       # audit fix (d): fitted on the core (v2: K4's residual AR(1) .750 / .747)
     core_mean = core_mean_2023_25()               # audit fix (d): the core's own 2023-25 mean (v2: the residual's 2.398)
     rows = []; prev_core = core_last
     for i, q in enumerate(C.FORWARD_QUARTERS):
-        if core_rule == "carry": core = core_last
+        on_mean = rq is not None and rq.loc[q, "core_rule"] == "mean"
+        if core_rule == "carry": core = core_exp_mean if on_mean else core_last
         elif core_rule == "mean_reversion": core = core_mean
         elif core_rule == "ar1": core = const + rho * prev_core; prev_core = core
         else: raise ValueError(core_rule)
@@ -202,13 +220,15 @@ def forward(core_rule="carry", geo_basis="nights_linked", bundle_total=BUNDLE_AD
             los = off["los_in_core"]
         if ln is not None and q in ln.index:       # fix (k): in-core fill + measured change 2Q26 -> 3Q26
             los = float(ln.loc[q, "los_forward_pp"])
+        if on_mean:                                # fix (m): the core no longer carries 2Q26's LOS fill
+            los = los_exp_mean
         wc_lap = -wc if q == "2Q27" else 0.0       # fix (l): 2Q27 laps the 2Q26 base's World Cup premium
         exfx = core + bt + geo + terms["unit_size"] + los + seats + terms["interaction"] + kline + basis_adj + wc_lap
         rows.append({"quarter": q, "core": core, "bundle": bt, "rnpl_na_leg": b.loc[q, "rnpl_na_leg"], "fee_cancel_leg": b.loc[q, "fee_cancel_leg"],
                      "rnpl_exna_leg": b.loc[q, "rnpl_exna_leg"], "residual": core + bt, "geo_mix": geo, "unit_size": terms["unit_size"],
                      "los_mix": los, "seats": seats, "interaction": terms["interaction"], "fee_k": kline, "basis_adj": basis_adj,
-                     "wc_core_adj": -wc if core_rule in ("carry", "ar1") else 0.0, "wc_lap": wc_lap, "exfx_yoy": exfx,
-                     "core_rule": core_rule, "geo_basis": geo_basis})
+                     "wc_core_adj": (-wc / len(cv) if on_mean else (-wc if core_rule in ("carry", "ar1") else 0.0)), "wc_lap": wc_lap, "exfx_yoy": exfx,
+                     "core_rule": "expanding mean (fix m)" if on_mean else core_rule, "geo_basis": geo_basis})
     return pd.DataFrame(rows).set_index("quarter")
 
 
@@ -297,14 +317,14 @@ def core_ar1() -> tuple[float, float]:
 def construction_cases() -> pd.DataFrame:
     """Audit fix (c): the base ex-FX as filed (v2), under case A (the default: LOS switch treated as a basis offset)
     and under case B (the measured LOS drop is real: forward LOS stays at I's 0.056)."""
-    global CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ
-    keep = (CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ)
+    global CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ, CORE_HORIZON_RULE
+    keep = (CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ, CORE_HORIZON_RULE)
     try:
-        LOS_NOWCAST = WC_CORE_ADJ = False          # fix (c)'s own cases, before fixes (k) and (l)
+        LOS_NOWCAST = WC_CORE_ADJ = CORE_HORIZON_RULE = False     # fix (c)'s own cases, before fixes (k)-(m)
         CONSTRUCTION_FIX = False; v2 = forward().exfx_yoy
         CONSTRUCTION_FIX = True; a = forward().exfx_yoy
     finally:
-        CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ = keep
+        CONSTRUCTION_FIX, LOS_NOWCAST, WC_CORE_ADJ, CORE_HORIZON_RULE = keep
     off = construction_offsets()
     b = a + (CARD_TERMS["los_mix"] - off["los_in_core"])
     return pd.DataFrame({"exfx_v2_as_filed": v2, "exfx_case_A": a, "exfx_case_B": b,
@@ -322,9 +342,10 @@ def envelope(fx_sd: pd.Series) -> pd.DataFrame:
     """Parameter envelope (RSS of half-ranges, J3 convention) on the base: bundle total BUNDLE_BAND (0.5-1.5; v2 0.8-1.2), ex-NA RNPL leg 0-1.15,
     geo (nights-linked vs card), unit, LOS, seats, interaction bands, the core carry's own h-step error; plus the FX
     predictive sd. Returns per-quarter half-band."""
-    base = forward(); rows = []; cse = core_carry_error_sd(); ln = los_nowcast()
+    base = forward(); rows = []; cse = core_carry_error_sd(); ln = los_nowcast(); rq = core_rule_by_quarter()
     for h, (q, r) in enumerate(base.iterrows(), start=1):
-        half = [cse[h]]
+        on_mean = rq is not None and rq.loc[q, "core_rule"] == "mean"
+        half = [float(rq.loc[q, "mean_rmse_max"]) if on_mean else cse[h]]   # fix (m): the mean rule's own PIT RMSE
         half.append(abs(forward(bundle_total=BUNDLE_BAND[1]).loc[q, "exfx_yoy"] - forward(bundle_total=BUNDLE_BAND[0]).loc[q, "exfx_yoy"]) / 2)
         half.append(abs(forward(exna_pp=RNPL_EXNA_ADR_PP_HIGH).loc[q, "exfx_yoy"] - r.exfx_yoy) / 2)
         half.append(abs(r.geo_mix - CARD_TERMS["geo_mix"]) / 2)
@@ -332,10 +353,13 @@ def envelope(fx_sd: pd.Series) -> pd.DataFrame:
             lo, hi = CARD_BANDS[key]
             if key == "los_mix" and ln is not None and q in ln.index:    # fix (k): the nowcast's own band
                 lo, hi = float(ln.loc[q, "band_lo_pp"]), float(ln.loc[q, "band_hi_pp"])
+            if key == "los_mix" and on_mean:                              # fix (m): mean vs the carried 3Q26 read
+                bound = float(ln.loc["3Q26", "los_forward_pp"]) if ln is not None else r.los_mix
+                lo, hi = sorted([r.los_mix, bound])
             half.append((hi - lo) / 2)
         half.append(WC_CORE_BOUND_PP / 2 if WC_CORE_ADJ else 0.0)       # fix (l): premium between 0 and the 0.20 bound
         rss = float(np.sqrt(np.sum(np.square(half))))
         fxsd = float(fx_sd.get(q, 0.0))
-        rows.append({"quarter": q, "exfx_half_band_pp": rss, "core_carry_sd_pp": cse[h], "fx_sd_pp": fxsd, "reported_half_band_pp": float(np.sqrt(rss ** 2 + fxsd ** 2)),
+        rows.append({"quarter": q, "exfx_half_band_pp": rss, "core_carry_sd_pp": half[0], "fx_sd_pp": fxsd, "reported_half_band_pp": float(np.sqrt(rss ** 2 + fxsd ** 2)),
                      "halfwidths": "core_carry|bundle|exna|geo|unit|los|seats|interaction|wc=" + "|".join(f"{x:.3f}" for x in half)})
     return pd.DataFrame(rows).set_index("quarter")

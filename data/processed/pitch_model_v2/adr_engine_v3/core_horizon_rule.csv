@@ -1,0 +1,7 @@
+quarter,h,core_rule,basis,mean_rmse_max
+3Q26,1,carry,h <= 2: carry (the windows split at h = 2),0.7963282829411776
+4Q26,2,carry,h <= 2: carry (the windows split at h = 2),0.8325907158248124
+1Q27,3,mean,h = 3-4: mean wins both windows in the audit (post-hoc),0.8387735820320963
+2Q27,4,mean,h = 3-4: mean wins both windows in the audit (post-hoc),0.840040864154137
+3Q27,5,mean,"h = 5: registered test PASS (mean/carry 0.808, n 6)",0.8287737972454543
+4Q27,6,mean,"h = 6: registered test PASS (mean/carry 0.993, n 5)",0.9214911549066463
