@@ -65,3 +65,8 @@ Street's 49.78 / 28.90 / 36.77%. World Cup +0.5pt kept by team decision (28 Sep)
 for v1). v2 is a copy of v1 with two edits made in Excel: Nights_Engine B77 = 9.2 (3Q26 all-in; X79 is now the residual) and row 91
 = RNPL cancellations (cohort engine central cell −0.93 / −0.85; 2027 = n02 base tail × 1.566), added into row 83. Graph 2 shows
 the cancellations as their own part. Outputs are copied to main-tree `deck/Graphs/caimanes_model_v2/`.
+
+### Update 29 Sep: ADR display table, memo pack
+
+v2's `ADR_Engine` rows 120-129 GBV cells are now live formulas (model nights × each rule's ADR). The memo rewrite reads
+`deck/MEMO_UPDATE_2026-09-29.md`.
