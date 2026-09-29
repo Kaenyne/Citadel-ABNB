@@ -45,7 +45,7 @@ def compose(src, dst, takeaway, source, top_size=64, src_size=44, wrap_top=66, w
 
 
 compose(ROOT / "deck/Graphs/caimanes_model_v2/stylemd/graph2_nights_bundle_separated.png", OUT / "graph1_captioned.png",
-        "Graph 1: Ex the bundle, nights grow ~7%, heading to ~6%; 2026's re-acceleration was the bundle, and it laps from 3Q26",
+        "Graph 1: Ex the bundle, nights grow ~7-8% in 2H26 and ~6% by 2H27; the bundle bought 2026's re-acceleration",
         "Source: Airbnb letters and earnings calls; Bloomberg consensus (12 Sep 2026); team model v2. Dashed boxes are "
         "subtracted; each bar ends at net growth. Bundle = RNPL, 14-day free cancellation, host-only fee. World Cup +0.5pt "
         "in 2Q26 is a team assumption.")

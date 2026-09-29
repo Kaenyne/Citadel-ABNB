@@ -32,12 +32,12 @@ NODE_PATH=<folder containing node_modules/docx> node deck/drafts/memo_v4_pm_feed
 
 **Page fit.**
 - The fit was checked in LibreOffice, because Aptos is not installable here. The check was calibrated by rendering the 24 Sep .docx the same way.
-- **Carlito**: the old memo renders to 2 pages ending at 745pt, which matches the real PDF. v4 ends at **705pt**.
-- **Liberation Sans**, which is wider: both the old memo and v4 run 63pt onto a third page.
-- So v4 is no longer than the memo that fit in Word. **Open it in Word and confirm two pages before sending.**
+- **Carlito**: the old memo renders to 2 pages ending at 745pt, which matches the real PDF. v4 ends at **715pt**, after the blind-review fixes.
+- **Liberation Sans**, which is wider: the old memo runs 63pt onto a third page, v4 about 115pt, because of different page breaks.
+- Carlito reproduced the real Aptos PDF exactly, so it is the better guide, but the margin is thin. **Open it in Word and confirm two pages before sending.**
 - Cut order if it spills:
   1. The "Macro no longer helps" last sentence.
-  2. Risk 5.
+  2. The February sentence in risk 4.
   3. The fourth "no longer a growth company" bullet.
 
 ---
@@ -48,8 +48,8 @@ NODE_PATH=<folder containing node_modules/docx> node deck/drafts/memo_v4_pm_feed
 |---|---|---|
 | 1 | More narrative and sales pitch, less numeric description, the "why" | The memo now reads as one argument: the call → the setup (2022–25 slowdown, the bundle) → why the market is wrong → why the bundle is an illusion → our proof → why Airbnb is no longer a growth company → margins → macro → catalysts → valuation → risks. The three "Thesis 1/2/3" evidence blocks are gone as headings. The ADR/FX detail (Street $177.06 vs straight line $177.07, −0.4pp FX, +1.0% ex-FX, mix −1.6pp) and the margin-bridge bars are cut from the text. |
 | 2 | Story: 2–5 years of slowing growth → why the market disconnected (Street hugging guidance after beats) → proof it reconnects | "The Setup": nights +31.0 / +13.8 / +9.7 / +8.4% (2022–25), trough +7.4% (2Q25), the bundle, +10.3% (2Q26), stock +17.4% on the print, management stops sizing the bundle. "Why the market is wrong": 19 straight guide beats, all 28 estimates ≥+10.0% for 3Q26, LSEG FY27 revenue +11.7%, and the 23 Sep sell-off cut the multiple, not the estimates. "Our proof": the stays index. |
-| 3 | Thesis opens with return, time frame, catalyst, and the fundamental truth the catalyst reveals | The Investment Thesis paragraph states: $120, −20.6%, 12 months; the truth (growth has slowed since 2022; 2026 was bought; underlying ~7% heading to ~6%); the path (5 Nov starts the reveal; February completes it; FY27 consensus converges through 2027); the size (FY27 revenue +7.5% vs +11.7%, EBITDA $4.89bn vs $5.83bn, −16%). |
-| 4 | Graph 1 (both-guides-miss event study): n=5, regime, and it implies an 8% one-day trade that does not match a −20% 12-month target | **Dropped**, for four reasons, listed below the table. The PM's own concern survives as one sentence of mechanism in Catalysts: the three largest post-print falls (3Q22 −13.4%, 1Q23 −10.9%, 2Q24 −13.4%) all came on revenue beats with nights guided lower. That sentence carries no average, no hit rate and no trade claim. |
+| 3 | Thesis opens with return, time frame, catalyst, and the fundamental truth the catalyst reveals | The Investment Thesis paragraph states: $120, −20.7%, 12 months; the truth (growth has slowed since 2022; 2026 was bought; underlying ~7% heading to ~6%); the path (5 Nov starts the reveal; February completes it; FY27 consensus converges through 2027); the size (FY27 revenue +7.5% vs +11.7%, EBITDA $4.89bn vs $5.83bn, −16%). |
+| 4 | Graph 1 (both-guides-miss event study): n=5, regime, and it implies an 8% one-day trade that does not match a −20% 12-month target | **Dropped**, for four reasons, listed below the table. A "three largest post-print falls" sentence in the first draft was also deleted after the blind review (n=3, selected on the outcome). |
 | 5 | A consistent catalyst path | November starts the reveal (nights print, a Q4 guide below the Street, the Q4 nights descriptor, the FY26 floor at risk; first FY27 cuts). February completes it (1Q27 guide against a +17.9% revenue comparison; FY27 margin outlook). Through 2027: ~6% prints bring the Street to our numbers. The same path appears in the thesis paragraph and in Catalysts. |
 | 6 | Size, liquidity, low SI, a gradual decline | One sentence at the end of the thesis paragraph: "a liquid $89B large cap with low short interest… estimate cuts over several prints, not one binary event." |
 | 7 | Briefly, why the bundle created an illusion of growth | A new paragraph: a level shift lifts the growth rate only until it laps (the lap dates); RNPL share has plateaued ("roughly 20%" → "over 20%"); cancellations arrive later (~22% implied). Net of cancellations, the bundle adds 1.4pt in 3Q26 and 0.1pt in 4Q26. |
@@ -65,7 +65,7 @@ NODE_PATH=<folder containing node_modules/docx> node deck/drafts/memo_v4_pm_feed
 - It frames a one-day trade, which the PM says does not fit a 12-month −20% target.
 
 **Other changes:**
-- **Header:** $120 / −20.6% / $89.3B (workbook Cover: 589.6M shares × $151.39); adds the horizon and EV/NTM EBITDA; drops "R/R 2:1", which has no source.
+- **Header:** $120 / −20.7% ($120 / $151.39 − 1; the pack's −20.6% is on the unrounded $120.19) / $89.3B (workbook Cover: 589.6M shares × $151.39); adds the horizon and EV/NTM EBITDA; drops "R/R 2:1", which has no source.
 - **Company overview:** dropped. The segment split was description, not argument.
 - **Thesis 2 and 3 numbers** moved to the v2 workbook: nights 9.20 / 7.27%, FY27 +6.4%, margins 34.6 / 34.9 / 32.6%, Street FY27 36.8%.
 - **Valuation:** reworded as the update pack suggests (three multiples, $117–123, target $120). One sentence adds why 1.5 turns of compression is conservative.
@@ -76,7 +76,10 @@ NODE_PATH=<folder containing node_modules/docx> node deck/drafts/memo_v4_pm_feed
 |---|---|---|
 | Street FY27 revenue growth | +11.7% | Workbook Cover K24 $15,846.1M ÷ FY26 Street ($6,286M 1H26A + $4,744.3M + $3,161.8M = $14,192.1M) − 1 = 11.65% |
 | Our FY27 revenue growth | +7.5% | Workbook: $15,022.4M ÷ FY26 $13,973.4M − 1 = 7.51% |
-| Growth gap used in the valuation sentence | 4.1pts | 11.65 − 7.51 |
+| Growth gap used in the valuation sentence | ~4pts | 11.65 − 7.51 = 4.14 |
+| NTM decomposition | EBITDA 12% below consensus; multiple −10% | Cover B32/C32/D32: 14.925 / 17.028 = 0.877; 13.425 / 14.925 = 0.899 |
+| Upside marker | $178 (7 Aug close, +17.4% on the print), +18% vs $151.39 | Reaction panel (2Q26 ret_1d 17.4%); close per press (TIKR, Motley Fool) |
+| FX in 1H26 | +3–4pts of reported revenue growth | Letters, via memo v3 ("+3 and +4 points of FX in 1Q26 and 2Q26") |
 | FY27 EBITDA vs Street | $4.89bn vs $5.83bn, −16% | Update pack §3 |
 | Annual nights growth | +31.0 / +13.8 / +9.7 / +8.4% (2022–25) | `research/notes/overnight/11_competition-supply-and-overlays.md` lines 37–40 (filings) |
 | Quarterly trough | +7.4% (2Q25) | Workbook `Income_Statement` K5 |
@@ -107,7 +110,6 @@ NODE_PATH=<folder containing node_modules/docx> node deck/drafts/memo_v4_pm_feed
 | Hotels | Single-digit share of nights | Management, `docs/pitch-forecasts/questions/risk-new-businesses-quantified-material/README.md` |
 | Ad revenue | Zero | `11_competition…md` line 274 |
 | Macro | Fed hike 16 Sep; CPI airfares +25.5% y/y (July); CoStar RevPAR +4.4% (2026) → +2.1% (2027); Booking Q3 room nights +3–5% | `docs/pitch-forecasts/questions/bonus-interest-income-falls/README.md` line 23; `research/notes/overnight/05_macro-outlook-and-transmission.md` lines 202–251 |
-| Three largest post-print falls | 3Q22 −13.4%, 1Q23 −10.9%, 2Q24 −13.4%; nights guided lower in each | `abnb_guidance_reaction_panel.csv` (ret_1d, nq_nights_dir); revenue beats per memo v3 |
 | February letters | A full-year margin outlook every year since Feb 2023 | `data/processed/overnight/02_guidance_ledger.csv` lines 58–175 |
 | February print day-1 returns | Up in 5 of 6 years | Reaction panel: 4Q20 +13.3, 4Q21 +3.6, 4Q22 +13.4, 4Q23 −1.7, 4Q24 +14.4, 4Q25 +4.6 |
 | Multiple-growth slope | ~0.5 turns per point | `data/processed/forecast_methods/valuation_v1/regression_reproduction.csv`: 0.486 on 12-month changes in EV/**LTM** (both windows, descriptive only). The NTM-level version fails W2, so it is quoted as "~0.5" and as support for "conservative", not as the target's basis. |
@@ -137,3 +139,9 @@ NODE_PATH=<folder containing node_modules/docx> node deck/drafts/memo_v4_pm_feed
 6. **Sources press-verified only:** the 23 Sep sell-off, the Muse / AI Mode / ChatGPT facts, and Chesky's "next year". Primary pages were blocked by the proxy in this session.
 7. **"R/R 2:1"** was removed because nothing supports it. If the team wants a risk/reward figure, it needs a defined upside case (e.g., the $178 post-print close) or a stop.
 8. **Chesky's "$1bn straight shot"** is deliberately not quoted. The repo tags it once as host/seller services (`05_statements.csv` line 374) and once as sponsored listings (`management-implied-model.md` line 27). Check the Communacopia transcript before using it in Q&A.
+9. **The target's time basis.**
+   - The Cover applies a compressed multiple to *today's* NTM EBITDA (3Q26–2Q27).
+   - In 12 months the market will price 4Q27–3Q28 earnings. The blind reviewer flagged this.
+   - FY27 on its own gives $117.33, and it is already one of the three prices averaged.
+   - This is a model choice for the team; the memo quotes the Cover as it stands.
+10. **Blind review.** See `BLIND_REVIEW.md`: 41/52 vs 10/52, and what was done with each gap.
