@@ -1,0 +1,1 @@
+adr_path_v3_kl_2026-09-23.csv: copy of citadel-abnb-adrfix (branch krish/adr-audit-fixes, HEAD 9cc8ce52 plus uncommitted fixes k and l) data/processed/pitch_model_v2/adr_engine_v3/adr_path.csv, written 2026-09-23 19:15:53; DEC-0049 (k, LOS nowcast) and DEC-0050 (l, World Cup out of the core), both proposed.

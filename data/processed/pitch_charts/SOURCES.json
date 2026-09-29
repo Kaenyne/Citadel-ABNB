@@ -1,0 +1,18 @@
+{
+ "s01_prints.csv": "data/processed/abnb_guidance_reaction_panel.csv; model/ABNB_historicals.xlsx sheet Earnings (Excess 20d, Rev vs Street)",
+ "s02_group_horizons.csv": "s01_prints.csv; Wilcoxon rank-sum (Mann-Whitney U) per horizon",
+ "s03_fits.csv": "s01_prints.csv; OLS day-1 excess return on each x",
+ "s04_two_gates.csv": "s01_prints.csv; nights direction = nq_nights_dir, else sign of nq_nights_guide_pts",
+ "r01_revenue_decomposition.csv": "data/processed/overnight/02_kpi_panel_quarterly.csv (history, letters' ex-FX ADR); model/ABNB_official_model_complete.xlsx Income_Statement (forecast nights, take rate, revenue); data/processed/pitch_charts/inputs/adr_path_v3_kl_2026-09-23.csv (ADR ex-FX/FX, ADR_LINE=kl); data/processed/margin_build/06_fy27_path_v2/06_revenue_path_3q26_4q27_v2b.csv fx_pts_revenue_memo (team revenue-FX line, DEC-0010)",
+ "r02_ours_vs_street.csv": "data/processed/reverse_dcf/E/E_street_distribution_vs_team.csv (Bloomberg MODL 12 Sep 2026, nights/ADR means); LSEG revenue {'3Q26': 4744.32, '4Q26': 3161.82}; ours from r01",
+ "r03_what_moved.csv": "model/ABNB_official_model_complete.xlsx Income_Statement (nights, take rate, cash costs, D&A, add-backs); ADR data/processed/pitch_charts/inputs/adr_path_v3_kl_2026-09-23.csv vs data/processed/pitch_model_v2/adr_engine/adr_path.csv; Street LSEG rows 39/41, FY27 15,819.3 at 36.45% (DEC-0013); 1H26 reported",
+ "r04_revenue_vs_street_quarterly.csv": "as r03; Street LSEG quarterly means (13 Sep 2026 pull)",
+ "r00_meta.csv": "which ADR line the revenue and guide charts are drawn on",
+ "r05_margin_bridge.csv": "copy of margin_build/46_margin_bridge (krish/cost-leg 32ceee0e) on main's 02 panel, 40 line build and 06 consensus; our revenue and EBITDA from ADR engine v3 with fixes (k) LOS and (l) World Cup, 23 Sep (PR #67 working tree)",
+ "s05_guide_call.csv": "docs/pitch-forecasts/SYNTHESIS.md (C01) and forecast_table.csv row C01 ($2,945/3,100/3,265M, P 0.72, set on bridge-v3 GBV X=25,046.09) scaled by the C1 guide model ratio (docs/pitch-model-v2/dossiers/R4C_r4c_c1_coefficients.md) at this ADR line's GBV (ADR engine v3 with fixes (k) LOS and (l) World Cup, 23 Sep (PR #67 working tree))",
+ "n02_cancellation_tail.csv": "data/processed/rnpl_short_audit/rnpl_nights_module_cohort_matrix.csv (RECOGNISED IN QUARTER, diagonal = same-quarter cohort); data/processed/rnpl_short_audit/rnpl_nights_module_state.csv rebook_offset; data/processed/rnpl_short_audit/rnpl_nights_module.csv M3+M4 for comparison",
+ "n01_nights_decomposition.csv": "docs/pitch-model-v2/lines/nights_v2_design.md \u00a72.1 (NA share, legs, laps, events); docs/pitch-model-v2/lines/final_nights.md \u00a71, \u00a76 (base path, envelopes, Street 149.0/134.0 Bloomberg MODL 12 Sep); printed nights data/processed/overnight/02_kpi_panel_quarterly.csv; short case = judgement path, krish/cost-leg 3065e2f2 44_short_case_v2/run.py; 4Q25 carries the NA fee+cancellation legs (launched Oct 2025) as in the D1 cross-check, giving 2.2pts against management's 'over 200 basis points' (the design table carries 1.51)",
+ "n03_cancel_rate.csv": "data/processed/rnpl_short_audit/rnpl_nights_module_state.csv (RNPL nights share, propensity); 16% historical and '17%' from management (4Q25 call, ledger D018, transcript mirror); 3Q25/4Q25 shares assumed, 1Q26 letter",
+ "n04_unearned_fees_vs_gbv.csv": "data/processed/rnpl_short_audit/verify_bs_yoy_gap_table.csv (10-Q/10-K balance sheets; GBV from letters)",
+ "n05_worldcup_reviews.csv": "krish/worldcup-premium (uncommitted) data/processed/worldcup_premium/40_v4_reviews.csv; RESULTS.md \u00a73c: ~0.1pt of global 2Q26 nights"
+}
