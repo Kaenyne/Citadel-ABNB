@@ -81,7 +81,7 @@ function floatingImage(file) {
   });
 }
 
-const lines = fs.readFileSync(path.join(HERE, "memo_v4_1_text.md"), "utf8").split("\n");
+const lines = fs.readFileSync(path.join(HERE, "memo_v4_1_text.md"), "utf8").split(/\r?\n/);
 const children = [];
 lines.forEach((line, i) => {
   if (!line.trim()) return;
