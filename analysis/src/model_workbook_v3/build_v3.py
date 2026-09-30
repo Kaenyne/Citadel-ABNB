@@ -189,6 +189,10 @@ def main():
             for co in ws.ChartObjects():
                 co.Chart.ChartArea.Font.Name = FONT
         add_valuation(wb)
+        # Cover: target price now comes from the FY27 bridge (memo v5); every other Cover cell is left as in v2
+        cover = wb.Worksheets("Cover")
+        cover.Range("E35").Formula = "=Valuation!C20"
+        cover.Range("A2").Formula = '="Target Price: $" & ROUND(Valuation!C20,2)'
         xl.CalculateFull()
         wb.Save()
         wb.Close(False)
